@@ -31,8 +31,6 @@ Please note that the "standard" installation method of installing the solution i
 <section>
   
   > [Controls browser](controls-browser/controls-browser)  
-  > The Controls Browser is built to provide an overview of the current risks in your Information System.  
-It provides administrators with an overview of the controls and associated defects (discrepancies) and when possible the means to remediate the risk.  
+  > The Controls Browser is built to provide an overview of the current risks in your Information System. It provides administrators with an overview of the controls and associated defects (discrepancies) and when possible the means to remediate the risk.  
 
 </section>
-
