@@ -29,7 +29,7 @@ Ranking is very useful to reorder entries with a risk approach perspective. Risk
 The end-user can associate to the risk rank the Nb of risks related to the entity. This helps to understand the context.
 As in the exemple below, the end-user can have more risks but with a lower severity for an entity (Jaime ROBERTSON), so that the risk rank will be higher than for others with more severes controls defects (Sophia FOX).
 
-![](./media/image-80-Search-identities_RiskRank.png){ width=100% }
+![](./media/image-80-Search-identities_RiskRank.png)
 
 ## Other computed KPIs  
 Other KPIs are automatically computed during the load of data in order to faciliate the analysis and to provide metrics and trends regarding the entities. These KPIs are provided as a series of “extended attributes” of the entities. As those KPIs are part of the datamodel you can use them in the user interfaces (such as search pages) or in your custom reports or analytics.  

@@ -21,7 +21,7 @@ For standard users, without any specific responsibility on resources and organiz
 
 - in the **My accounts** tab, the standard user will find the list of accounts he owns with indications of changes regarding group, permission and folder rights. These changes are evaluated during the data loading process by comparing the current situation with the previous timeslot. 
 
-![](./media/image-50-Access360_StandardUsers.png){ width=100% }
+![](./media/image-50-Access360_StandardUsers.png)
 
 - in the **My applications** tab, the list of applications accessible by the connected standard user is listed in a first table. Selecting an application will then provide in a second table on the right the list of the related profiles/roles/permissions that gives the selected identity access to the application.  
 The table on the right is configurable so that the end-user can add columns to display for example the sensitivity level and sensitivity reason of each permission. Please go to the [How to configure tables, columns and export data](#standard-tables) section to know more about table customization.
@@ -39,7 +39,7 @@ Resources owners will find the same tabs as standard users with in addition a "M
 
 Since he is the owner, by clicking on the resource or resource type, the resource owner can reach the related resource detail page to analyse and investigate accesses to them. See the [Detail pages](#detail-pages) section of this document for more details.
 
-![](./media/image-51-Access360_ResourcesOwners.png){ width=100% }
+![](./media/image-51-Access360_ResourcesOwners.png)
 
 - in the **Analytics** tab, all the analytic reports available for the resources owner are available. Analytics can be simple reports as well as more elaborated management interfaces, and will be limited to the scope owned by the resources owner.
 
@@ -56,7 +56,7 @@ When selecting "as a line manager", the end-user can also filter the list of ide
 He is also able to compare a selected identity in the team with one or more others selected in the same table. For more details on that, please reach the [how to compare identities, accounts, permissions or groups](#how-to-compare-identities-accounts-permissions-or-groups-with-each-others) section. 
 The end-user can click also on the name or HRcode of an identity to open the related identity detail page to analyse and investigate accesses granted to them. See the [Identity details](#identities-details-page) section of this document for more details..  
 
-![](./media/image-52-Access360_Managers.png){ width=100% }
+![](./media/image-52-Access360_Managers.png)
 
 - in the **Analytics** tab, all the analytic reports available for the organisation or line manager are available. Analytics can be simple reports as well as more elaborated management interfaces, and will be limited to the manager's scope of responsibilities.
 

@@ -14,7 +14,7 @@ IAP comes with more than 100 off-the-shelf controls. These controls identify pro
 
 These controls are part of the data model and are presented in each detail pane. They are also used to compute risk scores. You can use them in your own dashboards, reports, reviews and analytics. You can also search for errors through the search pages. (You will have to switch to "free search" and enable "show extended attributes" to do this.)
 
-![Sample advanced search using control results](./media/image56.png "Sample advanced search using control results"){ width=100% }
+![Sample advanced search using control results](./media/image56.png "Sample advanced search using control results")
 
 Here is an extract of the available controls in IAP. Please consult "Settings &rarr; System &rarr; Manage Controls Execution" for an updated list of the controls available in your instance.
 

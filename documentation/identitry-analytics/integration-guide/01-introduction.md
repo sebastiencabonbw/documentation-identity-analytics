@@ -20,7 +20,7 @@ The main difference with IAP is that it comes with a series of off-the-shelf ana
 
 IAP is also in an active development phase at RadiantLogic, thus by deploying IAP, not only you will benefit from a lot of off-the-shelf value, but you will also benefit of regular updates/improvements.
 
-![](./media/image1.png){ width=100% }
+![](./media/image1.png)
 
 ### Manifesto
 

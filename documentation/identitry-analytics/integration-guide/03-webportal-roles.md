@@ -15,9 +15,9 @@ Configuration authentication and authorization is beyond the scope of this docum
 Several roles are available to restrict the end-users capabilities in IAP.
 Those roles are sumarized here:
 
-![](./media/image20.png){ width=100% }
+![](./media/image20.png)
 
-![](./media/image21.png){ width=100% }
+![](./media/image21.png)
 
 ## user
 

@@ -13,7 +13,7 @@ IAP embeds a flexible framework in order to faciliate the inclusion of custom an
 
 You can configure custom analytics in the user section of Access360. Those analytics will appear among the others in the Analytics tab. Those customs analytics **MUST** be associated with the current user management characteristics, in a way that they will only appear if the current user corresponds to those management characteristics (line manager, application manager, ...).
 
-![](./media/image43.png){ width=100% }
+![](./media/image43.png)
 
 In order to add custom analytics, you have to create a Pages with the following constraints:
 
@@ -56,7 +56,7 @@ Keep in mind that the `feature:` property will help you to show or hide your cus
 
 You can configure custom analytics for endusers in the user section of Access360. Those analytics will appear among the others in the Analytics tab.
 
-![](./media/image43.png){ width=100% }
+![](./media/image43.png)
 
 In order to add custom analytics or end user , you have to create a Pages with the following constraints:
 
@@ -85,7 +85,7 @@ Keep in mind that the `feature:` property will help you to show/hide your custom
 
 You can add your own custom analytics in the 'Analytics' section of the detail panes.
 
-![](./media/image44.png){ width=100% }
+![](./media/image44.png)
 
 This method is the same as the one used in Ader version and 2017 version. You can consult the documentation for more information about this:  [Links to Reports and Pages from Detail Pages](https://documentation.brainwavegrc.com/Ader/docs/igrc-platform/pages/new-webportal-features/link-to-reports-and-pages/)
 
@@ -133,7 +133,7 @@ myanalyticspane_app = Page {
 You can add your own custom analytics in the 'Analytics' section of the detail panes for certain repository types.
 This is very useful if for instance you want to deploy analytics for a given system such as Active Directory, Mainframes, ...
 
-![](./media/image45.png){ width=100% }
+![](./media/image45.png)
 
 The way to configure those custom analytics is very similar to the upper section:
 
@@ -175,7 +175,7 @@ myadanalyticspane = Page {
 You can add your own custom analytics in the 'Analytics' section of the detail panes for certain entity families.
 This is very useful if for instance you want to deploy analytics for a given system such as Active Directory, SAP, ...
 
-![](./media/image45.png){ width=100% }
+![](./media/image45.png)
 
 The way to configure those custom analytics is very similar to the upper section:
 
@@ -228,7 +228,7 @@ For instance if you load database accounts and groups in a `Repository`, you sho
 You can add custom identity analytics based on the current identity management position (such as application manager, organisation manager, ...). This is very useful as it will avoid to provide empty analytics (such as direct team reports if the current identity is not a line manager).
 This approach is very similar to the one used in the "User section of Access360".
 
-![](./media/image46.png){ width=100% }
+![](./media/image46.png)
 
 You need to create a Page with the following constraints:
 
@@ -339,15 +339,15 @@ If you want to provide analytics on search results, you **MUST** use the new met
 
 From an end user perspective, those analytics are available through the contextual menu located at the lower right part of the search screen.
 
-![](./media/image64.png){ width=100% }
+![](./media/image64.png)
 
 When you click on this menu entry, all the available analytics are presented:
 
-![](./media/image65.png){ width=100% }
+![](./media/image65.png)
 
 When you click on a given analytics, it is displayed as usual but with a subtle difference: The search query itself is passed to the Analytics, as a result, **this analytics can be safely bookmarked in the favorites**
 
-![](./media/image66.png){ width=100% }
+![](./media/image66.png)
 
 ### Configuration
 
@@ -383,7 +383,7 @@ When the search page is displayed, depending on the number of search analytics p
 
 In the following example, although the Feature is enabled for the current user, no search analytics are available, as a result, the menu entry is grayed in the list
 
-![](./media/image68.png){ width=50% }
+![](./media/image68.png)
 
 A last thing regarding the overall performances of this function:
 
@@ -554,7 +554,7 @@ Here are the prototypes for the different kind of search
 
 Your view **must** have the search definition anchor option activated, as seen in the following screenshot.
 
-![](./media/image67.png){ width=50% }
+![](./media/image67.png)
 
 # Adding custom content in detail pages & dialog box
 
@@ -564,11 +564,11 @@ Once enabled, those detail panes will be displayed in the "standard" user interf
 
 In the detail pages:
 
-![](./media/image53.png){ width=100% }
+![](./media/image53.png)
 
 In the dialog box:
 
-![](./media/image52.png){ width=100% }
+![](./media/image52.png)
 
 In order to do so, you have to create your own content in predefined fragments. Those fragments are located in `/webportal/pages/bw_fragments/custom/` with one fragment per concept.
 
@@ -770,7 +770,7 @@ More than 200 documented fragments are provided off-the-shelf.
 
 For instance, here is a standard fragment to present identity details (fragmentIdentityFullDetails)
 
-![](./media/image49.png){ width=100% }
+![](./media/image49.png)
 
 Those fragments are located in `/webportal/pages/bw_fragments/`
 
@@ -781,17 +781,17 @@ Fragments are located in subdirectories, based on their concept:
 
 All fragments are documented, you can access to the corresponding fragment documentation through a mouse roll over the fragment. Hit F2 to open the help as a dialog box.
 
-![](./media/image48.png){ width=100% }
+![](./media/image48.png)
 
 Standard dialog box are also provided to present entity details, those dialog box are located in `/webportal/pages/bw_fragments/[entity]/details/[entity]Details.page`, for instance: `/webportal/pages/bw_fragments/account/details/accountDetails.page`
 
 Example of a dialog box to present a given account detail:
 
-![](./media/image50.png){ width=100% }
+![](./media/image50.png)
 
 Those dialog box are documented, you can access to the corresponding fragment documentation through a mouse roll over the dialog box. Hit F2 to open the help as a dialog box.
 
-![](./media/image51.png){ width=100% }
+![](./media/image51.png)
 
 As a best practice you **SHOULD** use those fragments and dialogbox whenever possible when you create custom reports and anaytics.
 
@@ -828,7 +828,7 @@ import "/webportal/pages/bw_fragments/lib/kpis.page"
 
 Former .gif and .png icons are deprecated. A new set of svg icon is available in IAP. You **SHOULD** use those icons instead of the former gif and png icons.
 
-![](./media/image55.png){ width=100% }
+![](./media/image55.png)
 
 Those icons are located in `reports/icons/bw_fragments/*`
 

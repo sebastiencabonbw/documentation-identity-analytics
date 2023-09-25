@@ -7,7 +7,7 @@ description : "Identity Analytics Integration Guide"
 
 A lot of analytics are available of the shelf, for an updated list of the available analytics, you **SHOULD** consult "Configuration &rarr; System &rarr; Available analytics".
 
-![](./media/image57.png){ width=100% }
+![](./media/image57.png)
 
 Here is an extract for your information:
 

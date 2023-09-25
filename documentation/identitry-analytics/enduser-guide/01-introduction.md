@@ -48,11 +48,11 @@ All screenshots in this document reflect the default display of the web portal a
 The header provides a QR code and URL generator to the current page (**1**). This allows the end-user to send directly the link to the report and dashboard he is displaying to stakeholders.
 On the right side of the header, the name of the connected end-user appears (**2**).  
 
-![](./media/image-68-HeaderQR.png){ width=100% }
+![](./media/image-68-HeaderQR.png)
 
 Clicking on the connected end-user name will provide an additional menu that allows to log out or access to the user preferences page.
 
-![](./media/image-69-HeaderPreferences.png){ width=20% }
+![](./media/image-69-HeaderPreferences.png)
 
 #### User preferences page
 
@@ -62,27 +62,27 @@ Please go to the [time navigation and changes](#time-navigation-and-changes) sec
 
 In the same "Links" section, clicking on "My delegations" (**3**) will open the delegation management page. This page allows the end-user to delegate some of his roles for a given period to a colleague and to document the reason of this delegation.
 
-![](./media/image-70-PreferencesPage.png){ width=100% }
+![](./media/image-70-PreferencesPage.png)
 
 #### Top of pages options
 
 On top of pages, a breadcrumb trail (**1**) represents the navigation path and gives the display context of the current page. On the right, an icon allows to refresh the page (**2**) when changes have been made in the displayed page, and a star icon (**3**) allows to add it to your favorite. When adding a page to your favorite, the related shortcut is then available from the menu bar in the list of favorites. See the next "Menu bar" section for more details.
 
-![](./media/image-71-TopOfPages.png){ width=100% }
+![](./media/image-71-TopOfPages.png)
 
 #### Menu bar  
 
 On the left side, the menu bar allows to browse through the different pages available in the web portal.
 
-![](./media/image-72-MenuBar.png){ width=20% }
+![](./media/image-72-MenuBar.png)
 
 On top of the menu bar, a first icon (**1**) allows to retract the menu bar to benefit from the full width of the web browser. 
 
-![](./media/image-73-TopOfMenuBar.png){ width=20% } 
+![](./media/image-73-TopOfMenuBar.png) 
 
 A second icon (**2**) allows to open the option menu:  
 
-![](./media/image-74-TopOfMenuBarOptions.png){ width=20% }  
+![](./media/image-74-TopOfMenuBarOptions.png)  
 
 This menu gives access to:  
 
@@ -95,7 +95,7 @@ A third magnifier icon (**3**) provides a direct access to the "My Analytics" da
 A fourth icon (**4**) allows to navigate through the timeslots. Please check the next part ["Time navigation and changes"](#time-navigation-and-changes) for more details. 
 
 Below these icons, other options are provided:
-![](./media/image-75-TopOfMenuBarIcons.png){ width=20% } 
+![](./media/image-75-TopOfMenuBarIcons.png) 
 
 The folder icon (**1**), selected by default, gives access to the list of categories and pages from the menu bar. 
 The star icon (**2**) allows to switch to the list of favorites (i.e. the list of pages the end user has added to his favorites).  
@@ -124,4 +124,4 @@ Using this same interface, he is also able to go back on previous data uploads (
 
 Please refer to the [Comparison timeslot](#how-to-configure-the-comparison-timeslot) section for more details about this feature and how to change the comparison timeslot.  
 
-![](./media/image-10-time_navigation.png){ width=100% }
+![](./media/image-10-time_navigation.png)

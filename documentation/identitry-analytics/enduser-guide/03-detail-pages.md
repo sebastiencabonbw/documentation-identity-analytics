@@ -40,19 +40,19 @@ This tab presents general information regarding the selected organisation throug
 
 - in **organisation tab**, key KPIs and management information about the selected organisation are provided. Please refer to the [Risk ranking and risk analysis](#computed-kpis) section of this document for more information about Risk rank, Max risk level, nb of Identities at risk and percentage of identities at risk.  
 
-![](./media/image-01-Organization_Details.png){ width=100% }
+![](./media/image-01-Organization_Details.png)
 
 - in **Managers tab**, the list of selected organisation's managers. 
 When the end-user is a **functional or technical administrator** (roles `functionaladmin`, `technicaladmin`), he can also add a new organisation manager and configure delegation, delete an organisation manager, access to the organisation manager updates audit trail, by clicking on the three icons avalaible on the right side of the table.  
   
-![](./media/image-02-Organization_Details_Managers.png){ width=100% }
+![](./media/image-02-Organization_Details_Managers.png)
 
 - in **Team tab**, the team members list is provided.
 In this table the end-user can include inactive identities if needed.  
 He is also able to compare team members regarding accesses at application, permission, account, group, share and folder levels. To do so, he needs to select two or more identities in the list and click on the "compare" button. For more details on that, please reach the [how to compare identities, accounts, permissions or groups](#how-to-compare-identities-accounts-permissions-or-groups-with-each-others) section.  
 The end-user can click also on the name or HRcode of an identity to open the related identity detail window.  
 
-![](./media/image-03-Organization_Details_Team.png){ width=100% }
+![](./media/image-03-Organization_Details_Team.png)
 
 - in **Hierarchy tab**, the graphical representation of the organisation chart is provided here.  
 
@@ -64,7 +64,7 @@ This is an optional tab, it presents the computed business activities as well as
 The end-user can click also on the name of the Business Activity to open the related Business Activity detail window.  
 Note that this tab requires the Booster for ERP/SoD licence.
 
-![](./media/image-05-Organization_Details_BusinessActivities.png){ width=100% }
+![](./media/image-05-Organization_Details_BusinessActivities.png)
 
 - in **Granted rights tab**, the end-user has access to the list of all the roles granted by the applications. 
 He can click also on the name of the permission/role/profile to open the related detail window.  
@@ -96,7 +96,7 @@ In this tab, a filter is also provided through combobox to help the end-user sel
 Clicking on the Rights value in column "Rights" opens the rights definition window (the legend).  
 Clicking on the Folder path name in column "Path" opens the Folder detail window.  
 
-![](./media/image-06-Organization_Details_FoldersTab.png){ width=100% }
+![](./media/image-06-Organization_Details_FoldersTab.png)
 
 - in **Folders rights tab**, the list of accounts-folder rights accessible by any of the team members is provided. This tab is only available if the end-user has the appropriate licence (Booster for Data Governance/Unstructured Data). 
 Top of the table, the options are exactly the same as for Folder tab, as described in the previous paragraph.
@@ -104,7 +104,7 @@ In addition, the end-user can click on the Account login to reach the account de
 
 - in **Usages tab** the list of activities is provided when some logs have been aggregated and consolidated in Identity Analytics as usages during the data collect phase.  
 
-![](./media/image-07-Organization_Details_UsagesTab.png){ width=100% }
+![](./media/image-07-Organization_Details_UsagesTab.png)
 
 ### Controls tab
 
@@ -112,14 +112,14 @@ It presents the list of all the control defects found for the selected organisat
 Checking the box "Show selected control defect risks details" allow to display the Control and Risk descriptions and the Suggested mitigation on bottom of page.  
 Clicking on the Control name leads to the Control detail window.
 
-![](./media/image-08-Organization_Details_Controls.png){ width=100% } 
+![](./media/image-08-Organization_Details_Controls.png) 
 
 ### Analytics tab
 
 It presents all the analytics available for the selected organisation. Analytics can be simple reports as well as more elaborated management interfaces.
 It will help to better understand how the access have been granted through the selected organisation's members by providing applications, roles, permissions, data access analysis reports, cross table analysis with peer groups analytics capabilities, analyze SoD defects matrix and to follow-up the changes that occured in the past ("Organisation timeline").
 
-![](./media/image-09-Organization_Details_Analytics.png){ width=100% } 
+![](./media/image-09-Organization_Details_Analytics.png) 
 
 The full list of Analytics reports for any resources is available from the administration page and documented. Please go to section [Analytics reports](#how-to-list-all-the-available-analytics-reports-and-their-description) to know more.
 
@@ -128,7 +128,7 @@ The full list of Analytics reports for any resources is available from the admin
 This is an optional tab, it presents all the decision taken for this entity such as access review decision or entity update made through IAS/IAP (account reconciliation, classification update, management information update, ...).
 The end-user is able in top of this table to filter per status such as "ok", "update", "revoke", "remove", "add", "not reviewed".
 
-![](./media/image-09-Organization_Details_DecisionHistory.png){ width=100% }
+![](./media/image-09-Organization_Details_DecisionHistory.png)
 
 ## Identities details page
 
@@ -152,14 +152,14 @@ Depending on the responsibilities of the selected identity, different sub-tabs w
 
 When the end-user is a **functional or technical administrator** (roles `functionaladmin`, `technicaladmin`), he can also add a new manager for the selected identity, delete a manager and access to the manager updates audit trail, by clicking on the three icons avalaible on the right side of the "Direct operational manager" section.  
 
-![](./media/image-11-Identity_Details.png){ width=100% }
+![](./media/image-11-Identity_Details.png)
 
 - in **Position tab**, the end-user can check the organisation hierarchy in which belongs the selected identity. Note that this table is configurable and the organisation Code and Short name can also be displayed.
 
 - in **Colleagues tab**, he can check the identities working under the same manager or in the same team. He can also add the identities from sub-organisations by selecting "all colleagues" in the combo box.
 The end-user can click also on the name or HRcode of an identity to open the related identity detail window.  
 
-![](./media/image-12-Identity_Details_Colleagues.png){ width=100% }
+![](./media/image-12-Identity_Details_Colleagues.png)
 
 - in **Team tab**, when the selected identity is a line and/or an organisation manager, the end-user can access here to the list of identities the selected manager is responsible for.
 A combobox allows to select which team is expected, the one as an organisation manager or the one as a line manager.
@@ -168,7 +168,7 @@ When selecting "as a line manager", the end-user can also filter the list of ide
 He is also able to compare a selected identity in the team with one or more others selected in the same table. For more details on that, please reach the [how to compare identities, accounts, permissions or groups](#how-to-compare-identities-accounts-permissions-or-groups-with-each-others) section. 
 The end-user can click also on the name or HRcode of an identity to open the related identity detail window.  
 
-![](./media/image-13-Identity_Details_Team.png){ width=100% }
+![](./media/image-13-Identity_Details_Team.png)
 
 - in **Managed organisations tab**, when the selected identity is an organisation manager, the end-user will find out here the list of his managed organisations, with details on the related expertise domain.
 He can click also on the short name or name of an organisation to open the related organisation detail window.
@@ -190,7 +190,7 @@ Note that this tab requires the Booster for IAM or ERP/SoD licence.
 - in **Overallocated rights**, the end-user has access to the list of permissions that are overallocated with regard to the theoretical rights uploaded in Identity Analytics.  
 Note that this tab requires the Booster for IAM licence.  
 
-![](./media/image-14-Identity_Details_OverAllocation.png){ width=100% }
+![](./media/image-14-Identity_Details_OverAllocation.png)
 
 ### Access tab
 
@@ -202,7 +202,7 @@ Clicking on the Login opens the account detail window.
 - in **Applications tab**, the list of applications accessible by the selected identity is listed in a first table. Selecting an application will then provide in a second table on the right the list of the related profiles/roles/permissions that gives the selected identity access to the application.  
 The table on the right is configurable so that the end-user can add columns to display for example the sensitivity level and sensitivity reason of each permission.
 
-![](./media/image-15-Identity_Details_AccessApplications.png){ width=100% }
+![](./media/image-15-Identity_Details_AccessApplications.png)
 
 - in **Shares tab**, the list of folder path accessible by the selected identity is provided with Share and rights (simplified ACLs) details. This tab is only available if the end-user has the appropriate licence (Booster for Data Governance/Unstructured Data).  
 By default, only folders with direct ACLs are displayed, not the sub folders with inheritance. The end-user is able to uncheck "Display only folders with ACLs" to get the full list of folders.  
@@ -212,7 +212,7 @@ Clicking on the Rights value in column "Rights" opens the rights definition wind
 Clicking on the Folder path name in column "Path" opens the Folder detail window, and allows to investigate on access rights (simplified ACLs) and related groups.  
 To know more about ACLs, please reach the [ACLs definition](#acls-definitions) section.
 
-![](./media/image-16-Identity_Details_Shares.png){ width=100% }
+![](./media/image-16-Identity_Details_Shares.png)
 
 - in **Usages tab** the list of activities is provided when some logs have been aggregated and consolidated in RadiantOne Identity Analytics as usages during the data collect phase.  
 
@@ -229,7 +229,7 @@ Clicking on the Control name leads to the Control detail window.
 It presents all the analytics available for the selected identity. Analytics can be simple reports as well as more elaborated management interfaces.
 It will help to better understand how the access have been granted to the selected identity by providing applications, roles, permissions, data access analysis reports, analyze SoD defects matrix, follow-up the changes that occured in the past ("Identity timeline") and a graphical representation of the identity's accesses (360° view of the identity).
 
-![](./media/image-17-Identity_Details_Analytics.png){ width=100% } 
+![](./media/image-17-Identity_Details_Analytics.png) 
 
 Analytics reports available for ressources owned by the selected identity are also provided.
 The full list of Analytics reports for any resources is available from the administration page and documented. Please go to section [Analytics reports](#how-to-list-all-the-available-analytics-reports-and-their-description) to know more.
@@ -239,7 +239,7 @@ The full list of Analytics reports for any resources is available from the admin
 This is an optional tab, it presents all the decision taken for this identity such as access review decision or identity update made through IAS/IAP.
 The end-user is able in top of this table to filter per status such as "ok", "update", "revoke", "not reviewed" thanks to checkboxes.  
 
-![](./media/image-17-Identity_Details_Decision history.png){ width=100% }
+![](./media/image-17-Identity_Details_Decision history.png)
 
 ## Repositories
 
@@ -254,21 +254,21 @@ This tab presents general information regarding the selected Repository through 
 - in **Repository tab**, key KPIs and management information about the selected repository are provided. Please refer to the [Risk ranking and risk analysis](#computed-kpis) section of this document for more information about Risk rank, Max risk level, nb of risks.  
 When the end-user is a **functional or technical administrator** (roles `functionaladmin`, `technicaladmin`), he can also add a new manager for the selected identity, delete a manager and access to the manager updates audit trail, by clicking on the three icons avalaible on the right side of the "Managers" section.   
 
-![](./media/image-18-Repository_Details.png){ width=100% }
+![](./media/image-18-Repository_Details.png)
 
 - in **Accounts tab**, the list of accounts available in the selected repository is provided.  
 The end-user is able to compare accounts regarding accesses at application, permission, group, share and folder levels. To do so, he needs to select two or more accounts in the list and click on the "compare" button. For more details on that, please reach the [how to compare identities, accounts, permissions or groups](#how-to-compare-identities-accounts-permissions-or-groups-with-each-others) section.  
 The end-user can click also on the Login or Username of an account to open the related account detail window.  
 Note that by default, only enabled accounts are listed in any table listing accounts. The end-user can uncheck the checkbox "Hide disabled accounts" if he wants to review disabled accounts.
 
-![](./media/image-19-Repository_Details_Accounts.png){ width=100% }
+![](./media/image-19-Repository_Details_Accounts.png)
 
 - in **Groups tab**, the list of groups available in the selected repository is provided.  
 The end-user is also able to compare groups regarding members (accounts). To do so, he needs to select two or more groups in the list and click on the "compare" button. For more details on that, please reach the [how to compare identities, accounts, permissions or groups](#how-to-compare-identities-accounts-permissions-or-groups-with-each-others) section.  
 The end-user can click also on the Name of a group to open the related group detail window.  
 Note that he can also choose to list the hierarchy of groups by selecting in the combobox on top of the table "groups hierarchy with accounts number".  
 
-![](./media/image-20-Repository_Details_Groups.png){ width=100% }
+![](./media/image-20-Repository_Details_Groups.png)
 
 ### Access tab
 
@@ -294,7 +294,7 @@ Clicking on the Control name leads to the Control detail window.
 
 It presents all the analytics available for the selected repository. Analytics can be simple reports as well as more elaborated management interfaces. It will help to improve the data quality of the selected repository (Similar groups analysis), to work on reconciliation and limit orphaned accounts (Orphaned account reconciliation management), and to follow-up the changes that occured in the past (Repository timeline).
 
-![](./media/image-21-Repository_Details_Orphan.png){ width=100% }
+![](./media/image-21-Repository_Details_Orphan.png)
 
 The full list of Analytics reports for any resources is available from the administration page and documented. Please go to section [Analytics reports](#how-to-list-all-the-available-analytics-reports-and-their-description) to know more.
 
@@ -315,19 +315,19 @@ This tab presents general information regarding the selected Repository through 
 
 - in **Account tab**, key KPIs and owner information about the selected Account are provided. Please refer to the [Risk ranking and risk analysis](#computed-kpis) section of this document for more information about Risk rank, Max risk level, nb of risks.  
 
-![](./media/image-22-Accounts_Details.png){ width=100% }
+![](./media/image-22-Accounts_Details.png)
 
 - in **Owner tab**, HR information about the account's owner is provided, such as the job title, the organisation, the manager of the owner and also the status: is he still working for the company?
 
 When the end-user is a **functional or technical administrator** (roles `functionaladmin`, `technicaladmin`), he can also manage owner for the selected account (reconciliation of an account with an identity). Four icons are available on the right side of the Owner name to delete the reconciliation, set a new owner, specify an owner that has left the company, and finally specify that this account has no owner (it is a technical or service account).  
 
-![](./media/image-23-Accounts_Details_Owner.png){ width=100% }
+![](./media/image-23-Accounts_Details_Owner.png)
 
 - in **Groups tab**, the list of groups available in the selected account is provided.  
 The end-user can click on the Name of a group to open the related group detail window.  
 Note that he can aslo choose to list, direct groups only, direct and indirect groups or the groups hierarchy by using the combobox on top of the table.
 
-![](./media/image-24-Accounts_Details_Groups.png){ width=100% }
+![](./media/image-24-Accounts_Details_Groups.png)
 
 ### Security Model tab
 
@@ -373,7 +373,7 @@ Clicking on the Control name leads to the Control detail window.
 It presents all the analytics available for the selected account. Analytics can be simple reports as well as more elaborated management interfaces. 
 It will help to better understand the access of the selected account by providing a graphical representation of the groups (360° view of the account groups), of the permissions (360° view of the account permissions), and to follow-up the changes that occured in the past (Account timeline).
 
-![](./media/image-25-Accounts_Details_Analytics.png){ width=100% }
+![](./media/image-25-Accounts_Details_Analytics.png)
 
 The full list of Analytics reports for any resources is available from the administration page and documented. Please go to section [Analytics reports](#how-to-list-all-the-available-analytics-reports-and-their-description) to know more.
 
@@ -395,17 +395,17 @@ This tab presents general information regarding the selected Group through four 
 - in **Group tab**, key KPIs, owner and hierarchy information about the selected group are provided.  
 When the end-user is a **functional or technical administrator** (roles `functionaladmin`, `technicaladmin`), he can also add new managers for the selected group, delete them and access to the manager updates audit trail, by clicking on the three icons avalaible on the right side of the "Managers" section.   
 
-![](./media/image-26-Groups_Details.png){ width=100% }
+![](./media/image-26-Groups_Details.png)
 
 - in **Accounts tab**, the list of accounts available in the selected group is provided, with the related identity when the account is reconciled.  
 The end-user can click on the Login or Username of an account to open the related account detail window.  
 On top of the table, a combobox allows to display only direct accounts ("Accounts"), direct and indirect accounts ("All accounts"), and the hierachy of groups with the related accounts ("subgroups hierarchy") in a double table.  
 
-![](./media/image-27-Groups_Accounts.png){ width=100% }  
+![](./media/image-27-Groups_Accounts.png)  
 
 - **organisations origin tab** gives a graphical overview of the distribution of identities members of this group throughout the company's organisations.
 
-![](./media/image-28-Groups_OrgaOrigin.png){ width=100% }  
+![](./media/image-28-Groups_OrgaOrigin.png)  
 
 - **Jobs origin tab** gives a graphical overview of the distribution of identities members of this group throughout the jobs.  
 
@@ -435,7 +435,7 @@ Clicking on the Control name leads to the Control detail window.
 It presents all the analytics available for the selected group. Analytics can be simple reports as well as more elaborated management interfaces. 
 It will help to better understand the hierarchy and the access granted by the selected group by providing a graphical representation of the groups ("360° view of the groups"), cross table analysis ("self-service analytics"), and to follow-up the changes that occured in the past ("Group timeline").
 
-![](./media/image-29-Groups_AnalyticsSelfService.png){ width=100% }
+![](./media/image-29-Groups_AnalyticsSelfService.png)
 
 The full list of Analytics reports for any resources is available from the administration page and documented. Please go to section [Analytics reports](#how-to-list-all-the-available-analytics-reports-and-their-description) to know more.
 
@@ -458,7 +458,7 @@ This tab presents general information regarding the selected Application through
 
 When the end-user is a **functional or technical administrator** (roles `functionaladmin`, `technicaladmin`), he is able to update the Classification status and description of the application as presented in the copyscreen below by clicking on the pen icon upper right. This will be helpfull to prioritize the most risky applications during investigations and reviews. In addition, he can also add a new manager for the selected application, delete a manager and access to the manager updates audit trail, by clicking on the three icons avalaible on the right side of the "Managers" section. 
 
-![](./media/image-30-Applications_Details.png){ width=100% }
+![](./media/image-30-Applications_Details.png)
 
 - in **Accounts tab**, the list of accounts available in the selected application is provided.  
 
@@ -471,7 +471,7 @@ On top of the table, a combobox allows to list either all permissions or only pe
 The end-user is also able to compare roles/permissions regarding account members. To do so, he needs to select two or more permissions in the list and click on the "compare" button. For more details on that, please reach the [how to compare identities, accounts, permissions or groups](#how-to-compare-identities-accounts-permissions-or-groups-with-each-others) section.  
 Clicking on the Permission code or Permission name opens the permission detail window, clicking on the Application name lead to the application detail window.  
 
-![](./media/image-31-Applications_Details_Permissions.png){ width=100% }
+![](./media/image-31-Applications_Details_Permissions.png)
 
 ### Security Model tab  
 
@@ -491,7 +491,7 @@ Clicking on the Login or account User name opens the account detail window.
 - **Jobs origin tab** gives a graphical overview of the distribution of identities having access to this application throughout the jobs.
 - in **Permission usage tab** gives a graphical overview of the distribution of user activities in the selected application throughout the permissions. This is provided when some logs have been aggregated and consolidated in RadiantOne Identity Analytics as usages during the data collect phase.  
 
-![](./media/image-32-Applications_Details_PermissionsUsage.png){ width=100% }
+![](./media/image-32-Applications_Details_PermissionsUsage.png)
 
 - in **Usages tab** the list of activities is provided when some logs have been aggregated and consolidated in Identity Analytics as usages during the data collect phase.  
 
@@ -506,7 +506,7 @@ Clicking on the Control name leads to the Control detail window.
 It presents all the analytics available for the selected application. Analytics can be simple reports as well as more elaborated management interfaces. 
 It will help to better understand how the access have been granted to the selected application by providing a graphical representation of permissions attributions ("Permissions map"), cross table analysis ("access analysis" with peer groups analytics capabilities and "self-service analytics"), analyze the similar profiles/roles to rationalize them ("Similar profiles analytics") and to follow-up the changes that occured in the past ("Application timeline").
 
-![](./media/image-33-Applications_Details_AnalyticsSimilarGroup.png){ width=100% }
+![](./media/image-33-Applications_Details_AnalyticsSimilarGroup.png)
 
 The full list of Analytics reports for any resources is available from the administration page and documented. Please go to section [Analytics reports](#how-to-list-all-the-available-analytics-reports-and-their-description) to know more.
 
@@ -526,11 +526,11 @@ This tab presents general information regarding the selected Permission through 
 
 - in **Permission tab**, key KPIs and management information about the selected permission are provided. Please refer to the [Computed KPIs](#computed-kpis) section of this document for more information about the computed indicators. When the end-user is a **functional or technical administrator** (roles `functionaladmin`, `technicaladmin`), he is able to update the Classification status and description of the permission as presented in the copyscreen below by clicking on the pen icon upper right. This will be helpfull to prioritize the most risky permissions during investigations, reviews and role mining. In addition, he can also add a new manager for the selected permission, delete a manager and access to the manager updates audit trail, by clicking on the three icons avalaible on the right side of the "Managers" section. 
 
-![](./media/image-34-Permissions_Details.png){ width=100% }
+![](./media/image-34-Permissions_Details.png)
 
 - in **Content**, the list of sub-permissions and fine-grained permissions is provided with a hierarchical display of information. Clicking on the sub-permission code or name will open the sub permission detail window.
 
-![](./media/image-35-Permissions_DetailsContent.png){ width=100% }
+![](./media/image-35-Permissions_DetailsContent.png)
 
 ### Security Model tab  
 
@@ -544,7 +544,7 @@ Note that this tab requires the Booster for IAM licence.
 Clicking on the name of a business activity will open the Business Activity detail page and allow to investigate on its definition and why it is provided by the selected permission.  
 Note that this tab requires the Booster for ERP/SoD licence.  
 
-![](./media/image-36-Permissions_DetailsSecuModel.png){ width=100% }
+![](./media/image-36-Permissions_DetailsSecuModel.png)
 
 ### Access tab
 
@@ -565,7 +565,7 @@ Clicking on the Control name leads to the Control detail window.
 It presents all the analytics available for the selected permission. Analytics can be simple reports as well as more elaborated management interfaces. 
 It will help to better understand the hierarchy and the access granted by the selected permission by providing a graphical representation of the sub-permissions ("360° view of the sub-permissions"), cross table analysis ("self-service analytics"), and to follow-up the changes that occured in the past ("Permission timeline").
 
-![](./media/image-37-Permissions_Details_AnalyticsTimeline.png){ width=100% }
+![](./media/image-37-Permissions_Details_AnalyticsTimeline.png)
 
 The full list of Analytics reports for any resources is available from the administration page and documented. Please go to section [Analytics reports](#how-to-list-all-the-available-analytics-reports-and-their-description) to know more.
 
@@ -574,7 +574,7 @@ The full list of Analytics reports for any resources is available from the admin
 This is an optional tab, it presents all the decision taken for this permission such as access review decision and information updated through IAS/IAP (owners of the permission, sensitivity level, description and more).  
 The end-user is able in top of this table to filter per status such as "ok", "update", "revoke", "not reviewed" and more thanks to a combobox.  
 
-![](./media/image-38-Permissions_Details_DecisionHistory.png){ width=100% }
+![](./media/image-38-Permissions_Details_DecisionHistory.png)
 
 ## Share
 
@@ -590,7 +590,7 @@ This tab presents general information regarding the selected Share through three
 - in **Share tab**, key KPIs and management information about the selected share are provided. Please refer to the [Computed KPIs](#computed-kpis) section of this document for more information about the computed indicators.  
 When the end-user is a **functional or technical administrator** (roles `functionaladmin`, `technicaladmin`), he is able to update the Classification status and description of the share as presented in the copyscreen below by clicking on the pen icon upper right. This will be helpfull to prioritize the most risky share during investigations and reviews. In addition, he can also add new managers for the selected share, delete managers and access to the manager updates audit trail, by clicking on the three icons avalaible on the right side of the "Managers" section. 
 
-![](./media/image-39-Shares_Details.png){ width=100% }  
+![](./media/image-39-Shares_Details.png)  
 
 - in **Accounts tab**, the list of accounts and when available the reconciled identities with access to the selected share is provided.  
 The end-user is able to compare accounts regarding accesses at folder levels. To do so, he needs to select two or more accounts in the list and click on the "compare" button. For more details on that, please reach the [how to compare identities, accounts, permissions or groups](#how-to-compare-identities-accounts-permissions-or-groups-with-each-others) section.  
@@ -601,7 +601,7 @@ On top of the table, a combobox allows to list either the list of all folders or
 The end-user is also able to compare when listing all folders the accounts and their related access rights. To do so, he needs to select two or more folders in the list and click on the "compare" button. For more details on that, please reach the [how to compare identities, accounts, permissions or groups](#how-to-compare-identities-accounts-permissions-or-groups-with-each-others) section.  
 Clicking on the Folder path or name opens the Folder detail window.  
 
-![](./media/image-40-Shares_Details_Compare.png){ width=100% }  
+![](./media/image-40-Shares_Details_Compare.png)  
 
 ### Access tab
 
@@ -629,7 +629,7 @@ Clicking on the Control name leads to the Control detail window.
 It presents all the analytics available for the selected organisation. Analytics can be simple reports as well as more elaborated management interfaces.  
 It will help to better understand how the access have been granted to the selected share by providing for instance cross table analysis ("access analysis" with peer groups analytics capabilities and "self-service analytics").
 
-![](./media/image-41-Shares_Details_Analytics.png){ width=100% }
+![](./media/image-41-Shares_Details_Analytics.png)
 
 The full list of Analytics reports for any resources is available from the administration page and documented. Please go to section [Analytics reports](#how-to-list-all-the-available-analytics-reports-and-their-description) to know more.  
 
@@ -654,17 +654,17 @@ When the end-user is a **functional or technical administrator** (roles `functio
 In addition, he can also add new managers for the selected share, delete managers and access to the manager updates audit trail, by clicking on the three icons avalaible on the right side of the "Managers" section. 
 Clicking on the magnifier icon, next to the Share name in the "Details & Classification" section will open the Share detail window.  
 
-![](./media/image-42-Folders_Details.png){ width=100% }  
+![](./media/image-42-Folders_Details.png)  
 
 - in **ACLs** tab, the list of ACLs set at a group level or set at an account level are provided. This allows the end-user to understand how access rights are granted through the hierarchy of groups and also if he faces quality issues due to access granted directly at an account level.
 
 In the "ACLs at a group level" section, clicking on the ACL line in the first table will display the related groups hierarchy in the "Selected ACL group details" section. In this same section, selecting a group will provide on the right the list of group members (accounts with the owner when the account is reconciled with an identity). Clicking on the account login will open the Account detail window.
 
-![](./media/image-43-Folders_DetailsACLsGroups.png){ width=100% } 
+![](./media/image-43-Folders_DetailsACLsGroups.png) 
 
 In the "ACLs at an account level" section, clicking on the second magnifier icon on the right side of the table will open the Account detail window.
 
-![](./media/image-44-Folders_DetailsACLsAccounts.png){ width=100% }
+![](./media/image-44-Folders_DetailsACLsAccounts.png)
 
 In the two sections, clicking on the first magnifier icon on the right side of the table will provide the definition of ACLs displayed in the table.  
 The end-user can switch from basic to advanced ACL by checking the "Show Advanced Permissions" box on the bottom of the table. Then clicking on the first magnifier will provide the definition of the advanced ACLs as well. To know more about ACLs, please reach the [ACLs definition](#acls-definitions) section.

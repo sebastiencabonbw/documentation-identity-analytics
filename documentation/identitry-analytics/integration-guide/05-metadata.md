@@ -14,7 +14,7 @@ your custom reports or analytics.
 
 > <span style="color:red">**Warning:**</span> If you plan to use those metadatas in your custom views, you **MUST** only use the `bwa_XXXanalytics` metadatas, the other ones are 'transient' metadatas used only during the execution plan, RadiantOne Identity Analytics won't enforce compatibility on those transient metadatas among product versions and RadiantOne Identity Analytics reserves the right to remove those transient metadatas in a later product version.
 
-![](./media/image42.png){ width=100% }
+![](./media/image42.png)
 
 Here is a summary of the available metadatas: 
 

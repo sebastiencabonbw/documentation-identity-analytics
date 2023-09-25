@@ -27,7 +27,7 @@ The *application technical owner* is involved in order to apply the requested ch
 
 This can be summarized as:
 
-![](./media/image60.png){ width=100% }
+![](./media/image60.png)
 
 Once a campaign is configured, it is immediately launched.
 The campaign will remain active until it is finalized by the campaign owner. A campaign due date is part of the campaign configuration and is displayed in the management interface.
@@ -46,7 +46,7 @@ The remediation is active immediately when the campaign is finalized.
 Remediation can be both embedded or delegated to a third party ITSM such as ServiceNow.
 Embedded remediation follows a simple ITSM change management process:
 
-![](./media/image46.png){ width=100% }
+![](./media/image46.png)
 
 Each entry will be tracked individually. The *application technical owner* is responsible for the remediation. 
 Entries to remediate are displayed in his user interface.
@@ -73,11 +73,11 @@ In order for a campaign to be valid, **all** entries must have a reviewer assign
 You can refine the reviewers by browsing and updating the entitlement catalog management information.
 A line manager is configured through the *identity detail* page.
 
-![](./media/image61.png){ width=100% }
+![](./media/image61.png)
 
 An *application business owner* or *application reviewer owner* is configured through the *application detail* page.
 
-![](./media/image62.png){ width=100% }
+![](./media/image62.png)
 
 You can also configure a *default reviewer* in the campaign configuration page.
 
@@ -103,7 +103,7 @@ Once the configuration is done, you can launch the review. It will be launched a
 Entries to review are accessible through the end user interface.
 As long as entries still need to be reviewed, *Entries to review* are displayed in the **first** panel "Access 360"
 
-![](./media/IAP155.png){ width=75% }
+![](./media/IAP155.png)
 
 You can either review entries one by one or through bulk operations by selecting several entries and clicking on *bulk approval*, *bulk revocation* in the contextual menu.
 You can reorder the table, and filter the entries either by selecting a given account/identity/permission/application or with the free text filter.
@@ -121,30 +121,30 @@ By default, **all** entries which still needs to be reviewed are displayed in th
 
 You can change your mind until the a review campaign is finalized even if you already have reviewed all your entries. 
 
-![](./media/IAP190.png){ width=100% }
+![](./media/IAP190.png)
 
 In order to do so, you have to uncheck *Hide already reviewed entries*.
 
-![](./media/IAP192.png){ width=100% }
+![](./media/IAP192.png)
 
 You can reassign entries to your peers through the contextual menu. In order to do so, you have to select the entries you want to reassign and pick *Ask for help to*. The "ask for help to" button is active if in the campaign configuration you have select the option "Enable Self delegation"
 
-![](./media/IAP193.png){ width=100% }
+![](./media/IAP193.png)
 
-![](./media/IAP165.png){ width=100% }
+![](./media/IAP165.png)
 
 Please consult the [Reassigning entries](#reassigning-entries) chapter for more information about reassigning entries.
 
 Finally, you can declare that you are not the reviewer for some entries. In order to do so, you have to select the entries you want to reassign and pick *I am not the reviewer*.
 Those entries will be removed from your list, the campaign owner will be able to identify those entries through the management interface (as their review status wil be "to reassign") and reassign them as needed.
 
-![](./media/image107.png){ width=100% }
+![](./media/image107.png)
 
 ## Management Interface functionalities
 
 The management interface helps you to manage ongoing campaign and to browse through finalized campaigns.
 
-![](./media/IAP153.png){ width=100% }
+![](./media/IAP153.png)
 
 The following actions are allowed on an ongoing campaign:
 
@@ -178,15 +178,15 @@ Through this page you can access to a series of KPIs
 - Backlog
 - ...
 
-![](./media/IAP161.png){ width=100% }
+![](./media/IAP161.png)
 
-![](./media/IAP162.png){ width=100% }
+![](./media/IAP162.png)
 
 You can also access to a real time view of the entries being reviewed with filtering/grouping/export capabilities and identity/permission context as well as a real time view of the actions identified so far with filtering/grouping/export capabilities and identity/permission context
 
 As an administrator, as long as the campaign is not finalized, you can perform bulk review operations, reset current review status (status, comment and reassignment) and reassign review entries
 
-![](./media/IAP194.png){ width=100% }
+![](./media/IAP194.png)
 
 > **Note:** Due to performance constraints, you cannot perform bulk operations of you have more than 10.000 entries displayed in the list. If this is the case, consider using search bar to reduce the number of items displayed in the table.
 
@@ -194,7 +194,7 @@ As an administrator, as long as the campaign is not finalized, you can perform b
 
 The last tab gives you a view of the remediation decision taken so far, keep in mind that a reviewer can still change is mind until the campaign is finalized. As a result, those decisions are temporary and are not considered as actionable remediations until the campaign is finalized.
 
-![](./media/IAP195.png){ width=100% }
+![](./media/IAP195.png)
 
 ## Remediation Interface functionalities
 
@@ -212,17 +212,17 @@ This interface presents a unified view of **all** remediations. Through this pag
 - Active remediation status
 - ...
 
-![](./media/IAP196.png){ width=100% }
+![](./media/IAP196.png)
 
 You can also access a real time view of the entries being remediated with filtering/grouping/export capabilities and identity/permission context.
 
 As an administrator, you can perform bulk operations on the remediations. You can also send notification to the **application technical owners**
 
-![](./media/IAP197.png){ width=100% }
+![](./media/IAP197.png)
 
 Finally, if discrepancies are found, they are displayed in a dedicated tab.
 
-![](./media/IAP198.png){ width=100% }
+![](./media/IAP198.png)
 
 > **Note** A discrepancy corresponds to a case where an entry has been marked as to be revoked, has been successfully remediated (remediation finalized with a closed status "Done") and yet is detected as still active upon data refresh.
 
@@ -243,7 +243,7 @@ In this page, you can:
 
 The last tab helps you declare a third party ITSM for remediations. For the moment only ServiceNow and Jira Cloud are supported off-the-shelf.
 
-![](./media/IAP222.png){ width=100% }
+![](./media/IAP222.png)
 
 In order to add a new third party ITSM, you **MUST** provide:  
 
@@ -270,7 +270,7 @@ You can assign a remediation strategy for each individual repository and applica
 
 By default, if no remediation strategy is assigned, an *embedded* remediation strategy will be used.
 
-![](./media/IAP223.png){ width=100% }
+![](./media/IAP223.png)
 
 > **Important:**  
 > - You cannot change a remediation strategy if you have pending remediation actions.
@@ -284,7 +284,7 @@ These remediations are assigned special state called *pending* (corresponding to
 
 This is the case for **any kind** of remediation, regardless of the remediation strategy.
 
-![](./media/IAP224.png){ width=100% }
+![](./media/IAP224.png)
 
 You can manually mark those remediations if needed (done / won't fix).  
 
@@ -296,17 +296,17 @@ All requested changes are presented as an attachment to the ticket.
 
 RadiantOne Identity Analytics will retrieve the ITSM ticket number as well as its current status.
 
-![](./media/IAP225.png){ width=100% }
+![](./media/IAP225.png)
 
-![](./media/IAP226.png){ width=100% }
+![](./media/IAP226.png)
 
-![](./media/IAP227.png){ width=100% }
+![](./media/IAP227.png)
 
 ### Refreshing ITSM tickets status
 
 You can manually refresh the status of all active ITSM tickets through the menu.
 
-![](./media/IAP228.png){ width=100% }
+![](./media/IAP228.png)
 
 Note that even though a remediation is managed through an ITSM, you can still manually force its status with the "Bulk in progress", "Bulk done" and "Bulk won't fix" buttons.  
 
@@ -326,7 +326,7 @@ You have to select on an-going campaign and click on *Send a message* to send a 
 
 Notification are sent to the current *responsible* reviewers (consult [Reassigning entries](#reassigning-entries) to understand the difference between accountable and responsible)
 
-![](./media/image77.png){ width=100% }
+![](./media/image77.png)
 
 The *Mail strategy* will help you to handle all typical use cases:
 
@@ -362,7 +362,7 @@ Notification are sent to **all** application **technical owners**, it means that
 
 **Note** If you filter the *Remediation Management* interface for a given campaign through *Advanced Filters*, notification will only be sent to *application technical owners* associated with this campaign for *embedded remediation* only
 
-![](./media/image78.png){ width=100% }
+![](./media/image78.png)
 
 You can personalize both the mail title and mail content.
 
@@ -389,7 +389,7 @@ Content is rich text (html based).
 RadiantOne Identity Analytics supports incremental review scenarios where entries status and comments can be pre-filled based on their latest review status.
 You can activate this feature through the campaign configuration
 
-![](./media/image79.png){ width=100% }
+![](./media/image79.png)
 
 In order for a previous status to be considered valid, it must both:
 
@@ -405,7 +405,7 @@ Offline reviews are operated through excel spreadsheet sent to the reviewers thr
 
 The reviewer can fulfill the excel spreadsheet and send it back to the Identity Analytics administrator, the Identity Analytics administrator can then import this file in the Identity Analytics platform to fulfill the review status and review comment accordingly.
 
-![](./media/image80.png){ width=100% }
+![](./media/image80.png)
 
 You can only import excel spreadsheet on *ongoing* campaigns.
 
@@ -419,7 +419,7 @@ Only the **R**esponsible reviews the entries. By default, when a campaign is ini
 One can reassign entries to another individual. As RACI principles are enforced, only the **R**esponsible information is updated.
 At the end of the review, it means that you can identify which entries have been reassigned by comparing those two fields. It is visible in the management interface:
 
-![](./media/image103.png){ width=50% }
+![](./media/image103.png)
 
 As you can see here, the first four entries have been reassigned to Tara BAKER, although Christopher COOPER remains accountable for those entries. A small icon is also displayed to highlight the fact that those entries have been reassigned.
 
@@ -427,7 +427,7 @@ As you can see here, the first four entries have been reassigned to Tara BAKER, 
 
 At the end of the review, when the campaign is finalized the compliance report will highlight the reassignments by indicating who is **R**esponsible and who is **A**ccountable for the entries.
 
-![](./media/IAP199.png){ width=100% }
+![](./media/IAP199.png)
 
 A reviewer can also reassign entries through the review interface. This self-service reassignment is limited as such:
 
@@ -439,7 +439,7 @@ A reviewer can also reassign entries through the review interface. This self-ser
 
 In case of doubt, you can display the *Reviewer Origin* column in the review table.
 
-![](./media/IAP167.png){ width=100% }
+![](./media/IAP167.png)
 
 ## Compliance report versus Management interface
 
@@ -470,11 +470,11 @@ At the end of the review, it also means that the management interface (review an
 
 If you want to prove to your auditors that you have reviewed 100% of your perimeter, you will have to present the **compliance report** as it will always present 100% of the entries
 
-![](./media/IAP200.png){ width=100% }
+![](./media/IAP200.png)
 
 This information is also presented in the last tab of the campaign management interface. You can use this tab if you want to search for entries or export those information in a form of a CSV file (right click on the "ungrouped" table for such purpose)
 
-![](./media/IAP221.png){ width=100% }
+![](./media/IAP221.png)
 
 ## Discrepancies
 
@@ -482,7 +482,7 @@ RadiantOne Identity Analytics automatically detects remediation discrepancies.
 
 A discrepancies occurs when a remediation fails: The access rights has been marked as remediated successfully, but when fresh data is loaded in RadiantOne Identity Analytics this access right still exists in the target system. 
 
-![](./media/IAP188.png){ width=100% }
+![](./media/IAP188.png)
 
 Discrepancies are accessible in the *Remediation Management*. Discrepancies are also identified as control defects (REM02 - remediation ticket closed and access right not removed)
 

@@ -20,11 +20,11 @@ Tons of KPIs are pre-computed and attached to the entities, most of them are ava
 
 Right click on the search table and select "configure" to show/hide the KPIs. 
 
-![](./media/image33.png){ width=100% }
+![](./media/image33.png)
 
 The KPIs are part of the datamodel, as a result you can leverage those KPIs in your search functions, in your access reviews or in your custom reports.
 
-![](./media/image34.png){ width=100% }
+![](./media/image34.png)
 
 Please consult the ["Computed KPIs"](#computed-kpis) of this documentation for futher information regarding those KPIs.
 
@@ -38,13 +38,13 @@ Here are a few examples on organisations and on identities:
 
 In the two copyscreens below, the end-user is building his search criteria to list organisations from the finance division with identities having left the company and having members with access to SAP  
 
-![](./media/image-46-SearchPage_freeSearch.png){ width=100% }  
+![](./media/image-46-SearchPage_freeSearch.png)  
 
-![](./media/image-46-SearchPage_freeSearch2.png){ width=75% }  
+![](./media/image-46-SearchPage_freeSearch2.png)  
 
 In the copyscreen below, the end-user lists the result of his search criteria on identities having access to SAP, having identified risks and having left the company 
 
-![](./media/image-46-SearchPage_freeSearch3.png){ width=100% }  
+![](./media/image-46-SearchPage_freeSearch3.png)  
 
 The end-user can sort the data in any columns that contains KPIs in ascending or descending order, by clicking on the header of the column. As in the example on identities where the Risk Rank column has been sorted to find the most risky identity first.  
 
@@ -52,23 +52,23 @@ The end-user can sort the data in any columns that contains KPIs in ascending or
 
 Once the end-user has built its query and obtain a result from the search page, he is able to save the query as favorite by clicking on the star icon available on the right side, so that he can use it to build new dashboard or update the existing ones. That way, all the saved queries are made available from the mashup dahsboard interfaces.
 
-![](./media/image-47-SearchPage_favorite.png){ width=100% }  
+![](./media/image-47-SearchPage_favorite.png)  
 
 Once queries are saved, the end-user can list them with the history of queries by clicking on the clock icon.
 
-![](./media/image-48-SearchPage_History.png){ width=100% } 
+![](./media/image-48-SearchPage_History.png) 
 
 Clicking on the "options" icon will provide additional capabilities such as manage the favorites, make additional attributes available to the "free search" mode and clear the search history.  
 
-![](./media/image-49-SearchPage_Options.png){ width=30% }  
+![](./media/image-49-SearchPage_Options.png)  
 
 When selecting "manage my favorite searches", the end-user is able to Rename, Share and Delete the saved queries by clicking on the related buttons. 
 
-![](./media/image-49-SearchPage_OptionsManageFavorite.png){ width=100% } 
+![](./media/image-49-SearchPage_OptionsManageFavorite.png) 
 
 If he choses to share a selected query, he can share it either with individuals picked from the list of all identities or with all identities having a specific role, such as functional admin, technical admin, auditor or any role defined in the Identity Analytics project.  
 
-![](./media/image-49-SearchPage_OptionsManageFavorite-ShareList.png){ width=50% } 
+![](./media/image-49-SearchPage_OptionsManageFavorite-ShareList.png) 
 
 Once the end-user has saved his queries, he can use them to create or update his own mashup dashboards. 
 When adding and creating a new widget in a mashup dashboard he can select them. 
@@ -77,11 +77,11 @@ In this page the same features are available as in the search pages to create ne
 By clicking on the pen on the right side of the table, the end-user can then build its own table and select the attributes he wants to display by columns. 
 Once done, clicking on the button "Save as..." bottom right will allow him to save it as a new mashup dahboard.
 
-![](./media/image-49-SearchPage_OptionsManageFavorite-MashupDashboard.png){ width=50% } 
+![](./media/image-49-SearchPage_OptionsManageFavorite-MashupDashboard.png) 
 
 Finally, the end-user will benefit from all the advanced features of mashup dashboard to enrich his newly created dashboard and to share it with others.
 
-![](./media/image-49-SearchPage_OptionsManageFavorite-MashupDashboard2.png){ width=50% } 
+![](./media/image-49-SearchPage_OptionsManageFavorite-MashupDashboard2.png) 
 
 Please refer to the online [general documentation on dashboards](https://developer.radiantlogic.com/) to know more about how to install and use them.
 
@@ -95,15 +95,15 @@ For instance:
 
 Those analytics are available through the contextual menu located at the lower right part of the search screen.
 
-![](./media/image64.png){ width=100% }
+![](./media/image64.png)
 
 When you click on this menu entry, all the available analytics are presented:
 
-![](./media/image65.png){ width=100% }
+![](./media/image65.png)
 
 When you click on a given analytics, it is displayed as usual but with a subtle difference: The search query itself is passed to the Analytics, as a result, **this analytics can be safely bookmarked in the favorites**
 
-![](./media/image66.png){ width=100% }
+![](./media/image66.png)
 
 ## Search pages per entity  
 
@@ -113,7 +113,7 @@ The Hierarchy search page allows to investigate on organisations by starting fro
 Clicking on an organisation will zoom on it and display the sub departements.
 By hovering the mouse over an organisation, a tooltip appears and allows you to go to the detail page of the selected organisation by clicking on its name.
 
-![](./media/image-45-SearchPage_orgachart.png){ width=100% }
+![](./media/image-45-SearchPage_orgachart.png)
 
 ### organisation search page 
 The organisation search page allows to list, filter and build queries on organisations loaded in RadiantOne Identity Analytics. 
@@ -136,7 +136,7 @@ The following computed KPIs are made available for organisations in the search p
 | nbsuborg             | nb of sub-organisations (direct+indirect) |
 | nbusage              | nb of usages found                        |
 
-![](./media/image-62-SearchOrga-KPIs.png){ width=100% }
+![](./media/image-62-SearchOrga-KPIs.png)
 
 ### Identity search page 
 
@@ -155,7 +155,7 @@ The following computed KPIs are made available for Identities in the search page
 | nshare             | nbshare (Filesystem)                         |
 | nbusage            | nb of usages found                           |
 
-![](./media/image-61-SearchIdentities-KPIs.png){ width=100% }
+![](./media/image-61-SearchIdentities-KPIs.png)
 
 ### Repository search page 
 
@@ -174,7 +174,7 @@ The following computed KPIs are made available for Repositories by default:
 | nshare                | nbshare (Filesystem)                                  |
 | nbusage               | nb of usages found                                    |
   
-![](./media/image-58-SearchRepositories-KPIs.png){ width=100% }
+![](./media/image-58-SearchRepositories-KPIs.png)
 
 ### Account search page 
 
@@ -192,7 +192,7 @@ The following computed KPIs are made available for Accounts by default:
 | nbperimeter              | nb perimeters used in the application             |
 | nbdirectfolderrights     | nb of direct folder rights                        |
 
-![](./media/image-59-SearchAccounts-KPIs.png){ width=100% }
+![](./media/image-59-SearchAccounts-KPIs.png)
 
 ### Group search page
 
@@ -209,7 +209,7 @@ The following computed KPIs are made available for Groups by default:
 | nbapplication        | nb applications (Profile)                 |
 | nshare               | nbshare (Filesystem)                      |
 
-![](./media/image-60-SearchGroups-KPIs.png){ width=100% }
+![](./media/image-60-SearchGroups-KPIs.png)
 
 ### Application search page
 
@@ -230,7 +230,7 @@ The following computed KPIs are made available for Applications by default:
 | nbperimeter           | nb perimeters used in the application                 |
 | nbusage               | nb of usages found                                    |
 
-![](./media/image-63-SearchApplication-KPIs.png){ width=100% }
+![](./media/image-63-SearchApplication-KPIs.png)
 
 ### Permission search page
 
@@ -246,7 +246,7 @@ The following computed KPIs are made available for Permissions by default:
 | nbtheoretical       | nb theoretical rights                         |
 | nbusage             | nb of usages found                            |
 
-![](./media/image-64-SearchPermission-KPIs.png){ width=100% }
+![](./media/image-64-SearchPermission-KPIs.png)
 
 ### Share search page
 
@@ -265,7 +265,7 @@ The following computed KPIs are made available for Shares by default:
 | nbfolder              | nb folder                                             |
 | nbmanagedfolder       | nb managed folder                                     |
 
-![](./media/image-65-SearchShare-KPIs.png){ width=100% }
+![](./media/image-65-SearchShare-KPIs.png)
 
 ### Folder search page
 
@@ -282,4 +282,4 @@ The following computed KPIs are made available for Folders by default:
 | nbwriteaccess       | nb write access                               |
 | nbfullcontrolaccess | nb full controll access                       |
 
-![](./media/image-66-SearchFolder-KPIs.png){ width=100% }
+![](./media/image-66-SearchFolder-KPIs.png)
