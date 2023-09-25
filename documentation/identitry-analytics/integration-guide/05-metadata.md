@@ -12,8 +12,7 @@ Metadatas are provided as a series of "extended attributes" of the entities.
 As those metadata are part of the datamodel you can use them in the user interfaces (such as search pages) or in 
 your custom reports or analytics.
 
-> Warning  
-> If you plan to use those metadatas in your custom views, you **MUST** only use the `bwa_XXXanalytics` metadatas, the other ones are 'transient' metadatas used only during the execution plan, RadiantOne Identity Analytics won't enforce compatibility on those transient metadatas among product versions and RadiantOne Identity Analytics reserves the right to remove those transient metadatas in a later product version.
+> [!warning] If you plan to use those metadatas in your custom views, you **MUST** only use the `bwa_XXXanalytics` metadatas, the other ones are 'transient' metadatas used only during the execution plan, RadiantOne Identity Analytics won't enforce compatibility on those transient metadatas among product versions and RadiantOne Identity Analytics reserves the right to remove those transient metadatas in a later product version.
 
 ![](./media/image42.png)
 

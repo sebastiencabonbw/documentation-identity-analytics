@@ -128,5 +128,4 @@ This means that if you try to use the `Controls Browser` on an existing timeslot
 It also means that if you re-run or add a control on a timeslot, the discrepancies will not be updated accordingly.  
 You **must launch a new timeslot** to update the indicators (the required metadata is included in the execution plan).  
 
-> Warning  
-> As the control browser depends on metadata calculated during the execution plan it is not compatible with timeslots that existed before the installation of `Controls Browser`.  
+> [!warning] As the control browser depends on metadata calculated during the execution plan it is not compatible with timeslots that existed before the installation of `Controls Browser`.  
