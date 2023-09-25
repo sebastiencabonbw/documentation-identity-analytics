@@ -68,6 +68,7 @@ You **MUST** download IAP prior to creating a new project. Once IAP is downloade
 
 As IAP is considered as a standard add-on, you will be able to upgrade it like any other add-on through the "facets" menu entry.
 
-> <span stle="color:red">**WARNING**:</span> Starting with IAP 1.7, a modern look&feel is used in the interfaces.
+> Warning  
+> Starting with IAP 1.7, a modern look&feel is used in the interfaces.
 > In order to activate this look&feel you **must** declare the corresponding CSS in your technical configuration
 > ![CSS decleration](./media/image69.png "CSS declaration")
