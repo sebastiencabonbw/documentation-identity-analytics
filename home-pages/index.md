@@ -21,7 +21,7 @@ Please note that the "standard" installation method of installing the solution i
   > [Identity Analytics Integration Guide](identitry-analytics/integration-guide/01-introduction)
   > This document describes the basic principles of IAP (Identity Analytics Platform) as well as the best practices to follow to fulfill the data & to configure the roles.  
 
-  > [Identity Analytics Access Review Guide](identity-analytics/uar-guide/introduction)
+  > [Identity Analytics Access Review Guide](identity-analytics/uar-guide/01-introduction)
   > This document describes the basic principles of self-service, Compliance driven Access, Review in IAS (Identity Analytics Services) as well as the best practices to follow to configure a review and manage the remediations.  
 
   > [Identity Analytics Release](identitry-analytics/iap-release/01-iap-release-overview)
