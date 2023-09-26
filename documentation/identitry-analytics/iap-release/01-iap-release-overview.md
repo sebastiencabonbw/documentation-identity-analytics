@@ -27,8 +27,8 @@ IAP leverages improvements applied to the IGRC product. Please refer to the foll
 
 For a full list of changes to IAP please refer the to following release notes:
 
-- [IAP 2.x release notes](identitry-analytics/iap-release/02-iap-2-release-notes.md "IAP release notes" )
-- [IAP 1.x release notes](identitry-analytics/iap-release/03-iap-1-release-notes.md "IAP release notes" )
+- [IAP 2.x release notes](02-iap-2-release-notes.md "IAP release notes" )
+- [IAP 1.x release notes](03-iap-1-release-notes.md "IAP release notes" )
 
 ### Version 2.0
 
