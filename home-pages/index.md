@@ -5,11 +5,26 @@ description: Guides to help build, configure and use Identity Analytics
 
 # Welcome to Identity Analytics guides
 
-In order to simplify the installation of brainwave's solution in different environments a new packaging of the solution has been implemented and is available.  
+This document describes the basic principles of IAP (Identity Analytics Platform) interfaces and dashboards.
 
-The following pages will provide you with the necessary information to build and run the updated deliverable.  
+Starting with Identity Analytics version Braille, the solution comes with a dedicated web experience called IAP (Identity Analytics Platform). The Identity Analytics Platform replaces the former webportal of Brainwave GRC.  
 
-Please note that the "standard" installation method of installing the solution is still available for those that require it.  
+The main difference is that IAP comes with a series of off-the-shelf analytics/reports/controls/... to provide more value to the end-users.
+
+IAP is also in an active development phase at RadiantLogic, thus by deploying IAP, not only the end user will benefit from a lot of off-the-shelf value, but he will also benefit of regular updates/improvements.
+
+## Manifesto
+
+IAP has been built with a set of general principles in mind, please find them below:
+
+- **FAST:** results within 5 seconds, metadata powered
+- **EFFICIENT:** All answers 3 clicks away
+- **CONSISTENT:** Same navigation & presentation logic
+- **SIMPLE** yet **POWERFUL**: Intuitive UX, rich analytics
+- **RICH:** All concepts are leveraged, details are accessible when needed
+- **TEMPORAL:** All UI include temporal analysis
+- **SECURITY BY DESIGN:** You cannot see more than what is needed based on the your management responsibilities
+- **EXTENSIBLE:** Easy to extend through 'Tags'  
 
 ## Identity Analytics
 
