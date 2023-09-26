@@ -30,7 +30,7 @@ IAP has been built with a set of general principles in mind, please find them be
 - **SIMPLE** yet **POWERFUL**: Intuitive UX, rich analytics
 - **RICH:** All concepts are leveraged, details are accessible when needed
 - **TEMPORAL:** All UI include temporal analysis
-- **SECURITY BY DESIGN:** You cannot see more than what is needed based on the your management responsibilites
+- **SECURITY BY DESIGN:** You cannot see more than what is needed based on the your management responsibilities
 - **EXTENSIBLE:** Easy to extend through 'Tags'  
 
 ## General webportal navigation features  
