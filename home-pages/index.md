@@ -30,16 +30,16 @@ IAP has been built with a set of general principles in mind, please find them be
 
 <section>
   
-  > [Identity Analytics Enduser Guide](identitry-analytics/enduser-guide/01-introduction)  
+  > [Identity Analytics Enduser Guide](identity-analytics/enduser-guide/01-introduction)  
   > This document describes the basic principles of IAP (Identity Analytics Platform) interfaces and dashboards.  
 
-  > [Identity Analytics Integration Guide](identitry-analytics/integration-guide/01-introduction)
+  > [Identity Analytics Integration Guide](identity-analytics/integration-guide/01-introduction)
   > This document describes the basic principles of IAP (Identity Analytics Platform) as well as the best practices to follow to fulfill the data & to configure the roles.  
 
   > [Identity Analytics Access Review Guide](identity-analytics/uar-guide/01-introduction)
   > This document describes the basic principles of self-service, Compliance driven Access, Review in IAS (Identity Analytics Services) as well as the best practices to follow to configure a review and manage the remediations.  
 
-  > [Identity Analytics Release](identitry-analytics/iap-release/01-iap-release-overview)
+  > [Identity Analytics Release](identity-analytics/iap-release/01-iap-release-overview)
   > This document provides information on the different releases of IAP, including the compatibility matrix and the release notes for each version.  
 
 </section>
