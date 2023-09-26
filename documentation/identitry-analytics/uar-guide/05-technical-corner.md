@@ -23,9 +23,9 @@ Here is a `view` of an access right campaign.
 
 ![](./media/image100.png)
 
-> **Note** As a campaign is launched manually, the `ticketlog` issuer is the one who launched the campaign.
+> [!note] As a campaign is launched manually, the `ticketlog` issuer is the one who launched the campaign.
 
-> **Note** When the campaign is initialized, the same reviewer information is assigned to the `ticketreview` as Accountable **and** Responsible. Responsible link is the one used to display entries to be reviewed by reviewers. When a reassignment occurs, only the *Responsible* link is updated, *Accountable* link never changes. As a result, you can spot reassigned entries by comparing accountableuid and responsibleuid (an entry is reassigned if they are different).
+> [!note] When the campaign is initialized, the same reviewer information is assigned to the `ticketreview` as Accountable **and** Responsible. Responsible link is the one used to display entries to be reviewed by reviewers. When a reassignment occurs, only the *Responsible* link is updated, *Accountable* link never changes. As a result, you can spot reassigned entries by comparing accountableuid and responsibleuid (an entry is reassigned if they are different).
 
 Campaign information is stored as such:
 
@@ -80,9 +80,9 @@ Review `status` value is one of the following value:
 | not reviewed   | Marked as not reviewed                                 |
 | to be reviewed | Initial status: Entry needs to be reviewed             |
 
-> **Note:** Entries to review are marked as *to be reviewed* at the very beginning of the campaign; those are the entries displayed to the reviewers. Entries still not reviewed when the campaign is finalized can be marked as *not reviewed*
+> [!note] Entries to review are marked as *to be reviewed* at the very beginning of the campaign; those are the entries displayed to the reviewers. Entries still not reviewed when the campaign is finalized can be marked as *not reviewed*
 
-> **Note:** *reassign* is a special status used when a reviewer indicates that he considers himself as not being the correct reviewer for some entries. Those entries have to be reassigned by the campaign owner through the management interface.
+> [!note] *reassign* is a special status used when a reviewer indicates that he considers himself as not being the correct reviewer for some entries. Those entries have to be reassigned by the campaign owner through the management interface.
 
 `custom3` contains the origin of the reviewer. It can be:
 
@@ -97,7 +97,7 @@ Review `status` value is one of the following value:
 | myself                    | The reviewer is the user himself                                        |
 | default                   | The reviewer is the default reviewer (as configured during campaign launch) |
 
-> **Important Note:** Although a reviewticket is not attached to a timeslot, the reviewed data is. As a result, you should be very cautious about the way you are designing your *views* as you can end up in situations where the lines won't appear because either the *Account* or the *Permission* no longer exists in the latest timeslot. If you want to display **all** this information whatever reviewed data still exists or not in the Identity Ledger, you should use *ticketreview displayname* instead of pointing to the access right.
+> [!important] Although a reviewticket is not attached to a timeslot, the reviewed data is. As a result, you should be very cautious about the way you are designing your *views* as you can end up in situations where the lines won't appear because either the *Account* or the *Permission* no longer exists in the latest timeslot. If you want to display **all** this information whatever reviewed data still exists or not in the Identity Ledger, you should use *ticketreview displayname* instead of pointing to the access right.
 
 ### Finalized Review
 
@@ -105,20 +105,20 @@ As a `ticketlog` is a read-only information in the data model, another `ticketlo
 
 ![](./media/image101.png)
 
-Ticketlog information is: 
+Ticketlog information is:  
 
 | Finalized ticket log |                                                            |
 |----------------------|------------------------------------------------------------|
 | recorduid            | Finalized ticketlog information internal unique identifier |
 | title                | Review campaign internal unique identifier                 |
 | tickettype           | ADHOC_UAR_COMPLIANCE                                       |
- 
-> **Note** `title` contains the review campaign `ticketlog` recorduid. As a result, if you want to check if a campaign is finalized you either have to create a *business view* and perform a join between those two ticketlogs with:
+
+> [!note] `title` contains the review campaign `ticketlog` recorduid. As a result, if you want to check if a campaign is finalized you either have to create a *business view* and perform a join between those two ticketlogs with:
 > `reviewticketlog.recorduid=finalizedticketlog.title`
 
-> **Note** Finalized ticketlog contains the **compliance report**
+> [!note] Finalized ticketlog contains the **compliance report**
 
-> **Note** You can also detect if a review is finalized by checking the review campaign status metadata 
+> [!note] You can also detect if a review is finalized by checking the review campaign status metadata 
 
 ### Remediation
 
@@ -149,7 +149,7 @@ Remediation information is stored in the remediation `reviewticket` as such
 
 `custom2` contains the remediation closed status. This information is managed by RadiantOne Identity Analytics and helps to identify whether this remediation is still active or closed. 
 
-> **Note** you cannot rely on `status` to check for the active remediation state as `status` contains a printable status which depends on the remediation type
+> [!note] you cannot rely on `status` to check for the active remediation state as `status` contains a printable status which depends on the remediation type
 
 | Remediation closed status |                                              |
 |---------------------------|----------------------------------------------|
@@ -167,7 +167,7 @@ As you can notice in the upper table, the only case where a remediation has been
 | embedded         | Manual remediation through RadiantOne Identity Analytics                                                      |
 | itsm             | Managed remediation through an ITSM system, as several ITSM can be declared in Identity Analytics, <br> `custom7` contains the Identity Analytics ITSM instanceid                                            |
 
-> **Important Note** A *remediation ticketreview* is **not** associated with the access right which needs to be remediated. It is associated with a *dummy* reviewed metadata. When configured this way, this ticketreview will never diseapear even when the access right itself diseapear when refreshing the Identity Ledger. A printable version of the access right is available in `custom1`.
+> [!important] A *remediation ticketreview* is **not** associated with the access right which needs to be remediated. It is associated with a *dummy* reviewed metadata. When configured this way, this ticketreview will never diseapear even when the access right itself diseapear when refreshing the Identity Ledger. A printable version of the access right is available in `custom1`.
 
 ## create / update review status
 

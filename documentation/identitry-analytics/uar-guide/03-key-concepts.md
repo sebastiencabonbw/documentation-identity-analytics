@@ -96,7 +96,7 @@ As you will see in the next chapters, the **accountable reviewer** can still rea
 
 Once the configuration is done, you can launch the review. It will be launched automatically, it means that the entries to be reviewed will appear in the reviewers home page.
 
-> **Note:** Once the campaign is launched, the reviewers are definitely assigned to their entries, it means that if you refresh your data afterwards and some management information change, it won't have any effect on the reviewers, they will still have to review their assigned entries.
+> [!note] Once the campaign is launched, the reviewers are definitely assigned to their entries, it means that if you refresh your data afterwards and some management information change, it won't have any effect on the reviewers, they will still have to review their assigned entries.
 
 ## End User Functionalities
 
@@ -115,7 +115,7 @@ A contextual menu accessible with a right click on the table helps you to:
 - add/remove columns
 - select/unselect the displayed entries at once
 
-> **Note:** Table configuration is *persistent*, it means that if you reorder/add/remove columns this will be *saved* in your personal settings. If you want to roll back to the default configuration you need to *Reset configuration* through the Table contextual menu.
+> [!note] Table configuration is *persistent*, it means that if you reorder/add/remove columns this will be *saved* in your personal settings. If you want to roll back to the default configuration you need to *Reset configuration* through the Table contextual menu.
 
 By default, **all** entries which still needs to be reviewed are displayed in the table.
 
@@ -159,7 +159,7 @@ The following actions are allowed once a campaign is finalized:
 
 You can also browse inside a campaign to access its details, display a planning of all the campaigns and delete a campaign.
 
-> **Note:** Deleting a campaign will remove **all** information associated with this campaign, including review information and remediation information. This cannot be undone. You should use this with caution.
+> [!note] Deleting a campaign will remove **all** information associated with this campaign, including review information and remediation information. This cannot be undone. You should use this with caution.
 
 ### Campaign detail page
 
@@ -188,9 +188,9 @@ As an administrator, as long as the campaign is not finalized, you can perform b
 
 ![](./media/IAP194.png)
 
-> **Note:** Due to performance constraints, you cannot perform bulk operations of you have more than 10.000 entries displayed in the list. If this is the case, consider using search bar to reduce the number of items displayed in the table.
+> [!note] Due to performance constraints, you cannot perform bulk operations of you have more than 10.000 entries displayed in the list. If this is the case, consider using search bar to reduce the number of items displayed in the table.
 
-> **Note:** Due to a technical constraint, you cannot reset review status on more than than 1.000 entries at once.
+> [!note] Due to a technical constraint, you cannot reset review status on more than than 1.000 entries at once.
 
 The last tab gives you a view of the remediation decision taken so far, keep in mind that a reviewer can still change is mind until the campaign is finalized. As a result, those decisions are temporary and are not considered as actionable remediations until the campaign is finalized.
 
@@ -224,7 +224,7 @@ Finally, if discrepancies are found, they are displayed in a dedicated tab.
 
 ![](./media/IAP198.png)
 
-> **Note** A discrepancy corresponds to a case where an entry has been marked as to be revoked, has been successfully remediated (remediation finalized with a closed status "Done") and yet is detected as still active upon data refresh.
+> [!note] A discrepancy corresponds to a case where an entry has been marked as to be revoked, has been successfully remediated (remediation finalized with a closed status "Done") and yet is detected as still active upon data refresh.
 
 ### Configuring the remediation strategy
 
@@ -272,7 +272,7 @@ By default, if no remediation strategy is assigned, an *embedded* remediation st
 
 ![](./media/IAP223.png)
 
-> **Important:**  
+> [!important]  
 > - You cannot change a remediation strategy if you have pending remediation actions.
 > - You cannot remove an ITSM definition if it is associated with a repository or an application
 
@@ -409,7 +409,7 @@ The reviewer can fulfill the excel spreadsheet and send it back to the Identity 
 
 You can only import excel spreadsheet on *ongoing* campaigns.
 
-> **Note** When importing an excel file, **all** reviewed entries will be written, regardless of their current review status in the Identity Analytics platform. It means that if a reviewer has started to review some entries through the user interface and later send an excel spreadsheet, the excel spreadsheet will overwrite the former statuses.
+> [!note] When importing an excel file, **all** reviewed entries will be written, regardless of their current review status in the Identity Analytics platform. It means that if a reviewer has started to review some entries through the user interface and later send an excel spreadsheet, the excel spreadsheet will overwrite the former statuses.
 
 ## Reassigning entries
 
@@ -423,7 +423,7 @@ At the end of the review, it means that you can identify which entries have been
 
 As you can see here, the first four entries have been reassigned to Tara BAKER, although Christopher COOPER remains accountable for those entries. A small icon is also displayed to highlight the fact that those entries have been reassigned.
 
-> **Note** When you force a review status through the Review Management interface, it will automatically declare you as **R**esponsible for the entries.
+> [!note] When you force a review status through the Review Management interface, it will automatically declare you as **R**esponsible for the entries.
 
 At the end of the review, when the campaign is finalized the compliance report will highlight the reassignments by indicating who is **R**esponsible and who is **A**ccountable for the entries.
 

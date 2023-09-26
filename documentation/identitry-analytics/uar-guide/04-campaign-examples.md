@@ -43,7 +43,7 @@ Let's say for instance that you want to review SOX applications access rights in
 
 In order to do so, you will have first to tag all accounts belonging to people working for the *finance departement*.
 
-> **Note** You can do it by performing an account search followed by a bulk tagging operation.
+> [!note] You can do it by performing an account search followed by a bulk tagging operation.
 
 ![](./media/IAP203.png)
 
@@ -66,7 +66,7 @@ In order to review technical accounts only, you just have to uncheck *Include Us
 
 ![](./media/IAP204.png)
 
-> **Note** *Leavers* account correspond to active accounts belonging to people who are no longer part of the company. 
+> [!note] *Leavers* account correspond to active accounts belonging to people who are no longer part of the company. 
 
 ## Review sensitive access rights per application owner
 

@@ -171,7 +171,7 @@ As you can notice, the corresponding entries are highlighted in red.
 
 If everything is ok, you can click on *Configure the Review* to move forward
 
-> **Note:** If you want to run this access review campaign on a regular basis you can bookmark this page in your favorites by clicking on star button.  
+> [!note] If you want to run this access review campaign on a regular basis you can bookmark this page in your favorites by clicking on star button.  
 > The configuration will be saved in a way that the queries will be run again when you will access to this page at a later time. As a result, your review perimeter data will be updated with *fresh* data when your will update your entitlement catalog with new data.
 
 ![](./media/IAP151.png)
@@ -368,7 +368,7 @@ Then he still can select them and reset them in order to delegate them to anothe
 
 ![](./media/IAP168-2.png)  
 
-> **Note:** From a campaign management perspective we keep track of all the delegations by enforcing the RACI principles.  
+> [!note] From a campaign management perspective we keep track of all the delegations by enforcing the RACI principles.  
 > The initial reviewers are considered as **accountable** while the delegated reviewers are considered as **responsible**.  
 > This can be highlighted in the campaign management interface.
 
@@ -407,7 +407,7 @@ As some entries still need to be reviewed, a warning message appears and a decis
 
 In our case we will mark them as *not reviewed* even though we **know** that it will correspond to a review failure
 
-> **Note:** Once finalized a review cannot be updated anymore. The remediation will be automatically launched once the campaign is finalized. This background operation can take some time.
+> [!note] Once finalized a review cannot be updated anymore. The remediation will be automatically launched once the campaign is finalized. This background operation can take some time.
 
 ![](./media/IAP179.png)
 
@@ -424,7 +424,7 @@ You can also browse the campaign details to access the KPIs
 
 ![](./media/IAP183.png)
 
-> **Note:** *Review status* and *Actions Requested* link to *accounts* and *permissions* objects in the Identity Ledger, therefore if data is refreshed and those objects disappear they won't be listed anymore. As a result consider the compliance report as the **only** source of trust to prove that your review perimeter has been done. 
+> [!note] *Review status* and *Actions Requested* link to *accounts* and *permissions* objects in the Identity Ledger, therefore if data is refreshed and those objects disappear they won't be listed anymore. As a result consider the compliance report as the **only** source of trust to prove that your review perimeter has been done. 
 
 ## Step 9 - Following up the remediation
 
