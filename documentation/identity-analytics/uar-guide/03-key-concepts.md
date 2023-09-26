@@ -272,7 +272,7 @@ By default, if no remediation strategy is assigned, an *embedded* remediation st
 
 ![](./media/IAP223.png)
 
-> [!important]  
+> [!warning]  
 > - You cannot change a remediation strategy if you have pending remediation actions.
 > - You cannot remove an ITSM definition if it is associated with a repository or an application
 

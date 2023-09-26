@@ -97,7 +97,7 @@ Review `status` value is one of the following value:
 | myself                    | The reviewer is the user himself                                        |
 | default                   | The reviewer is the default reviewer (as configured during campaign launch) |
 
-> [!important] Although a reviewticket is not attached to a timeslot, the reviewed data is. As a result, you should be very cautious about the way you are designing your *views* as you can end up in situations where the lines won't appear because either the *Account* or the *Permission* no longer exists in the latest timeslot. If you want to display **all** this information whatever reviewed data still exists or not in the Identity Ledger, you should use *ticketreview displayname* instead of pointing to the access right.
+> [!warning] Although a reviewticket is not attached to a timeslot, the reviewed data is. As a result, you should be very cautious about the way you are designing your *views* as you can end up in situations where the lines won't appear because either the *Account* or the *Permission* no longer exists in the latest timeslot. If you want to display **all** this information whatever reviewed data still exists or not in the Identity Ledger, you should use *ticketreview displayname* instead of pointing to the access right.
 
 ### Finalized Review
 
@@ -167,7 +167,7 @@ As you can notice in the upper table, the only case where a remediation has been
 | embedded         | Manual remediation through RadiantOne Identity Analytics                                                      |
 | itsm             | Managed remediation through an ITSM system, as several ITSM can be declared in Identity Analytics, <br> `custom7` contains the Identity Analytics ITSM instanceid                                            |
 
-> [!important] A *remediation ticketreview* is **not** associated with the access right which needs to be remediated. It is associated with a *dummy* reviewed metadata. When configured this way, this ticketreview will never diseapear even when the access right itself diseapear when refreshing the Identity Ledger. A printable version of the access right is available in `custom1`.
+> [!warning] A *remediation ticketreview* is **not** associated with the access right which needs to be remediated. It is associated with a *dummy* reviewed metadata. When configured this way, this ticketreview will never diseapear even when the access right itself diseapear when refreshing the Identity Ledger. A printable version of the access right is available in `custom1`.
 
 ## create / update review status
 
