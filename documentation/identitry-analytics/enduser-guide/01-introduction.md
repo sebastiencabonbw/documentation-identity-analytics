@@ -14,15 +14,13 @@ For a more general introduction to RadiantOne Identity Analytics and the configu
 
 ## General principles
 
-### Introduction
-
 Starting with Identity Analytics version Braille, the solution comes with a dedicated web experience called IAP (Identity Analytics Platform). The Identity Analytics Platform replaces the former webportal of Brainwave GRC. 
 
 The main difference is that IAP comes with a series of off-the-shelf analytics/reports/controls/... to provide more value to the end-users.
 
 IAP is also in an active development phase at RadiantLogic, thus by deploying IAP, not only the end user will benefit from a lot of off-the-shelf value, but he will also benefit of regular updates/improvements.
 
-### Manifesto
+## Manifesto
 
 IAP has been built with a set of general principles in mind, please find them below:
 
@@ -35,7 +33,7 @@ IAP has been built with a set of general principles in mind, please find them be
 - **SECURITY BY DESIGN:** You cannot see more than what is needed based on the your management responsibilites
 - **EXTENSIBLE:** Easy to extend through 'Tags'  
 
-### General webportal navigation features  
+## General webportal navigation features  
 
 This part aims at describing the general navigation principles of the Web Portal.  
 By default, a header and menu bar on the left are provided to help the end-user browse through the information.  
@@ -43,7 +41,7 @@ Note that these header and menu bar have been probably customized to fit the bra
 In addition, other specific menu categories and pages probably appear in the menu to meet some specific needs, or following the creation of new mashup dashboards by end-users.  
 All screenshots in this document reflect the default display of the web portal and do not reflect the specificities or cutomizations that may have been implemented in your Identity Analytics project.  
 
-#### Header  
+### Header  
 
 The header provides a QR code and URL generator to the current page (**1**). This allows the end-user to send directly the link to the report and dashboard he is displaying to stakeholders.
 On the right side of the header, the name of the connected end-user appears (**2**).  
@@ -54,7 +52,7 @@ Clicking on the connected end-user name will provide an additional menu that all
 
 ![](./media/image-69-HeaderPreferences.png)
 
-#### User preferences page
+### User preferences page
 
 This page allows to change the preferred language (**1**) and other global preferences like choosing to display deleted items in all the "changes" columns of tables by default.  
 To do so, from the User preferences page, the end-user can click on Global preferences (**2**) in the "Links" section and set "Include removed items in table trends" to yes. 
@@ -64,13 +62,13 @@ In the same "Links" section, clicking on "My delegations" (**3**) will open the 
 
 ![](./media/image-70-PreferencesPage.png)
 
-#### Top of pages options
+### Top of pages options
 
 On top of pages, a breadcrumb trail (**1**) represents the navigation path and gives the display context of the current page. On the right, an icon allows to refresh the page (**2**) when changes have been made in the displayed page, and a star icon (**3**) allows to add it to your favorite. When adding a page to your favorite, the related shortcut is then available from the menu bar in the list of favorites. See the next "Menu bar" section for more details.
 
 ![](./media/image-71-TopOfPages.png)
 
-#### Menu bar  
+### Menu bar  
 
 On the left side, the menu bar allows to browse through the different pages available in the web portal.
 
@@ -109,14 +107,17 @@ When end-users have additional roles, such as designer, auditor or administrator
 - "Settings" that contains all the administration interfaces such as "Manage dashboards", "System" and the documentation.  
 - "Review" contains the review campaign management page and is available if you have the appropriate license.  
 
-#### Time navigation and changes
+### Time navigation and changes
+
 All the tables provided in Access 360 and the Detail pages have a column named "changes" that list the status of the item in the selected timeslot (set of data upload) with regard to the comparison timeslot. The timeslot used for comparison is either the previous timeslot (by default), or the previous *reference timeslot* if references are used. This additional column indicates whether each entry has not changed with regard to the comparison date, is a new entry, or has been updated.  
 
 The end-user can also display removed entries if needed, although this functionality is disabled by default to avoid any confusion. In order to activate 'removed entries', he has to edit his user preferences by clicking on his name->Preferences in the header on the upper right of the portal.  
 
 As a general rule, it is very important to understand that comparison is done through:  
+
 - element existence in the comparison timeslot  
-- sub-elements cardinality (if any) such as nb of perms, nb of groups, nb of accounts, nb of identities, …  
+- sub-elements cardinality (if any) such as nb of perms, nb of groups, nb of accounts, nb of identities, ...
+
 Comparison is NOT performed through a one by one attribute comparison, it means that for instance if an account attribute is updated (such as 'password never expires') it WON'T be displayed as updated.  
 
 To check which timeslot is used for comparison, the end-user can open the timeslot selection dialog box (calendar) available on the upper left of the portal.  
