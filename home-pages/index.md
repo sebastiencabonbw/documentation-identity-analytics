@@ -40,7 +40,7 @@ IAP has been built with a set of general principles in mind, please find them be
   > This document describes the basic principles of self-service, Compliance driven Access, Review in IAS (Identity Analytics Services) as well as the best practices to follow to configure a review and manage the remediations.  
 
   > [Identity Analytics Release](identitry-analytics/iap-release/01-iap-release-overview)
-  > This document provides information on the different releases information of IAP, including the compatibility matrix and the release notes for each version.  
+  > This document provides information on the different releases of IAP, including the compatibility matrix and the release notes for each version.  
 
 </section>
 
