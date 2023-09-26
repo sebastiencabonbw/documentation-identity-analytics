@@ -45,9 +45,12 @@ Enhanced user experience for review owners:
 
 - Owner escalation management of review campaigns
 - New "Reviewer" resource owner type in addition to "Business Owner" and "Technical Owner" to facilitate reviewer identification
-- PAM Booster is now embedded by default in IAP including the CyberArk Safes User Access Review
-- Consideration of new license levels Observability, Governance, Compliance
-- Multiple bugfixes (see release note)
+
+PAM Booster is now embedded by default in IAP including the CyberArk Safes User Access Review.  
+
+Consideration of new license levels Observability, Governance, Compliance.  
+
+Multiple bugfixes (see release note).  
 
 ### Version 1.8
 
