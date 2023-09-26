@@ -13,17 +13,17 @@ The repository is structured such as each branch corresponds to the documentatio
 
 To use the repository to build locally in Gatsby use the following code in the `GATSBY_DEPLOY_REPOS` parameter of the `.env` file (some adaptation may be necessary):
 
-```json
+```sh
 GATSBY_DEPLOY_REPOS='
 [
   {
-    "name": "bw",
+    "name": "ia",
     "displayName": "Identity Analytics",
-    "description": "XXXX",
+    "description": "This guide provides a high-level overview Identity Analytics. This documentation includes the user guides and integration guides for Identity Analytics along with the different modules included.",
         "links": [
       {
-        "text": "Self Managed - docker",
-        "href": "/bw/main/#0"
+        "text": "Identity Analytics",
+        "href": "/ia/iap_2.0/#0"
       }
     ],
     "remote": "https://github.com/radiantlogic-v8/documentation-identity-analytics.git",
@@ -33,12 +33,12 @@ GATSBY_DEPLOY_REPOS='
     ],
     "deployBranches": [
       {
-        "name": "iap-1.8",
-        "displayName": "Identity Analytics"
+        "name": "iap_2.0",
+        "displayName": "v2.0"
       }
     ]
   }
 ]
 '
-
+'
 ```
