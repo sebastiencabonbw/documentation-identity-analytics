@@ -27,7 +27,7 @@ Ranking is very useful to reorder entries with a risk approach perspective. Risk
 
 ### Nb of risks and Max risk level  
 The end-user can associate to the risk rank the Nb of risks related to the entity. This helps to understand the context.
-As in the exemple below, the end-user can have more risks but with a lower severity for an entity (Jaime ROBERTSON), so that the risk rank will be higher than for others with more severes controls defects (Sophia FOX).
+As in the example below, the end-user can have more risks but with a lower severity for an entity (Jaime ROBERTSON), so that the risk rank will be higher than for others with more severes controls defects (Sophia FOX).
 
 ![](./media/image-80-Search-identities_RiskRank.png)
 

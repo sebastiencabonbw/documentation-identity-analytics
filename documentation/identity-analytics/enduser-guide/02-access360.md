@@ -5,7 +5,7 @@ description : "Identity Analytics Enduser Guide"
 
 # Access 360
 
-Access 360 is the first page the end-user see when he connects to the Identity Analytics portal. The objective of this page is to give him a quick overview of all the access information related to him, basically: who am I, my task list, and what can I access to. It also includes, when relevant, all information about resource management, when for exemple the end-user is an application owner, or an organisation manager, or a shared folder owner...
+Access 360 is the first page the end-user see when he connects to the Identity Analytics portal. The objective of this page is to give him a quick overview of all the access information related to him, basically: who am I, my task list, and what can I access to. It also includes, when relevant, all information about resource management, when for example the end-user is an application owner, or an organisation manager, or a shared folder owner...
 
 For end-users, Access360 will be the only accessible page. As a result, end-users DO NOT have access to search pages. Drill-down is only available through the main interface Access360 in order to enforce the least privilege principle.
 

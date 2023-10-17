@@ -81,7 +81,7 @@ In our use case we want to review **ALL** accounts, so lets keep the default con
 
 To identify some specific accounts or some specific permissions, creating tags allows you to filter on them. Creating tags should be done before the review configuration.
 
-For exemple, to create a tag and filter on accounts that number of risk is greater than 2, go to accounts search pages and select the rule that correspond to your need. And click on "Bulk add a tag in search results" to create your new tag. This new tag can be use to refine the perimeter of your review.
+For example, to create a tag and filter on accounts that number of risk is greater than 2, go to accounts search pages and select the rule that correspond to your need. And click on "Bulk add a tag in search results" to create your new tag. This new tag can be use to refine the perimeter of your review.
 
 ![](./media/IAP144.png)
 
