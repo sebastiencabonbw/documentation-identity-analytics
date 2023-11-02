@@ -3,7 +3,7 @@ title: "Identity Analytics Release Notes"
 description : "Identity Analytics Release Notes"
 ---
 
-# Identity Analytics Release Notes  
+# Identity Analytics Release Notes
 
 ## IAP/IGRC Compatibility matrix
 
@@ -92,7 +92,7 @@ Version 1.7 includes among others:
 
 #### Pre-requisits
 
-IAP 1.6 includes by default project dashboards, a feature added in version Curie R3 of the product (see [here](https://documentation.brainwavegrc.com/Descartes/docs/igrc-platform/dashboards/advanced-configuration/project-based-dashboards/) for more information). IAP 1.6 is as such compatible with Curie R2, however, all project dashboards will be ignored.  
+IAP 1.6 includes by default project dashboards, a feature added in version Curie R3 of the product (see [here](https://documentation.brainwavegrc.com/latest/docs/igrc-platform/dashboards/advanced-configuration/project-based-dashboards/) for more information). IAP 1.6 is as such compatible with Curie R2, however, all project dashboards will be ignored.  
 
 When upgrading to IAP 1.6 in a version Curie R2 of the product and when the default dashboards are used in the project, please do not remove them from the project when migrating.  
 

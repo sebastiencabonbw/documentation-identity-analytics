@@ -5,7 +5,7 @@ description : "Identity Analytics Integration Guide"
 
 # Adding Analytics
 
-IAP embeds a flexible framework in order to faciliate the inclusion of custom anaytics.
+IAP embeds a flexible framework in order to facilitate the inclusion of custom analytics.
 
 ## User section of Access360
 
@@ -13,7 +13,7 @@ IAP embeds a flexible framework in order to faciliate the inclusion of custom an
 
 You can configure custom analytics in the user section of Access360. Those analytics will appear among the others in the Analytics tab. Those customs analytics **MUST** be associated with the current user management characteristics, in a way that they will only appear if the current user corresponds to those management characteristics (line manager, application manager, ...).
 
-![](./media/image43.png)
+![Analytics tab](./media/image43.png "Analytics tab")
 
 In order to add custom analytics, you have to create a Pages with the following constraints:
 
@@ -34,10 +34,9 @@ Here is a description of the Tags:
 | mygroup\_access360      | Group managers (business owners)        |
 | myorg\_access360        | Organisation managers (business owners) |
 
-
 Here is an example to add a custom analytics for end users being application manager:
 
-```
+```pages  
 myanalytics_app = Page {
 	title: 'my custom analytics for app manager'
 	description:'description of my custom analytics for app manager'
@@ -54,9 +53,9 @@ Keep in mind that the `feature:` property will help you to show or hide your cus
 
 ### Custom analytics for end users
 
-You can configure custom analytics for endusers in the user section of Access360. Those analytics will appear among the others in the Analytics tab.
+You can configure custom analytics for end-users in the user section of Access360. Those analytics will appear among the others in the Analytics tab.
 
-![](./media/image43.png)
+![Analytics for end-users](./media/image43.png "Analytics for end-users")
 
 In order to add custom analytics or end user , you have to create a Pages with the following constraints:
 
@@ -65,7 +64,7 @@ In order to add custom analytics or end user , you have to create a Pages with t
 
 Here is an example to add a custom analytics for end users:
 
-```
+```pages  
 myanalytics_app = Page {
 	title: 'my custom analytics for all users'
 	description:'description of my custom analytics for all users'
@@ -77,6 +76,7 @@ myanalytics_app = Page {
 	// TODO: Your content here
 }
 ```
+
 Keep in mind that the `feature:` property will help you to show/hide your custom analytics depending on the user roles if needed
 
 ## Detail pane
@@ -85,9 +85,9 @@ Keep in mind that the `feature:` property will help you to show/hide your custom
 
 You can add your own custom analytics in the 'Analytics' section of the detail panes.
 
-![](./media/image44.png)
+![Analytics for entities](./media/image44.png "Analytics for entities")
 
-This method is the same as the one used in Ader version and 2017 version. You can consult the documentation for more information about this:  [Links to Reports and Pages from Detail Pages](https://documentation.brainwavegrc.com/Ader/docs/igrc-platform/pages/new-webportal-features/link-to-reports-and-pages/)
+This method is the same as the one used in Ader version and 2017 version. You can consult the documentation for more information about this:  [Links to Reports and Pages from Detail Pages](https://documentation.brainwavegrc.com/latest/docs/igrc-platform/pages/new-webportal-features/link-to-reports-and-pages/)
 
 Here is a quick description:
 You need to create a Page with the following constraints:
@@ -112,10 +112,9 @@ Here is a description of the Tags to specify where to display this custom analyt
 | share        | Share analytics (for all shares)                 |
 | sharedfolder | Shared folder analytics (for all shared folders) |
 
-
 Here is an example to add a custom analytics in the application details Analytics pane for all applications:
 
-```
+```pages  
 myanalyticspane_app = Page {
 	title: 'my custom app analytics'
 	description:'description of my custom app analytics'
@@ -133,7 +132,7 @@ myanalyticspane_app = Page {
 You can add your own custom analytics in the 'Analytics' section of the detail panes for certain repository types.
 This is very useful if for instance you want to deploy analytics for a given system such as Active Directory, Mainframes, ...
 
-![](./media/image45.png)
+![Repository analytics](./media/image45.png "Repository analytics")
 
 The way to configure those custom analytics is very similar to the upper section:
 
@@ -157,7 +156,7 @@ Here is a description of the Tags to specify where to display this custom analyt
 Here is an example to add a custom report for Repository detail pane **only for Active Directory repositories**
 In order to do so, we assume that you have configured your collect line by setting the attribute `repositorytype=AD` in the corresponding repositories.
 
-```
+```pages  
 myadanalyticspane = Page {
 	title: 'my custom analytics for Active Directory'
 	description:'description of my custom analytics for Active Directory'
@@ -175,7 +174,7 @@ myadanalyticspane = Page {
 You can add your own custom analytics in the 'Analytics' section of the detail panes for certain entity families.
 This is very useful if for instance you want to deploy analytics for a given system such as Active Directory, SAP, ...
 
-![](./media/image45.png)
+![Family analytics](./media/image45.png "Family analytics")
 
 The way to configure those custom analytics is very similar to the upper section:
 
@@ -200,11 +199,10 @@ Here is a description of the Tags to specify where to display this custom analyt
 | shareext        | Share analytics with applicationfamily = Tag         |
 | sharedfolderext | Shared folder analytics with applicationfamily = Tag |
 
-
 Here is an example to add a custom report for Repository detail pane **only for Active Directory repositories**
 In order to do so, we assume that you have configured your collect line by setting the attribute `repositoryfamily=AD` in the corresponding repositories.
 
-```
+```pages  
 myadanalyticspane = Page {
 	title: 'my custom analytics for Active Directory'
 	description:'description of my custom analytics for Active Directory'
@@ -220,15 +218,15 @@ myadanalyticspane = Page {
 For repositories, as a best practice you should consider `repositorytype` as a main custom type and `repositoryfamily` as a sub custom type.
 For instance if you load database accounts and groups in a `Repository`, you should fulfill your data as is:
 
- - repositorytype = database
- - repositoryfamily = SQL Server
+- repositorytype = database
+- repositoryfamily = SQL Server
 
 ### Custom identity analytics based on management position
 
 You can add custom identity analytics based on the current identity management position (such as application manager, organisation manager, ...). This is very useful as it will avoid to provide empty analytics (such as direct team reports if the current identity is not a line manager).
 This approach is very similar to the one used in the "User section of Access360".
 
-![](./media/image46.png)
+![Identity analytics](./media/image46.png "Identity analytics")
 
 You need to create a Page with the following constraints:
 
@@ -253,10 +251,9 @@ Here is a description of the Tags to specify where to display this custom analyt
 | identityext + sharemanager        | Identity analytics for share managers        |
 | identityext + foldermanager       | Identity analytics for folder managers       |
 
-
 Here is an example to add a custom analytics in the identity details Analytics pane for application managers:
 
-```
+```pages  
 appaccessrights360detail = Page {
 	title: $appaccessrights360NLS.title
 	description:$appaccessrights360NLS.description
@@ -269,12 +266,11 @@ appaccessrights360detail = Page {
 
 ### Best practice to publish custom analytics
 
-When you create custom analytics for end users, you **SHOULD** make them available as well in the analytics pane of the corresponding identity. At the end of the day, it will faciliate level 1 support such as an individual calling the support line because he is confused about an analytics content. As an administrator or and auditor, you will be able to browse through the corresponding identity detail pane and to access the exact same analytics from the Analytics pane.
+When you create custom analytics for end users, you **SHOULD** make them available as well in the analytics pane of the corresponding identity. At the end of the day, it will facilitate level 1 support such as an individual calling the support line because he is confused about an analytics content. As an administrator or and auditor, you will be able to browse through the corresponding identity detail pane and to access the exact same analytics from the Analytics pane.
 
 In order to do so, you should create your pages with the following pattern:
 
-
-```
+```pages  
 myreport_admin = Page {
 	title: "My analytics"
 	icon: "16/details/browsing_16.png" large-icon: "48/details/browsing_48.png"
@@ -315,7 +311,7 @@ myreport = Page {
 }
 ```
 
-If needed you will be able to add `feature:` on the _admin and _enduser pages to restrict the access depending on the user roles.
+If needed you will be able to add `feature:` on the `_admin` and `_enduser` pages to restrict the access depending on the user roles.
 
 ## Search pane
 
@@ -323,11 +319,12 @@ If needed you will be able to add `feature:` on the _admin and _enduser pages to
 
 Starting with IAP 1.1 you can configure Analytics accessible through the search pages in order to perform analysis on search results.
 
-For instance: 
+For instance:  
+
 - You search for 'VIP identities' and you want to access to a report displaying their access rights and what changed since a given data
 - You search for orphan AD accounts and you want to list their groups
 
-Until IAP 1.1 this was possible through a custom tag `byuids`, please consult [Managing analytics pages and reports](https://documentation.brainwavegrc.com/Braille/docs/igrc-platform/pages/new-webportal-features/analytics-section/).
+Until IAP 1.1 this was possible through a custom tag `byuids`, please consult [Managing analytics pages and reports](https://documentation.brainwavegrc.com/latest/docs/igrc-platform/pages/new-webportal-features/analytics-section/).
 
 However, this feature had some limitations:
 
@@ -339,15 +336,15 @@ If you want to provide analytics on search results, you **MUST** use the new met
 
 From an end user perspective, those analytics are available through the contextual menu located at the lower right part of the search screen.
 
-![](./media/image64.png)
+![Apply analytics on search results](./media/image64.png "Apply analytics on search results")
 
 When you click on this menu entry, all the available analytics are presented:
 
-![](./media/image65.png)
+![Search analytics](./media/image65.png "Search analytics")
 
 When you click on a given analytics, it is displayed as usual but with a subtle difference: The search query itself is passed to the Analytics, as a result, **this analytics can be safely bookmarked in the favorites**
 
-![](./media/image66.png)
+![Sample analytics](./media/image66.png "Sample analytics")
 
 ### Configuration
 
@@ -375,7 +372,7 @@ The `searchanalytics` featureset is associated by default to the following roles
 - technical administrator
 - auditor
 
-> It means that even if you grant access to the seach page to some users, they **won't be able** to access to those analytics until you grant them the right as well.
+> It means that even if you grant access to the search page to some users, they **won't be able** to access to those analytics until you grant them the right as well.
 
 When the search page is displayed, depending on the number of search analytics pages found, the item can be grayed. (grayed if no analytics are found or if none of them are accessible to the current user )
 
@@ -383,7 +380,7 @@ When the search page is displayed, depending on the number of search analytics p
 
 In the following example, although the Feature is enabled for the current user, no search analytics are available, as a result, the menu entry is grayed in the list
 
-![](./media/image68.png)
+![Disabled analytics button](./media/image68.png "Disabled analytics button")
 
 A last thing regarding the overall performances of this function:
 
@@ -418,7 +415,6 @@ You can override those default values at your own risks through the technical co
 | search.folder.analyticswarningthreshold       | warns the user if the analytics will be launch on those number of search results |
 | search.folder.analyticserrorthreshold         | prevent the user to run the analytics on those number of search results          |
 
-
 ### Build your own search analytics
 
 You can easily build your own search analytics, as with the rest of the analytics, they will be automatically discovered and added to the list thanks to their tags.
@@ -427,7 +423,7 @@ If you are looking for some implementation examples, the default search analytic
 
 Here is a typical search analytics skeleton
 
-```
+```pages  
 myOwnIdentitySearchAnalytics= Page {
  title: "My own identity analytics"
  description: "Description of my analytics"
@@ -467,85 +463,85 @@ The first one specify the search page:
 | share        | Share search page                                |
 | sharedfolder | Shared folder search page                        |
 
-The page **must** contain a `search` parameter in the form of a [SearchDefinition](https://documentation.brainwavegrc.com/Braille/docs/igrc-platform/pages/new-webportal-features/search-pages-and-navigation-system/).
+The page **must** contain a `search` parameter in the form of a [SearchDefinition](https://documentation.brainwavegrc.com/latest/docs/igrc-platform/pages/new-webportal-features/search-pages-and-navigation-system/).
 
 Here are the prototypes for the different kind of search
 
-**Identity SearchDefinition**
+#### Identity SearchDefinition
 
-```
+```pages  
  search = SearchDefinition {
   entity: Identity
   simple-mode-rule: br_identity_simple_search
  }
 ```
 
-**Organisation SearchDefinition**
+#### Organisation SearchDefinition
 
-```
+```pages  
  search = SearchDefinition {
   entity: Organisation
   simple-mode-rule: br_organisation_simple_search
  }
 ```
 
-**Account SearchDefinition**
+#### Account SearchDefinition
 
-```
+```pages  
  search = SearchDefinition {
   entity: Account
   simple-mode-rule: br_account_simple_search
  }
 ```
 
-**Group SearchDefinition**
+#### Group SearchDefinition
 
-```
+```pages  
  search = SearchDefinition {
   entity: Group
   simple-mode-rule: br_group_simple_search
  }
 ```
 
-**Repository SearchDefinition**
+#### Repository SearchDefinition
 
-```
+```pages  
  search = SearchDefinition {
   entity: Repository
   simple-mode-rule: br_repository_simple_search
  }
 ```
 
-**Application SearchDefinition**
+#### Application SearchDefinition
 
-```
+```pages  
  search = SearchDefinition {
   entity: Application
   simple-mode-rule: br_application_simple_search
  }
 ```
 
-**Permission SearchDefinition**
+#### Permission SearchDefinition
 
-```
+```pages  
  search = SearchDefinition {
   entity: Permission
   simple-mode-rule: br_permission_simple_search
  }
 ```
 
-**Share SearchDefinition**
+#### Share SearchDefinition
 
-```
+```pages  
  search = SearchDefinition {
   entity: Application
   simple-mode-rule: br_application_simple_search
  }
 ```
 
-**SharedFolder SearchDefinition**
+#### SharedFolder SearchDefinition
 
-```
+```pages  
  search = SearchDefinition {
   entity: Permission
   simple-mode-rule: br_sharedfolder_simple_search
@@ -554,32 +550,31 @@ Here are the prototypes for the different kind of search
 
 Your view **must** have the search definition anchor option activated, as seen in the following screenshot.
 
-![](./media/image67.png)
+![Search anchor in view](./media/image67.png "Search anchor in view")
 
 # Adding custom content in detail pages & dialog box
 
-You can be in a situation where you have loaded custom information on entities (such as custom identity information or custom account information). Whatever the form (custom attributes or metadata), you will want to display this information in the user interfaces as well. 
+You can be in a situation where you have loaded custom information on entities (such as custom identity information or custom account information). Whatever the form (custom attributes or metadata), you will want to display this information in the user interfaces as well.  
 In order to do so, you can enable "custom detail panes" in both the detail pages and the dialog box.
 Once enabled, those detail panes will be displayed in the "standard" user interface:
 
 In the detail pages:
 
-![](./media/image53.png)
+![Additional information tab](./media/image53.png "Additional information tab")
 
 In the dialog box:
 
-![](./media/image52.png)
+![Additional information in dialog](./media/image52.png "Additional information in dialog")
 
 In order to do so, you have to create your own content in predefined fragments. Those fragments are located in `/webportal/pages/bw_fragments/custom/` with one fragment per concept.
 
-![](./media/image54.png)
+![Extended details fragments](./media/image54.png "Extended details fragments")
 
 If you want to display custom content for a concept, you **MUST** modify the corresponding file to add your own content.
 
-
 Here is the content of `accountExtendedDetails.page` file
 
-```
+```pages  
 /**
  * Display the selected account details extended attributes
  * 
@@ -604,7 +599,7 @@ As you can see, you will be provided the `uid` of the entity to display, you **M
 
 Here is an example where additional account information will be displayed only for 'Active Directory' and 'Top Secret' repository types, with dedicated content for each.
 
-```
+```pages  
 fragmentAccountExtendedDetails = PageFragment {
 	enter-event:StringCase(account.repository_repositoryfamily) { 
 					when "AD" then [ Set True to outdisplay ] 
@@ -639,7 +634,7 @@ fragmentAccountExtendedDetails = PageFragment {
 
 You can override the default details pages to provide custom content. For instance, if you have loaded a very specific application, you can consider that the default application detail page is not relevant/sufficient, you can in this case create your own detail page for this application and configure IAP in a way that it will display your detail page instead of the default one.
 
-In order to override a default page, you **MUST** use the `Activity` functionality of Pages. Please refer to [RadiantOne Identity Analytics product documentation](https://documentation.brainwavegrc.com/) if you are not familiar with this functionality.
+In order to override a default page, you **MUST** use the `Activity` functionality of Pages. Please refer to [RadiantOne Identity Analytics product documentation](https://developer.radiantlogic.com/) if you are not familiar with this functionality.
 
 Starting with IAP, you can use the `discriminator` of the `Activity` to specify when to override the detail page.
 
@@ -657,12 +652,11 @@ Here is a list of the possibilities:
 |                   | Applicationtype                   |
 | Repository        | Repositoryfamily                  |
 
-
 Here are some examples:
 
 Dedicated account details and group details for Active Directory repositories:
 
-```
+```pages  
 Activity {
 	concept: Account
 	kind: Detail
@@ -671,7 +665,7 @@ Activity {
 }
 ```
 
-```
+```pages  
 Activity {
 	concept: Group
 	kind: Detail
@@ -682,7 +676,7 @@ Activity {
 
 Dedicated application details for windows servers loaded as applications (with 'server' loaded as applicationtype):
 
-```
+```pages  
 Activity {
 	concept: Application
 	kind: Detail
@@ -693,7 +687,7 @@ Activity {
 
 Dedicated application details for SAP applications (with 'SAP' loaded as applicationfamily):
 
-```
+```pages  
 Activity {
 	concept: Application
 	kind: Detail
@@ -704,7 +698,7 @@ Activity {
 
 Dedicated permission details for SAP transactions loaded as permission (with applicationfamily='SAP' and permissiontype='transaction'):
 
-```
+```pages  
 Activity {
 	concept: Permission
 	kind: Detail
@@ -719,7 +713,7 @@ As a best practice you are **NOT ALLOWED** to modify the default details pages. 
 
 As with detail pages, you can override the default detail dialog boxes to provide custom content. For instance, if you have loaded a very specific application, you can consider that the default application detail dialog box is not relevant/sufficient, you can in this case create your own detail dialog box for this application and configure IAP in a way that it will display your detail dialog box instead of the default one.
 
-In order to override a default dialog box, you **MUST** configure the dialog box content as a  `PageFragment`. Please refer to [RadiantOne Identity Analytics product documentation](https://documentation.brainwavegrc.com/) if you are not familiar with this functionality.
+In order to override a default dialog box, you **MUST** configure the dialog box content as a  `PageFragment`. Please refer to [RadiantOne Identity Analytics product documentation](https://developer.radiantlogic.com/) if you are not familiar with this functionality.
 
 In order to override a default dialog box, you have to create a `PageFragment` whom name follows a naming convention.
 
@@ -738,7 +732,6 @@ In order to override a default dialog box, you have to create a `PageFragment` w
 For instance, if you want to override the default dialog box for an `Application` of type `Filesystem` you have to create a fragment with the following name: `bwf_applicationDetailsFragmentFilesystem`
 
 The best practive whenever you want to create your own dialog box is to start with the default one by copy/pasting its content in your fragment.
-
 
 | Concept           | Default Fragment location                              |
 | ----------------- | ---------------------------------------------------------------------------- |
@@ -761,37 +754,36 @@ As a best practice you are **NOT ALLOWED** to modify the default dialog boxes. I
 
 # Building your own page
 
-## Fragments 
+## Fragments
 
 IAP provides a framework which tremendously improves the way you can build your own reports and analytics.
-One of the main aspects of this framework is the use of 'fragments' (see [Pages Fragments](https://documentation.brainwavegrc.com/Ader/docs/igrc-platform/pages/page-fragments/) for more details about this functionality). 
+One of the main aspects of this framework is the use of 'fragments' (see [Pages Fragments](https://documentation.brainwavegrc.com/latest/docs/igrc-platform/pages/page-fragments/) for more details about this functionality).  
 
 More than 200 documented fragments are provided off-the-shelf.
 
 For instance, here is a standard fragment to present identity details (fragmentIdentityFullDetails)
 
-![](./media/image49.png)
+![Custom page example](./media/image49.png "Custom page example")
 
 Those fragments are located in `/webportal/pages/bw_fragments/`
 
 Fragments are located in subdirectories, based on their concept:
 
-![](./media/image47.png)
-
+![Fragments directory](./media/image47.png "Fragments directory")
 
 All fragments are documented, you can access to the corresponding fragment documentation through a mouse roll over the fragment. Hit F2 to open the help as a dialog box.
 
-![](./media/image48.png)
+![Fragment documentation](./media/image48.png "Fragment documentation")
 
 Standard dialog box are also provided to present entity details, those dialog box are located in `/webportal/pages/bw_fragments/[entity]/details/[entity]Details.page`, for instance: `/webportal/pages/bw_fragments/account/details/accountDetails.page`
 
 Example of a dialog box to present a given account detail:
 
-![](./media/image50.png)
+![Sample dialog](./media/image50.png "Sample dialog")
 
 Those dialog box are documented, you can access to the corresponding fragment documentation through a mouse roll over the dialog box. Hit F2 to open the help as a dialog box.
 
-![](./media/image51.png)
+![Fragment documentation](./media/image51.png "Fragment documentation")
 
 As a best practice you **SHOULD** use those fragments and dialogbox whenever possible when you create custom reports and anaytics.
 
@@ -813,7 +805,7 @@ Those libraries include:
 
 As a best practice, you **SHOULD** include librairies in your custom pages by copy/pasting the following bloc on the upper section of your page:
 
-```
+```pages  
 import "/webportal/pages/bw_fragments/lib/mixins.page"
 import "/webportal/pages/bw_fragments/lib/templates.page"
 import "/webportal/pages/bw_fragments/lib/mappings.page"
@@ -828,11 +820,11 @@ import "/webportal/pages/bw_fragments/lib/kpis.page"
 
 Former .gif and .png icons are deprecated. A new set of svg icon is available in IAP. You **SHOULD** use those icons instead of the former gif and png icons.
 
-![](./media/image55.png)
+![Available icons](./media/image55.png "Available icons")
 
 Those icons are located in `reports/icons/bw_fragments/*`
 
-For more information on how to use svg icons in Pages, you can consult the product documentation [SVG images](documentation.brainwavegrc.com/Ader/docs/igrc-platform/pages/images-and-colors.html#svg-images)
+For more information on how to use svg icons in Pages, you can consult the product documentation [SVG images](https://documentation.brainwavegrc.com/latest/docs/igrc-platform/pages/images-and-colors#svg-images)
 
 What is very interesting with those svg icons is that you can dynamically configure their size and their color.
 
@@ -841,7 +833,7 @@ In this library the icons have been declared in various size and colors with the
 
 Here is a simple example:
 
-```
+```pages  
 Header {
 	value:'My title with a 48px account logo'
 	icon:%concept_48.account
@@ -851,7 +843,6 @@ Header {
 ## Colors
 
 IAP colors are located in `/webportal/pages/bw_fragments/lib/colors.page`, you **SHOULD** use them instead of hardcoding your colors in your pages. If the color is not available you **SHOULD** reference a theme color instead of hardcoding your color
-
 
 ## IAP project files
 
@@ -878,7 +869,7 @@ For your information, IAP project files are located as such:
 By default, only `functionaladmin`, `auditor` and `technicaladmin` have access to all the search pages in order to enforce the **least privilege principle**
 In very specific use case, you can be in a situation where you want to break the least privilege principle and to open the door for some business user by allowing them to perfom search on sub-perimeters of the Identity Ledger.
 
-This is actually done through the standard search pages for application owners, repository owners and line managers. In this case, those search pages content are restricted to the owner perimeter. This is done thanks to dedicated standard dynamic roles with `perimeter'. See [features and roles](https://documentation.brainwavegrc.com/Ader/docs/igrc-platform/pages/features-and-roles) for more information about how to configure roles and perimeters in your project.
+This is actually done through the standard search pages for application owners, repository owners and line managers. In this case, those search pages content are restricted to the owner perimeter. This is done thanks to dedicated standard dynamic roles with `perimeter'. See [features and roles](https://documentation.brainwavegrc.com/latest/docs/igrc-platform/pages/features-and-roles) for more information about how to configure roles and perimeters in your project.
 
 At the end of the day, search pages are restricted as such using perimeters:
 
@@ -895,5 +886,4 @@ At the end of the day, search pages are restricted as such using perimeters:
 | SharedFolder | Perimeter configured on Application          |
 
 As you can see, **except for organisation**, you can also grant access to the search pages using custom roles if you have properly configured the `Perimeter` for a given user.
-Most probably you will have to create custom menu entries which will point to the search pages you want to publish, See [RadiantOne Identity Analytics Product Documentation](https://documentation.brainwavegrc.com/) on how to configure your own menu entries. Search pages are located on `webportal/pages/bw_portaluar_base/[entity]/details.page`
-
+Most probably you will have to create custom menu entries which will point to the search pages you want to publish, See [RadiantOne Identity Analytics Product Documentation](https://developer.radiantlogic.com/) on how to configure your own menu entries. Search pages are located on `webportal/pages/bw_portaluar_base/[entity]/details.page`
