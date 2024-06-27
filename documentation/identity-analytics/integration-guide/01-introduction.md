@@ -8,7 +8,7 @@ description : "Identity Analytics Integration Guide"
 This document describes the basic principles of IAP (Identity Analytics Platform) as well as the best practices to follow to fulfill the data & to configure the roles.
 
 This documentation will only focus on IAP configuration, for a more general introduction to RadiantOne Identity Analytics and the configuration of the solution, please refer to the full documentation, available using the following URL:
-[https://documentation.brainwavegrc.com](https://documentation.brainwavegrc.com)
+[https://developer.radiantlogic.com](https://developer.radiantlogic.com)
 
 ## General principles
 
@@ -60,7 +60,7 @@ Easy to extend through Tags
 
 ## Setup
 
-IAP is delivered as a dedicated add-on, available on the [marketplace](https://marketplace.brainwavegrc.com/package/bw_ias/).
+IAP is delivered as a dedicated add-on, available on the [marketplace](https://marketplace.radiantlogic.com/package/bw_ias/).
 
 You **MUST** download IAP prior to creating a new project. Once IAP is downloaded launch RadiantOne Identity Analytics and click on "new project", you will be able to select your IAP file add-on on the new Project Dialog Box.
 

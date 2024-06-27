@@ -12,7 +12,9 @@ This documentation will only focus on access review configuration, for a more ge
 
 > In IAP version 2.2 a new "sign off" principle has been added to the review process, as well as the the ability to launch the remediation process as soon as the reviewer signs off.  
 >
-> Due to this change in behavior it is **necessary** to finalize **all** web-based reviews **before** upgrading IAP to version 2.1 or 2.2.  
+> In IAP version 3.0, the concept of review campaigns has been introduce with the ability to manage campaign configurations, including notification and scheduling capabilities. These new capabilities come with a new "Review Campaign Management" interface. The previous "Review Management" interface contains the finalized reviews in previous versions and has been renamed "Custom Review Management" interface.
+>
+> Due to these changes in behavior it is **necessary** to finalize **all** web-based reviews **before** upgrading IAP to version 3.0.
 
 ## General principles
 
@@ -119,32 +121,55 @@ A lack of empathy between the actors often leads to rubber stamping signature of
 
 As you will discover in the following chapter RadiantOne Identity Analytics solves this problem thanks to its self-service, compliance driven, access review capabilities.
 
-## RadiantOne Identity Analytics Access Review Overview
+### RadiantOne Identity Analytics Access Review Overview
 
-RadiantOne Identity Analytics embeds compliance driven user access review interface. Through this interface you can configure an access review perimeter and run an access certification campaign. Users will then have to review their entries either online through the GUI or offline thanks to microsoft excel spreadsheet reports. At the end of the day, this interface also manages the remediation process so that you are sure that all decisions taken during the access certification campaign are enforced.
+RadiantOne Identity Analytics embeds compliance driven user access review interface. Through this interface you can configure an access review perimeter and run an access certification campaign. Users will then have to review their entries either online through the GUI or offline thanks to microsoft excel spreadsheet reports. At the end of the day, this interface also manages the remediation process so that you are sure that all decisions taken during the access certification campaign are enforced.  
 
-Here is a quick list of the features available in compliance driven access review:
+#### List of new Identity Analytics 3.0 features
 
-- Can configure a precise perimeter of what needs to be reviewed
-- Can mix organisational review and application review in a single campaign
-- Can run multiple campaigns at once
-- Can automatically identify for each entry to review who is accountable for the review
-- Can launch both a global/full access review or an incremental campaign focusing only of what changed since the last review
-- Provides rich review end user interface including
-  - risk scoring
-  - identity context and permission context
-  - review history information
-  - filtering capabilities
-  - reordering capabilities
-  - bulk operations
-  - self-service entries reassignment to peers (colleagues / other application owners) by enforcing RACI principles
-  - exporting review data in excel format
-  - running the review offline through excel spreadsheets
-- Provides rich review management interface including
-  - KPIs to follow up the campaign progress
-    - review perimeter
-    - Nb of applications to review
-    - Nb of reviewers
+Here is a quick list of the features available in compliance driven access review:  
+
+The User Access Review component has been completely redesigned in Identity Analytics 3.0 to offer the following new features:
+
+- New "Review Campaign Management" interface for managing campaign configurations: create, modify, duplicate, delete, export/import configurations,  
+- Automated notifications and reminders, with the option of defining email templates and a notification strategy (scheduling),  
+- View reminder chronology in a timeline to update (add/delete) reminders,  
+- Definition of a campaign owner, who can start/stop/finalize/modify his/her own campaigns and view the review history.  
+- Access to the old "Review Management" interface renamed "Custom Review Management" to access reviews finalized in previous versions and web-based custom reviews,  
+- New six-step configuration wizard to define a review campaign:
+  1. "Perimeter Selection" with the ability to define a static or dynamic tag-based review scope.  
+  2. "Review Strategy Selection" with the option to activate the AI AIDA Data Wizard in SaaS mode.  
+  3. "Preview Data" for a read-only check of the scope of the review campaign based on the current time slot.  
+  4. "Reviewer UI" for fine-tuning the reviewer interface (bulk action limit, comment templates, enable/disabe actions, etc.).  
+  5. "Campaign Schedule" to choose a frequency and manage notifications and reminders.  
+  6. "Campaign information" to define campaign name, description, tags, owners, etc.  
+- New ability to notify a selection of reviewers when a review has been started.  
+- An IDDM connector can now be configured in the remediation interfaces to take advantage of IDA to IDDM remediation once a review has been completed by a reviewer.  
+  
+#### List of Other Identity Analytics features  
+
+All the features provided in previous versions are still available:
+  
+- Can configure a precise perimeter of what needs to be reviewed  
+- Can mix organisational review and application review in a single campaign  
+- Can run multiple campaigns at once  
+- Can automatically identify for each entry to review who is accountable for the review  
+- Can launch both a global/full access review or an incremental campaign focusing only on what changed since the last review  
+- Provides rich review end user interface including  
+  - risk scoring  
+  - identity context and permission context  
+  - review history information  
+  - filtering capabilities  
+  - reordering capabilities  
+  - bulk operations  
+  - self-service entries reassignment to peers (colleagues / other application owners) by enforcing RACI principles  
+  - exporting review data in excel format  
+  - running the review offline through excel spreadsheets  
+- Provides rich review management interface including  
+  - KPIs to follow up the campaign progress  
+    - review perimeter  
+    - Nb of applications to review  
+    - Nb of reviewers  
     - Reviewed entries so far
     - Actions identities so far
     - Statistics around the nb of entries to review per reviewer (percentile, min, max, ...)
@@ -162,6 +187,7 @@ Here is a quick list of the features available in compliance driven access revie
   - Mail gentle-reminder capabilities, including if needed entries to review as a dynamic attachment
   - Generate, archive and provide digitally signed PDF compliance reports
 - Provides both an embedded remediation workflow and ITSM connectivity to ServiceNow to delegate remediation activities to a third party ITSM
+- Provides a "Sign-Off" feature to allow remediation even if all the reviewers have not finalized their review
 - Provides rich remediation end user interface including
   - risk scoring
   - identity context and permission context
@@ -184,4 +210,58 @@ Here is a quick list of the features available in compliance driven access revie
   - Real time view of the discrepancies identified so far with filtering/grouping/export capabilities and identity/permission context
   - Bulk remediation operations as an administrator
   - Mail notification capabilities
-- When leveraging ServiceNow for remediation, retrieve tickets numbers and track tickets status upon completion. Automatically spot discrepancies (action marked as done in ServiceNow and access still active in the target system...).
+- When leveraging ServiceNow for remediation, retrieve tickets numbers and track tickets status upon completion. Automatically spot discrepancies (action marked as done in ServiceNow and access still active in the target system...).  
+  
+#### Behavior of a Review Campaign Running Over Several Timeslots
+
+The duration of a campaign can be spread over a time range comprising several data loads at different dates (timeslots). In this case:
+
+- What remains the same timeslot after timeslot:
+  - The reviewer. For example:
+    - An identity changes line manager when the reviewer strategy relies on line managers.
+    - An application right when the reviewer strategy relies on application managers
+  - The reviewed access chain (i.e. the link Identity - Account - Permission - Application)
+- What can change timeslot after timeslot:
+  - Context information linked to the access chain (identity name/department/job, account expiry date, permission name, etc.). In this case, information from the current timeslot is displayed. Note that if you return to the timeslot on which the campaign was launched in the Portal, you will still see these modifications (i.e. those of the current timeslot), and not the information of the selected timeslot.
+- If entries to be reviewed are deleted in the next timeslot (an account, an access, etc.), they will no longer appear in the IAP review page (if this has not been finalized, of course).
+  - Note that deleted entries will be marked as "revoked" in the compliance report.
+  - Also note that the content of the campaign follow-up page depends on the timeslot selected. This means that :
+    - If entries are deleted in the next timeslot, the number of entries to be reviewed will change according to the timeslot selected in the portal in the list of entries to be reviewed (i.e., we'll have the initial list of entries to be reviewed on the timeslot on which the campaign was launched, and the "modified" list without the deleted entries on the next timeslot).
+    - If context information (identity name/department/job, account expiry date, permission name, etc.) for certain entries is modified in the next timeslot, the information displayed will depend on the timeslot selected (i.e. initial information on the timeslot on which the campaign was launched, modified information on the current timeslot).  
+
+#### Role Assignment Prerequisites for UAR Management Access
+
+The following personas can now access to the "Review Campaign Management" interface:
+
+- The Identity Analytics administrator
+- The Auditor
+- The Campaign Owner (New IAP 3.0)
+
+The *Identity Analytics administrator* is either a **functional administrator** ('functionaladmin' role) or a **technical administrator** ('technicaladmin' role) of the RadiantOne Identity Analytics platform. She/he can create, modify, duplicate, delete, export/import review campaign configurations. From a selected review campaign he can also launch, pause/resume, finalize, follow-up, download the compliance report, and delete a review instance.  
+  
+The *Identity Analytics auditor* is **auditor** ('auditor' role) of the RadiantOne Identity Analytics platform. She/He has access in readonly to all the interfaces, can check the history of review instances and can download the compliance reports.
+  
+The *campaign owner* is defined by the administrator when creating a new review campaign. She/he can be any identity with a valid email address. Once defined as owner of a campaign, she/he has access to the campaign and can edit the review campaign configuration, launch and manage review instances. The Campaign Owner does not need to have a specific role.  
+
+Of course, the Identity Analytics administrator must ensure that all these personas have a valid e-mail address associated with their identity in Identity Analytics to receive notifications.  
+
+#### Behavior of the Scheduling
+
+The scheduling is done through a workflow that needs to be up and running: the scheduler. To check the status or start the workflow, using the left menu bar, go to "Settings" > "System" and then click on the "Scheduler" button:
+
+![](uar_guide_en.media/media/IAP257.png){ width=50% }  
+
+Specify the hour you need to start the scheduler, click on "Start Scheduler" and then confirm:
+
+![](uar_guide_en.media/media/IAP256.png){ width=75% }  
+
+When the scheduler is started, you'll find in the same page the information about the lifecycle of the scheduler:
+
+![](uar_guide_en.media/media/IAP258.png){ width=50% }  
+
+When a campaign reaches its start date, the revision instance will be launched on the specified start date, at the same time as the scheduler's start time.  
+
+> **Notes:**
+>
+> 1. When the scheduler is restarted, it will launch all overdue review instances. Please make sure you've deactivated any campaigns you don't want to launch before starting the scheduler, otherwise these campaigns will be launched and notifications sent to all reviewers if you have them activated.  
+> 2. if the current review instance is still active on the start date of the next schedule, the new review instance will not be launched until the initial one is finalized. In that case, the next start date of the campaign is set to "Behind Schedule". Once the current review instance has been finalized, the next start date is one day after the finalization date.

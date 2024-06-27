@@ -6,6 +6,21 @@ description : "Identity Analytics Access Review Guide"
 # Review Campaign Examples
 
 This chapter presents review campaign configuration examples to cover the most common use cases.  
+Please note, six steps are required to configure a review campaign:  
+
+1. The first step `Review Perimeter` allows to define your review perimeter,
+2. The second step `Review Strategy` helps you define the review strategy,
+3. The third step `Perimeter Preview` shows the data for the review on the current timeslot,
+4. The fourth step `Reviewer UI` allows to configure the reviewer user interfaces,
+5. The fifth step `Campaign Schedule` helps you define the scheduling strategy,
+6. The final step `Campaign Information` concerns review campaign information.
+
+ALL selected data MUST be reviewed, the *reviewer* is automatically identified based on the entries to be reviewed as configured in the second step "2. Review Strategy".  
+For example, a strategy could be:  
+  
+- user accounts are reviewed by the line manager,  
+- technical are reviewed by the application owner,  
+- all other account and if no line manager and no application owner are found, the default reviewer is taken.  
 
 ## Review all access rights for some applications  
 
@@ -16,7 +31,9 @@ You can do it one application by one application:
 
 Or you can do it by using tags:  
 
-![](./media/IAP143.png)  
+![](./media/IAP141.png)  
+
+Note that when using tags, filtering the table by column has no effect on the perimeter. Only the filter to the right of "Selection by Tag" does.
 
 The default configuration will review **all** active accounts direct access rights (limited to permission type 'Role')  
 
@@ -37,15 +54,16 @@ It can be useful to restrict your access review to a given organisation, especia
 Let's say for instance that you want to review SOX applications access rights in the *Finance Department*.  
 
 In order to do so, you will have first to tag all accounts belonging to people working for the *finance departement*.  
-  
+
 > You can do it by performing an account search followed by a bulk tagging operation.  
 
 ![](./media/IAP203.png)  
-  
+
 ![](./media/IAP203-bis.png)  
+
 Once done, you will have to select the account tag in the campaign configuration page.
 
-![](./media/IAP202.png)
+![](./media/IAP202.png)  
 
 ## Review access rights of people who moved from one organisation to another
 
@@ -75,19 +93,20 @@ Once this is done, you configure your access right campaign by
 
 ![](./media/IAP205.png)  
 
-- Force the application owner to review everything in the next step *2. Define Review Strategy*:
+- Force the application owner to review everything in the next step *Review Strategy*:
 
 ![](./media/IAP205-bis.png)  
 
+
 ## Self review of all dormant (unused) user accounts by the users themselves  
 
-In the next step *2. Define Review Strategy*, you can pick *user accounts by themself* if you want the user reviewing themselves. This is very useful to review at-risk users or control defects such as outliers and unused access.  
+In the next step *Review Strategy*, you can pick *User Accounts by Account Owner* if you want the user reviewing themselves. This is very useful to review at-risk users or control defects such as outliers and unused access.  
 
 ![](./media/image108.png)  
 
 ## Review Only the changes since the last review
 
-In order to review only the changes that occurred since the last review, you have to configure your *Incremental Review Strategy* in the step *2. Define Review Strategy*:
+In order to review only the changes that occurred since the last review, you have to configure your *Incremental Review Strategy* in the step *Review Strategy* in the AI Options section:
 
 ![](./media/IAP207.png)
 
@@ -96,7 +115,9 @@ Keep in mind that an entry will be considered as already been reviewed only if a
 - The entry has been reviewed in the configured time frame (X days)
 - For a user account, account owner characteristics have not changed (organisation, job title, internal status)
 
-This will fulfill both the status and the comment columns in your review table. You can also simply remove those entries from the review perimeter by checking "Remove from the list entries who have already been reviewed"
+This will fulfill both the status and the comment columns in your review table. You can also simply remove those entries from the review perimeter by checking "Hide Already Removed Entries" (if for instance you only want to review changes that occurred since the last review date, without displaying valid entries).
+
+![](./media/image7.png)
 
 ## Review unused accounts access rights
 
@@ -108,12 +129,12 @@ Once this is done, you configure your access review and select the corresponding
 
 ## Repository accounts review
 
-To launch an repository accounts review, select "Repository accounts Review" in the Access Review Management section. You have to select the repository that you want to include in your accounts review campaign.
+To launch a repository accounts review, click on "+ Create" button and select "Account Repository Review" in the Access Review Management section. You have to select the repository that you want to include in your accounts review campaign.
 
 ![](./media/IAP209.png)  
 ![](./media/IAP210.png)  
 
-The next steps are the same that application access rights review. Incremental review strategy and reviewers strategy must be defined:  
+The next steps are the same than application access rights review. Decision history (Incremental review) strategy and reviewers strategy must be defined:  
 
 ![](./media/IAP210-bis.png)  
 
@@ -121,7 +142,7 @@ The available *reviewer strategies* are:
 
 - User accounts by line manager, technical accounts by the repository owner
 - User accounts by line manager, all other accounts by the repository owner
-- User accounts by themself, all other accounts by the repository owner
+- User accounts by themselves, all other accounts by the repository owner
 - All accounts by the repository owner
 - All accounts by the default reviewer
 
@@ -135,7 +156,7 @@ Reviewers can start the accounts review. They can approve, revoke or comment one
 
 ## Repository group membership review
 
-To launch a repository group membership review, select "Repository accounts Review" in the Access Review Management section. You have to select the repository that you want to include in your group review campaign. Note that only group direct members are considered, meaning that an entry is composed of the group, its related repository and the direct account member of the related group.
+To launch a direct group membership review, select "Group Membership Review" in the Access Review Management section. You have to select the repository that you want to include in your group review campaign. Note that only direct group members are considered, meaning that an entry to review is composed of the group, its related repository and the direct account member of the related group.
 
 ![](./media/IAP239.png)  
 ![](./media/IAP240.png)  
@@ -146,15 +167,15 @@ The next steps are the same that application access rights review. Incremental r
 
 The available *reviewer strategies* are:  
 
-- User account members by line manager, technical/service account members by the repository owner
-- User account members by line manager, all other members by the repository owner
-- User account members by themself, all other members by the repository owner
-- User account members by line manager, technical/service account members by the group owner
-- User account members by line manager, all other members by the group owner
-- User account members by themself, all other members by the group owner
-- All members by the group owner
-- All members by the repository owner
-- All members by the default reviewer
+- User account members by line manager, technical/service account members by repository owner
+- User account members by line manager, all other members by repository owner
+- User account members by themselves, all other members by the repository owner
+- User account members by line manager, technical/service account members by group owner
+- User account members by line manager, all other members by group owner
+- User account members by themselves, all other members by group owner
+- All members by group owner
+- All members by repository owner
+- All members by default reviewer
 
 When the group membership review is launch, review is available on "Access 360" section:
 
@@ -162,19 +183,22 @@ When the group membership review is launch, review is available on "Access 360" 
 
 Reviewers can start the group membership review. They can approve, revoke or comment one by one, they can also perform bulk operations by selecting several entries at once.  
 
-![](./media/IAP242.png)
+![](./media/IAP242.png)  
 
 ## Sensitive service accounts by account owners, all other accounts by line manager or repository owner
 
-You can configure more advanced scenarios where you can select who will have to do the review depending on some factors such as risk level, account sensitivity level, last login date, ...
-In order to do this you have to enable the `advanced reviewer selection` mode.  
+For campaigns such as "Account Repository Review" you can configure more advanced scenarios where you can select who will have to do the review depending on some factors such as risk level, account sensitivity level, last login date, ...
+In order to do this you have to enable the `Advanced` mode in the Review Strategy step of the configuration wizard, and click on "Edit Reviewer Script":  
 
-![](./media/IAP229.png)  
+![](./media/IAP231.png)  
 
 Once done, you can define your strategy through a server side javascript.  
 This script will be executed for each individual line to review in order to find a valid reviewer. Here is an example.  
 
-![](./media/IAP230.png)
+![](./media/IAP232.png)  
+
+When you click OK, a check is performed to identify any errors in the script, and the errors are then highlighted.  
+
 
 ```javascript
 // This script identifies the reviewer for each individual review line.
@@ -229,21 +253,25 @@ else {
   else
     'repositoryowner,default';
 }
+
 ```
 
-> This mode is disabled by default.  The related feature have to be enabled in your project if you want to use advanced review strategies. To do so, you have to edit the following feature file: `\webportal\features\bw_iasreview\iasreview.features`. The feature `ias_accountreviewadvancedreviewermode` for repository accounts reviews and repository group membership reviews has to be associated to the relevant feature sets. Please contact your Identity Analytics project owner to configure this.  
+> This mode is enabled by default for the functional and technical administration role (`iasreview_funcadmin` and `iasreview_techadmin`). The related feature have to be disabled in your project if you don't want campaign owners to use advanced review strategies. To do so, you have to edit the following feature file: `\webportal\features\bw_iasreview\iasreview.features`. The feature `iasr_accountreviewadvancedreviewermode` for repository accounts reviews has to be associated to the relevant feature sets. Please contact your Identity Analytics project owner to configure this.  
 
 ## Sensitive permissions by permission owners, all other permissions by line manager or application owner
 
-You can configure more advanced scenarios where you can select who will have to do the review depending on some factors such as risk level, account sensitivity level, last login date, ...
+For campaigns such as "Application Access Rights Review", you can also configure more advanced scenarios where you can select who will have to do the review depending on some factors such as risk level, account sensitivity level, last login date, ...
 In order to do this you have to enable the `advanced reviewer selection` mode  
 
-![](./media/IAP231.png)
+![](./media/IAP229.png)
 
 Once done, you can define your strategy through a server side javascript.
 This script will be executed for each individual line to review in order to find a valid reviewer. Here is an example.
 
-![](./media/IAP232.png)
+![](./media/IAP230.png)  
+
+When you click OK, a check is performed to identify any errors in the script, and the errors are then highlighted.  
+
 
 ```javascript
 // This script identifies the reviewer for each individual review line.
@@ -311,4 +339,4 @@ else {
 
 ```
 
-> This mode is disabled by default.  The related feature have to be enabled in your project if you want to use advanced review strategies. To do so, you have to edit the following feature file: `\webportal\features\bw_iasreview\iasreview.features`. The feature `ias_rightreviewadvandedreviewermode` for application rights reviews has to be associated to the relevant feature sets. Please contact your Identity Analytics project owner to configure this.  
+> This mode is enabled by default for the functional and technical administration role (`iasreview_funcadmin` and `iasreview_techadmin`). The related feature have to be disabled in your project if you don't want campaign owners to use advanced review strategies. To do so, you have to edit the following feature file: `\webportal\features\bw_iasreview\iasreview.features`. The feature `iasr_rightreviewadvandedreviewermode` for application rights reviews has to be associated to the relevant feature sets. Please contact your Identity Analytics project owner to configure this.  

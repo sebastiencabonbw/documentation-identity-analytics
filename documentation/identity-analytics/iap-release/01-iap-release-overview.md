@@ -9,26 +9,27 @@ description : "Identity Analytics Release Notes"
 
 IAP leverages improvements applied to the IGRC product. Please refer to the following table for more information :
 
-|              | IAP 1.0 -- 1.2 | IAP 1.3 -- 1.7 | IAP 1.8 | IAP 2.0 - 2.2 |
-| :----------- | :------------: | :------------: | :-----: | :-----------: |
-| Curie R1     |     **X**      |       -        |    -    |       -       |
-| Curie R2     |       -        |     **X**      |    -    |       -       |
-| Curie R2 SP1 |       -        |     **X**      |    -    |       -       |
-| Curie R3     |       -        |     **X**      |    -    |       -       |
-| Curie R3 SP4 |       -        |       -        |  **X**  |       -       |
-| Descartes R1 |       -        |       -        |  **X**  |       -       |
-| Descartes R2 |       -        |       -        |  **X**  |     **X**     |
+|              | IAP 1.0 -- 1.2 | IAP 1.3 -- 1.7 | IAP 1.8 | IAP 2.0 - 2.2 | IAP 3.0 |
+| :----------- | :------------: | :------------: | :-----: | :-----------: | ------- |
+| Curie R1     |     **X**      |       -        |    -    |       -       |         |
+| Curie R2     |     **X**      |     **X**      |    -    |       -       |         |
+| Curie R3 SP4 |     **X**      |     **X**      |  **X**  |       -       |         |
+| Descartes R2 |     **X**      |     **X**      |  **X**  |     **X**     |         |
+| Descartes R4 |     **X**      |     **X**      |  **X**  |     **X**     | **X**   |
 
 ## IAP release content
 
 For a full list of changes to IAP please refer the to following release notes:
 
-- [IAP 2.x release notes](02-iap-2-release-notes.md "IAP release notes" )
-- [IAP 1.x release notes](03-iap-1-release-notes.md "IAP release notes" )
+- [IAP 3.x release notes](04-iap-3-release-notes.md "IAP release notes" )
+- [IAP 2.x release notes](03-iap-2-release-notes.md "IAP release notes" )
+- [IAP 1.x release notes](02-iap-1-release-notes.md "IAP release notes" )
+
+### Version 3.0
 
 ### Version 2.2
 
-Update of the "web based" user access review with the extension to all reviews of explicit validation by the reviewer ("sign-off")and automatic update of remediation status:</p>
+Update of the "web based" user access review with the extension to all reviews of explicit validation by the reviewer ("sign-off")and automatic update of remediation status:
 
 - Safe Permissions Review,
 - Repository Accounts Review,

@@ -331,10 +331,12 @@ Note that he can also choose to list, direct groups only, direct and indirect gr
 
 This is an optional tab, it presents the computed business activities as well as the theoretical access rights that the selected account is having. For instance, access granted through a ticketing system or an IAM system. Comparing these "theoretical" rights with the real ones in the target application will provide the overallocated rights.  
 
-- in **Business Activities tab**, the list of Business Activities accessible by the selected account is provided. When controls defect such as SoD issues have been detected for a Business Activities, a orange icon is displayed in the first column by default. The end-user can click also on the name of the Business Activity to open the related Business Activity detail window.  
+- in **Business Activities tab**, the list of Business Activities accessible by the selected account is provided. When controls defect such as SoD issues have been detected for a Business Activities, a orange icon is displayed in the first column by default. 
+The end-user can click also on the name of the Business Activity to open the related Business Activity detail window.  
 Note that this tab requires the Booster for ERP/SoD license.
 
-- in **Granted rights tab**, the end-user has access to the list of all the roles granted by the applications. He can click also on the name of the permission/role/profile code or name to open the related detail window.  
+- in **Granted rights tab**, the end-user has access to the list of all the roles granted by the applications. 
+He can click also on the name of the permission/role/profile code or name to open the related detail window.  
 Note that this tab requires the Booster for IAM or ERP/SoD license.  
 
 - in **Overallocated rights**, the end-user has access to the list of permission/role/profile that are overallocated with regard to the theoretical rights uploaded in RadiantOne Identity Analytics.

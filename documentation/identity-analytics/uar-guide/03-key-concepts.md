@@ -9,21 +9,25 @@ This chapter presents the key concepts of access certification.
 
 ## Access Review Process
 
-As seen in the previous chapter, access certification is a straight forward process involving 3 actors:
+As seen in the previous chapter, access certification is a straight forward process involving 4 actors:
 
-- Review owner
+- Identity Analytics administrator
+- Campaign owner
 - Reviewer
 - Resource technical owner
 
-The *review owner* is responsible for configuring, launching and animating an access certification campaign.
-In order to configure and launch a review campaign, you must either be a **functional administrator** or a **technical administrator** of the RadiantOne Identity Analytics platform.
+In order to configure and launch a review campaign as an Identity Analytics administrator, you must either be a **functional administrator** or a **technical administrator** of the RadiantOne Identity Analytics platform. You need to have a valid email address attached to your identity in Identity Analytics. When configuring a campaign, you can define yourself or another identity as *campaign owner*.
 
-The reviewer is either a **direct line manager**, a resource owner set as **reviewer**, a resource owner set as **business owner** or **the user himself**.
+The *campaign owner* is responsible for configuring, launching and animating an access certification campaign. He also needs to have a valid email address attached to his identity in Identity Analytics.
+
+The reviewer is either a **direct line manager**, a resource owner set as **reviewer**, a resource owner set as **business owner** or **the user himself**.  
+
+For example, when the "User Accounts by Line Manager and Technical Accounts by Application/Repository/Group/Safe Owner" review strategy is chosen, the following rules apply:  
 Each "user account" or "access right" will be reviewed by the account owner direct line manager.
-All the other entries (technical accounts, orphan accounts, ...) will be reviewed by the resource owner.
-The application owner can be either defined as a **reviewer**, or **business owner** or **technical owner**. This can be updated in the application detail pages from the web portal or in the collect.
+All the other entries (technical accounts, orphaned accounts, ...) will be reviewed by the resource owner. Depending on the review type, it could be an application, a repository, a group or a safe owner.
+In Identity Analytics, this owner can be either defined as a **reviewer**, or **business owner** or **technical owner** of the resource he owns. This can be updated in the resource detail pages from the web portal or in the collect.
 
-The *application technical owner* is involved in the remediation phase in order to apply the requested changes once the access review is finalized.
+The resource *technical owner* is involved in the remediation phase in order to apply the requested changes once the access review is finalized, where "resource" can be an application, a repository or a safe.
 
 This can be summarized as:
 
@@ -128,7 +132,7 @@ In order to do so, you have to chose *Display all reviewed entries* as soon as y
 
 ![](./media/IAP159-2.png)
 
-You can reassign entries to your peers through the contextual menu. In order to do so, you have to select the entries you want to reassign and pick *Ask for help to*. The "ask for help to" button is active if in the review campaign configuration you have selected the option "Enable Self delegation" at step *4. Launch Review*.  
+You can reassign entries to your peers through the contextual menu. In order to do so, you have to select the entries you want to reassign and pick *Ask for help to*. The "ask for help to" button is active if in the review campaign configuration you have selected the option `Enable "Ask for help" action` at step 4 *Reviewer UI*.  
 
 ![](./media/IAP193.png)  
 
@@ -143,29 +147,46 @@ Those entries will be removed from your list, the *review owner* will be able to
 
 ## Management Interface functionalities  
 
-The management interface helps you to manage ongoing review campaign and to browse through finalized review campaigns.  
+The management interface helps you to manage review campaigns and to browse through ongoing or finalized review instances.  
 
 ![](./media/IAP153.png)  
 
-The following actions are allowed on an ongoing review campaign:  
+The following actions at the top of the page are allowed on the selected review campaign in the table:  
 
-- Send notification to the reviewers, button *Send a message*
-- Pause / resume a review campaign, button *Pause*
-- Import review status from an excel spreadsheet, button *Upload*  
-- Finalize the review campaign, button *Finalize*  
+- Edit the configuration by clicking on **Configure**,
+- **Duplicate** the configuration of your campaign,
+- **Delete** it with all its review instances history. Not that this can be done only if there is not an ongoing review instance for the selected campaign.
+
+Additional buttons are available by clicking on the three bullets to:  
+
+- **Create** new campaigns,
+- **Export Configuration** of one or a selection of campaigns,
+- **Import Configuration** of one or a selection of campaigns.
+
+![](./media/IAP253.png)  
+
+On the right side of the screen, you'll find all the information regarding the review instances that are pending, in progress or have already been completed. The left section includes two parts, "Latest Review" listing the on-going/active review instance, and "Review History" listing the completed reviews.
+
+![](./media/IAP255.png)  
+
+The following actions are allowed on an ongoing review instance:  
+
+- Open the follow-up dashboard to view statistics and manage the review entries, button *Details*,
+- Manage reminders to remove/create new recall dates, button *Reminders*,
+- Pause / resume a review campaign, button *Pause* or *resume* when the review instance is already in pause,
+- Import review status from an excel spreadsheet, button *Upload*,
+- Finalize the review campaign, button *Finalize*.
 
 The following actions are allowed once a review campaign is finalized:  
 
-- Download the compliance report, button *Compliance Report*
-- Delete the review campaign, button *Delete*  
+- Download the compliance report, button *Download Report*,
+- Delete the review campaign, button *Delete*, also available when the review instance is in pause.
 
-You can also browse inside a review campaign to access its details (button *Details* or click on the review name) and display a planning of all the review campaigns (button *Planning*).  
-
-> Deleting a review campaign will remove **all** information associated with this review campaign, including review information and remediation information. This cannot be undone. You should use this with caution.  However the compliance report will still be available in the database and can be downloaded by the administrator.  
+> Deleting a review instance will remove **all** information associated with this review instance, including review information and remediation information. This cannot be undone. You should use this with caution. However the compliance report will still be available in the database and can be downloaded by the administrator.
 
 ### Campaign detail page  
 
-The review campaign detail page gives you a real-time view of your review campaign progress.  
+The review campaign detail page, or follow-up dashboard, gives you a real-time view of your review campaign progress.  
 Through this page you can access to a series of KPIs  
 
 - review perimeter
@@ -181,22 +202,58 @@ Through this page you can access to a series of KPIs
 - Backlog
 - ...
 
+#### Review Status
+
+In the first "Review Status" tab, *Reviewers* that have already signed off their user access review are shown in the left-hand table. In the table on the right, reviewers who have not yet started reviewing entries, or who are in the process of reviewing them, or who have reviewed all entries but have not yet signed off their review, are displayed.  
+
+When you click on the KPI or reviewer name in the tables on this tab, you go directly to the "Entries to review" tab, with the filter applied according to the KPI/reviewer name you initially clicked on.
+
 ![](./media/IAP161.png)  
+
+Note that from the right table, you can send reminders to a selection of reviewers if needed. This is particularly helpful when you have reassignment (accountable or responsible) that have been done recently and when the next reminders won't be coming soon.  
+
+When doing so, the reminder email template you configured within your campaign is proposed here, with the ability to change/update the text:
+
+![](./media/IAP259.png)  
+
+When offline mode has been activated in the campaign configuration, you can choose also between three different strategies:  
+
+- Send a message to the selected *reviewers* with all the entries as an attachment
+- Send a message to the selected *reviewers* with the remaining entries to review as an attachment
+- Send an email to the selected *reviewers* without attachment
+
+![](./media/IAP263.png)  
+
+The first two choices can be useful if you want to send the review content along with the email for instance when you want to enable "offline" reviews by some *reviewers* (reviewing through an excel spreadsheet instead of reviewing in the UI).
+The last one is more "traditional" as they do not include any attachment.  
+
+If the offline mode is disabled in your campaign configuration, you cannot add attachment to your notifications.
+
+Depending on your review strategy and your review phase (initial notification,gentle reminder), you have to select the right Email Strategy in the combo box.  
+
+The emails look like:  
+
+![](./media/image17.png)  
+
+#### Review Statistics and entries management
+
+You can also browse through the review statistics to check the current review status in the second tab "Review Statistics".  
 
 ![](./media/IAP162.png)  
 
-You can also access to a real time view of the entries being reviewed in the tab *Entries to review* with filtering/grouping/export capabilities and identity/permission context as well as a real time view of the actions identified so far with filtering/grouping/export capabilities and identity/permission context.  
+You can access to a real time view of the entries being reviewed in the tab *Entries to review* with filtering/grouping/export capabilities and identity/permission context as well as a real time view of the actions identified so far with filtering/grouping/export capabilities and identity/permission context.  
 
 As a *review owner*, as long as the review campaign is not finalized, you can perform bulk review operations, reset current review status (status, comment and reassignment) and reassign review entries.  
 
 ![](./media/IAP163.png)  
 
-> Due to performance constraints, you cannot perform bulk operations if you have more than 10.000 entries displayed in the list. If this is the case, consider using search bar to reduce the number of items displayed in the table.  
-  
-> Due to a technical constraint, you cannot reset review status on more than than 2.000 entries at once.  
+> **Notes:**  
+>
+> 1. Due to performance constraints, you cannot perform bulk operations if you have more than 10.000 entries displayed in the list. If this is the case, consider using search bar to reduce the number of items displayed in the table.  
+> 2. Due to a technical constraint, you cannot reset review status on more than than 2.000 entries at once.  
 
 Once the entries have been signed off by the *reviewer* or once the sign off have been forced by the *review owner*, the related entries are displayed in the tab "Entries sign off".  
-  
+
 ![](./media/IAP164.png)  
 
 Those entries are considered ready for remediation even if the review campaign has not been finalized by the *review owner*.  
@@ -205,9 +262,9 @@ When entries are in that particular state, it means that the *reviewer* cannot c
 By selecting entries and clicking on "Proceed Now", the "signed off" entries will be immediately set in "pending remediation" state.  
 By selecting entries and clicking on "Force Bulk Reset", the entries will once again be available to the *reviewer* so that he can change his decisions.  
 
-> The "proceed now" option is also hidden by default. To make it available, it requires to set the `ias_reviewcanproceedsignedentries` variable to `true`.  
-
-> To automate the change from "signed off" to "pending remediation", the variable `ias_reviewautomateproceedsignedentries` and `ias_reviewproceedsignedentriesdelay` have to be set to in the configuration of the project. When `ias_reviewautomateproceedsignedentries` is set to `true` and `ias_reviewproceedsignedentriesdelay` is set to a number of days, the entries will automatically go from a "Signed-off" state to a "Proceed: Remediation Pending" state after the number of days indicated. The remediation will then have to be launched and managed through the "Remediation Management" page. To allow this automation, the related workflow (`bwaccess360_automateProceedSignofAccessRights`) needs to be launch using a batch.  
+> **Notes:**  
+> 1. The "proceed now" option is also hidden by default. To make it available, it requires to set the `ias_reviewcanproceedsignedentries` variable to `true`.  
+> 2. To automate the change from "signed off" to "pending remediation", the variable `ias_reviewautomateproceedsignedentries` and `ias_reviewproceedsignedentriesdelay` have to be set to in the configuration of the project. When `ias_reviewautomateproceedsignedentries` is set to `true` and `ias_reviewproceedsignedentriesdelay` is set to a number of days, the entries will automatically go from a "Signed-off" state to a "Proceed: Remediation Pending" state after the number of days indicated. The remediation will then have to be launched and managed through the "Remediation Management" page. To allow this automation, the related workflow (`bwaccess360_automateProceedSignofAccessRights`) needs to be launch using a batch.  
 
 The last tab *Actions Requested* gives you a view of the remediation decision taken so far, keep in mind that a *reviewer* can still change is mind until he sign off his review or until the review campaign is finalized by the *review owner*. As a result, those decisions are temporary and are not considered as actionable remediations until the *sign off*.
 
@@ -276,7 +333,7 @@ Please note that both the caller and the assignment group will be resolved when 
 Note that you can declare the same endpoint several time. This can be useful if you want for instance assign remediation actions to different *assignment groups* depending on the target system (repository or application)
 
 Declaring a new RPA is done by selecting "Mail notification" in the list.
-A mail will be sent for **each** individual remediation. The purpose of this mail is to be analyzed by a robot (either an ITSM or a RPA to automate actions upon reception).
+An email will be sent for **each** individual remediation. The purpose of this email is to be analyzed by a robot (either an ITSM or a RPA to automate actions upon reception).
 
 #### Assigning a remediation strategy to a repository or an application
 
@@ -301,7 +358,6 @@ Once a review is finalized, or entries have been signed off and proceeded, remed
 These remediations are assigned special state called *pending* (corresponding to an *init* status). These remediations are visible in the remediation interface but are not launched yet. This gives you a final chance to review what changes will be done in the target system.  
 
 > To automate the change from "signed off" to "pending remediation", the variable `ias_reviewautomateproceedsignedentries` and `ias_reviewproceedsignedentriesdelay` have to be set to in the configuration of the project. When `ias_reviewautomateproceedsignedentries` is set to `true` and `ias_reviewproceedsignedentriesdelay` is set to a number of days, the entries will automatically go from a "Signed-off" state to a "Proceed: Remediation Pending" state after the number of days indicated. The remediation will then have to be launched and managed through the "Remediation Management" page. To allow this automation, the related workflow (`bwaccess360_automateProceedSignofAccessRights`) needs to be launch using a batch.  
-
 
 This is the case for **any kind** of remediation, regardless of the remediation strategy.  
 
@@ -337,34 +393,23 @@ This is not the case for "Bulk in progress". You should mark an ITSM ticket as "
 
 ## Users notification
 
-The administrator can send emails to the stakeholders both from the *Access Review Management* interface and the *Remediation Management* interface.  
+In addition to the scheduled reminders and notifications configured in campaigns, the administrator or campaign owner can send emails to the stakeholders both from the *Access Review Management* interface and the *Remediation Management* interface.  
 
 ### Access Review Notification
 
-Access review notification are sent from the *Access Review Management* interface on a review campaign per review campaign basis.  
+#### Automated Notification
 
-You have to select on an-going review campaign and click on *Send a message* to send a notification.  
+Access review notification are sent automatically based on your campaign configuration. As far as reviewers are concerned, two types of notifications can be automated: initial notifications at the start of the campaign, and reminders based on a predefined schedule configured in the campaign settings.
 
-Notification are sent to the current *responsible* reviewers (consult [Reassigning entries](#reassigning-entries) to understand the difference between accountable and responsible)  
-
-![](./media/image77.png)  
-
-The *Mail strategy* will help you to handle all typical use cases:  
-
-- initial notification
-- gentle reminder
-- offline review
-
-You can personalize both the mail title and mail content.  
-
+For each sort of notification, the email template can be modified in the campaign configuration. You can personalize both the email title and email content of those two templates.  
 Some dynamic variables are available for your convenience:  
 
-- reviewer employee number as a String: `{dataset.hrcode.get()}`
 - reviewer fullname as a String: `{dataset.fullname.get()}`
 - reviewer email address as a String: `{dataset.mail.get()}`
-- reviewer direct line manager employee number as a String: `{dataset.linemanagerhrcode.get()}`
 - reviewer direct line manager fullname as a String: `{dataset.linemanagerfullname.get()}`
 - reviewer direct line manager email address as a String: `{dataset.linemanagermail.get()}`
+- reviewer delegator fullname as a String: `{dataset.delegatorfullname.get()}`
+- reviewer delegator email address as a String: `{dataset.delegatormail.get()}`
 - review campaign title as a String: `{param.campaignname.get()}`
 - review campaign description as a String: `{param.campaigndescription.get()}`
 - review campaign priority as a String: `{param.campaignpriority.get()}`
@@ -375,17 +420,37 @@ Some dynamic variables are available for your convenience:
 
 Content is rich text (html based).  
 
+#### Ad-hoc Notification
+
+You can also send ad-hoc notifications from the *Access Review Management* interface on a review campaign per review campaign basis.  
+
+You have to select on a campaign with an-going review instance and click on *Details* to reach the "Review Status" page. From there, you can send notification to a selection of reviewers or all the reviewers with pending entries: right click on the table, select all and then click on the button "Send a message".  
+
+Notification are sent to the current *responsible* reviewers (consult [Reassigning entries](#reassigning-entries) to understand the difference between accountable and responsible)  
+
+![](./media/IAP259.png)  
+
+The *Mail strategy* will help you to handle all typical use cases:  
+
+- initial notification when reassignment (new accountable reviewer) or delegation (new responsible reviewer),
+- gentle reminder,
+- offline review.
+
+Check the [Review Status](#review-status) section for more details about ad-hoc notifications.
+
 ### Embedded Remediation Notification  
 
 Remediation notification are sent from the *Remediation Management* interface for all pending remediation regardless of the review campaigns.  
 
 Notification are sent to **all** application **technical owners**, it means that if you have several application owners for a given application they all will receive a notification.  
 
-> If you filter the *Remediation Management* interface for a given review campaign through *Advanced Filters*, notification will only be sent to *application technical owners* associated with this review campaign for *embedded remediation* only.  
+> **Note** If you filter the *Remediation Management* interface for a given review campaign through *Advanced Filters*, notification will only be sent to *application technical owners* associated with this review campaign for *embedded remediation* only.  
 
-![](./media/image78.png)
+![](./media/image50.png)
 
-You can personalize both the mail title and mail content.  
+![](./media/image51.png)
+
+You can personalize both the email title and email content.  
 
 Some dynamic variables are available for your convenience:  
 
@@ -405,19 +470,73 @@ Some dynamic variables are available for your convenience:
 
 Content is rich text (html based).  
 
-## Incremental review  
+## AI Options
 
-RadiantOne Identity Analytics supports incremental review scenarios where entries status and comments can be pre-filled based on their latest review status.
-You can activate this feature through the review campaign configuration
+### AIDA (SaaS only)  
 
-![](./media/image79.png)  
+When using our SaaS offer with AI enabled, you can activate the Artificial Intelligence Data Assistant AIDA for each campaign. AIDA will assist the reviewers when performing the review if he asks for it.  
 
-In order for a previous status to be considered valid, it must both:  
+![](./media/IAP243.png)
 
-- have been validated in the configured window time frame (reviewed in the last X days)
-- in case of user account, does not have any account owner characteristics changed as compared when it has been reviewed (organisation, job title, internal status)
+Note that AIDA is currently only available for Application Access Rights type of reviews. Availability will be extended to other types of reviews and other RadiantOne solutions and features in the future.  
 
-By default, those entries are considered reviewed and won't appear in the end user review page **unless** they configure their interface to display **all** entries currently being reviewed.  
+AIDA with User Access Reviews follows these four main principles:
+
+1. AIDA guides the reviewer, step by step, through the review process. It is helps the reviewer identify where to start, the time saved and helps provide a better understanding of the data.
+2. At each stage, AIDA proposes decisions based on the performed analysis. It details the reasoning behind the decision. The reviewer then has the information needed in order to proceed in his decision-making process.
+3. Once the reviewer makes his decision, AIDA will carry out the action for him in the system. This method aligns with compliance regulations as it is mandatory that a human being, and not a machine, be the one to fully perform the review.
+4. During the review process and in addition to AIDA's suggestions and explanations, the reviewer can delve more deeply by using Large Language Models (LLM) to request further clarification and analysis which helps to explain the context (who can access what, what is the access chain, how to compare accesses, etc.).
+
+The reviewer can activate AIDA by clicking on the icon at the top right of the screen.  
+
+![](./media/IAP271.png)
+
+At any time, he can pause AIDA by closing the panel on the right.  
+
+#### AIDA main steps
+
+AIDA will guides the reviewer through four main steps:  
+
+![](./media/IAP270.png)  
+
+1. **Past decisions**: in this step, AIDA proposes to review the entries that have already been reviewed in the last 90 days by default. This is linked to the "Decision History" option you configured in the campaign configuration wizard, step "Review Strategy" section "AI Options" (see the next chapter for more details).
+2. **Anomalous**: at this stage, AIDA displays the entries with discrepancies in the following order:
+    - Leaver Accounts
+    - Orphaned Accounts
+    - Unused Accounts
+3. **Similarities**: this step examines the data in cross-tabular mode and identifies for the reviewer all clusters, i.e. identities with similar accesses, enabling decisions to be made quickly on the basis of similarities. It automatically detects up to 7 clusters and leads the reviewer through each one, from the largest to the smallest, using a dedicated clustering algorythm.
+4. **Isolated Items**: this final stage guides the reviewer through the last entries, identity by identity for user accounts and account per account for service/technical.
+
+![](./media/IAP272.png)  
+  
+The reviewer can exit AIDA's review mode at any time and reactivate it. In this case, AIDA is paused. The reviewer can also decide directly on certain entries in the interface, without having to leave AIDA.  
+
+#### AIDA feedback  
+
+At any time, the reviewer can provide feedback about the suggestions from AIDA by clicking on the icons on the right of each tile in the AIDA panel.  
+
+![](./media/IAP273.png)  
+
+Note that this information is stored in your Identity Analytics database and will not be used by the LLM agent for reasons of data confidentiality. If you would like RadiantLogic to include these comments to train the LLM agent, please contact us.
+
+### Decision History
+
+Also called "Incremental Review", this option will help you to leverage previous access certification campaigns.
+When enabled, previous review status will be used to "prefill" review status and review comment.
+
+This happens **only** when:
+
+- The entry has been reviewed in the configured time frame (*A valid entry is an entry which has been reviewed in the last X days*)
+- In case of an user account, account owner characteristics have not changed since the last review:
+  - Organisation
+  - Job Title
+  - Internal status
+
+![](./media/image7bis.png)
+
+You can also chose to simply remove those entries from the review perimeter if needed (if for instance you only want to review changes that occurred since the last review date, without displaying valid entries).
+
+![](./media/image7.png)
 
 ## Offline review
 
@@ -430,7 +549,7 @@ The reviewer can fulfill the excel spreadsheet and directly upload it from "Acce
 
 You can only import excel spreadsheet on *ongoing* review campaigns.  
 
-> When importing an excel file, **all** reviewed entries will be written, regardless of their current review status in the Identity Analytics platform. It means that if a reviewer has started to review some entries through the user interface and later send an excel spreadsheet, the excel spreadsheet will overwrite the former statuses.  
+> **Note** When importing an excel file, **all** reviewed entries will be written, regardless of their current review status in the Identity Analytics platform. It means that if a reviewer has started to review some entries through the user interface and later send an excel spreadsheet, the excel spreadsheet will overwrite the former statuses.  
 
 ## Reassigning entries  
 
@@ -493,7 +612,7 @@ If you want to prove to your auditors that you have reviewed 100% of your perime
 
 ![](./media/IAP200.png)  
 
-This information is also presented in the last tab of the review campaign management interface. You can use this tab if you want to search for entries or export those information in a form of a CSV file (right click on the "ungrouped" table for such purpose).  
+This information is also presented in the last tab of the review campaign management interface. You can use this tab if you want to search for entries or export those information in a form of a CSV/excel file (right click on the "ungrouped" table for such purpose).  
 
 ![](./media/IAP221.png)  
 

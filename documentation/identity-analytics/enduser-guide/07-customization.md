@@ -26,7 +26,7 @@ When selecting this last option, he can hide or display by clicking on the "eye"
 
 And finally the "Edit..." button allows to customize the selected column:  
 
-- Mask the column,
+- Hide the column,
 - Change the header,
 - Manage alignment of the column content,
 - Set the column size in % or px,
