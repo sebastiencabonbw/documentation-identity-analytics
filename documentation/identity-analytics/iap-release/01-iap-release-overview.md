@@ -27,6 +27,23 @@ For a full list of changes to IAP please refer the to following release notes:
 
 ### Version 3.0
 
+Update of the "web based" user access review with a new configuration wizard that allows to:
+
+- Create new review campaigns and set a campaign owner,
+- Configure the scheduling of the campaign,
+- Set the notification and reminders of the campaign,as well as the related email templates,
+- Configure the reviewer interfaces for the campaign,
+- Define a review perimeter using tags,
+- In SaaS mode, enable AIDA for Application Rights Review only, the AI Data Assistant that helps reviewers performing their review.
+
+A new connector that handles remediation from IDA to IDDM is now available, to directly apply account deactivation and account removal from group after a review.  
+
+In addition, CMDB data can now be imported into Identity Analytics by using the dedicated ServiceNow and CMDB connectors. CMDB elements can be automatically correlated with the existing Applications, Repositories, Servers and Shares to better understand who can access to a Service or a CMDB element. New analytics and dashboards are now available as well to provide insights around CMDB CI components with:
+
+- A new CMDB element search menu,
+- New CMDB element detail pages,
+- A series of new CMDB element analytics.
+
 ### Version 2.2
 
 Update of the "web based" user access review with the extension to all reviews of explicit validation by the reviewer ("sign-off")and automatic update of remediation status:
