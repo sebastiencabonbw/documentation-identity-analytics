@@ -21,9 +21,9 @@ IAP leverages improvements applied to the IGRC product. Please refer to the foll
 
 For a full list of changes to IAP please refer the to following release notes:
 
-- [IAP 3.x release notes](04-iap-3-release-notes.md "IAP release notes" )
-- [IAP 2.x release notes](03-iap-2-release-notes.md "IAP release notes" )
-- [IAP 1.x release notes](02-iap-1-release-notes.md "IAP release notes" )
+- [IAP 3.x release notes](04-iap-3.X-release-notes.md "IAP release notes" )
+- [IAP 2.x release notes](03-iap-2.X-release-notes.md "IAP release notes" )
+- [IAP 1.x release notes](02-iap-1.X-release-notes.md "IAP release notes" )
 
 ### Version 3.0
 
