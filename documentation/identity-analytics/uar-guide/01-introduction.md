@@ -8,7 +8,7 @@ description : "Identity Analytics Access Review Guide"
 This document describes the basic principles of self-service compliance driven Access Review in IA (Identity Analytics) as well as the best practices to configure and follow-up a review and manage the remediation processes.
 
 This documentation will only focus on access review configuration, for a more general introduction to RadiantOne Identity Analytics and the configuration of the solution, please refer to the full documentation, available using the following URL:
-[https://developer.radiantlogic.com](https://developer.radiantlogic.com)  
+https://developer.radiantlogic.com  
 
 > In IAP version 2.2 a new "sign off" principle has been added to the review process, as well as the the ability to launch the remediation process as soon as the reviewer signs off.  
 >

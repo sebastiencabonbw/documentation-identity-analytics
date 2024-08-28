@@ -3,7 +3,7 @@
 ## Introduction
 
 This repository holds the documentation for Identity Analytics.  
-The documentation is used as an input to build the documentation [https://developer.radiantlogic.com/](https://developer.radiantlogic.com/)
+The documentation is used as an input to build the documentation https://developer.radiantlogic.com/
 
 ## Repository Structure
 

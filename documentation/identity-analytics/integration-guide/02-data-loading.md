@@ -87,7 +87,8 @@ Business activities are loaded as "permission" objects, you **MUST** identify th
 Even though, the former activity/sub-activity way of describing SoD checks is still supported, you should consider it as deprecated and you **SHOULD** load SoD checks through basic expressions.
 
 Please refer to the product documentation on how to write down SoD rules by leveraging the expression language.
-[https://developer.radiantlogic.com](https://developer.radiantlogic.com/ia/descartes/igrc-platform/collector/04-components/#collecting-sod-matrix)
+
+https://developer.radiantlogic.com/ia/descartes/igrc-platform/collector/04-components/#collecting-sod-matrix
 
 ## Theoretical rights
 

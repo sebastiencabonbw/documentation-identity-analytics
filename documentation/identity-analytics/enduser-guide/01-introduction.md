@@ -10,7 +10,7 @@ This document describes the basic principles of IAP (Identity Analytics Platform
 This documentation will only focus on Identity Analytics end user interfaces concepts and browsing, for details about installation and configuration, please refer to the IAP Integrator Guide.
 
 For a more general introduction to RadiantOne Identity Analytics and the configuration of the solution, please refer to the full documentation, available using the following URL:
-[https://developer.radiantlogic.com](https://developer.radiantlogic.com)
+https://developer.radiantlogic.com
 
 ## General principles
 

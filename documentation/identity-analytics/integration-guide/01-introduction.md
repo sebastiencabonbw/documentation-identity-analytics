@@ -8,7 +8,7 @@ description : "Identity Analytics Integration Guide"
 This document describes the basic principles of IAP (Identity Analytics Platform) as well as the best practices to follow to fulfill the data & to configure the roles.
 
 This documentation will only focus on IAP configuration, for a more general introduction to RadiantOne Identity Analytics and the configuration of the solution, please refer to the full documentation, available using the following URL:
-[https://developer.radiantlogic.com](https://developer.radiantlogic.com)
+https://developer.radiantlogic.com
 
 ## General principles
 
