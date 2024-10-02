@@ -9,13 +9,14 @@ description : "Identity Analytics Release Notes"
 
 IAP leverages improvements applied to the IGRC product. Please refer to the following table for more information :
 
-|              | IAP 1.0 -- 1.2 | IAP 1.3 -- 1.7 | IAP 1.8 | IAP 2.0 - 2.2 | IAP 3.0 |
-| :----------- | :------------: | :------------: | :-----: | :-----------: | ------- |
-| Curie R1     |     **X**      |       -        |    -    |       -       |         |
-| Curie R2     |     **X**      |     **X**      |    -    |       -       |         |
-| Curie R3 SP4 |     **X**      |     **X**      |  **X**  |       -       |         |
-| Descartes R2 |     **X**      |     **X**      |  **X**  |     **X**     |         |
-| Descartes R4 |     **X**      |     **X**      |  **X**  |     **X**     | **X**   |
+|              | IAP 1.0 -- 1.2 | IAP 1.3 -- 1.7 | IAP 1.8 | IAP 2.0 - 2.2 | IAP 3.0 - 3.1 |
+| :----------- | :------------: | :------------: | :-----: | :-----------: | :-----------: |
+| Curie R1     |     **X**      |       -        |    -    |       -       |               |
+| Curie R2     |     **X**      |     **X**      |    -    |       -       |               |
+| Curie R3 SP4 |     **X**      |     **X**      |  **X**  |       -       |               |
+| Descartes R2 |     **X**      |     **X**      |  **X**  |     **X**     |               |
+| Descartes R4 |     **X**      |     **X**      |  **X**  |     **X**     | **X**         |
+| Descartes R5 |     **X**      |     **X**      |  **X**  |     **X**     | **X**         |
 
 ## IAP release content
 
@@ -24,6 +25,18 @@ For a full list of changes to IAP please refer the to following release notes:
 - [IAP 3.x release notes](04-iap-3.X-release-notes.md "IAP release notes" )
 - [IAP 2.x release notes](03-iap-2.X-release-notes.md "IAP release notes" )
 - [IAP 1.x release notes](02-iap-1.X-release-notes.md "IAP release notes" )
+
+### Version 3.1
+
+Improved management of large volumes of data in access review interfaces:
+
+- on the reviewers' interface side, by setting up an asynchronous operating mode for the requested actions,
+- on the review configuration side, by optimizing the display of the various stages according to data volume.
+
+Fix of display issues in the "web based" review:
+
+- When a review campaign takes place over several timeslots, and reviewed or to-be-reviewed entries are deleted from the dataset in the meantime because they no longer exist, this service pack fixes the counters displayed in the reviewer interface and in the review tracking interface for the campaign owner.
+- It also corrects the display of KPIs and entries to review in the configuration wizard when the perimeter is filtered by tags on permissions.
 
 ### Version 3.0
 
