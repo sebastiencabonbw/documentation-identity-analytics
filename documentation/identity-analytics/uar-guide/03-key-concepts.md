@@ -110,9 +110,12 @@ As long as entries still need to be reviewed, *Entries to review* are displayed 
 
 ![](./media/IAP155.png)  
 
-You can either review entries one by one or through bulk operations by selecting several entries and clicking on *bulk approval*, *bulk revocation* in the contextual menu.  
+By default, the option "Hide Signed-Off Reviews" is checked to list only on-going reviews. If you wish to additionally display completed reviews that have been signed-off, uncheck this box. Note that signed-off reviews can no longer be updated by the reviewer, only the campaign owner can reset or update them.  
+You can either review entries one by one or through bulk operations by selecting several entries and clicking on *Approve*, *Revoke* in the contextual menu.  
 You can reorder the table, and filter the entries either by selecting a given account/identity/permission/application or with the free text filter.  
 
+> **Note** in Identity Analytics 3.1 and beyond, when executing bulk actions on multiple entries, the process is now asynchronous, meaning that the end-user can continue to browse the interfaces as required. Of course, it is still not possible to take action on the remaining entries until the current process has been completed.  
+ 
 A contextual menu accessible with a right click on the table helps you to:  
 
 - export the table content in CSV/Excel format
@@ -144,6 +147,16 @@ Finally, you can declare that you are not the reviewer for some entries. In orde
 Those entries will be removed from your list, the *review owner* will be able to identify those entries through the management interface (as their review status will be "to reassign") and reassign them as needed to another person.  
 
 ![](./media/image107.png)  
+
+At any time, by clicking on the icon in the top right-hand corner, you can toggle the table display into pivot table mode to view similarities and make a decision for a group of entries. 
+
+![](./media/IAP274.png) 
+
+When clicking on the "clustering" button in a cross-table, the data is sorted to group users by similar permission sets. Biggest blocks are displayed to the top left of the cross-table, making easier to tackle the most significant groups of similar entries and to identify the outliers at the right and bottom.  
+ 
+![](./media/IAP275.png) 
+
+
 
 ## Management Interface functionalities  
 
@@ -300,6 +313,9 @@ Finally, if discrepancies are found, they are displayed in a dedicated tab.
 
 > A discrepancy corresponds to a case where an entry has been marked as to be revoked, has been successfully remediated (remediation finalized with a closed status "Done") and yet is detected as still active upon data refresh.
 
+> When the resource on which a remediation is launched is no longer available in the current timeslot (the data relating to the resource has not been loaded), the entries will remain in "pending" status. In this case, the remediation administrator must force the status to "won't fix".    
+
+
 ### Configuring the remediation strategy
 
 You can select for each individual application and each individual repository the remediation strategy that you want to apply.  
@@ -310,6 +326,7 @@ In this page, you can:
 
 - Declare third party ITSMs for remediation
 - Declare third party RPA for remediation
+- Declare RadiantOne automated remediation							  
 - Assign a remediation strategy for each individual repository
 - Assign a remediation strategy for each individual application
 
@@ -505,6 +522,12 @@ AIDA will guides the reviewer through four main steps:
     - Orphaned Accounts
     - Unused Accounts
 3. **Similarities**: this step examines the data in cross-tabular mode and identifies for the reviewer all clusters, i.e. identities with similar accesses, enabling decisions to be made quickly on the basis of similarities. It automatically detects up to 7 clusters and leads the reviewer through each one, from the largest to the smallest, using a dedicated clustering algorythm.
+
+**Automatic Identification of Clusters with AIDA in a permission matrix:**
+*Data Examination*: During the Similarities step, AIDA examines the access rights of various users and identifies patterns in the data.
+*Cluster Detection*: AIDA automatically detects clusters, based on a "frequent closed itemsets mining" algorithm that have been especially enhanced for user access review. The detected clusters are groups of identities that display similar access rights based on permissions-application. This helps highlight entries that likely require similar treatment during the review.
+*Clustering Algorithm*: A dedicated algorithm sorts the detected clusters by size, and select the first seven biggest clusters. AIDA guides the reviewer through the largest clusters first, making it easier to tackle the most significant groups of similar entries.
+
 4. **Isolated Items**: this final stage guides the reviewer through the last entries, identity by identity for user accounts and account per account for service/technical.
 
 ![](./media/IAP272.png)  

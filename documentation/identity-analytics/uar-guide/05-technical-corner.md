@@ -236,9 +236,9 @@ Four new configuration variables have been added to the project to handle large 
 
 - `ias_reviewersdisplaylimitvalue` used by Identity Analytics 3.0 and 2.2, indicates the maximum number of reviewers to display the "Review Statsitics" tab in the review follow-up interface (accessible via the **Details** button of a review instance). The default value is 1000.
 - `ias_maxentriestoreview` in Identity Analytics 2.2, the maximum number of entries to review per reviewer can be limited by this configuration variable. By default, the limit is set to 30,000. In Identity Analytics 3.0, the limit does not depend to this variable and is set to 100,000.
-- `ias_disablenoniaspreviews` allows to disable the display of custom workflow review types in Access360 to improve performance, used by Identity Analytics 3.0 and 2.2. The default value is false, and it should be activated only if you don't have any custom workflow reviews.
+- `ias_disablenoniappreviews` allows to disable the display of custom workflow review types in Access360 to improve performance, used by Identity Analytics 3.0 and 2.2. The default value is false, and it should be activated only if you don't have any custom workflow reviews.
 - `ias_reviewercriticalthreshold` in Identity Analytics 3.0 and 2.2, indicates the number of entries upon which the review instance is forced to offline mode. The default value is 30,000.
-  
+- `ias_reviewdisablepreviewlimit` in Identity Analytics 3.1 and above, allows for reviews on large volumes of data, above 30,000 entries by default, to deactivate the step 3 `Perimeter Preview` to smooth the experience, as well as hide the KPIs in step 6. As a result, the campaign is forced into "on hold" mode to allow perimeter review from the campaign management interface before launching the reviews.  
 ### AIDA configuration variables
 
 In the technical project configuration file, two variables are available:

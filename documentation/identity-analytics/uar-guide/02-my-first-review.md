@@ -80,7 +80,8 @@ For example, a strategy could be:
 - user accounts are reviewed by the line manager,  
 - technical are reviewed by the application owner,  
 - all other account and if no line manager and no application owner are found, the default reviewer is taken.  
-  
+
+> **Note** For reviews on large volumes of data, above 30,000 entries by default, step 3 `Perimeter Preview` is deactivated to smooth the experience, and the KPIs in step 6 are hidden. As a result, the campaign is forced into "on hold" mode to allow perimeter review from the campaign management interface before launching the reviews. This threshold of 30,000 entries can be modified in the project's technical configuration using the variable `ias_reviewdisablepreviewlimit`. 
 ### Accounts Review Perimeter
 
 To refine the review perimeter, the advanced mode in the first step allows you to include or exclude some types of accounts. For example: User accounts, technical accounts, orphaned accounts and leaver accounts.  
@@ -227,6 +228,11 @@ If some *reviewers* have not been found an error message is displayed on the scr
   
 You still can browse the table to check each entry.  
 If everything is ok, you can click on *Next* to move forward.  
+
+> **Note** For reviews on large volumes of data, above 30,000 entries by default, this step is deactivated to smooth the experience. In that case, the following message will be displayed:  
+
+![](./media/IAP276.png)  
+
   
 ## Step 4 - Reviewer UI  
 
@@ -330,6 +336,8 @@ Finally, in the "Compliance Framework Specification" section, you can define tag
 ![](./media/IAP252.png)  
 
 Once everything is fulfilled, click on **Finish** to save your campaign configuration.  
+  
+> **Note** For reviews on large volumes of data, above 30,000 entries by default, the KPIs in this step are not displayed to smooth the experience. In addition the campaign is forced into "on hold" mode to allow perimeter review from the campaign management interface before launching the reviews.   
 
 ## Step 7 - Managing your review campaign
 
@@ -543,7 +551,7 @@ Grouped by application:
 
 This mode is a graphic mode and allows *reviewers* to have graphic view.  
 
-All entries can be organized to have a rapid view and help to identify discrepancies between accounts. Click on the button highlighted in yellow bellow. Discrepancy accounts will be quickly identified. With this mode bulk approval and bulk revocation are interesting.  
+All entries can be organized to have a rapid view and help to identify discrepancies between accounts. This option allows cluster sorting of crosstable cells using an **advanced classification algorithm**. This will help the end-user to work on peer group. To activate it, he needs to click on the icon on the upper left (framed in red in the copyscreen below). In the case of a cross-table listing identities, accounts and their related permissions, when clicking on the "clustering" button in the cross-table, the data is sorted to group users by similar permission sets. Biggest blocks are displayed to the top left of the cross-table, making easier to tackle the most significant groups of similar entries and to identify the outliers at the right and bottom. 
 
 ![](./media/IAP172.png)
 
@@ -658,6 +666,10 @@ In the example above, some entries still need to be reviewed. This is why a warn
 - mark those remaining entries as *ok*
 - mark those remaining entries as *not reviewed*
 
+> [!warning]  
+>
+> SQL server database limitation: when using a SQL Server database (on-premise installation, self-managed k8s and SaaS are not concerned here), you cannot revoke more than 2000 entries at the “Finalize exam” stage. In that case, *not reviewed* has to be selected.
+
 In our case we will mark them as *not reviewed* even though we **know** that it will correspond to a review failure, and add a comment to:
 
 ![](./media/IAP178-bis.png)
@@ -700,6 +712,8 @@ While remediation are in progress, application technical owners will see those r
 A remediation is following a simple ITSM change management process. Each remediation has its own current status and open/close state.
 
 ![](./media/image46.png)
+
+> **Note:** When the resource on which a remediation is launched is no longer available in the current timeslot (the data relating to the resource has not been loaded), the entries will remain in "pending" status. In this case, the remediation administrator must force the status to "won't fix".  
 
 In our use case, once the *remediation management* displayed, the administrator can follow up the remediation
 We can notice that some action have already been made

@@ -22,6 +22,8 @@ For example, a strategy could be:
 - technical are reviewed by the application owner,  
 - all other account and if no line manager and no application owner are found, the default reviewer is taken.  
 
+> **Note** For reviews on large volumes of data, above 30,000 entries by default, step 3 `Perimeter Preview` is deactivated to smooth the experience, and the KPIs in step 6 are hidden. As a result, the campaign is forced into "on hold" mode to allow perimeter review from the campaign management interface before launching the reviews. This threshold of 30,000 entries can be modified in the project's technical configuration using the variable `ias_reviewdisablepreviewlimit`. 
+
 ## Review all access rights for some applications  
 
 This is the most common use case, in order to do so, you have to select the applications that you want to include in your access review campaign.  
