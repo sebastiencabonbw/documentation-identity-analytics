@@ -9,14 +9,15 @@ description : "Identity Analytics Release Notes"
 
 IAP leverages improvements applied to the IGRC product. Please refer to the following table for more information :
 
-|              | IAP 1.0 -- 1.2 | IAP 1.3 -- 1.7 | IAP 1.8 | IAP 2.0 - 2.2 | IAP 3.0 - 3.1 |
-| :----------- | :------------: | :------------: | :-----: | :-----------: | :-----------: |
-| Curie R1     |     **X**      |       -        |    -    |       -       |               |
-| Curie R2     |     **X**      |     **X**      |    -    |       -       |               |
-| Curie R3 SP4 |     **X**      |     **X**      |  **X**  |       -       |               |
-| Descartes R2 |     **X**      |     **X**      |  **X**  |     **X**     |               |
-| Descartes R4 |     **X**      |     **X**      |  **X**  |     **X**     | **X**         |
-| Descartes R5 |     **X**      |     **X**      |  **X**  |     **X**     | **X**         |
+|                 | IAP 1.0 -- 1.2 | IAP 1.3 -- 1.7 | IAP 1.8 | IAP 2.0 - 2.2 | IAP 3.0 - 3.1 | IAP 3.2 |
+| :-------------- | :------------: | :------------: | :-----: | :-----------: | :-----------: | :-----: |
+| Curie R1        |     **X**      |       -        |    -    |       -       |               |         |
+| Curie R2        |     **X**      |     **X**      |    -    |       -       |               |         |
+| Curie R3 SP4    |     **X**      |     **X**      |  **X**  |       -       |               |         |
+| Descartes R2    |                |                |  **X**  |     **X**     |               |         |
+| Descartes R4    |                |                |  **X**  |     **X**     | **X**         |         |
+| Descartes R5    |                |                |  **X**  |     **X**     | **X**         |         |
+| Descartes R5 SP3|                |                |  **X**  |     **X**     | **X**         | **X**   |
 
 ## IAP release content
 
@@ -25,6 +26,15 @@ For a full list of changes to IAP please refer the to following release notes:
 - [IAP 3.x release notes](04-iap-3.X-release-notes.md "IAP release notes" )
 - [IAP 2.x release notes](03-iap-2.X-release-notes.md "IAP release notes" )
 - [IAP 1.x release notes](02-iap-1.X-release-notes.md "IAP release notes" )
+
+### Version 3.2
+
+- PAM Booster: support of CyberArk PCloud with CyberArk Identity and EntraID,
+- Improvement of the “web-based” review:
+  - Add of “description” attribute for accounts in accounts and group membership “web-based” reviews,
+  - AIDA configuration option in campaign configuration to hide the LLM prompt,
+  - User experience and performance improvements.  
+
 
 ### Version 3.1
 
