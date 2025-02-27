@@ -5,7 +5,7 @@ description : "Identity Analytics Enduser Guide"
 
 # ACLs definitions  
 
-The access rights to share and shared folders are displayed in IAS/IAP interfaces as Access Control Lists (ACLs). There are three different ways to display them:
+The access rights to "Shares" and "Shared folders" are displayed in IAS/IAP interfaces as Access Control Lists (ACLs). There are three different ways to display them:
 
 - simplified ACLs, for a quick and easy understanding, especially for business end-users,
 - basic ACLs, for a mapping to the Microsoft Windows permissions that are set in the Windows GUI,
