@@ -7,14 +7,15 @@ description : "Identity Analytics Access Review Guide"
 
 Through this chapter we will guide you to configure and operate your first access certification review with a typical example.
 
-Four types of review can be configured:  
+Five types of review can be configured:  
 
 - Repository accounts review, to review all accounts in the selected repositories,
 - Group membership review, to review all group and their member accounts in the selected repositories,
 - Application access rights review, to review all access rights in the selected applications,
+- Server Review, to review access rights on servers. Server access rights need to be uploaded in the Identity Ledger as permissions, and servers as applications of type "server". For Windows servers, use the [bw_windows_local_accounts](https://marketplace.radiantlogic.com/package/bw_windows_local_accounts/) add-on available in the RadiantLogic Marketplace. This add-on collects and maps the extracted data as well into Identity Analytics.
 - Safe permissions review, to review all access rights in the selected CyberArk PAM Safes if you have enabled PAM Booster.
 
-In this chapter, we will configure and launch an application access rights review. The repository accounts review and group membership review use the same principles, and a dedicated documentation is also available for the PAM Booster designed for CyberArk.
+In this chapter, we will configure and launch an application access rights review. The repository accounts review, group membership review, and server review use the same principles, and a dedicated documentation is also available for the PAM Booster designed for CyberArk.
 
 > As a reminder in IAP version 2.2 a new "sign off" principle has been added to the review process, as well as the the ability to launch the remediation process as soon as the reviewer signs off.  
 >
