@@ -229,10 +229,15 @@ If some *reviewers* have not been found an error message is displayed on the scr
 You still can browse the table to check each entry.  
 If everything is ok, you can click on *Next* to move forward.  
 
-> **Note** For reviews on large volumes of data, above 30,000 entries by default, this step is deactivated to smooth the experience. In that case, the following message will be displayed:  
+> **Note:** For reviews on large volumes of data, above 30,000 entries by default, this step is deactivated to smooth the experience. In that case, the following message will be displayed:  
 
 ![](./media/IAP276.png)  
 
+ > **Note:** Creating and launching a review for a previous timeslot is not a standard use case. As a result, the perimeter preview shown during the campaign setup will only display general information based on the most recent timeslot, not the one you selected.
+
+The accurate preview for your selected timeslot will become available only after the campaign has been created (see the Campaign Follow-up section).
+
+To ensure accuracy and allow for adjustments, we recommend setting the campaign “on hold” during Step 6 of the configuration wizard. This gives you time to review and validate the setup before launching.
   
 ## Step 4 - Reviewer UI  
 
