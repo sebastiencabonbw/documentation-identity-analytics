@@ -251,13 +251,19 @@ By default, the following comments are proposed for `Update`:
 
 ![](./media/IAP246.png)
 
-If you want to avoid the "Rubber Stamping" effect, you can limit the bulk actions of the reviewer to a certain number of entries.  
+If you want to avoid the "Rubber Stamping" effect, you can limit the bulk actions of the reviewer to a certain number of entries. You can also choose whether to enable or disable these additional features:   
   
-Two additional options can be disabled such as:  
-  
-- allowing the reviewer to specify that he is not the right person with the `I'm not the reviewer` button. In that case the related entries are set as "to reassign" and are not visible any more by the reviewer. The accountable reviewer has to change. The review owner has then to re-assign those entries to another person from the follow-up interfaces of the review instance.  
-  
-- allowing the reviewer to `ask for help to`another person in his team if he is line manager, or another owner if he is a resource owner. In that case, the reviewer stay the accountable reviewer of the entries, however he ask to a responsible reviewer to take the decisions on his behalf for the selected entries.  
+- **Hide already reviewed entries by default**  
+  When enabled, the reviewer will, by default, only see entries that still need to be reviewed. Previously reviewed entries are hidden but can be shown by unchecking this option at the top of the table.
+
+- **Hide delegated entries by default**  
+  When enabled, the reviewer will, by default, only see entries they are personally responsible for. Entries delegated to others will be hidden but can be displayed by unchecking this option at the top of the table.
+
+- **I'm not the reviewer**  
+  Allows the reviewer to indicate they are not the appropriate person to review certain entries. These entries are then marked as "To Reassign" and are no longer visible to the reviewer. The accountable reviewer must be updated, and the review owner is responsible for reassigning the entries via the follow-up interface of the review instance.
+
+- **Ask for help**  
+  Allows the reviewer to request assistance from another person. Line managers can ask team members for help; resource owners can reach out to other owners. The reviewer remains the accountable reviewer but delegates the decision-making for selected entries to a responsible reviewer.
   
 In your case, you can keep the default values and click on *Next* to move forward.  
   
@@ -308,9 +314,11 @@ You are almost done, the last thing you need is to give additional information t
 
 ![](./media/IAP152.png)  
 
-Two additional options are available here, such as "Enable offline mode", which allows reviewers to download the entries to be reviewed into an Excel spreadsheet from their home page and upload it once they have partially or completely completed it. It allows also the campaign owner to send e-mail notifications with this spreadsheet attached so that reviewers can work offline. This option is particularly appreciated when reviewers travel a lot or have no access to the company's IS for whatever reason (if they are contractors for example). Note that a same reviewer can work both online and offline if needed.  
+Three additional options are available here, such as "Enable offline mode", which allows reviewers to download the entries to be reviewed into an Excel spreadsheet from their home page and upload it once they have partially or completely completed it. It allows also the campaign owner to send e-mail notifications with this spreadsheet attached so that reviewers can work offline. This option is particularly appreciated when reviewers travel a lot or have no access to the company's IS for whatever reason (if they are contractors for example). Note that a same reviewer can work both online and offline if needed.  
 
-The second option disables the campaign, so that it cannot be launched automatically or manually. You need to edit it and change the deactivation of this setting for it to work. This allows you to work on the configuration at a later date and perform a few additional checks before the review instance starts and notifications are sent automatically.  
+The second option disables the campaign, so that it cannot be launched automatically or manually. You need to edit it and change the deactivation of this setting for it to work. This allows you to work on the configuration at a later date and perform a few additional checks before the review instance starts and notifications are sent automatically. 
+
+The third option, "Attach Review to Timeslot" allows you to configure User Access Reviews (UAR) in Identity Analytics based on a fixed timeslot. The timeslot represents the state of user access at a specific point in time. As a result, the review will not take into account newer timeslots. Any entries that have been removed since the review began will still be included in the review.
 
 ![](./media/IAP152bis.png)  
 
@@ -343,7 +351,9 @@ Once everything is fulfilled, click on **Finish** to save your campaign configur
 Once your review campaign configuration has been saved, it appears in the compliance review management page.  
 You can access to this page through the menu *Review / Review Campaign Management*  
 
-![](./media/IAP153.png)  
+![](./media/IAP153.png) 
+
+> **Note:** To accurately check the status of your access review campaigns and their review instances, make sure you are in the latest timeslot. If you are viewing a past timeslot, some review instances may appear active even though they have been closed in the current timeslot.
 
 When selecting your campaign in the list, you can either edit the configuration by clicking on **Configure**, **Duplicate** the configuration of your campaign or **Delete** it with all its review instances history.  
 
