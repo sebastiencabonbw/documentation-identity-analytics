@@ -20,6 +20,31 @@ For the new custom reviews, the review configuration page needs to have the tag 
 
 ![](./media/IAP264.png)  
 
+## Collecting Server Access Information for Server Access Rights Reviews
+
+To effectively conduct Server Access Rights User Access Reviews (UARs) in RadiantOne Identity Analytics, it's essential to gather accurate server access data. This process involves extracting relevant information from your servers and configuring appropriate data mappings within the Identity Analytics platform.
+
+### Data Extraction
+
+**For Windows Servers:**
+
+Utilize the IDA Extraction Scripts available in the `bw_windows_local` add-on, which can be downloaded from the RadiantLogic Marketplace. The primary script, `bw_data_collector.ps1`, is designed to extract data from Active Directory and local servers. The extracted data is saved in CSV format, suitable for uploading into your Identity Analytics instance.
+
+**For Other Servers:**
+
+For non-Windows servers, you can employ alternative add-ons or custom scripts to extract access data. Ensure that these scripts are designed to capture all necessary access information. It's crucial to verify that the data mapping configurations are correctly set up to ensure seamless integration with the Identity Analytics platform.
+
+### Configuring Data Mapping
+
+After extracting the data, follow these steps to configure the data mapping in the Identity Data Analytics Data Model:
+
+**Upload Data into Identity Analytics:**
+
+   - **For Windows Servers:** It's recommended to install the "bw_windows_local" add-on in your Identity Analytics instance to facilitate data mapping. This add-on simplifies the process of mapping server data into the IDA data model.
+
+   - **For Other Servers:** If you're using custom scripts or different add-ons, ensure that the extracted data aligns with the IDA data model's requirements. Specifically, map servers as applications with the attribute "Application Type" set to "server." Additionally, map access rights, such as local groups within your servers, to the appropriate permissions within the IDA model.
+
+
 ## Data model
 
 ### Review
