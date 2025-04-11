@@ -20,15 +20,15 @@ For the new custom reviews, the review configuration page needs to have the tag 
 
 ![](./media/IAP264.png)  
 
-## Collecting Server Access Information for Server Access Rights Reviews
+## Server Data Extraction for User Access Reviews
 
-To effectively conduct Server Access Rights User Access Reviews (UARs) in RadiantOne Identity Analytics, it's essential to gather accurate server access data. This process involves extracting relevant information from your servers and configuring appropriate data mappings within the Identity Analytics platform.
+To extract server data for Identity Analytics (IDA) Server Reviews, you can combine PowerShell-based extraction, teledistribution tools (Ansible, Puppet, or SCCM) for script deployment, and automated scheduling. This process aligns with the RadiantLogic Windows Connector methodology and UAR (User Access Review) server review requirements. 
 
 ### Data Extraction
 
 **For Windows Servers:**
 
-Utilize the IDA Extraction Scripts available in the `bw_windows_local` add-on, which can be downloaded from the RadiantLogic Marketplace. The primary script, `bw_data_collector.ps1`, is designed to extract data from Active Directory and local servers. The extracted data is saved in CSV format, suitable for uploading into your Identity Analytics instance.
+Utilize the Identity Analytics Extraction Scripts available in the "bw_windows_local" add-on, which can be downloaded from the RadiantLogic Marketplace. The primary script, `bw_data_collector.ps1`, is designed to extract data from Active Directory and local servers. The extracted data is saved in CSV format, suitable for uploading into your Identity Analytics instance.
 
 **For Other Servers:**
 
