@@ -267,19 +267,25 @@ Of course, the Identity Analytics administrator must ensure that all these perso
 
 The scheduling is done through a workflow that needs to be up and running: the scheduler. To check the status or start the workflow, using the left menu bar, go to "Settings" > "System" and then click on the "Scheduler" button:
 
-![](uar_guide_en.media/media/IAP257.png){ width=50% }  
+![](./media/IAP257.png)  
 
 Specify the hour you need to start the scheduler, click on "Start Scheduler" and then confirm:
 
-![](uar_guide_en.media/media/IAP256.png){ width=75% }  
+![](./media/IAP256.png)
 
 When the scheduler is started, you'll find in the same page the information about the lifecycle of the scheduler:
 
-![](uar_guide_en.media/media/IAP258.png){ width=50% }  
+![](./media/IAP258.png) 
 
 When a campaign reaches its start date, the revision instance will be launched on the specified start date, at the same time as the scheduler's start time.  
 
 > **Notes:**
 >
 > 1. When the scheduler is restarted, it will launch all overdue review instances. Please make sure you've deactivated any campaigns you don't want to launch before starting the scheduler, otherwise these campaigns will be launched and notifications sent to all reviewers if you have them activated.  
-> 2. if the current review instance is still active on the start date of the next schedule, the new review instance will not be launched until the initial one is finalized. In that case, the next start date of the campaign is set to "Behind Schedule". Once the current review instance has been finalized, the next start date is one day after the finalization date.
+> 2. If the current review instance is still active on the start date of the next schedule, the new review instance will not be launched until the initial one is finalized. In that case, the next start date of the campaign is set to "Behind Schedule". Once the current review instance has been finalized, the next start date is one day after the finalization date.
+
+
+#### Purging Behavior
+
+When an "attached to timeslot" review campaign is active and linked to a specific timeslot, that timeslot cannot be purged. Purging will only be allowed once all reviews associated with the timeslot have been finalized or deleted.
+
