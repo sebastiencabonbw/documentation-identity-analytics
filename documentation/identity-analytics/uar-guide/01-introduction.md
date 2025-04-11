@@ -214,20 +214,44 @@ All the features provided in previous versions are still available:
   
 #### Behavior of a Review Campaign Running Over Several Timeslots
 
-The duration of a campaign can be spread over a time range comprising several data loads at different dates (timeslots). In this case:
+Identity Analytics supports two modes for handling user access review campaigns across multiple timeslots: **Standard Mode** and **Attached to Timeslot Mode**. These modes define how reviews handle changes in access data over time. The standard mode allows reviews to reflect updates and removals during the campaign, while the attached mode freezes the review scope to the exact state at campaign launch—ideal for audit and compliance requirements. 
 
-- What remains the same timeslot after timeslot:
-  - The reviewer. For example:
-    - An identity changes line manager when the reviewer strategy relies on line managers.
-    - An application right when the reviewer strategy relies on application managers
-  - The reviewed access chain (i.e. the link Identity - Account - Permission - Application)
-- What can change timeslot after timeslot:
-  - Context information linked to the access chain (identity name/department/job, account expiry date, permission name, etc.). In this case, information from the current timeslot is displayed. Note that if you return to the timeslot on which the campaign was launched in the Portal, you will still see these modifications (i.e. those of the current timeslot), and not the information of the selected timeslot.
-- If entries to be reviewed are deleted in the next timeslot (an account, an access, etc.), they will no longer appear in the IAP review page (if this has not been finalized, of course).
-  - Note that deleted entries will be marked as "revoked" in the compliance report.
-  - Also note that the content of the campaign follow-up page depends on the timeslot selected. This means that :
-    - If entries are deleted in the next timeslot, the number of entries to be reviewed will change according to the timeslot selected in the portal in the list of entries to be reviewed (i.e., we'll have the initial list of entries to be reviewed on the timeslot on which the campaign was launched, and the "modified" list without the deleted entries on the next timeslot).
-    - If context information (identity name/department/job, account expiry date, permission name, etc.) for certain entries is modified in the next timeslot, the information displayed will depend on the timeslot selected (i.e. initial information on the timeslot on which the campaign was launched, modified information on the current timeslot).  
+> Note that standard mode is only available in Identity Analytics version 3.3 and higher. 
+
+
+##### Standard mode 
+
+In standard mode, the review campaign adapts to changes in data across timeslots. This means:The duration of a campaign can be spread over a time range comprising several data loads at different dates (timeslots).
+
+Across multiple timeslots, some aspects of the review campaign remain constant, while others may vary.
+
+**Consistent across timeslots:**
+- The assigned **reviewer** remains the same, regardless of underlying changes. For example:
+  - If the review strategy is based on line managers, the reviewer stays the same even if the identity's manager changes.
+  - If the strategy is based on application managers, the reviewer does not change even if application ownership changes.
+- The **access chain** under review (Identity → Account → Permission → Application) remains unchanged.
+
+**Variable across timeslots:**
+- **Contextual information** related to each access entry—such as identity name, department, job title, account expiration date, or permission name—can change between timeslots.
+- The displayed information always reflects the **current timeslot**, even when viewing the campaign from the original launch timeslot in the Portal.
+
+**Behavior when entries are deleted in later timeslots:**
+- If a reviewed item (e.g., an account or access right) is removed in a newer timeslot before the campaign is finalized:
+  - It will no longer appear in the IAP review interface.
+  - It will still be shown as **"revoked"** in the compliance report.
+  - The list of entries in the **campaign follow-up page** will depend on the selected timeslot:
+    - Selecting the original timeslot shows the **full list** of entries as they were at campaign launch.
+    - Selecting a newer timeslot displays a **modified list**, excluding deleted entries.
+    - Updated contextual details (e.g., changed department or permission names) will appear based on the selected timeslot—either the original values or the most recent ones.
+
+
+##### Attached to Timeslot Mode 
+
+Starting with Identity Analytics version 3.3, a new review mode titled "Attached to Timeslot" has been introduced. This mode allows user access reviews to be fixed to a specific timeslot, representing the access configurations at that particular time. Consequently, the review does not account for newer timeslots where some entries may have been removed since the review began. This mode is applicable to all review types: Application Access Rights Review, Account Repository Review, Group Membership Review, Safe Owner Review, and Server Review. 
+
+Using this mode is beneficial when strong compliance evidence is required, such as demonstrating to auditors that all accesses existing at a specific time have been reviewed. If the focus is more on reducing risks and enhancing operational efficiency rather than providing compliance proof, the standard mode, which considers access rights removal during the review campaign, might be more appropriate.
+
+If your priority is minimizing risk and improving operational efficiency—rather than strict compliance—you can opt for the standard mode, which dynamically reflects access removals during the campaign, ensuring reviewers focus only on current, active access.
 
 #### Role Assignment Prerequisites for UAR Management Access
 
