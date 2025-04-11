@@ -88,14 +88,13 @@ To refine the review perimeter, the advanced mode in the first step allows you t
 
 ![](./media/IAP143.png)
 
-You can configure that only some accounts will be part of the review, either by playing with the options (user accounts, orphaned accounts, ...) or by tagging the accounts you want to include in your review thanks to the account search interface.
+You can configure that only some accounts will be part of the review, either by playing with the options (user accounts, orphaned accounts and so on) or by tagging the accounts you want to include in your review thanks to the account search interface.
 
 This is super flexible as it can be for instance used to review only accounts with some attributes or characteristics such as:
 
 - Accounts from people working in a given division / country / ...
 - Accounts with a given sensitivity level,
 - Accounts with given controls defects,
-- ...
 
 In our use case we want to review **ALL** accounts, so lets keep the default configuration.
 
@@ -116,7 +115,6 @@ This is super flexible as it can help you to review only some permissions such a
 - Sensitive permissions
 - Permissions with given controls defects
 - Admin permissions
-- ...
 
 Keep in mind that at the end the review configuration, only the lines whom **BOTH** accounts and permissions are part of the perimeter will be part the review. In that case, the resources that are reviewed (the Elyxo-Treasury, SAP and SAGE-Accounting applications in our case here) will not be considered compliant at the end because the review is not comprehensive.  
 
@@ -218,7 +216,7 @@ When configuring columns:
 You can also use the filtering capabilities at the top of the table such as the filter per reviewer on the upper left of the table or the global filter and the group by feature on the upper right.
 ![](./media/IAP151.png)
 
-You can access to objects details by clicking on the corresponding labels (login, name, permission, ...)
+You can access to objects details by clicking on the corresponding labels (login, name, permission, etc.)
 
 ![](./media/IAP149.png)
 
