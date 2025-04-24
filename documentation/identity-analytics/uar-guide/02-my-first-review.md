@@ -8,6 +8,7 @@ description : "Identity Analytics Access Review Guide"
 Through this chapter we will guide you to configure and operate your first access certification review with a typical example.
 
 Five types of review can be configured:  
+Five types of review can be configured:  
 
 - Repository accounts review, to review all accounts in the selected repositories,
 - Group membership review, to review all group and their member accounts in the selected repositories,
@@ -92,14 +93,13 @@ To refine the review perimeter, the advanced mode in the first step allows you t
 
 ![](./media/IAP143.png)
 
-You can configure that only some accounts will be part of the review, either by playing with the options (user accounts, orphaned accounts, ...) or by tagging the accounts you want to include in your review thanks to the account search interface.
+You can configure that only some accounts will be part of the review, either by playing with the options (user accounts, orphaned accounts and so on) or by tagging the accounts you want to include in your review thanks to the account search interface.
 
 This is super flexible as it can be for instance used to review only accounts with some attributes or characteristics such as:
 
 - Accounts from people working in a given division / country / ...
 - Accounts with a given sensitivity level,
 - Accounts with given controls defects,
-- ...
 
 In our use case we want to review **ALL** accounts, so lets keep the default configuration.
 
@@ -120,7 +120,6 @@ This is super flexible as it can help you to review only some permissions such a
 - Sensitive permissions
 - Permissions with given controls defects
 - Admin permissions
-- ...
 
 Keep in mind that at the end the review configuration, only the lines whom **BOTH** accounts and permissions are part of the perimeter will be part the review. In that case, the resources that are reviewed (the Elyxo-Treasury, SAP and SAGE-Accounting applications in our case here) will not be considered compliant at the end because the review is not comprehensive.  
 
@@ -232,7 +231,7 @@ When configuring columns:
 You can also use the filtering capabilities at the top of the table such as the filter per reviewer on the upper left of the table or the global filter and the group by feature on the upper right.
 ![](./media/IAP151.png)
 
-You can access to objects details by clicking on the corresponding labels (login, name, permission, ...)
+You can access to objects details by clicking on the corresponding labels (login, name, permission, etc.)
 
 ![](./media/IAP149.png)
 
@@ -243,10 +242,12 @@ If some *reviewers* have not been found an error message is displayed on the scr
 You still can browse the table to check each entry.  
 If everything is ok, you can click on *Next* to move forward.  
 
-> **Note** For reviews on large volumes of data, above 30,000 entries by default, this step is deactivated to smooth the experience. In that case, the following message will be displayed:  
+> **Note:** For reviews on large volumes of data, above 30,000 entries by default, this step is deactivated to smooth the experience. In that case, the following message will be displayed:  
 
-![](./media/IAP276.png)
+![](./media/IAP276.png)  
 
+ > **Note:** Creating and launching a review for a previous timeslot is not a standard use case. As a result, the perimeter preview shown during the campaign setup will only display general information based on the most recent timeslot, not the one you selected. The accurate preview for your selected timeslot will become available only after the campaign has been created (see the [Campaign Follow-up](/#campaign-follow-up-details-button) section). To ensure accuracy and allow for adjustments, we recommend setting the campaign “on hold” during Step 6 of the configuration wizard. This gives you time to review and validate the setup before launching.
+  
 ## Step 4 - Reviewer UI  
 
 In this step you can specify the user interfaces you want to provide to the reviewers.  
@@ -265,17 +266,19 @@ By default, the following comments are proposed for `Update`:
 
 ![](./media/IAP246.png)
 
-If you want to avoid the "Rubber Stamping" effect, you can limit the bulk actions of the reviewer to a certain number of entries.  
+If you want to avoid the "Rubber Stamping" effect, you can limit the bulk actions of the reviewer to a certain number of entries. You can also choose whether to enable or disable these additional features:   
   
-Four additional options can be disabled such as:  
-  
-- allowing the reviewer to specify that he is not the right person with the `I'm not the reviewer` button. In that case the related entries are set as "to reassign" and are not visible any more by the reviewer. The accountable reviewer has to change. The review owner has then to re-assign those entries to another person from the follow-up interfaces of the review instance.  
-  
-- allowing the reviewer to `ask for help to`another person in his team if he is line manager, or another owner if he is a resource owner. In that case, the reviewer stay the accountable reviewer of the entries, however he ask to a responsible reviewer to take the decisions on his behalf for the selected entries.  
-  
-- allowing the reviewer to `hide already reviewed entries by default`: when activated, the reviewer will only see by default the remaining entries he has to review. He still can uncheck this option on top of the tables to see all entries, including the one already reviewed.  
+- **Hide already reviewed entries by default**  
+  When enabled, the reviewer will, by default, only see entries that still need to be reviewed. Previously reviewed entries are hidden but can be shown by unchecking this option at the top of the table.
 
-- allowing the reviewer to `Hide delegated entries by default`: when activated, the reviewer will only see by default his remaining entries but not the one he has delegated to other people. He still can uncheck this option on top of the tables to see all entries, including the one he has delegated.  
+- **Hide delegated entries by default**  
+  When enabled, the reviewer will, by default, only see entries they are personally responsible for. Entries delegated to others will be hidden but can be displayed by unchecking this option at the top of the table.
+
+- **I'm not the reviewer**  
+  Allows the reviewer to indicate they are not the appropriate person to review certain entries. These entries are then marked as "To Reassign" and are no longer visible to the reviewer. The accountable reviewer must be updated, and the review owner is responsible for reassigning the entries via the follow-up interface of the review instance.
+
+- **Ask for help**  
+  Allows the reviewer to request assistance from another person. Line managers can ask team members for help; resource owners can reach out to other owners. The reviewer remains the accountable reviewer but delegates the decision-making for selected entries to a responsible reviewer.
   
 In your case, you can keep the default values and click on *Next* to move forward.  
   
@@ -327,10 +330,10 @@ You are almost done, the last thing you need is to give additional information t
 ![](./media/IAP152.png)  
 
 Three additional options are available here, such as "Enable offline mode", which allows reviewers to download the entries to be reviewed into an Excel spreadsheet from their home page and upload it once they have partially or completely completed it. It allows also the campaign owner to send e-mail notifications with this spreadsheet attached so that reviewers can work offline. This option is particularly appreciated when reviewers travel a lot or have no access to the company's IS for whatever reason (if they are contractors for example). Note that a same reviewer can work both online and offline if needed.  
-  
-The second option `Attach Review to Timeslot` allows to configure user access review in Identity Analytics that are fixed to a specific timeslot, which represents the configuration of the accesses at a particular time. This way, the User Access Review is not taken into account the newer timeslots where some of the entries may have been removed since the review began.
-  
-The third option disables the campaign, so that it cannot be launched automatically or manually. You need to edit it and change the deactivation of this setting for it to work. This allows you to work on the configuration at a later date and perform a few additional checks before the review instance starts and notifications are sent automatically.  
+
+The second option disables the campaign, so that it cannot be launched automatically or manually. You need to edit it and change the deactivation of this setting for it to work. This allows you to work on the configuration at a later date and perform a few additional checks before the review instance starts and notifications are sent automatically. 
+
+The third option, "Attach Review to Timeslot" allows you to configure User Access Reviews (UAR) in Identity Analytics based on a fixed timeslot. The timeslot represents the state of user access at a specific point in time. As a result, the review will not take into account newer timeslots. Any entries that have been removed since the review began will still be included in the review.
 
 ![](./media/IAP152bis.png)  
 
@@ -371,9 +374,9 @@ Once everything is fulfilled, click on **Finish** to save your campaign configur
 Once your review campaign configuration has been saved, it appears in the compliance review management page.  
 You can access to this page through the menu *Review / Review Campaign Management*  
 
-![](./media/IAP153.png)  
+![](./media/IAP153.png)
 
-> To check the status of your access review campaigns and their review instances, you must be in the latest timeslot, otherwise if you are in a past timeslot, certain review instances may appear active even though they were closed in the current timeslot.  
+> To accurately check the status of your access review campaigns and their review instances, make sure you are in the latest timeslot. If you are viewing a past timeslot, some review instances may appear active even though they have been closed in the current timeslot.
 
 When selecting your campaign in the list, you can either edit the configuration by clicking on **Configure**, **Duplicate** the configuration of your campaign or **Delete** it with all its review instances history.  
 

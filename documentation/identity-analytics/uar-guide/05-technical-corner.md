@@ -61,6 +61,31 @@ Upload the data into the IDA platform:
 - For windows server, we recommend installing the add-on `bw_winlocalresources` in your Identity Analytics for the data mapping into IDA
 - Or define your own data mapping. For that you need to map servers as applications in the IDA data model with the attribute Application Type set to 'server' and you need to map access rights (that could be local groups within your servers) to permissions.
 
+## Server Data Extraction for User Access Reviews
+
+To extract server data for Identity Analytics (IDA) Server Reviews, you can combine PowerShell-based extraction, teledistribution tools (Ansible, Puppet, or SCCM) for script deployment, and automated scheduling. This process aligns with the RadiantLogic Windows Connector methodology and UAR (User Access Review) server review requirements. 
+
+### Data Extraction
+
+**For Windows Servers:**
+
+Utilize the Identity Analytics Extraction Scripts available in the "bw_windows_local" add-on, which can be downloaded from the RadiantLogic Marketplace. The primary script, `bw_data_collector.ps1`, is designed to extract data from Active Directory and local servers. The extracted data is saved in CSV format, suitable for uploading into your Identity Analytics instance.
+
+**For Other Servers:**
+
+For non-Windows servers, you can employ alternative add-ons or custom scripts to extract access data. Ensure that these scripts are designed to capture all necessary access information. It's crucial to verify that the data mapping configurations are correctly set up to ensure seamless integration with the Identity Analytics platform.
+
+### Configuring Data Mapping
+
+After extracting the data, follow these steps to configure the data mapping in the Identity Data Analytics Data Model:
+
+**Upload Data into Identity Analytics:**
+
+   - **For Windows Servers:** It's recommended to install the "bw_windows_local" add-on in your Identity Analytics instance to facilitate data mapping. This add-on simplifies the process of mapping server data into the IDA data model.
+
+   - **For Other Servers:** If you're using custom scripts or different add-ons, ensure that the extracted data aligns with the IDA data model's requirements. Specifically, map servers as applications with the attribute "Application Type" set to "server." Additionally, map access rights, such as local groups within your servers, to the appropriate permissions within the IDA model.
+
+
 ## Data model
 
 ### Review
