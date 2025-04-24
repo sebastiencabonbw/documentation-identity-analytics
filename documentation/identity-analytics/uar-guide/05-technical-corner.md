@@ -18,7 +18,48 @@ Those reviews are available from the main menu on the left in "Custom Review Man
 
 For the new custom reviews, the review configuration page needs to have the tag "newiasreview". In that case, it will be directly accessible when clicking on "Create a New Review" button.
 
-![](./media/IAP264.png)  
+![](./media/IAP264.png)
+
+## Server Data Extraction For User Access Review
+
+To extract server data for Identity Analytics (IDA) Server Reviews, you can combine PowerShell-based extraction, teledistribution tools (Ansible, Puppet, or SCCM) for script deployment, and automated scheduling. This process aligns with the RadiantLogic Windows Connector methodology and User Access Review server review requirements.  
+  
+### Server Data Extraction  
+
+For windows accounts, you can use the IDA Extraction Scripts available in the add-on [bw_winlocalresources](http://marketplace.radiantlogic.com/package/bw_winlocalresources/) that you can download from the RadiantLogic Marketplace to extract data.
+
+For that you can execute locally the script on the windows servers using teledistribution tools:  
+
+```sh
+.\get-winlocalresources.ps1 -logLevel Debug
+```
+
+In addition, you can use for small environment the following scripts from a single server of the domains to extract list of servers from AD and then their local accounts and groups:  
+
+- Example to list Windows server machines available in the current Active Directory Domain, named `intra05` in this example. The output file will be `intra05_hosts.csv`.
+
+```sh
+get-hosts.ps1 -prefix intra05`
+```
+
+- Then extract, for each Windows server present in `intra05_hosts.csv` file, local accounts and groups, shares:
+
+```sh
+get-hosts-sharesinfos.ps1 -prefix intra05 -hostsFile intra05_hosts.csv
+```
+
+The output will be csv files that you can transfer to upload them to your Identity Analytics instance.
+
+> For more details, please refer to the documentation embedded within the add-on.
+
+For other kind of servers, you can use other add-ons or your own script to extract data. In that case, you have to make sure that the data mapping is well configured in order to see your servers in the Server Access Reviews.  
+
+### Configuration of the Data Mapping in the IDA data model
+
+Upload the data into the IDA platform:
+
+- For windows server, we recommend installing the add-on `bw_winlocalresources` in your Identity Analytics for the data mapping into IDA
+- Or define your own data mapping. For that you need to map servers as applications in the IDA data model with the attribute Application Type set to 'server' and you need to map access rights (that could be local groups within your servers) to permissions.
 
 ## Data model
 
@@ -234,11 +275,12 @@ Please contact your Identity Analytics project owner to configure this.
 
 Four new configuration variables have been added to the project to handle large amount of data.
 
-- `ias_reviewersdisplaylimitvalue` used by Identity Analytics 3.0 and 2.2, indicates the maximum number of reviewers to display the "Review Statsitics" tab in the review follow-up interface (accessible via the **Details** button of a review instance). The default value is 1000.
-- `ias_maxentriestoreview` in Identity Analytics 2.2, the maximum number of entries to review per reviewer can be limited by this configuration variable. By default, the limit is set to 30,000. In Identity Analytics 3.0, the limit does not depend to this variable and is set to 100,000.
-- `ias_disablenoniappreviews` allows to disable the display of custom workflow review types in Access360 to improve performance, used by Identity Analytics 3.0 and 2.2. The default value is false, and it should be activated only if you don't have any custom workflow reviews.
-- `ias_reviewercriticalthreshold` in Identity Analytics 3.0 and 2.2, indicates the number of entries upon which the review instance is forced to offline mode. The default value is 30,000.
+- `ias_reviewersdisplaylimitvalue` used by Identity Analytics 3.X and 2.2, indicates the maximum number of reviewers to display the "Review Statsitics" tab in the review follow-up interface (accessible via the **Details** button of a review instance). The default value is 1000.
+- `ias_maxentriestoreview` in Identity Analytics 2.2, the maximum number of entries to review per reviewer can be limited by this configuration variable. By default, the limit is set to 30,000. In Identity Analytics 3.X, the limit does not depend to this variable and is set to 100,000.
+- `ias_disablenoniappreviews` allows to disable the display of custom workflow review types in Access360 to improve performance, used by Identity Analytics 3.X and 2.2. The default value is false, and it should be activated only if you don't have any custom workflow reviews.
+- `ias_reviewercriticalthreshold` in Identity Analytics 3.X and 2.2, indicates the number of entries upon which the review instance is forced to offline mode. The default value is 30,000.
 - `ias_reviewdisablepreviewlimit` in Identity Analytics 3.1 and above, allows for reviews on large volumes of data, above 30,000 entries by default, to deactivate the step 3 `Perimeter Preview` to smooth the experience, as well as hide the KPIs in step 6. As a result, the campaign is forced into "on hold" mode to allow perimeter review from the campaign management interface before launching the reviews.  
+
 ### AIDA configuration variables
 
 In the technical project configuration file, two variables are available:

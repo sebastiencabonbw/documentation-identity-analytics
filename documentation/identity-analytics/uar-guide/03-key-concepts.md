@@ -349,8 +349,48 @@ Please note that both the caller and the assignment group will be resolved when 
 
 Note that you can declare the same endpoint several time. This can be useful if you want for instance assign remediation actions to different *assignment groups* depending on the target system (repository or application)
 
+#### Declaring a new RPA
+
 Declaring a new RPA is done by selecting "Mail notification" in the list.
 An email will be sent for **each** individual remediation. The purpose of this email is to be analyzed by a robot (either an ITSM or a RPA to automate actions upon reception).
+
+#### Declaring RadiantOne
+
+If RadiantOne Identity Data Management is installed and used as a datasource for Identity Analytics, you can also leverage RadiantOne for remediation.
+
+When RadiantOne is used for remediation, the remediation orders are sent to RadiantOne and automatically enforced (provisioned) to the target systems in near real time.
+
+At the time of writing, the following remediation strategies are supported:
+
+- Account revocation
+- Group membership removal
+
+For account revocation, two strategies are applied whether the source system is Active Directory or not:
+For Active Directory, Identity analytics will automatically update the UAC (User Account Control) attribute to disable the account. For any other target system, Identity Analytics will set the configured attribute to the configured value. If you want to apply different revocation remediation strategies for different repositories (by setting different key/value pairs), you need to configure several RadiantOne remediation strategies.
+
+![](./media/R1-001.png)
+
+RadiantOne remediation strategies can be assigned to repositories loaded through RadiantOne connectors (and only those ones) in the first tab. Please note that the RadiantOne choice is automatically hidden if the repository has not been loaded through RadiantOne.
+
+![](./media/R1-002.png)
+
+At the time of writing, the following datasource connectors are supported for RadiantOne remediation:
+
+RadiantOne - Active Directory
+
+![](./media/R1-003.png)
+
+RadiantOne - Generic LDAP
+
+![](./media/R1-004.png)
+
+RadiantOne - Generic Bridge
+
+![](./media/R1-005.png)
+
+> <span style="color:red">**Important:**</span>  
+> When you use "RadiantOne - Generic Bridge", it is up to you to configure the ETL engine to load the data. This means that you can load any kind of information in Identity analytics, regardless of the source (database accounts, local server accounts, etc) and enforce automated remediation (as long as you have configured the proper remediation strategy in Identity Data Management with GlobalSync).  
+> In order to do this though, you have to configure your collect line in a special way in order for Identity Analytics to detect the RadiantOne lineage. Please consult the [integration guide](../integration-guide/08-r1-remediation.md) for more on how to configure your collect line with the "RadiantOne - Generic Bridge" and the automated remediation.
 
 #### Assigning a remediation strategy to a repository or an application
 
@@ -407,6 +447,28 @@ Note that even though a remediation is managed through an ITSM, you can still ma
 As "Bulk done" and "Bulk won't fix" will move the selected remediations to a finalized state. RadiantOne Identity Analytics will no longer query ServiceNow to update the ticket status.  
 
 This is not the case for "Bulk in progress". You should mark an ITSM ticket as "In Progress" only if you want retrieve the latest ITSM status and that this remediation was previously marked as "finalized".  
+
+### RPA tickets status  
+
+Once the emails are sent, all RPA remediations are considered processed.
+
+### RadiantOne tickets status  
+
+As rememediation is done automatically and on the fly by RadiantOne Identity Data Management, once the remediation orders are sent to RadiantOne Identity Data Management without any error, the remediations are considered processed and are closed.
+
+Therefore, a RadiantOne remediation can only have two different closed status:
+
+- **done** The remediation has been sent to Identity Data Management (data has been properly updated in FID)
+- **error** Identity Analytics was not able to send the remediation order to Identity Data Management. Further investigation is required to identify the problem. This is a **final status**, the remediation will have to be performed by any other means.
+
+Due to the fact that Identity Analytics performs point-in-time analysis, there can be situations where there is a drift between Identity Analytics data and Ientity Data Management data, such as:
+
+- The account has been deleted in between
+- The account has been disabled in between
+- The account/group has moved (its DN has changed)
+- the group membership no longer exists
+
+In those cases, the remediation is considered **done** but the remediation status is set to **warning**. It is advised to review those **warning** remediation on a regular basis, especially to identify if it is because of account/group who have moved as in that case a manual remediation would still be required.
 
 ## Users notification
 
@@ -528,7 +590,11 @@ AIDA will guides the reviewer through four main steps:
 *Cluster Detection*: AIDA automatically detects clusters, based on a "frequent closed itemsets mining" algorithm that have been especially enhanced for user access review. The detected clusters are groups of identities that display similar access rights based on permissions-application. This helps highlight entries that likely require similar treatment during the review.
 *Clustering Algorithm*: A dedicated algorithm sorts the detected clusters by size, and select the first seven biggest clusters. AIDA guides the reviewer through the largest clusters first, making it easier to tackle the most significant groups of similar entries.
 
-4. **Isolated Items**: this final stage guides the reviewer through the last entries, identity by identity for user accounts and account per account for service/technical.
+4. **Remaining Items**: this final stage guides the reviewer through the last entries, identity by identity for user accounts and account per account for service/technical.
+
+![](./media/IAP272.png)  
+
+![](./media/IAP272-bis.png)  
 
 ![](./media/IAP272.png)  
   

@@ -34,9 +34,18 @@ All access are granted in read-only mode.
 
 The technical administrator role is given on top of the user role. The technical administrator role includes all the capabilities of the business administrator role + technical administration capabilities such as Identity Ledger management (activate or hide timeslots).  
 
+## developer
+
+Users with developer role are responsible for the technical implementation of the mashup dashboards, and can store these mashup dashboards into the git project as files. This role cannot be used when IDA is deployed in a SaaS EOC environment.  
+
+## designer
+
+The designer role can implement mashup dashboards and store them in the database, but cannot save them as files in the project. Also he cannot edit and modify dashboards that are already saved in the project.
+By default, the `technicaladmin` and `functionaladmin` roles includes the same features as the designer role but not the developer role.  
+
 ## Dynamic roles & management information
 
- For your information, some dynamic roles are computed in RadiantOne Identity Analytics based on the Identity Ledger information, you do not need to manually assign those roles to the users:
+For your information, some dynamic roles are computed in RadiantOne Identity Analytics based on the Identity Ledger information, you do not need to manually assign those roles to the users:
 
 - **campaignowner** the campaign owner role is given on top of the user role. This role is dynamically computed based on information present in the Identity Ledger: In order to have this role, the user must be assigned as an owner of at least one campaign. Once the role granted, the user has access to a restricted version of the campaign manager in order to launch & manage its own campaigns.
 

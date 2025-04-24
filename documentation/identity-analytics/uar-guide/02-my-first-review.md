@@ -7,18 +7,21 @@ description : "Identity Analytics Access Review Guide"
 
 Through this chapter we will guide you to configure and operate your first access certification review with a typical example.
 
-Four types of review can be configured:  
+Five types of review can be configured:  
 
 - Repository accounts review, to review all accounts in the selected repositories,
 - Group membership review, to review all group and their member accounts in the selected repositories,
 - Application access rights review, to review all access rights in the selected applications,
+- Server access rights review, to review all access rights in the selected servers,
 - Safe permissions review, to review all access rights in the selected CyberArk PAM Safes if you have enabled PAM Booster.
 
-In this chapter, we will configure and launch an application access rights review. The repository accounts review and group membership review use the same principles, and a dedicated documentation is also available for the PAM Booster designed for CyberArk.
+> For Server review, the Server access rights need to be uploaded in the identity ledger as permissions and servers as application of type server. You can use for windows servers the add-on extracting windows local accounts and groups bw_winlocalresources available in the RadiantLogic Marketplace. This add-on collect and map the extracted data as well in the Identity Analytics: [bw_winlocalresources](http://marketplace.radiantlogic.com/package/bw_winlocalresources/)
+
+In this chapter, we will configure and launch an application access rights review. The repository accounts review, group membership review and server review use the same principles, and a dedicated documentation is also available for the PAM Booster designed for CyberArk.
 
 > As a reminder in IAP version 2.2 a new "sign off" principle has been added to the review process, as well as the the ability to launch the remediation process as soon as the reviewer signs off.  
 >
-> In IAP version 3.0, the concept of review campaigns has been introduce with the ability to manage campaign configurations, including notification and scheduling capabilities. These new capabilities come with a new "Review Campaign Management" interface. The previous "Review Management" interface contains the finalized reviews in previous versions and has been renamed "Custom Review Management" interface.  
+> In IAP version 3.0, the concept of review campaigns has been introduce with the ability to manage campaign configurations, including notification and scheduling capabilities. These new capabilities come with a new "Review Campaign Management" interface. The previous "Review Management" interface contains the finalized reviews in previous versions and has been renamed "Custom Review Management" interface.
 >
 > Due to these changes in behavior it is **necessary** to finalize **all** web-based reviews **before** upgrading IAP to version 3.0.
 
@@ -81,7 +84,8 @@ For example, a strategy could be:
 - technical are reviewed by the application owner,  
 - all other account and if no line manager and no application owner are found, the default reviewer is taken.  
 
-> **Note** For reviews on large volumes of data, above 30,000 entries by default, step 3 `Perimeter Preview` is deactivated to smooth the experience, and the KPIs in step 6 are hidden. As a result, the campaign is forced into "on hold" mode to allow perimeter review from the campaign management interface before launching the reviews. This threshold of 30,000 entries can be modified in the project's technical configuration using the variable `ias_reviewdisablepreviewlimit`. 
+> For reviews on large volumes of data, above 30,000 entries by default, step 3 `Perimeter Preview` is deactivated to smooth the experience, and the KPIs in step 6 are hidden. As a result, the campaign is forced into "on hold" mode to allow perimeter review from the campaign management interface before launching the reviews. This threshold of 30,000 entries can be modified in the project's technical configuration using the variable `ias_reviewdisablepreviewlimit`.
+
 ### Accounts Review Perimeter
 
 To refine the review perimeter, the advanced mode in the first step allows you to include or exclude some types of accounts. For example: User accounts, technical accounts, orphaned accounts and leaver accounts.  
@@ -174,7 +178,15 @@ When using our SaaS offer with AI enabled, you can activate the Artificial Intel
 
 Note that AIDA is only available for Application Access Rights type of reviews for now, and will be extended to other types of reviews and other RadiantOne solutions and features in the future.  
 
-AIDA with User Access Reviews follows these four main principles:  
+The end-user can enable the prompt provided by AIDA by turning on the option “Enable AIDA Prompt”.  
+
+![](./media/IAP277.png)  
+
+By doing so, at any time the reviewer can ask AIDA questions at the bottom of the side panel:  
+
+![](./media/IAP278.png)  
+  
+AIDA with User Access Reviews follows these four main principles:
 
 1. AIDA guides the reviewer through the review process, step by step, so that the reviewer is clear about where to start, time is saved and the reviewer has a better understanding of the data.
 2. At each stage, AIDA proposes a decision based on the analysis it has carried out, explaining why this decision should be made by presenting the analysis. The reviewer then has the information needed in order to proceed in his decision-making process.
@@ -208,6 +220,8 @@ This section will present a preview of the data to be reviewed as well as the *c
 
 ![](./media/IAP147.png)
 
+> Creating and launching a review on a previous timeslot is not a standard use case, so the preview shown in the review campaign setup only gives general information based on the last timeslot. The preview based on the timeslot you selected will be available once the campaign is created by entering the details of your access review (see Campaign Follow-up section). This is why we recommend that you configure your campaign “on hold” if it is a scheduled campaign at step 6 of the configuration wizard. 
+
 You can browse through the table, reorder the columns, add or remove columns through the options or export the data in CSV/excel format if needed. Click on the three buttons on the upper right of the table for such purpose.
 
 ![](./media/IAP148.png)
@@ -231,9 +245,8 @@ If everything is ok, you can click on *Next* to move forward.
 
 > **Note** For reviews on large volumes of data, above 30,000 entries by default, this step is deactivated to smooth the experience. In that case, the following message will be displayed:  
 
-![](./media/IAP276.png)  
+![](./media/IAP276.png)
 
-  
 ## Step 4 - Reviewer UI  
 
 In this step you can specify the user interfaces you want to provide to the reviewers.  
@@ -254,11 +267,15 @@ By default, the following comments are proposed for `Update`:
 
 If you want to avoid the "Rubber Stamping" effect, you can limit the bulk actions of the reviewer to a certain number of entries.  
   
-Two additional options can be disabled such as:  
+Four additional options can be disabled such as:  
   
 - allowing the reviewer to specify that he is not the right person with the `I'm not the reviewer` button. In that case the related entries are set as "to reassign" and are not visible any more by the reviewer. The accountable reviewer has to change. The review owner has then to re-assign those entries to another person from the follow-up interfaces of the review instance.  
   
 - allowing the reviewer to `ask for help to`another person in his team if he is line manager, or another owner if he is a resource owner. In that case, the reviewer stay the accountable reviewer of the entries, however he ask to a responsible reviewer to take the decisions on his behalf for the selected entries.  
+  
+- allowing the reviewer to `hide already reviewed entries by default`: when activated, the reviewer will only see by default the remaining entries he has to review. He still can uncheck this option on top of the tables to see all entries, including the one already reviewed.  
+
+- allowing the reviewer to `Hide delegated entries by default`: when activated, the reviewer will only see by default his remaining entries but not the one he has delegated to other people. He still can uncheck this option on top of the tables to see all entries, including the one he has delegated.  
   
 In your case, you can keep the default values and click on *Next* to move forward.  
   
@@ -270,14 +287,14 @@ This part allows you to configure the schedule of your review instances and the 
 
 ### Campaign Scheduling
 
-In the first section, `Campaign Scheduling`, you can choose either to define a **manual** or a **scheduled** campaign.  
+In the first section, `Campaign Scheduling`, you can choose either to define a **manual** or a **scheduled** campaign. 
 
-If you choose the **manual** option, the review instance must be launched by the campaign owner when needed. You need to specify the expected duration of the campaign in days, so that notification of completion of the review instance is automatically sent to the campaign owner on the correct date, as well as reminders according to the reminder strategy you define in the next section.  
+If you choose the **manual** option, the review instance must be launched by the campaign owner when needed. You need to specify the expected duration of the campaign in days, so that notification of completion of the review instance is automatically sent to the campaign owner on the correct date, as well as reminders according to the reminder strategy you define in the next section.
 
 If you choose the **scheduled** option, the first review instances will be launched automatically at the **initial start date** you've specified. Then the next instances will be launched based on the frequency you've defined, which could be weekly, monthly, quarterly, semi-annual, yearly. You have also to set the expected duration of the campaign in days, so that notification of completion of the review instance is automatically sent to the campaign owner on the correct date, as well as reminders according to the reminder strategy you define in the next section.  
 You can also activate a reminder to notify the campaign owner a certain number of days, which you can define, before the campaign automatically starts. The aim is to allow the owner to review the scope and reviewers to be called upon before the review instance starts.  
 
-The finalization of **manual** and **scheduled** review instances is therefore manual, allowing the campaign owner to grant a grace period if necessary, to ensure that all reviewers have completed their review.  
+The finalization of **manual** and **scheduled** review instances is therefore manual, allowing the campaign owner to grant a grace period if necessary, to ensure that all reviewers have completed their review.
 
 For both **manual** and **scheduled** campaigns you can check the option "Put on hold at startup" so that when the review will start either automatically or manually, the review instance will be in pause status and the notifications will not be send, allowing you to review the scope and the reviewer strategy before starting it. In your case we will check that option, to review the perimeter before launching the first instance.
 
@@ -285,11 +302,11 @@ In your case here, you can choose a "scheduled" review with a quarterly frequenc
 
 ### Reviewers' Notifications and Reminders Strategies
 
-In this section, you can activate initial notifications and reminders sent to reviewers. For each of these, you can edit the e-mail templates and modify them as required. Those templates are use when notifications are send automatically and also when the campaign owner wants to send reminders manually to a selection of reviewers from the follow-up interface.  
+In this section, you can activate initial notifications and reminders sent to reviewers. For each of these, you can edit the e-mail templates and modify them as required. Those templates are use when notifications are send automatically and also when the campaign owner wants to send reminders manually to a selection of reviewers from the follow-up interface.
 
 ![](./media/IAP248.png)
 
-When editing email templates, you can use the gear icons to insert variables in the main text of the email or in the fields of the destination email address.  
+When editing email templates, you can use the gear icons to insert variables in the main text of the email or in the fields of the destination email address.
 
 ![](./media/IAP249.png)  
 
@@ -309,9 +326,11 @@ You are almost done, the last thing you need is to give additional information t
 
 ![](./media/IAP152.png)  
 
-Two additional options are available here, such as "Enable offline mode", which allows reviewers to download the entries to be reviewed into an Excel spreadsheet from their home page and upload it once they have partially or completely completed it. It allows also the campaign owner to send e-mail notifications with this spreadsheet attached so that reviewers can work offline. This option is particularly appreciated when reviewers travel a lot or have no access to the company's IS for whatever reason (if they are contractors for example). Note that a same reviewer can work both online and offline if needed.  
-
-The second option disables the campaign, so that it cannot be launched automatically or manually. You need to edit it and change the deactivation of this setting for it to work. This allows you to work on the configuration at a later date and perform a few additional checks before the review instance starts and notifications are sent automatically.  
+Three additional options are available here, such as "Enable offline mode", which allows reviewers to download the entries to be reviewed into an Excel spreadsheet from their home page and upload it once they have partially or completely completed it. It allows also the campaign owner to send e-mail notifications with this spreadsheet attached so that reviewers can work offline. This option is particularly appreciated when reviewers travel a lot or have no access to the company's IS for whatever reason (if they are contractors for example). Note that a same reviewer can work both online and offline if needed.  
+  
+The second option `Attach Review to Timeslot` allows to configure user access review in Identity Analytics that are fixed to a specific timeslot, which represents the configuration of the accesses at a particular time. This way, the User Access Review is not taken into account the newer timeslots where some of the entries may have been removed since the review began.
+  
+The third option disables the campaign, so that it cannot be launched automatically or manually. You need to edit it and change the deactivation of this setting for it to work. This allows you to work on the configuration at a later date and perform a few additional checks before the review instance starts and notifications are sent automatically.  
 
 ![](./media/IAP152bis.png)  
 
@@ -322,13 +341,21 @@ When offline mode is enabled:
 ![](./media/IAP218.png)
 
 - Download and Upload of the excel file can be done:  
+
   - By the *campaign owner* from the campaign management interface, by clicking on the "Upload" button in the "Latest Review" section on the right:  
-  ![](./media/IAP215.png)  
+
+![](./media/IAP215.png)  
+
   - By the *reviewer* from his home page Access360 interface:
-  ![](./media/IAP155.png)  
+
+![](./media/IAP155.png)  
+
 - When the excel file is uploaded, the number of review entries is displayed:  
+
 ![](./media/IAP216.png)
+
 - Then the review progress bar is updated:  
+
 ![](./media/IAP220.png)  
 
 Finally, in the "Compliance Framework Specification" section, you can define tags for your campaign to easily filter from the "Review Campaign Management" interface on all campaigns contributing to the same compliance framework, as in this example, filtering campaigns configured in accordance with SOX:
@@ -337,7 +364,7 @@ Finally, in the "Compliance Framework Specification" section, you can define tag
 
 Once everything is fulfilled, click on **Finish** to save your campaign configuration.  
   
-> **Note** For reviews on large volumes of data, above 30,000 entries by default, the KPIs in this step are not displayed to smooth the experience. In addition the campaign is forced into "on hold" mode to allow perimeter review from the campaign management interface before launching the reviews.   
+> **Note** For reviews on large volumes of data, above 30,000 entries by default, the KPIs in this step are not displayed to smooth the experience. In addition the campaign is forced into "on hold" mode to allow perimeter review from the campaign management interface before launching the reviews.  
 
 ## Step 7 - Managing your review campaign
 
@@ -345,6 +372,8 @@ Once your review campaign configuration has been saved, it appears in the compli
 You can access to this page through the menu *Review / Review Campaign Management*  
 
 ![](./media/IAP153.png)  
+
+> To check the status of your access review campaigns and their review instances, you must be in the latest timeslot, otherwise if you are in a past timeslot, certain review instances may appear active even though they were closed in the current timeslot.  
 
 When selecting your campaign in the list, you can either edit the configuration by clicking on **Configure**, **Duplicate** the configuration of your campaign or **Delete** it with all its review instances history.  
 
@@ -553,6 +582,8 @@ This mode is a graphic mode and allows *reviewers* to have graphic view.
 
 All entries can be organized to have a rapid view and help to identify discrepancies between accounts. This option allows cluster sorting of crosstable cells using an **advanced classification algorithm**. This will help the end-user to work on peer group. To activate it, he needs to click on the icon on the upper left (framed in red in the copyscreen below). In the case of a cross-table listing identities, accounts and their related permissions, when clicking on the "clustering" button in the cross-table, the data is sorted to group users by similar permission sets. Biggest blocks are displayed to the top left of the cross-table, making easier to tackle the most significant groups of similar entries and to identify the outliers at the right and bottom. 
 
+Discrepancy accounts will be quickly identified as well. With this mode bulk approval and bulk revocation are interesting.  
+
 ![](./media/IAP172.png)
 
 Filters on the pivot table can be directly applied to facilitate review.
@@ -713,7 +744,7 @@ A remediation is following a simple ITSM change management process. Each remedia
 
 ![](./media/image46.png)
 
-> **Note:** When the resource on which a remediation is launched is no longer available in the current timeslot (the data relating to the resource has not been loaded), the entries will remain in "pending" status. In this case, the remediation administrator must force the status to "won't fix".  
+> When the resource on which a remediation is launched is no longer available in the current timeslot (the data relating to the resource has not been loaded), the entries will remain in "pending" status. In this case, the remediation administrator must force the status to "won't fix".  
 
 In our use case, once the *remediation management* displayed, the administrator can follow up the remediation
 We can notice that some action have already been made

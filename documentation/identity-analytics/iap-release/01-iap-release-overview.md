@@ -3,7 +3,7 @@ title: "Identity Analytics Release Notes"
 description : "Identity Analytics Release Notes"
 ---
 
-# Identity Analytics Release Notes  
+# Identity Analytics Release Notes
 
 ## IAP/IGRC Compatibility matrix
 
@@ -35,11 +35,21 @@ For a full list of changes to IAP please refer the to following release notes:
 - [IAP 2.x release notes](03-iap-2.X-release-notes.md "IAP release notes" )
 - [IAP 1.x release notes](02-iap-1.X-release-notes.md "IAP release notes" )
 
+### Version 3.3
+
+- New timeslot-attached review mode that sticks to a selected timeslot and ignores entry deletions that may occur in more recent timeslots during the campaign,
+- New type of review Server Access Rights Review,
+- Improvement of Review Campaign Management interface performance,
+- AIDA improvements for Application Access Rights Review with IDA in SaaS,
+- Improvement of CyberArk PCloud and Identity data ingestion,
+- Fix of crosstable display bugs,
+- Vulnerabilities fix.
+
 ### Version 3.2
 
 - PAM Booster: support of CyberArk PCloud with CyberArk Identity and EntraID,
-- Improvement of the “web-based” review:
-  - Add of “description” attribute for accounts in accounts and group membership “web-based” reviews,
+- Improvement of the "web-based" review:
+  - Add of "description" attribute for accounts in accounts and group membership "web-based" reviews,
   - AIDA configuration option in campaign configuration to hide the LLM prompt,
   - User experience and performance improvements.  
 
@@ -172,7 +182,7 @@ Access review improvements:
 - Add a campaign initialization status
 - Can pause/resume a campaign
 - Reviewer can ask for a change (ok, revoke, update)
-- Reviewer can mark entries as “I am not the reviewer”
+- Reviewer can mark entries as "I am not the reviewer"
 - Reviewer can now see delegated (RACI) entries
 - Default comments provided for the reviewer
 - Self-review campaign
