@@ -19,13 +19,13 @@ IAP leverages improvements applied to the IGRC product. Please refer to the foll
 
 ### Version Descartes
 
-|                  | IAP 1.8 | IAP 2.0 - 2.2 | IAP 3.0 - 3.1 | IAP 3.2 | IAP 3.3 |
-| :--------------- | :-----: | :-----------: | :-----------: | :-----: | :-----: |
-| Descartes R2     |  **X**  |     **X**     |       -       |    -    |    -    |
-| Descartes R4     |  **X**  |     **X**     |     **X**     |    -    |    -    |
-| Descartes R5     |  **X**  |     **X**     |     **X**     |    -    |    -    |
-| Descartes R5 SP3 |  **X**  |     **X**     |     **X**     |  **X**  |    -    |
-| Descartes R5 SP6 |  **X**  |     **X**     |     **X**     |  **X**  |  **X**  |
+|                  | IAP 1.8 | IAP 2.0 - 2.2 | IAP 3.0 - 3.1 | IAP 3.2 | IAP 3.3.X |
+| :--------------- | :-----: | :-----------: | :-----------: | :-----: | :-------: |
+| Descartes R2     |  **X**  |     **X**     |       -       |    -    |     -     |
+| Descartes R4     |  **X**  |     **X**     |     **X**     |    -    |     -     |
+| Descartes R5     |  **X**  |     **X**     |     **X**     |    -    |     -     |
+| Descartes R5 SP3 |  **X**  |     **X**     |     **X**     |  **X**  |     -     |
+| Descartes R5 SP6 |  **X**  |     **X**     |     **X**     |  **X**  |   **X**   |
 
 ## IAP release content
 
@@ -36,6 +36,12 @@ For a full list of changes to IAP please refer the to following release notes:
 - [IAP 1.x release notes](02-iap-1.X-release-notes.md "IAP release notes" )
 
 ### Version 3.3
+
+#### Version 3.3.1
+
+- Includes a fix to EntraID's connector through IDDM.
+
+#### Version 3.3.0
 
 - New timeslot-attached review mode that sticks to a selected timeslot and ignores entry deletions that may occur in more recent timeslots during the campaign,
 - New type of review Server Access Rights Review,
