@@ -5,9 +5,18 @@ description : "Identity Analytics Release Notes"
 
 # Identity Analytics Release Notes
 
+## Supported versions
+
+We only support actively the last two versions of Identity analytics. Currently:
+
+- Version 3.3
+- Version 3.4
+
 ## IAP/IGRC Compatibility matrix
 
 IAP leverages improvements applied to the IGRC product. Please refer to the following table for more information :
+
+> [!warning] Curie is no longer supported. Please refer to the supported versions of IAP for more information.
 
 ### Version Curie
 
@@ -19,13 +28,14 @@ IAP leverages improvements applied to the IGRC product. Please refer to the foll
 
 ### Version Descartes
 
-|                  | IAP 1.8 | IAP 2.0 - 2.2 | IAP 3.0 - 3.1 | IAP 3.2 | IAP 3.3 |
-| :--------------- | :-----: | :-----------: | :-----------: | :-----: | :-----: |
-| Descartes R2     |  **X**  |     **X**     |       -       |    -    |    -    |
-| Descartes R4     |  **X**  |     **X**     |     **X**     |    -    |    -    |
-| Descartes R5     |  **X**  |     **X**     |     **X**     |    -    |    -    |
-| Descartes R5 SP3 |  **X**  |     **X**     |     **X**     |  **X**  |    -    |
-| Descartes R5 SP6 |  **X**  |     **X**     |     **X**     |  **X**  |  **X**  |
+|                  | IAP 1.8 - 2.2 | IAP 3.0 - 3.1 | IAP 3.2 | IAP 3.3 | IAP 3.4 |
+| :--------------- | :-----------: | :-----------: | :-----: | :-----: | :-----: |
+| Descartes R2     |     **X**     |       -       |    -    |    -    |    -    |
+| Descartes R4     |     **X**     |     **X**     |    -    |    -    |    -    |
+| Descartes R5     |     **X**     |     **X**     |    -    |    -    |    -    |
+| Descartes R5 SP3 |     **X**     |     **X**     |  **X**  |    -    |    -    |
+| Descartes R5 SP6 |     **X**     |     **X**     |  **X**  |  **X**  |    -    |
+| Descartes R5 SP7 |     **X**     |     **X**     |  **X**  |  **X**  |  **X**  |
 
 ## IAP release content
 
@@ -34,6 +44,29 @@ For a full list of changes to IAP please refer the to following release notes:
 - [IAP 3.x release notes](04-iap-3.X-release-notes.md "IAP release notes" )
 - [IAP 2.x release notes](03-iap-2.X-release-notes.md "IAP release notes" )
 - [IAP 1.x release notes](02-iap-1.X-release-notes.md "IAP release notes" )
+
+### Version 3.4
+
+Web User Access Review Improvements:
+
+- Email templates configurable across campaigns with nationalization, english, spanish and french supported,
+- New perimeter filtering capabilities with "saved rules",
+- New "reviewer strategies" implemented for Application Access Rights Review and Account Repository Review,
+- Custom reviews can now be integrated within the Review Campaign Manager,
+- Reviewer Policies are now configurable as templates to be use in different campaigns,
+- Reviewer table are configurable with possibility to add custom attributes,
+
+Improvement of the remediation with error management and retry for Jira and ServiceNow connectors, and remediation of server user access,
+
+PAM Booster for CyberArk PCloud enhancement,
+
+Migration of all javascript graphical widgets to latest versions,
+
+Fix of portal bugs within the Tech Admin dashboard,
+
+Performance improvement,
+
+Vulnerabilities fix.
 
 ### Version 3.3
 
