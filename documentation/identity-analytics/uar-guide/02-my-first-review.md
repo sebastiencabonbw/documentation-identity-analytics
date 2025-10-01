@@ -93,17 +93,52 @@ To refine the review perimeter, the advanced mode in the first step allows you t
 
 ![](./media/IAP143.png)
 
-You can configure that only some accounts will be part of the review, either by playing with the options (user accounts, orphaned accounts and so on) or by tagging the accounts you want to include in your review thanks to the account search interface.
+You can configure that only some accounts will be part of the review, either by playing with the options (user accounts, orphaned accounts, ...) or by tagging the accounts you want to include in your review thanks to the account search interface.
 
 This is super flexible as it can be for instance used to review only accounts with some attributes or characteristics such as:
 
 - Accounts from people working in a given division / country / ...
 - Accounts with a given sensitivity level,
 - Accounts with given controls defects,
+- ...
 
-In our use case we want to review **ALL** accounts, so lets keep the default configuration.
+In addition, You can filter accounts using saved rules.
 
-### Accounts and Permissions Tag
+![](./media/IAP143-1.png)
+
+Two possibilities for that, you can use predefined rules available in the project or define your own rule from the user interface as in the following screenshot. In the first case, the list of related rules will be displayed in the combo box "Select Custom Perimeter Rule". The rules defined in the project have to get the following values for:
+
+- Tag > "family" attribute: "Perimeter",
+- The option Execution plan > "Include in execution plan" selected.
+
+Your rule will be executed and the result stored in the database during the next data upload. You can also using the tab "History" of the rule, add it manually to existing timeslots if you are connected to the database.
+
+If the expected rule is not available or does not suite the end-user needs, he can create it directly from the web interface by clicking on the three small dots to the right of the field and then "Create rule...". Several rules can be created, but only one can be selected at a time:  
+
+Select an available rule:  
+![](./media/IAP143-4.png)
+
+Create a new rule:  
+![](./media/IAP143-5.png)  
+  
+![](./media/IAP143-2.png)  
+
+Once your criteria are entered in the rule builder, click on the magnifying glass to display the result, then give it an understandable name and click on save to save the rule.
+
+![](./media/IAP143-3.png)  
+
+Using this method allows for example to filter only:
+
+- accounts having access to a list of specific applications,  
+- accounts from a specific list of repositories with a max risk level higher than 2,  
+- accounts from a specific repository having a direct access to a list of specific permissions,  
+- accounts belonging to identities working in a list of specific departments (organizations), and so on.
+
+In our use case we want to review **ALL** accounts, so lets keep the default configuration.  
+
+### How to Tag Accounts and Permissions  
+
+- Tag Accounts  
 
 To identify some specific accounts or some specific permissions, creating tags allows you to filter on them. Creating tags should be done before the review configuration.
 
@@ -111,7 +146,7 @@ For example, to create a tag and filter on accounts that contain "adm" in their 
 
 ![](./media/IAP144.png)
 
-### Permissions Review Perimeter
+- Tag Permissions  
 
 Once again you can refine your review perimeter in this section by selecting only some permissions to review. In order to do so, you have to tag the permissions that will be part of the review perimeter thanks to the permission search interface.
 
@@ -120,8 +155,9 @@ This is super flexible as it can help you to review only some permissions such a
 - Sensitive permissions
 - Permissions with given controls defects
 - Admin permissions
+- ...
 
-Keep in mind that at the end the review configuration, only the lines whom **BOTH** accounts and permissions are part of the perimeter will be part the review. In that case, the resources that are reviewed (the Elyxo-Treasury, SAP and SAGE-Accounting applications in our case here) will not be considered compliant at the end because the review is not comprehensive.  
+Keep in mind that at the end the review configuration, only the lines whom **BOTH** accounts and permissions that are part of the perimeter will be part the review. In that case, the resources that are reviewed (the Elyxo-Treasury, SAP and SAGE-Accounting applications in our case here) will not be considered compliant at the end because the review is not comprehensive.
 
 In our use case we want to review **ALL** permissions, so lets leave this part empty.
 
@@ -141,6 +177,7 @@ RACI principle is enforced, as a result there is only **ONE** *reviewer* account
 In the Application Access Right review, you have the choice between the following strategies:
 
 - User Accounts by Line Manager and Technical Accounts by Application Owner
+- User Accounts by Line Manager and Technical Accounts by Technical Account Owner
 - User Accounts by Line Manager and All Other Accounts by Application Owner
 - User Accounts by Account Owner and All Other Accounts by Application Owner
 - All Accounts by Application Owner
@@ -167,6 +204,45 @@ As you will see, if RadiantOne Identity Analytics does not find any reviewer for
 
 Let's keep the default values for now and let's move to the next section.
 
+### Advanced Reviewer Strategy
+
+#### When configuring a new campaign
+
+Clicking on "Advanced" allows you to select an advanced reviewer policy template from the combo box. You can use as it is or if you're a technical administrator modify it specifically for your campaign by clicking on "Edit Reviewer Policy" and modifying the script. 
+
+![](./media/IAP146-1.png)
+
+![](./media/IAP146-2.png)
+
+#### How to manage reviewer policy templates
+
+From the campaign manager, on the top right of the page, a tab "Reviewer Policies" allows technical administrators to create and manage script templates per review type that will be available each time a new campaign is created or modified.  
+
+![](./media/IAP146-3.png)
+
+![](./media/IAP146-4.png)
+
+For example, if you want to set the following strategy:  
+
+- User accounts by themselves
+- Service accounts by account managers
+- All other accounts by application owner
+- Default reviewer for left entries
+
+You'll have to enter in the script the following conditions:
+
+```javascript
+if(accounttype.equals('user')) {  
+	'myself';  
+}  
+if(accounttype.equals('service')) {  
+	'accountowner';  
+}
+'default.applicationowner';  
+```
+
+This will ease the configuration of new campaigns when the review policies are specific to the organization.
+
 ### AI Options
 
 #### AIDA (SaaS only)  
@@ -190,7 +266,7 @@ AIDA with User Access Reviews follows these four main principles:
 1. AIDA guides the reviewer through the review process, step by step, so that the reviewer is clear about where to start, time is saved and the reviewer has a better understanding of the data.
 2. At each stage, AIDA proposes a decision based on the analysis it has carried out, explaining why this decision should be made by presenting the analysis. The reviewer then has the information needed in order to proceed in his decision-making process.
 3. Once the reviewer makes his decision, AIDA will carry out the action for him in the system. This method aligns with compliance regulations because it is mandatory that a human being, and not a machine, be the one to fully perform the review.
-4. During the review process and in addition to AIDA's suggestions and explanations, the reviewer can delve more deeply by using Large Language Models (LLM) to request further clarification and analysis which helps to explain the context (who can access what, what is the access chain, how to compare accesses, etc.).
+4. During the review process and in addition to AIDA's suggestions and explanations, the reviewer can delve more deeply by using Large Language Models (LLM) to request further clarification and analysis which helps to explain the context (who can access what, what is the access chain, how to compare accesses, etc.).  
 
 #### Decision History
 
@@ -219,7 +295,7 @@ This section will present a preview of the data to be reviewed as well as the *c
 
 ![](./media/IAP147.png)
 
-> Creating and launching a review on a previous timeslot is not a standard use case, so the preview shown in the review campaign setup only gives general information based on the last timeslot. The preview based on the timeslot you selected will be available once the campaign is created by entering the details of your access review (see Campaign Follow-up section). This is why we recommend that you configure your campaign “on hold” if it is a scheduled campaign at step 6 of the configuration wizard. 
+> Creating and launching a review on a previous timeslot is not a standard use case, so the preview shown in the review campaign setup only gives general information based on the last timeslot. The preview based on the timeslot you selected will be available once the campaign is created by entering the details of your access review (see Campaign Follow-up section). This is why we recommend that you configure your campaign “on hold” if it is a scheduled campaign at step 6 of the configuration wizard.  
 
 You can browse through the table, reorder the columns, add or remove columns through the options or export the data in CSV/excel format if needed. Click on the three buttons on the upper right of the table for such purpose.
 
@@ -231,7 +307,7 @@ When configuring columns:
 You can also use the filtering capabilities at the top of the table such as the filter per reviewer on the upper left of the table or the global filter and the group by feature on the upper right.
 ![](./media/IAP151.png)
 
-You can access to objects details by clicking on the corresponding labels (login, name, permission, etc.)
+You can access to objects details by clicking on the corresponding labels (login, name, permission, ...)
 
 ![](./media/IAP149.png)
 
@@ -242,17 +318,30 @@ If some *reviewers* have not been found an error message is displayed on the scr
 You still can browse the table to check each entry.  
 If everything is ok, you can click on *Next* to move forward.  
 
-> **Note:** For reviews on large volumes of data, above 30,000 entries by default, this step is deactivated to smooth the experience. In that case, the following message will be displayed:  
+> **Note** For reviews on large volumes of data, above 30,000 entries by default, this step is deactivated to smooth the experience. In that case, the following message will be displayed:  
 
-![](./media/IAP276.png)  
+![](./media/IAP276.png)
 
- > **Note:** Creating and launching a review for a previous timeslot is not a standard use case. As a result, the perimeter preview shown during the campaign setup will only display general information based on the most recent timeslot, not the one you selected. The accurate preview for your selected timeslot will become available only after the campaign has been created (see the [Campaign Follow-up](/#campaign-follow-up-details-button) section). To ensure accuracy and allow for adjustments, we recommend setting the campaign “on hold” during Step 6 of the configuration wizard. This gives you time to review and validate the setup before launching.
-  
-## Step 4 - Reviewer UI  
+## Step 4 - Reviewer UI
 
-In this step you can specify the user interfaces you want to provide to the reviewers.  
+In this step you can specify the user interfaces you want to provide to the reviewers.
 
-The first section focus on the reviewer decision configuration: revoke, validate, update entries.
+![](./media/IAP244.png)
+
+The first section focus on the selection of attributes to include and display or hide in the reviewer table.
+
+![](./media/IAP244-1.png)
+
+By clicking on "Select Columns", you can choose the attributes you want to include by moving the from the left to the right of the table. By activating the "eye" icon, you choose to display the attribute by default in the table, by deactivating it you choose to hide it. You can also re-order the the attributes as you wish.  
+
+![](./media/IAP244-2.png)
+
+The tab "Customization" allows you to rename the attributes with an understandable label to make it easier for reviewers to understand.
+
+![](./media/IAP244-3.png)
+
+
+The second section focus on the reviewer decision configuration: revoke, validate, update entries.
 
 ![](./media/IAP244.png)
 
@@ -266,19 +355,17 @@ By default, the following comments are proposed for `Update`:
 
 ![](./media/IAP246.png)
 
-If you want to avoid the "Rubber Stamping" effect, you can limit the bulk actions of the reviewer to a certain number of entries. You can also choose whether to enable or disable these additional features:   
+If you want to avoid the "Rubber Stamping" effect, you can limit the bulk actions of the reviewer to a certain number of entries.  
   
-- **Hide already reviewed entries by default**  
-  When enabled, the reviewer will, by default, only see entries that still need to be reviewed. Previously reviewed entries are hidden but can be shown by unchecking this option at the top of the table.
+Four additional options can be disabled such as:  
+  
+- allowing the reviewer to specify that he is not the right person with the `I'm not the reviewer` button. In that case the related entries are set as "to reassign" and are not visible any more by the reviewer. The accountable reviewer has to change. The review owner has then to re-assign those entries to another person from the follow-up interfaces of the review instance.  
+  
+- allowing the reviewer to `ask for help to`another person in his team if he is line manager, or another owner if he is a resource owner. In that case, the reviewer stay the accountable reviewer of the entries, however he ask to a responsible reviewer to take the decisions on his behalf for the selected entries.  
+  
+- allowing the reviewer to `hide already reviewed entries by default`: when activated, the reviewer will only see by default the remaining entries he has to review. He still can uncheck this option on top of the tables to see all entries, including the one already reviewed.  
 
-- **Hide delegated entries by default**  
-  When enabled, the reviewer will, by default, only see entries they are personally responsible for. Entries delegated to others will be hidden but can be displayed by unchecking this option at the top of the table.
-
-- **I'm not the reviewer**  
-  Allows the reviewer to indicate they are not the appropriate person to review certain entries. These entries are then marked as "To Reassign" and are no longer visible to the reviewer. The accountable reviewer must be updated, and the review owner is responsible for reassigning the entries via the follow-up interface of the review instance.
-
-- **Ask for help**  
-  Allows the reviewer to request assistance from another person. Line managers can ask team members for help; resource owners can reach out to other owners. The reviewer remains the accountable reviewer but delegates the decision-making for selected entries to a responsible reviewer.
+- allowing the reviewer to `Hide delegated entries by default`: when activated, the reviewer will only see by default his remaining entries but not the one he has delegated to other people. He still can uncheck this option on top of the tables to see all entries, including the one he has delegated.  
   
 In your case, you can keep the default values and click on *Next* to move forward.  
   
@@ -292,12 +379,12 @@ This part allows you to configure the schedule of your review instances and the 
 
 In the first section, `Campaign Scheduling`, you can choose either to define a **manual** or a **scheduled** campaign. 
 
-If you choose the **manual** option, the review instance must be launched by the campaign owner when needed. You need to specify the expected duration of the campaign in days, so that notification of completion of the review instance is automatically sent to the campaign owner on the correct date, as well as reminders according to the reminder strategy you define in the next section.
+If you choose the **manual** option, the review instance must be launched by the campaign owner when needed. You need to specify the expected duration of the campaign in days, so that notification of completion of the review instance is automatically sent to the campaign owner on the correct date, as well as reminders according to the reminder strategy you define in the next section.   
 
 If you choose the **scheduled** option, the first review instances will be launched automatically at the **initial start date** you've specified. Then the next instances will be launched based on the frequency you've defined, which could be weekly, monthly, quarterly, semi-annual, yearly. You have also to set the expected duration of the campaign in days, so that notification of completion of the review instance is automatically sent to the campaign owner on the correct date, as well as reminders according to the reminder strategy you define in the next section.  
 You can also activate a reminder to notify the campaign owner a certain number of days, which you can define, before the campaign automatically starts. The aim is to allow the owner to review the scope and reviewers to be called upon before the review instance starts.  
 
-The finalization of **manual** and **scheduled** review instances is therefore manual, allowing the campaign owner to grant a grace period if necessary, to ensure that all reviewers have completed their review.
+The finalization of **manual** and **scheduled** review instances is therefore manual, allowing the campaign owner to grant a grace period if necessary, to ensure that all reviewers have completed their review. 
 
 For both **manual** and **scheduled** campaigns you can check the option "Put on hold at startup" so that when the review will start either automatically or manually, the review instance will be in pause status and the notifications will not be send, allowing you to review the scope and the reviewer strategy before starting it. In your case we will check that option, to review the perimeter before launching the first instance.
 
@@ -305,9 +392,11 @@ In your case here, you can choose a "scheduled" review with a quarterly frequenc
 
 ### Reviewers' Notifications and Reminders Strategies
 
-In this section, you can activate initial notifications and reminders sent to reviewers. For each of these, you can edit the e-mail templates and modify them as required. Those templates are use when notifications are send automatically and also when the campaign owner wants to send reminders manually to a selection of reviewers from the follow-up interface.
+In this section, you can activate initial notifications and reminders sent to reviewers. For each of these, you can edit the e-mail templates and modify them as required in the three languages supported by default: English, French, Spanish. Those templates are used when notifications are send automatically and also when the campaign owner wants to send reminders manually to a selection of reviewers from the follow-up interface. 
 
 ![](./media/IAP248.png)
+
+You can choose pre-defined template by selecting one in the dropbox "Email Template" and then modify it specifically for your review. On the right, the name of the original template use is displayed.
 
 When editing email templates, you can use the gear icons to insert variables in the main text of the email or in the fields of the destination email address.
 
@@ -323,6 +412,19 @@ Later, once you've finalized the configuration of your campaign, you'll be able 
 
 You can leave the default templates and reminder calendar as they are for your use case.
 
+### How to manage notification templates
+
+From the campaign manager, on the top right of the page, a tab "Mail Templates" allows technical administrators to create and manage notification templates for initial notification and reminder email templates.  
+
+![](./media/IAP280.png)
+
+![](./media/IAP280-1.png)
+
+You can create new template, edit and duplicate existing ones, or remove some templates. Deleting templates will not affect any campaigns that have already been set up using those templates.
+For each template, you can define emails in english, french and spanish. The Identity Analytics can specify the languages tha need to be supported by setting in the technical configuration of the project the variable `ias_supportedlanguages` to "en,fr,es".  
+
+This will ease the configuration of new campaigns to create and share notification templates across user access review campaigns for the organization.
+
 ## Step 6 - Campaign Information
 
 You are almost done, the last thing you need is to give additional information to your campaign such as a pretty name, description, specify an owner, a priority level. This priority level can be useful when several review campaigns are being run at the same time, giving your *reviewers* a way of evaluating their entries by priority level.  
@@ -330,12 +432,12 @@ You are almost done, the last thing you need is to give additional information t
 ![](./media/IAP152.png)  
 
 Three additional options are available here, such as "Enable offline mode", which allows reviewers to download the entries to be reviewed into an Excel spreadsheet from their home page and upload it once they have partially or completely completed it. It allows also the campaign owner to send e-mail notifications with this spreadsheet attached so that reviewers can work offline. This option is particularly appreciated when reviewers travel a lot or have no access to the company's IS for whatever reason (if they are contractors for example). Note that a same reviewer can work both online and offline if needed.  
+  
+The second option `Attach Review to Timeslot` allows to configure user access review in Identity Analytics that are fixed to a specific timeslot, which represents the configuration of the accesses at a particular time. This way, the User Access Review is not taken into account the newer timeslots where some of the entries may have been removed since the review began.
+  
+The third option disables the campaign, so that it cannot be launched automatically or manually. You need to edit it and change the deactivation of this setting for it to work. This allows you to work on the configuration at a later date and perform a few additional checks before the review instance starts and notifications are sent automatically.  
 
-The second option disables the campaign, so that it cannot be launched automatically or manually. You need to edit it and change the deactivation of this setting for it to work. This allows you to work on the configuration at a later date and perform a few additional checks before the review instance starts and notifications are sent automatically. 
-
-The third option, "Attach Review to Timeslot" allows you to configure User Access Reviews (UAR) in Identity Analytics based on a fixed timeslot. The timeslot represents the state of user access at a specific point in time. As a result, the review will not take into account newer timeslots. Any entries that have been removed since the review began will still be included in the review.
-
-![](./media/IAP152bis.png)  
+![](./media/IAP152bis.png)
 
 When offline mode is enabled:  
 
@@ -376,9 +478,10 @@ You can access to this page through the menu *Review / Review Campaign Managemen
 
 ![](./media/IAP153.png)
 
-> To accurately check the status of your access review campaigns and their review instances, make sure you are in the latest timeslot. If you are viewing a past timeslot, some review instances may appear active even though they have been closed in the current timeslot.
+> **Notes:**
+> To check the status of your access review campaigns and their review instances, you must be in the latest timeslot, otherwise if you are in a past timeslot, certain review instances may appear active even though they were closed in the current timeslot. 
 
-When selecting your campaign in the list, you can either edit the configuration by clicking on **Configure**, **Duplicate** the configuration of your campaign or **Delete** it with all its review instances history.  
+When selecting your campaign in the list, you can either edit the configuration by clicking on **Configure**, **Duplicate** the configuration of your campaign or **Delete** it with all its review instances history. 
 
 Additional buttons are available to **Create** new campaigns and **Export Configuration** **Import Configuration** by clicking on the three bullets.
 
@@ -404,13 +507,17 @@ If the campaign has been scheduled which is the case here, back in the review ca
 
 ![](./media/IAP255.png)  
 
-The first occurrence of the review will have "#1" added at the end of its name, the second "#2" and so on.
+The first occurrence of the review will have "#1" added at the end of its name, the second "#2" and so on. 
 On the active instance, you can:
 
-- go to the follow-up dashboard by clicking on **Details**,
+- go to the follow-up dashboard by clicking on **Details**, 
+
 - manage reminders (remove/create) by clicking on **Reminders**,
+
 - pause your instance by clicking on **Pause**,
+
 - finalize your review instance by clicking on **Finalize**,
+
 - when paused, delete your review instance by clicking on **Delete**.
 
 ### Campaign Follow-up: **Details** button
@@ -419,7 +526,7 @@ The very first thing you will want to do is to go to the follow-up dashboard to 
 
 #### Measuring review campaign progress  
 
-The first tabs "Review Status" and "Review Statistics" allow to measure and follow the progress of your review instance with the help of KPIs and graphs. 
+The first tabs "Review Status" and "Review Statistics" allow to measure and follow the progress of your review instance with the help of KPIs and graphs.  
 
 ![](./media/IAP161.png)  
 
@@ -427,7 +534,7 @@ The first tabs "Review Status" and "Review Statistics" allow to measure and foll
 
 In the first "Review Status" tab, *Reviewers* that have already signed off their user access review are shown in the left-hand table. In the table on the right, reviewers who have not yet started reviewing entries, or who are in the process of reviewing them, or who have reviewed all entries but have not yet signed off their review, are displayed.  
 
-When you click on the KPI or reviewer name in the tables on this tab, you go directly to the "Entries to review" tab, with the filter applied according to the KPI/reviewer name you initially clicked on.
+When you click on the KPI or reviewer name in the tables on this tab, you go directly to the "Entries to review" tab, with the filter applied according to the KPI/reviewer name you initially clicked on. 
 
 Note that from the right table, you can send reminders to a selection of reviewers if needed. This is particularly helpful when you have reassignment (accountable or responsible) that have been done recently and when the next reminders won't be coming soon.  
 
@@ -460,7 +567,7 @@ You can also browse through the review statistics to check the current review st
 
 ![](./media/IAP162.png)  
 
-But what we're interested in here is more the third tab "Entries to Review", to review and refine reviewers if needed before starting the review.
+But what we're interested in here is more the third tab "Entries to Review", to review and refine reviewers if needed before starting the review. 
 
 #### Refine reviewers  
 
@@ -491,7 +598,7 @@ Once I'm ok with the list of entries and their related reviewers, I can go back 
 
 ![](./media/IAP267.png)  
 
-Then the review will be dispayed as `Active`:  
+Then the review will be displayed as `Active`:  
 
 ![](./media/IAP268.png)  
 
@@ -501,7 +608,7 @@ The reminder dialog lets you fine-tune the reminders you wish to send during you
 
 ![](./media/IAP262.png)  
 
-In your case, in addition to the default reminders, we've chosen to add two, at one day and four days before the end date.
+In your case, in addition to the default reminders, we've chosen to add two, at one day and four days before the end date.     
 
 ### Update campaign status: **Pause/Resume**, **Abort** and **Finalize** buttons
 

@@ -81,10 +81,9 @@ After extracting the data, follow these steps to configure the data mapping in t
 
 **Upload Data into Identity Analytics:**
 
-   - **For Windows Servers:** It's recommended to install the "bw_windows_local" add-on in your Identity Analytics instance to facilitate data mapping. This add-on simplifies the process of mapping server data into the IDA data model.
+- **For Windows Servers:** It's recommended to install the "bw_windows_local" add-on in your Identity Analytics instance to facilitate data mapping. This add-on simplifies the process of mapping server data into the IDA data model.
 
-   - **For Other Servers:** If you're using custom scripts or different add-ons, ensure that the extracted data aligns with the IDA data model's requirements. Specifically, map servers as applications with the attribute "Application Type" set to "server." Additionally, map access rights, such as local groups within your servers, to the appropriate permissions within the IDA model.
-
+- **For Other Servers:** If you're using custom scripts or different add-ons, ensure that the extracted data aligns with the IDA data model's requirements. Specifically, map servers as applications with the attribute "Application Type" set to "server." Additionally, map access rights, such as local groups within your servers, to the appropriate permissions within the IDA model.
 
 ## Data model
 
@@ -107,23 +106,23 @@ Here is a `view` of an access right campaign.
 
 Campaign information is stored as such:  
 
-| Campaign     |                                                            |
-| ------------ | ---------------------------------------------------------- |
-| recorduid    | Campaign internal unique identifier                        |
-| ticketnumber | Campaign unique number                                     |
-| title        | Campaign name                                              |
-| description  | Campaign description                                       |
-| priority     | Campaign priority number                                   |
-| duedate      | Campaign due date                                          |
-| custom1      | Campaign type ('right', 'account', 'safe', 'group members")|
-| custom2      | timeslotuid when the campaign was launched                 |
-| custom3      | status page                                                |
-| custom4      | review page                                                |
-| custom5      | finalize page                                              |
-| custom6      | offline mode enabled                                       |
-| custom7      | self delegation enabled                                    |
-| custom8      | is it a full (compliance driven ) review                   |
-| tickettype   | ADHOC_UAR                                                  |
+| Campaign     |                                                             |
+| ------------ | ----------------------------------------------------------- |
+| recorduid    | Campaign internal unique identifier                         |
+| ticketnumber | Campaign unique number                                      |
+| title        | Campaign name                                               |
+| description  | Campaign description                                        |
+| priority     | Campaign priority number                                    |
+| duedate      | Campaign due date                                           |
+| custom1      | Campaign type ('right', 'account', 'safe', 'group members") |
+| custom2      | timeslotuid when the campaign was launched                  |
+| custom3      | status page                                                 |
+| custom4      | review page                                                 |
+| custom5      | finalize page                                               |
+| custom6      | offline mode enabled                                        |
+| custom7      | self delegation enabled                                     |
+| custom8      | is it a full (compliance driven ) review                    |
+| tickettype   | ADHOC_UAR                                                   |
 
 The campaign current status is stored in a dedicated metadata named `bwr_campaigninstance` where the subkey equals the campaign recorduid. The status is stored as a String in string3, the possible values are:
 
@@ -211,7 +210,7 @@ Ticketlog information is:
 
 Once a campaign is finalized, remediation tickets are automatically created for all reviewed entries with `revoke` or `update` status.
 
-A remediation is a `ticketlog`, nevertheless, as a ticketlog is read-only, a `ticketreview` is created for **each** remediation. This `ticketreview` contains the remediation current status.
+A remediation is a `ticketlog`, nevertheless, as a `ticketlog` is read-only, a `ticketreview` is created for **each** remediation. This `ticketreview` contains the remediation current status.
 
 ![](./media/image102.png)
 
@@ -274,10 +273,10 @@ Several workflows are available to create/update reviews. You should use them wh
 
 Several workflows are available to automatically create/update remediations. You can launch them through a scheduled batch (`igrc_workflow.[cmd|sh]`) if you want automate remediation creation or ITSM tickets refresh. Those workflows are located in `/workflow/bw_iasreview/`
 
-| Workflows                           |                                                              |
-| ----------------------------------- | ------------------------------------------------------------ |
-| inittickets (bwr_inittickets)       | Used to automatically launch all "pending" remediations.     |
-| refreshtickets (bwr_refreshtickets) | Used to automatically refresh all active ITSM tickets status |
+| Workflows                             |                                                              |
+| ------------------------------------- | ------------------------------------------------------------ |
+| inittickets (`bwr_inittickets`)       | Used to automatically launch all "pending" remediations.     |
+| refreshtickets (`bwr_refreshtickets`) | Used to automatically refresh all active ITSM tickets status |
 
 ## Self-Reassignment
 
@@ -296,7 +295,14 @@ To do so, you have to edit the following feature file: `\webportal\features\bw_i
 
 Please contact your Identity Analytics project owner to configure this.
 
-## New configuration variables to handle large volume of data
+## New configuration variables
+
+### Configuration variable to handle notifications languages
+
+When managing notifications from the user access review campaign management interface, tab "Mail Templates", the technical administrator can create new email template, edit and duplicate existing ones, or remove some templates. Deleting templates will not affect any campaigns that have already been set up using those templates.
+For each template, you can define emails in english, french and spanish. The Identity Analytics can specify the languages that need to be supported by setting in the technical configuration of the project the variable `ias_supportedlanguages` to "en,fr,es".  
+
+### Configuration variables to handle large volume of data
 
 Four new configuration variables have been added to the project to handle large amount of data.
 
@@ -305,7 +311,7 @@ Four new configuration variables have been added to the project to handle large 
 - `ias_disablenoniappreviews` allows to disable the display of custom workflow review types in Access360 to improve performance, used by Identity Analytics 3.X and 2.2. The default value is false, and it should be activated only if you don't have any custom workflow reviews.
 - `ias_reviewercriticalthreshold` in Identity Analytics 3.X and 2.2, indicates the number of entries upon which the review instance is forced to offline mode. The default value is 30,000.
 - `ias_reviewdisablepreviewlimit` in Identity Analytics 3.1 and above, allows for reviews on large volumes of data, above 30,000 entries by default, to deactivate the step 3 `Perimeter Preview` to smooth the experience, as well as hide the KPIs in step 6. As a result, the campaign is forced into "on hold" mode to allow perimeter review from the campaign management interface before launching the reviews.  
-
+  
 ### AIDA configuration variables
 
 In the technical project configuration file, two variables are available:
