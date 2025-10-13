@@ -230,6 +230,7 @@ Remediation information is stored in the remediation `reviewticket` as such
 | custom6                   | External ticket id (internal info)                                |
 | custom7                   | External ITSM instance code                                       |
 | custom8                   | External ITSM hyperlink to show the ticket details                |
+| custom10                  | Assigned remediation instance code _(error only)_                 |
 
 `status` contains the current review ticket status. This printable value depends on the remediation type (manuel, automated, ...) in case of an automated review through an ITSM system, this value contains the current ITSM ticket status.
 
@@ -237,12 +238,13 @@ Remediation information is stored in the remediation `reviewticket` as such
 
 > You cannot rely on `status` to check for the active remediation state as `status` contains a printable status which depends on the remediation type
 
-| Remediation closed status |                                              |
-| ------------------------- | -------------------------------------------- |
-| -1                        | Remediation is ready to be launched          |
-| 0                         | Remediation is still active                  |
-| 1                         | Remediation is closed and has been done      |
-| 2                         | Remediation is closed and has been cancelled |
+| Remediation closed status |                                                   |
+| ------------------------- | ------------------------------------------------- |
+| -1                        | Remediation is ready to be launched               |
+| 0                         | Remediation is still active                       |
+| 1                         | Remediation is closed and has been done           |
+| 2                         | Remediation is closed and has been cancelled      |
+| 3                         | Remediation is in error and can be launched again |
 
 As you can notice in the upper table, the only case where a remediation has been done is when `custom2=1`
 
@@ -252,6 +254,12 @@ As you can notice in the upper table, the only case where a remediation has been
 - `itsm`: Managed remediation through an ITSM system, as several ITSM can be declared in Identity Analytics, `custom7` contains the Identity Analytics ITSM instanceid
 
 > [!warning] A *remediation ticketreview* is **not** associated with the access right which needs to be remediated. It is associated with a *dummy* reviewed metadata. When configured this way, this ticketreview will never disappear even when the access right itself disappear when refreshing the Identity Ledger. A printable version of the access right is available in `custom1`.
+
+#### Remediation error
+
+Using an external ITSM tools can lead to errors during the creation process of the tickets whether it's due to misconfiguration, the external server not being reachable or any other reason. In case of error, the closed status is set to `custom2=3` along with the `custom10=remediationinstancecode`, this way the remediation instance that must be looked into can quickly be identified and the `comment` field, used to store the error returned during the process, can help resolve the issue.
+
+Once the error has been fixed, the remediations in error can be launched again. The `bwr_retrytickets` workflow is executed to do so, with the variable `retrymode=True` sent as an input to the `bwr_inittickets` workflow. This way instead of processing the remediations with a closed status `custom2=-1` it executes on `custom2=3` hence retrying to create the remediation tickets that fell in error before.
 
 ## create / update review status
 
@@ -269,7 +277,7 @@ Several workflows are available to create/update reviews. You should use them wh
 | createRemediationTicket                 | Used to create one remediation ticket                                                              |
 | writeRemediationTickets                 | Used to update remediation tickets status                                                          |
 
-## launch remediation  and create ITSM tickets / refresh ITSM tickets status
+## launch remediation and create ITSM tickets / refresh ITSM tickets status / retry in case of error
 
 Several workflows are available to automatically create/update remediations. You can launch them through a scheduled batch (`igrc_workflow.[cmd|sh]`) if you want automate remediation creation or ITSM tickets refresh. Those workflows are located in `/workflow/bw_iasreview/`
 
@@ -277,6 +285,7 @@ Several workflows are available to automatically create/update remediations. You
 | ------------------------------------- | ------------------------------------------------------------ |
 | inittickets (`bwr_inittickets`)       | Used to automatically launch all "pending" remediations.     |
 | refreshtickets (`bwr_refreshtickets`) | Used to automatically refresh all active ITSM tickets status |
+| retrytickets (`bwr_retrytickets`)     | Used to automatically retry the creation of tickets that fell into an error state |
 
 ## Self-Reassignment
 
