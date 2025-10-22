@@ -279,7 +279,7 @@ Several workflows are available to create or update reviews. You should use them
 
 ## Launch remediation and create ITSM tickets 
 
-Several workflows are available to automatically create/update remediations. You can launch them through a scheduled batch (`igrc_workflow.[cmd|sh]`) if you want automate remediation creation or ITSM tickets refresh. Those workflows are located in `/workflow/bw_iasreview/`
+Several workflows are available to automatically create and update remediations. You can launch them as a scheduled batch (`igrc_workflow.[cmd|sh]`) to automate remediation creation or refresh ITSM tickets. Those workflows are located in `/workflow/bw_iasreview/`
 
 | Workflows                             |                                                              |
 | ------------------------------------- | ------------------------------------------------------------ |
@@ -327,6 +327,7 @@ In the technical project configuration file, two variables are available:
 
 - `aida_enabled` which allows to disable/enable the AIDA service in your Identity Analytics project.  
 - `aida_service_url` which is the API URL used to reach the LLM agents in AWS Bedrock.  
+
 
 
 
