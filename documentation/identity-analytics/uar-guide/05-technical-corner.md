@@ -285,7 +285,7 @@ Several workflows are available to automatically create/update remediations. You
 | ------------------------------------- | ------------------------------------------------------------ |
 | inittickets (`bwr_inittickets`)       | Used to automatically launch all "pending" remediations.     |
 | refreshtickets (`bwr_refreshtickets`) | Used to automatically refresh all active ITSM tickets status |
-| retrytickets (`bwr_retrytickets`)     | Used to automatically retry the creation of tickets that fell into an error state |
+| retrytickets (`bwr_retrytickets`)     | Used to automatically retry the creation of tickets that previously encountered error(s) |
 
 ## Self-Reassignment
 
@@ -327,4 +327,5 @@ In the technical project configuration file, two variables are available:
 
 - `aida_enabled` which allows to disable/enable the AIDA service in your Identity Analytics project.  
 - `aida_service_url` which is the API URL used to reach the LLM agents in AWS Bedrock.  
+
 
