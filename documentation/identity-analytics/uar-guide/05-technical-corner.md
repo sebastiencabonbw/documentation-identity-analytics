@@ -257,7 +257,7 @@ As you can notice in the upper table, the only case where a remediation has been
 
 #### Remediation error
 
-Using an external ITSM tools can lead to errors during the creation process of the tickets whether it's due to misconfiguration, the external server not being reachable or any other reason. In case of error, the closed status is set to `custom2=3` along with the `custom10=remediationinstancecode`, this way the remediation instance that must be looked into can quickly be identified and the `comment` field, used to store the error returned during the process, can help resolve the issue.
+Using external ITSM tools can lead to errors during the creation process of the tickets whether it's due to misconfiguration, the external server not being reachable or any other reason. In case of error, the closed status is set to `custom2=3` along with the `custom10=remediationinstancecode`, this way the remediation instance that must be looked into can quickly be identified and the `comment` field, used to store the error returned during the process, can help resolve the issue.
 
 Once the error has been fixed, the remediations in error can be launched again. The `bwr_retrytickets` workflow is executed to do so, with the variable `retrymode=True` sent as an input to the `bwr_inittickets` workflow. This way instead of processing the remediations with a closed status `custom2=-1` it executes on `custom2=3` hence retrying to create the remediation tickets that fell in error before.
 
@@ -327,3 +327,4 @@ In the technical project configuration file, two variables are available:
 
 - `aida_enabled` which allows to disable/enable the AIDA service in your Identity Analytics project.  
 - `aida_service_url` which is the API URL used to reach the LLM agents in AWS Bedrock.  
+
