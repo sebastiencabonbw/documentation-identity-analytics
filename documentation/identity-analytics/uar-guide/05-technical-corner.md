@@ -5,8 +5,8 @@ description : "Identity Analytics Access Review Guide"
 
 # Technical Corner
 
-This chapter explains how access review are configured in RadiantOne Identity Analytics, from a technical point of view.  
-This information is only useful if you have deployed Identity Analytics 'on-prem' and you want to leverage / extend access review.  
+This document explains how access reviews are configured in RadiantOne Identity Analytics, from a technical point of view.  
+This information is only useful if you have deployed Identity Analytics 'on-prem' and you want to leverage or extend access reviews.  
 
 ## Custom Web-based Reviews
 
@@ -261,9 +261,9 @@ Using external ITSM tools can lead to errors during the creation process of the 
 
 Once the error has been fixed, the remediations in error can be launched again. The `bwr_retrytickets` workflow is executed to do so, with the variable `retrymode=True` sent as an input to the `bwr_inittickets` workflow. This way instead of processing the remediations with a closed status `custom2=-1` it executes on `custom2=3` hence retrying to create the remediation tickets that fell in error before.
 
-## create / update review status
+## Create and update review status
 
-Several workflows are available to create/update reviews. You should use them whenever possible. Those workflows are located in `/workflow/bw_access360/`
+Several workflows are available to create or update reviews. You should use them whenever possible. Those workflows are located in `/workflow/bw_access360/`
 
 | Workflows                               |                                                                                                    |
 | --------------------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -277,7 +277,7 @@ Several workflows are available to create/update reviews. You should use them wh
 | createRemediationTicket                 | Used to create one remediation ticket                                                              |
 | writeRemediationTickets                 | Used to update remediation tickets status                                                          |
 
-## launch remediation and create ITSM tickets / refresh ITSM tickets status / retry in case of error
+## Launch remediation and create ITSM tickets 
 
 Several workflows are available to automatically create/update remediations. You can launch them through a scheduled batch (`igrc_workflow.[cmd|sh]`) if you want automate remediation creation or ITSM tickets refresh. Those workflows are located in `/workflow/bw_iasreview/`
 
@@ -327,5 +327,6 @@ In the technical project configuration file, two variables are available:
 
 - `aida_enabled` which allows to disable/enable the AIDA service in your Identity Analytics project.  
 - `aida_service_url` which is the API URL used to reach the LLM agents in AWS Bedrock.  
+
 
 
