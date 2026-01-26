@@ -710,11 +710,16 @@ You can only import excel spreadsheet on *ongoing* review campaigns.
 
 ## Reassigning entries  
 
-Each entry to review has a reviewer. RACI principles, as a result each entry has both a **R**esponsible and an **A**ccountable.  
-Only the **R**esponsible reviews the entries. By default, when a review campaign is initialized, both fields contain the same value: The reviewer computed during the initialization phase.  
+Each entry to review is assigned a reviewer according to RACI principles. As a result, every entry has both a **Responsible** and an **Accountable**.
 
-One can reassign entries to another individual. As RACI principles are enforced, only the **R**esponsible information is updated.  
-At the end of the review, it means that you can identify which entries have been reassigned by comparing those two fields. It is visible in the management interface:  
+Both the **Responsible** and the **Accountable** are allowed to review an entry.
+
+By default, when a review campaign is initialized, the **Responsible** and **Accountable** fields contain the same value: the reviewer computed during the initialization phase.
+
+Entries can be reassigned to another individual. In accordance with RACI principles, only the **Responsible** field is updated when a reassignment occurs; the **Accountable** remains unchanged.
+
+At the end of the review, reassigned entries can be identified by comparing the **Responsible** and **Accountable** fields. This information is visible in the management interface.
+
 
 ![](./media/image103.png)  
 
@@ -782,3 +787,4 @@ A discrepancies occurs when a remediation fails: The access rights has been mark
 ![](./media/IAP188.png)
 
 Discrepancies are accessible in the *Remediation Management*. Discrepancies are also identified as control defects (REM02 - remediation ticket closed and access right not removed)
+
