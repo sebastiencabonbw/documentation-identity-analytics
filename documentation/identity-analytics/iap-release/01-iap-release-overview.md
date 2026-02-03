@@ -9,8 +9,8 @@ description: "Identity Analytics Release Notes"
 
 We only support actively the last two versions of Identity analytics. Currently:
 
-- Version 3.3
 - Version 3.4
+- Version 3.5
 
 ## IAP/IGRC Compatibility matrix
 
@@ -28,20 +28,21 @@ IAP leverages improvements applied to the IGRC product. Please refer to the foll
 
 ### Descartes Version
 
-| Version          | IAP 1.8 - 2.2 | IAP 3.0 - 3.1 | IAP 3.2 | IAP 3.3 | IAP 3.4 |
-| :--------------- | :-----------: | :-----------: | :-----: | :-----: | :-----: |
-| Descartes R2     |     **X**     |       -       |    -    |    -    |    -    |
-| Descartes R4     |     **X**     |     **X**     |    -    |    -    |    -    |
-| Descartes R5     |     **X**     |     **X**     |    -    |    -    |    -    |
-| Descartes R5 SP3 |     **X**     |     **X**     |  **X**  |    -    |    -    |
-| Descartes R5 SP6 |     **X**     |     **X**     |  **X**  |  **X**  |    -    |
-| Descartes R5 SP7 |     **X**     |     **X**     |  **X**  |  **X**  |  **X**  |
+| Version                | IAP 1.8 - 2.2 | IAP 3.0 - 3.1 | IAP 3.2 | IAP 3.3 | IAP 3.4 + |
+| :--------------------- | :-----------: | :-----------: | :-----: | :-----: | :-------: |
+| Descartes R2           |     **X**     |       -       |    -    |    -    |     -     |
+| Descartes R4           |     **X**     |     **X**     |    -    |    -    |     -     |
+| Descartes R5           |     **X**     |     **X**     |    -    |    -    |     -     |
+| Descartes R5 SP3       |     **X**     |     **X**     |  **X**  |    -    |     -     |
+| Descartes R5 SP6       |     **X**     |     **X**     |  **X**  |  **X**  |     -     |
+| Descartes R5 SP7 - SP8 |     **X**     |     **X**     |  **X**  |  **X**  |   **X**   |
 
 ### Eiffel Version
 
-| Version   | IAP 1.8 - 2.2 | IAP 3.0 - 3.1 | IAP 3.2 | IAP 3.3 | IAP 3.4 |
-| :-------- | :-----------: | :-----------: | :-----: | :-----: | :-----: |
-| Eiffel R1 |     **X**     |     **X**     |  **X**  |  **X**  |  **X**  |
+| Version     | IAP 3.0 - 3.5 |
+| :---------- | :-----------: |
+| Eiffel R1   |     **X**     |
+| Eiffel R2 + |     **X**     |
 
 ## IAP release content
 
@@ -50,6 +51,15 @@ For a full list of changes to IAP please refer the to following release notes:
 - [IAP 3.x release notes](04-iap-3.X-release-notes.md "IAP release notes")
 - [IAP 2.x release notes](03-iap-2.X-release-notes.md "IAP release notes")
 - [IAP 1.x release notes](02-iap-1.X-release-notes.md "IAP release notes")
+
+### Version 3.5
+
+- New "Role Content" review, to review the permissions included in business roles.
+- Updated SOD dashboards that take exceptions into account and allow launching remediations.
+- New SOD designer, to build SOD matrices in the portal.
+- Improvement/fixes to:
+  - Campaign manager
+  - Review notifications feature
 
 ### Version 3.4
 
