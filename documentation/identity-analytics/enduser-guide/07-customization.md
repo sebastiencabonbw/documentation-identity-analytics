@@ -1,133 +1,146 @@
 ---
 title: "Identity Analytics Enduser Guide"
-description : "Identity Analytics Enduser Guide"
+description: "Identity Analytics Enduser Guide"
 ---
 
 # Customization
 
 ## How to configure tables, columns and export data
 
-### standard tables
+### Standard tables
 
-A right click on the Identity Analytics tables allows to export data and configure it.  
+Right‑clicking a table in Identity Analytics lets you export and configure its content.  
 
-![](./media/image-53-Table-Configuration.png)  
+![./media/image-53-Table-Configuration.png](./media/image-53-Table-Configuration.png)  
 
-By selecting "Export displayed columns to CSV" or "Export displayed columns to Excel format", the end-user can export the information present in the table only to a csv or Excel file, the hidden columns will be ignored.  
+- **Export displayed columns to CSV / Excel**: exports only the visible columns to a CSV or Excel file. Hidden columns are ignored.  
+- **Export all columns to CSV / Excel**: exports all columns (visible and hidden) to a CSV or Excel file.  
+- **Reset configuration**: restores the default column configuration.  
+- **Configure**: lets you show or hide columns, resize them, and change their headers.  
 
-By selecting "Export all columns to CSV" or "Export all columns to Excel format", he will export all the information, hidden or not to a csv or Excel file.  
+When using **Configure**, you can hide or display a column by clicking the “eye” icon to the left of its header. The **Up** and **Down** buttons on the right let you reorder columns.  
 
-By selecting "Reset configuration", the end-user can restore the default columns.  
-By selecting "configure", he can show/hide new columns, resize them and change their headers.  
+![./media/image-54-Table-ConfigurationGrid.png](./media/image-54-Table-ConfigurationGrid.png){ width=40% }  
 
-When selecting this last option, he can hide or display by clicking on the "eye" icon on the left of the column header. The "Up" and "Down" buttons available on the right will allow to reorder the columns.  
+The **Edit…** button lets you customize the selected column:
 
-![](./media/image-54-Table-ConfigurationGrid.png){ width=40% }  
+- Hide the column  
+- Change the header  
+- Adjust alignment of the column content  
+- Set the column width (in % or px)  
+- Enable or disable column resizing  
 
-And finally the "Edit..." button allows to customize the selected column:  
+![./media/image-55-Table-ConfigurationEdit.png](./media/image-55-Table-ConfigurationEdit.png)
 
-- Hide the column,
-- Change the header,
-- Manage alignment of the column content,
-- Set the column size in % or px,
-- Unable the possibility to resize the column.
+### Cross tables
 
-![](./media/image-55-Table-ConfigurationEdit.png)
+A cross table is a two‑way table that displays aggregated information in rows and columns (dimensions). Its purpose is to visualize relationships between dimensions and to present large datasets in a condensed format. Cross tables are generally used in analytics reports.  
 
-### cross tables
+Two types of cross tables are available by default: **standard** and **self‑service**.  
+Right‑clicking the table content allows you to export the full cross table. In Excel, panes remain frozen so you can easily work with and share the data.  
 
-A cross table is a two-way table that displays aggregated information in rows and columns (also known as Dimensions). Its main purpose is to visualize the relationship between rows and columns and to display large datasets in a condensed format. Cross table is generally used in Analytics reports.  
-Two types of cross-tables are provided by default, the standard one and the self-service one. A right click on the table content allows to extract the table with all the data. What is interesting here is that panes are freezed in Excel too, so that you can easily work and communicate.  
+- **Standard cross tables**  
+  - The end user can select a cell (**1**) and trigger actions (such as displaying a message, updating a detail panel, or navigating to another page) when configured. This is especially used in SoD analytics reports.  
+  - They can filter row and column header values by clicking the header (**2**) and applying a filter.  
+  - They can sort row and column header values by clicking the sort icon (**3**).  
+  - An option allows cluster sorting of cross‑table cells using an **advanced classification algorithm**. This helps work with peer groups. To activate it, click the icon (**4**) in the upper‑left corner.  
 
-- in standard cross tables: The end-user can select a cell (**1**) and take actions accordingly (such as displaying a message, updating a detail panel or jumping to a different page ) when this is relevant. This option is used especially in SoD analytics reports.
+![./media/image-56-CrossTable-Fixed-Config.png](./media/image-56-CrossTable-Fixed-Config.png)
 
-The end-user can filter rows and columns header values by clicking on the header of each column and row (**2**) and apply a filter on the available data.  
+- **Self‑service cross tables**  
+  - The end user can build and organize the cross table as needed by dragging available dimensions (**1**) to rows or columns.  
+  - They can select the measure to use from the list of available measures (**2**) and choose an aggregation function (for example, count, sum, maximum, average).  
+  - They can choose how to display aggregated data: figures, bar charts, or heatmaps (**3**).  
+  - As with standard cross tables, they can filter dimensions by clicking the row or column header (**4**) and sort header values using the sort icon (**5**).  
 
-He can also sort row and column header values by clicking on the related icon (**3**).  
+![./media/image-57-CrossTable-Self-Config.png](./media/image-57-CrossTable-Self-Config.png)
 
-An option allows cluster sorting of crosstable cells using an **advanced classification algorithm**. This will help the end-user to work on peer group. To activate it, he needs to click on the icon (**4**) on the upper left.  
+## How to configure the comparison timeslot  
 
-![](./media/image-56-CrossTable-Fixed-Config.png)
+The end user can define a **comparison timeslot** that is used to evaluate changes between the current dataset (timeslot) and an older **reference timeslot**. By default, the comparison timeslot is the previous dataset.  
 
-- self-service cross tables: With this kind of cross table, the end-user can create and organize the information as he likes. He can drag and drop the available dimensions (**1**) to rows or columns to dynamically build a crosstable to fit his needs.  
+All these evaluations are computed during data upload (the execution plan). If the end user changes the reference timeslot, the new reference is used for subsequent data loads only. Marking an historical timeslot as a reference has no impact on data that has already been loaded.  
 
-He can also select the measure to use among the list of available measures (**2**), and the aggregation function to use ( eg. count, sum, maximum, average, etc…).  
+To modify the reference timeslot, the end user must open the **Identity Ledger Manager** from the administration page:  
+**Settings → System → Manage Identity Ledger**.  
 
-The end-user can also select to display the aggregated data as figures, bar chart or heatmaps (**3**).  
+This action requires the **technical admin** role (`technicaladmin`).  
 
-As in a standard cross table, he can filter the different dimensions to display only a subset of the crosstable by clicking on the header of each column and row (**4**) and also sort row and column header values by clicking on the related icon (**5**).  
+By default, the current timeslot is always a temporary reference timeslot of type `$$HEAD$$`. It is replaced by the next current timeslot when new data is loaded.  
+If the user wants to keep it as a reference, they must rename `$$HEAD$$` to another value.  
 
-![](./media/image-57-CrossTable-Self-Config.png)
+If several reference timeslots are renamed, the **last renamed reference timeslot** is used as the comparison timeslot for future data loads.  
 
-## How to configure the Comparison timeslot  
+![./media/image-90-ReferenceTimeslot-configuration.png](./media/image-90-ReferenceTimeslot-configuration.png)
 
-The end-user is able to define a comparison timeslots that will be used to evaluate all the changes between the current set of data (timeslot) and an older one which is the reference timeslot. By default the comparison timeslot is the previous set of data.  
+## How to compare identities, accounts, permissions or groups  
 
-All these evaluations are computed during the data upload (the execution plan), so that if the end-user changes the reference timeslot, it will be taken into account for all the next data upload. If a timeslot in the history is added as a reference timeslot, it has no impact on the already loaded data of the existing timeslots.  
+In most tables on detail pages, the end user can compare resources with one another. Examples:
 
-To modify the reference timeslot, the end-user needs to reach the "Identity Ledger Manager" available in the administration page: using the menu bar, go to Settings > System, then click on the button "Manage Identity Ledger".  
+- In the **Team** tab of organisation and identity (manager) detail pages, they can **compare a selected identity** with others in the list.  
+- In the **Accounts** sub‑tab of repository, application, and share detail pages, they can **compare a selected account** with others.  
+- In the **Groups** tab of the repository detail page, they can **compare a selected group** with others.  
+- In the **Permissions** tab of the application detail page, they can **compare a selected permission** with others.  
+- In the **Folders** sub‑tab of the share detail page, they can **compare a selected folder** with others.  
 
-Note that this requires the **technical admin role** (role `technicaladmin`).  
+The first selected identity, group, permission, or account is used as the baseline and is compared with all other selected items.
 
-By default, the current timeslot is always the reference timeslot (of type "&#36;&#36;HEAD&#36;&#36;") but this situation is temporary because it will be replaced by the next current timeslot the next time data is loaded.
-If the user wants to keep it as a reference timeslot, he has to rename the reference "&#36;&#36;HEAD&#36;&#36;" with a new value.
-In this case, and if several reference timeslots have been renamed, it will always be the last renamed reference timeslot that will be used as comparison timeslot for future data loadings.  
+![./media/image-91-ComparisonFeatureForIdentities.png](./media/image-91-ComparisonFeatureForIdentities.png)
 
-![](./media/image-90-ReferenceTimeslot-configuration.png)
+- For **identities** and **accounts**, comparison is performed per resource type with respect to the comparison timeslot (see previous section) at application, permission, group, share, and folder level. Share and folder levels require the **Booster for Data Governance / Unstructured Data** license.  
+  When comparing identities, account repositories are also compared.  
 
-## How to compare identities, accounts, permissions or groups with each others  
+- For **groups**, comparison focuses on group members (accounts).  
+- For **permissions**, comparison focuses on accounts that have access.  
 
-In most of the tables available in the Detail pages, the end-user is able to compare resources one with each others:  
+In the comparison dashboard, the end user can switch the comparison target (identity, account, or group) using the widget at the top of the page.  
 
-In the "Team" tab of organisation and Identity (when the identity is a manager) details pages, the end-user can **compare a selected identity** with others in the list.  
+![./media/image-92-ComparisonWidget.png](./media/image-92-ComparisonWidget.png)
 
-In the "Accounts" sub-tab of Repository, Application and Share details page, he can **compare a selected account** with others in the list.  
+## How to list all available analytics reports and their description
 
-In the "Groups" tab of Repository details page, he can **compare a selected group** with others in the list.  
+Analytics range from simple reports to advanced management interfaces.  
 
-In the "Permissions" tab of Application details page, he can **compare a selected permission** with others in the list.  
+The full list of analytics reports for any resource is available from the administration page:  
+**Settings → System → Available analytics**.  
 
-In the "Folders" sub-tab of Share details page,  he can **compare a selected folder** with others in the list.
+From this list, the end user can:
 
-The first identity, group, permission or account selected in the list will be the one that will be compared with all the other selections.
+- Click a report name to view more details.  
+- Add columns by right‑clicking and selecting **Configure**.  
 
-![](./media/image-91-ComparisonFeatureForIdentities.png)
+Access to this page requires the **technical admin** role (`technicaladmin`).  
 
-For identities and accounts, the comparison is provided on each type of resources with regard to the comparison timeslot (see the previous section for more details) at Application, Permission, Group, Share and Folder level. These last two levels naturally require the Booster for Data Governance/Unstructured Data license.
-When working on Identities, Accounts repositories are also compared.  
+![./media/image-100-AnalyticsReports-List.png](./media/image-100-AnalyticsReports-List.png)
 
-For Groups comparison, the comparison is provided only on group members (accounts).
-For Permissions comparison, the comparison is provided only on accounts having access.
+## Advanced feature: how to list all controls, view their description, and manage execution  
 
-Once in the comparison dashboard, to compare the selected identity, account or group with another one of the selected list, the end-user can use the widget available on top of the page.  
+IAS/IAP include hundreds of controls used across the interfaces and to compute risk KPIs.  
 
-![](./media/image-92-ComparisonWidget.png)
+The full list of controls is available from the administration page:  
+**Settings → System → Available analytics**.  
 
-## How to list all the available Analytics reports and their description
+This list is built by scanning the controls available in your project, so all controls must be part of the RadiantOne Identity Analytics project to be visible and executable.  
 
-Analytics can be simple reports as well as more elaborated management interfaces.  
-The full list of Analytics reports for any resources is available from the administration page: using the menu bar, go to Settings > System, then click on the button "Available analytics" to get the full list.  
-The end-user is able to get more details by clicking on the report name or adding more columns by right clicking and selecting "configure".  
-Note that this requires the **technical admin role** (role `technicaladmin`).  
+Using the buttons on the right side of the table, you can:
 
-![](./media/image-100-AnalyticsReports-List.png)
+- Display details for the selected control.  
+- Re‑execute the selected control on the current timeslot.  
+- Execute controls that are **not** included in the execution plan (data loading process) on the current timeslot.  
 
-## Advanced Feature: How to list all the available controls, their description and manage their execution  
+This is particularly useful when, for example, you:
 
-IAS/IAP come with hundreds of controls which are available through the different interfaces and used to compute Risk KPIs.  
-The full list of these controls is available from the administration page: using the menu bar, go to Settings > System, then click on the button "Available analytics" to get the full list.  
-This list is built by scanning the controls available in your project, so all controls must be part of the RadiantOne Identity Analytics project to be seen and tto execute them.  
+- Set new account owners (reconciliation).  
+- Mark technical accounts.  
+- Update sensitivity status or ownership.  
 
-By using the buttons available on the right side of the table you can:  
+You can use this interface to recompute related controls after these attributes are changed or the reconciliation status is improved.  
 
-- display the selected control details,
-- re-execute the selected control on the current timeslot,
-- execute controls that are not included in the execution plan (data loading process) on the current timeslot,
+Some controls are displayed in *italics*. This means either:
 
-This is very useful when you set new account owners using IAS/IAP (work on reconciliation), new technical accounts, work on sensitivity status or entities ownership. Using this interface, you can recompute the related controls after having changed these attributes or improved the reconciliation status.
+- The corresponding control file cannot be found in the project, or  
+- The user cannot execute the control because it is generated automatically during data load (for example, SoD controls created from an SoD matrix).  
 
-Some control are displayed in italic, that means the corresponding control file cannot be found in the project or the end-user can not execute them because there are generated automatically during the data load. This is especially the case for SoD controls because there are automatically created from an SoD matrix.
+![./media/image-67-Controls-Execution.png](./media/image-67-Controls-Execution.png)
 
-![](./media/image-67-Controls-Execution.png)
-
-All the controls executed during data loading are used to compute the Risk rank and risk score.
+All controls executed during data loading are used to compute the **Risk rank** and **risk score**.
