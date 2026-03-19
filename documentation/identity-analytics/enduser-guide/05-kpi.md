@@ -5,39 +5,42 @@ description : "Identity Analytics Enduser Guide"
 
 # Computed KPIs  
 
-KPIs are automatically computed during the data loading process, thanks to the "Metadata" technical feature. These KPIs are then distributed in the different search and detail pages, and sometime used in analytics reports also.
+KPIs are automatically computed during the data loading process using the **Metadata** technical feature. These KPIs are then surfaced across search pages, detail pages, and in some cases analytics reports.
 
 ## Risk ranking and risk analysis
 
-One of the key features of IAS/IAP is to provide risk assessment and risk ranking to help end-users to identify the most risky situations and mitigate risks.
+A core feature of IAS/IAP is to provide risk assessment and risk ranking to help end users identify the riskiest situations and mitigate those risks.
 
-Three pre-calculated KPIs have been made available at organisation, Identity and Account level:
+Three pre‑calculated KPIs are available at organisation, identity, and account level:
 
-- the total number of risks
-- the maximum risk level
-- the risk rank
+- Total number of risks  
+- Maximum risk level  
+- Risk rank  
 
-The combination of these three KPIs will help the end-user to have a good idea of risk level of each resource and allow comparison for a better prioritization. Note that these KPIs are computed during the data upload.  
+Together, these three KPIs give the end user a clear view of the risk level of each resource and support comparison and prioritization. These KPIs are computed during data upload.  
 
-### Risk Rank  
+### Risk rank  
 
-Risk scoring and risk ranking are based on the control results, it helps in identifying where the problems are located and how the problems evolve. To get the list of all the controls available in your project and used for the Risk calculation, please go to section [How to list all the available controls](./07-customization#advanced-feature-how-to-list-all-the-available-controls-their-description-and-manage-their-execution) of this document.  
+Risk scoring and risk ranking are based on control results and help identify where issues are located and how they evolve over time. To see all controls available in your project and used for risk calculation, refer to [How to list all the available controls](./07-customization#advanced-feature-how-to-list-all-the-available-controls-their-description-and-manage-their-execution).  
 
-Risk scoring is based on an aggregated score of the entity discrepancies, weighted by the controls risk levels.  
-Based on the risk scoring, a risk ranking is automatically computed. The higher the worst (account ranked #1 is the MOST RISKY account of the company). Entities with the exact same risk score are ranked the same, this is the reason why the end-user can have ex aequo situations. For more details about how Risk rank is computed, please check out the "Identity Analytics Integration Guide", section: IAS/IAP UX principles > UI Content Principles > Risk scoring & Risk ranking.  
+Risk scoring is based on an aggregated score of discrepancies on the entity, weighted by each control’s risk level.  
+From this score, a risk ranking is automatically computed. The higher the rank, the worse the situation (for example, the account ranked **#1** is the most risky account in the company).  
 
-Ranking is very useful to reorder entries with a risk approach perspective. Risks are available both on the search pages and on the details pages.  
+Entities with exactly the same risk score share the same rank, which is why the end user may see **ex aequo** rankings. For more details on how risk rank is computed, see the *Identity Analytics Integration Guide*, section *IAS/IAP UX principles > UI Content Principles > Risk scoring & Risk ranking*.  
 
-### Nb of risks and Max risk level  
+Ranking is particularly useful to reorder entries from a risk‑based perspective. Risk information is available both on search pages and on detail pages.  
 
-The end-user can associate to the risk rank the Nb of risks related to the entity. This helps to understand the context.
-As in the example below, the end-user can have more risks but with a lower severity for an entity (Jaime ROBERTSON), so that the risk rank will be higher than for others with more severe controls defects (Sophia FOX).
+### Number of risks and maximum risk level  
 
-![](./media/image-80-Search-identities_RiskRank.png)
+In addition to the risk rank, the end user can look at the **number of risks** associated with an entity. This helps interpret the overall context.  
+
+As in the example below, one entity (Jaime ROBERTSON) may have more risks, but with lower severity, resulting in a higher (less critical) rank than another entity (Sophia FOX) that has fewer but more severe control defects.
+
+![./media/image-80-Search-identities_RiskRank.png](./media/image-80-Search-identities_RiskRank.png)
 
 ## Other computed KPIs  
 
-Other KPIs are automatically computed during the load of data in order to facilitate the analysis and to provide metrics and trends regarding the entities. These KPIs are provided as a series of “extended attributes” of the entities. As those KPIs are part of the data model you can use them in the user interfaces (such as search pages) or in your custom reports or analytics.  
+Additional KPIs are automatically computed during data loading to simplify analysis and to provide metrics and trends for entities. These KPIs are exposed as **extended attributes** on entities. Because they are part of the data model, they can be used in user interfaces (such as search pages) and in custom reports or analytics.
 
 Here is a summary of the available computed KPIs:
 
