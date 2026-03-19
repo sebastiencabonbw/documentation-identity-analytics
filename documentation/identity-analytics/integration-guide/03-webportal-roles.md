@@ -5,9 +5,10 @@ description : "Identity Analytics Integration Guide"
 
 # Web portal roles
 
-Configuration authentication and authorization is beyond the scope of this documentation. If you want to understand the RadiantOne Identity Analytics security model or if you want to configure authentication/authorization against Active Directory or through SAML, you should consult the following documentations
+This page focuses on how web portal roles control what users can see and do in the Identity Analytics Platform (IAP), from basic self‑service access (Access 360) to advanced administration, auditing, and dashboard development.
 
-[Installation and deployment](https://developer.radiantlogic.com/ia/descartes/igrc-platform/installation-and-deployment/03-brainwaves-web-portal/)
+Configuration of authentication and authorization is outside the scope of this guide. For details on the underlying security model or how to integrate with external identity providers (such as Active Directory or SAML), refer to the Installation and deployment documentation.
+[Installation and deployment](../../../descartes/igrc-platform/installation-and-deployment/03-brainwaves-web-portal/)
 
 Several roles are available to restrict the end-users capabilities in IAP.
 Those roles are summarized here:
@@ -16,41 +17,83 @@ Those roles are summarized here:
 
 ![](./media/image21.png)
 
+Several roles are available to control what end users can do in IAP.  
+These roles are summarized below:
+
+![./media/image20.png](./media/image20.png)
+
+![./media/image21.png](./media/image21.png)
+
 ## user
 
-Basic role that a user **MUST** have in order to be able to access to IAP, this role grant access to Access360 (basically, who am I, my task list, and what can I access to)
+This is the basic role that a user **must** have to access IAP.  
+It grants access to **Access 360**, which provides an overview of the user’s identity, task list, and entitlements (what they can access).
 
 ## functionaladmin
 
-The functional administrator role is given on top of the user role in order to grant access to the whole Identity Ledger. Once granted this role, a user can access to all information through the search views, he can also browse the controls as well as some of the configuration interfaces (such as audit logs). Functional administrators have also access to the Campaign Manager in order to configure and manage new campaigns. Finally, Functional Administrators can update both classification & ownerships.
+The **functionaladmin** role is assigned in addition to the **user** role to grant full access to the **Identity Ledger**.  
+
+With this role, a user can:
+
+- Access all information through search views.  
+- Browse controls.  
+- Access selected configuration interfaces (for example, audit logs).  
+- Use the **Campaign Manager** to configure and manage campaigns.  
+- Update both **classification** and **ownership** information.
 
 ## auditor
 
-The auditor role is given on top of the user role in order to grant access to the whole Identity Ledger. Once granted this role, a user can access to all information through the search views, he can also browse the controls as well as some of the configuration interfaces (such as audit logs). Business administrators have also access to the Campaign Manager.  
+The **auditor** role is also assigned on top of the **user** role to grant full access to the **Identity Ledger**.  
 
-All access are granted in read-only mode.
+With this role, a user can:
+
+- Access all information through search views.  
+- Browse controls.  
+- Access selected configuration interfaces (such as audit logs).  
+- Use the **Campaign Manager**.
+
+All access for the **auditor** role is **read‑only**.
 
 ## technicaladmin
 
-The technical administrator role is given on top of the user role. The technical administrator role includes all the capabilities of the business administrator role + technical administration capabilities such as Identity Ledger management (activate or hide timeslots).  
+The **technicaladmin** role is assigned on top of the **user** role.  
+
+It includes all capabilities of the **functionaladmin** role, plus additional technical administration features, such as **Identity Ledger** management (for example, activating or hiding timeslots).
 
 ## developer
 
-Users with developer role are responsible for the technical implementation of the mashup dashboards, and can store these mashup dashboards into the git project as files. This role cannot be used when IDA is deployed in a SaaS EOC environment.  
+Users with the **developer** role are responsible for the **technical implementation** of mashup dashboards.  
+They can create dashboards and store them as files in the Git project.  
+
+This role cannot be used when IDA is deployed in a **SaaS EOC** environment.
 
 ## designer
 
-The designer role can implement mashup dashboards and store them in the database, but cannot save them as files in the project. Also he cannot edit and modify dashboards that are already saved in the project.
-By default, the `technicaladmin` and `functionaladmin` roles includes the same features as the designer role but not the developer role.  
+The **designer** role can create mashup dashboards and store them in the **database**, but cannot save them as files in the project.  
+Designers also cannot edit or modify dashboards that have already been saved in the project.  
 
-## Dynamic roles & management information
+By default, the **technicaladmin** and **functionaladmin** roles include the same features as the **designer** role, but not the **developer** role.
 
-For your information, some dynamic roles are computed in RadiantOne Identity Analytics based on the Identity Ledger information, you do not need to manually assign those roles to the users:
+## Dynamic roles and management information
 
-- **campaignowner** the campaign owner role is given on top of the user role. This role is dynamically computed based on information present in the Identity Ledger: In order to have this role, the user must be assigned as an owner of at least one campaign. Once the role granted, the user has access to a restricted version of the campaign manager in order to launch & manage its own campaigns.
+Some roles are computed dynamically by RadiantOne Identity Analytics based on information stored in the **Identity Ledger**.  
+You do not need to assign these roles manually.
 
-As you can see, there are no roles identifying the characteristics of the users such as line manager, organisation manager, resource owner, ... this is because those yes of information are dynamically computed based on the information in the Identity Ledger. It means that even though a user is only granted a **user** role, he can still access to more information than himself if he is considered as a manager.
+- **campaignowner**: This role is granted on top of the **user** role when a person is defined as the **owner** of at least one campaign in the Identity Ledger.  
+  Users with this role have access to a **restricted version** of the Campaign Manager, limited to launching and managing their own campaigns.
 
-As a general principle however, when a user only has the **user** role he won't be able to access any other information than their managed resources (enforcing the concept of least privilege).  
+There are no static roles that directly represent user characteristics such as **line manager**, **organization manager**, or **resource owner**.  
+These characteristics are derived dynamically from the Identity Ledger.  
 
-Please take this in consideration if you configure custom/add-hoc reports for the users.
+This means a user with only the **user** role may still see information beyond their own identity if they are identified as a manager or owner in the data.  
+
+As a general rule, when a user has only the **user** role, they cannot see any information beyond their **managed resources**, which enforces the **least privilege** principle.
+
+Keep this behavior in mind when configuring custom or ad‑hoc reports for users.
+Have a better intro
+Here’s an improved intro you can drop in:
+
+Configuration of authentication and authorization is outside the scope of this guide. Instead, this page focuses on how web portal roles control what users can see and do in the Identity Analytics Platform (IAP), from basic self‑service access (Access 360) to advanced administration, auditing, and dashboard development. For details on the underlying security model or how to integrate with external identity providers (such as Active Directory or SAML), refer to the Installation and deployment documentation.
+
+
+
