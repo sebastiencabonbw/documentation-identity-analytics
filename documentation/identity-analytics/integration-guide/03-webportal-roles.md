@@ -7,8 +7,7 @@ description : "Identity Analytics Integration Guide"
 
 This page focuses on how web portal roles control what users can see and do in the Identity Analytics Platform (IAP), from basic self‑service access (Access 360) to advanced administration, auditing, and dashboard development.
 
-Configuration of authentication and authorization is outside the scope of this guide. For details on the underlying security model or how to integrate with external identity providers (such as Active Directory or SAML), refer to the Installation and deployment documentation.
-[Installation and deployment](../../../descartes/igrc-platform/installation-and-deployment/03-brainwaves-web-portal/)
+Configuration of authentication and authorization is outside the scope of this guide. For details on the underlying security model or how to integrate with external identity providers (such as Active Directory or SAML), refer to the [Installation and deployment documentation](../../../descartes/igrc-platform/installation-and-deployment/03-brainwaves-web-portal/).
 
 Several roles are available to restrict the end-users capabilities in IAP.
 Those roles are summarized here:
@@ -94,6 +93,7 @@ Have a better intro
 Here’s an improved intro you can drop in:
 
 Configuration of authentication and authorization is outside the scope of this guide. Instead, this page focuses on how web portal roles control what users can see and do in the Identity Analytics Platform (IAP), from basic self‑service access (Access 360) to advanced administration, auditing, and dashboard development. For details on the underlying security model or how to integrate with external identity providers (such as Active Directory or SAML), refer to the Installation and deployment documentation.
+
 
 
 
