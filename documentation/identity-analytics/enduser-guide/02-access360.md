@@ -1,63 +1,63 @@
 ---
 title: "Identity Analytics Enduser Guide"
-description : "Identity Analytics Enduser Guide"
+description: "Identity Analytics Enduser Guide"
 ---
 
 # Access 360
 
-Access 360 is the first page the end-user see when he connects to the Identity Analytics portal. The objective of this page is to give him a quick overview of all the access information related to him, basically: who am I, my task list, and what can I access to. It also includes, when relevant, all information about resource management, when for example the end-user is an application owner, or an organisation manager, or a shared folder owner...
+Access 360 is the first page displayed when an end user signs in to the Identity Analytics portal. Its purpose is to provide a quick overview of all access information related to that user: **who they are**, their **task list**, and **what they can access**. It also includes, when relevant, resource management information for users who are application owners, organization managers, shared folder owners, and similar roles.
 
-For end-users, Access360 will be the only accessible page. As a result, end-users DO NOT have access to search pages. Drill-down is only available through the main interface Access360 in order to enforce the least privilege principle.
+For most end users, **Access 360** is the only accessible page. As a result, they do not have access to search pages, and drill‑down is only available through the Access 360 interface in order to enforce the **least privilege** principle.
 
-So the left menu is empty, since only functional admins, technical admins and Review campaign managers will access to additional entries such as Search, Review, Settings and more. However, if mashup dashboards features have been activated, the end-user may find additional menu entries on the left.  
+In this case, the left menu remains empty, because only functional administrators, technical administrators, and review campaign managers see additional entries such as **Search**, **Review**, **Settings**, and others. However, if mashup dashboard features are enabled, end users may see additional menu entries on the left.
 
-When tasks are assigned to any end-users, during an access review process for instance, he will find the list of related tasks with their submission date directly accessible in the first tab of Access360: **My tasks**.  
+When tasks are assigned to end users (for example, during an access review campaign), they will find the list of these tasks and their submission dates directly in the first Access 360 tab: **My tasks**.
 
-Depending on the scope of responsibilities of the end-user, the interface will present less or more information distributed in different tabs. Let's present each of them by responsibility type:
+Depending on the user’s scope of responsibilities, the interface will display more or fewer tabs. The sections below describe the tabs by responsibility type.
 
-## For standard users  
+## For standard users
 
-For standard users, without any specific responsibility on resources and organizations consolidated in RadiantOne Identity Analytics, the Access360 interface will provide to the end-user an overview on its accounts, its applications and its folders.
+For standard users without specific responsibilities over resources or organizations consolidated in RadiantOne Identity Analytics, the Access 360 interface presents an overview of their **accounts**, **applications**, and **folders**.
 
-- in the **My accounts** tab, the standard user will find the list of accounts he owns with indications of changes regarding group, permission and folder rights. These changes are evaluated during the data loading process by comparing the current situation with the previous timeslot.  
+- In the **My accounts** tab, users see the list of accounts they own, with indicators showing changes related to groups, permissions, and folder rights. These changes are evaluated during the data loading process by comparing the current situation with the previous timeslot.
 
-![](./media/image-50-Access360_StandardUsers.png)
+  ![./media/image-50-Access360_StandardUsers.png](./media/image-50-Access360_StandardUsers.png)
 
-- in the **My applications** tab, the list of applications accessible by the connected standard user is listed in a first table. Selecting an application will then provide in a second table on the right the list of the related profiles/roles/permissions that gives the selected identity access to the application.
-The table on the right is configurable so that the end-user can add columns to display for example the sensitivity level and sensitivity reason of each permission. Please go to the [How to configure tables, columns and export data](./07-customization#standard-tables) section to know more about table customization.
+- In the **My applications** tab, the first table lists all applications accessible to the signed‑in user. Selecting an application populates a second table on the right with the related profiles, roles, or permissions that grant that identity access to the application.  
+  The right‑hand table is configurable so users can add columns, for example to display the sensitivity level and sensitivity reason for each permission. For more information, see [How to configure tables, columns and export data](./07-customization#standard-tables).
 
-- in the **My folders** tab, the list of folder path and related rights (simplified ACLs) accessible by the connected standard user is provided. This tab is only available if the end-user has the appropriate license (Booster for Data Governance/Unstructured Data).
-By default, only folders with direct ACLs are displayed, not the sub folders with inheritance. The end-user is able to check "Display only folders with ACLs" to get the full list of folders.
-A Share family column is provided to list the type of unstructured data: SharedFolders (NTFS, CIFS), Microsoft365 (OneDrive, SharePointOnline, ExchangeOnline) and more.
-In this tab, a filter is also provided through combobox to help the end-user select a specific share family and/or share and/or the folder depth requested.
+- In the **My folders** tab, users see folder paths and related simplified ACLs for folders they can access. This tab is only available if the appropriate license is enabled (Booster for Data Governance / Unstructured Data).  
+  By default, only folders with direct ACLs are shown, not subfolders inheriting permissions. Users can uncheck **Display only folders with ACLs** to view the full list of folders.  
+  A **Share family** column indicates the type of unstructured data (for example: SharedFolders (NTFS, CIFS), Microsoft 365 (OneDrive, SharePoint Online, Exchange Online), and others).  
+  A set of filters (comboboxes) lets users narrow down the content by share family, specific share, and desired folder depth.
 
-## For resources owners  
+## For resources owners
 
-Resources owners will find the same tabs as standard users with in addition a "Managed resources" tab and an Analytics tab.
+Resource owners see the same tabs as standard users, plus an additional **Managed resources** tab and an **Analytics** tab.
 
-- in the **Managed resources** tab, the resources owner can retrieve here the list of resources he owns, that could be of any type, such as Application, SharedFolders, Shares, Roles, Permissions, Accounts, Repositories, Groups and more.
+- In the **Managed resources** tab, the owner finds the list of resources they are responsible for. These resources can be of various types, such as applications, shared folders, shares, roles, permissions, accounts, repositories, groups, and more.
 
-Since he is the owner, by clicking on the resource or resource type, the resource owner can reach the related resource detail page to analyze and investigate accesses to them. See the [Detail pages](./03-detail-pages#detail-pages) section of this document for more details.
+  As the owner, clicking a resource or resource type opens the corresponding resource detail page to analyze and investigate access to that resource. See the [Detail pages](./03-detail-pages#detail-pages) section for more information.
 
-![](./media/image-51-Access360_ResourcesOwners.png)
+  ![./media/image-51-Access360_ResourcesOwners.png](./media/image-51-Access360_ResourcesOwners.png)
 
-- in the **Analytics** tab, all the analytic reports available for the resources owner are available. Analytics can be simple reports as well as more elaborated management interfaces, and will be limited to the scope owned by the resources owner.
+- In the **Analytics** tab, all analytics reports available to the resource owner are listed. These analytics can range from simple reports to more advanced management interfaces and are always restricted to the owner’s scope.
 
-The full list of Analytics reports for any resources is available from the administration page and documented. Please go to section [Analytics reports](./07-customization#how-to-list-all-the-available-analytics-reports-and-their-description) to know more.
+  The complete list of analytics reports for any resource type is available from the administration page and documented. See [Analytics reports](./07-customization#how-to-list-all-the-available-analytics-reports-and-their-description) for details.
 
-## For organisation or/and line managers
+## For organisation and line managers
 
-Managers will get the same tabs as standard users with two additional: "My team" and "Analytics" tabs.  
+Managers see the same tabs as standard users, plus two additional tabs: **My team** and **Analytics**.
 
-- in the **My team** tab, the manager can access to the list of identities he is responsible for.
-A combobox allows to select which team is expected, the one as an organisation manager or the one as a line manager.
-A checkbox "Whole team" can be checked to list all the identities working in the sub departements/organisations.
-When selecting "as a line manager", the end-user can also filter the list of identities per expertise domain.
-He is also able to compare a selected identity in the team with one or more others selected in the same table. For more details on that, please reach the [how to compare identities, accounts, permissions or groups](./07-customization#how-to-compare-identities-accounts-permissions-or-groups-with-each-others) section.  
-The end-user can click also on the name or HRcode of an identity to open the related identity detail page to analyze and investigate accesses granted to them. See the [Identity details](./03-detail-pages#identities-details-page) section of this document for more details..  
+- In the **My team** tab, managers can view the list of identities they are responsible for.  
+  A combobox allows them to choose which team to display: the team where they act as an **organization manager** or the one where they are a **line manager**.  
+  A **Whole team** checkbox lets them include all identities in sub‑departments or sub‑organizations.  
+  When viewing the team “as a line manager,” managers can also filter identities by **expertise domain**.  
+  They can compare one selected identity with one or more others from the same table. For more information, see [How to compare identities, accounts, permissions or groups with each others](./07-customization#how-to-compare-identities-accounts-permissions-or-groups-with-each-others).  
+  Managers can click the identity name or HR code to open the identity detail page and analyze access granted to that identity. See the [Identity details](./03-detail-pages#identities-details-page) section for more information.
 
-![](./media/image-52-Access360_Managers.png)
+  ![./media/image-52-Access360_Managers.png](./media/image-52-Access360_Managers.png)
 
-- in the **Analytics** tab, all the analytic reports available for the organisation or line manager are available. Analytics can be simple reports as well as more elaborated management interfaces, and will be limited to the manager's scope of responsibilities.
+- In the **Analytics** tab, all analytics reports available to organization or line managers are listed. As with resource owners, these can be simple reports or advanced management interfaces and are restricted to the manager’s scope of responsibilities.
 
-The full list of Analytics reports for any resources is available from the administration page and documented. Please go to section [Analytics reports](./07-customization#how-to-list-all-the-available-analytics-reports-and-their-description) to know more.
+  The complete list of analytics reports for any resource is available from the administration page and documented. See [Analytics reports](./07-customization#how-to-list-all-the-available-analytics-reports-and-their-description) for more details.
