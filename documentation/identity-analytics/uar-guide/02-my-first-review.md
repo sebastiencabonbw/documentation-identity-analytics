@@ -21,10 +21,9 @@ Five types of review can be configured:
 In this chapter, we will configure and launch an application access rights review. The repository accounts review, group membership review and server review use the same principles, and a dedicated documentation is also available for the PAM Booster designed for CyberArk.
 
 > As a reminder in IAP version 2.2 a new "sign off" principle has been added to the review process, as well as the the ability to launch the remediation process as soon as the reviewer signs off.
->
-> In IAP version 3.0, the concept of review campaigns has been introduce with the ability to manage campaign configurations, including notification and scheduling capabilities. These new capabilities come with a new "Review Campaign Management" interface. The previous "Review Management" interface contains the finalized reviews in previous versions and has been renamed "Custom Review Management" interface.
->
-> Due to these changes in behavior it is **necessary** to finalize **all** web-based reviews **before** upgrading IAP to version 3.0.
+
+> In IAP version 3.0, "review campaigns" was introduced, providing enhanced capabilities to configure, schedule, and manage campaign-related notifications. These features are available through the new Review Campaign Management interface. The previous Review Management interface, which contained finalized reviews from earlier versions, has been renamed as **Custom Review Management**.
+Due to these changes, it is **required** to finalize all web-based reviews before upgrading to IAP version 3.0.
 
 ![](./media/newcampaign.png)
 
