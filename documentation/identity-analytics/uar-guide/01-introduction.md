@@ -1,6 +1,6 @@
 ---
 title: "Identity Analytics Access Review Guide"
-description : "Identity Analytics Access Review Guide"
+description: "Identity Analytics Access Review Guide"
 ---
 
 # Introduction
@@ -8,9 +8,9 @@ description : "Identity Analytics Access Review Guide"
 This document describes the basic principles of self-service compliance driven Access Review in IA (Identity Analytics) as well as the best practices to configure and follow-up a review and manage the remediation processes.
 
 This documentation will only focus on access review configuration, for a more general introduction to RadiantOne Identity Analytics and the configuration of the solution, please refer to the full documentation, available using the following URL:
-https://developer.radiantlogic.com  
+https://developer.radiantlogic.com
 
-> In IAP version 2.2 a new "sign off" principle has been added to the review process, as well as the the ability to launch the remediation process as soon as the reviewer signs off.  
+> In IAP version 2.2 a new "sign off" principle has been added to the review process, as well as the the ability to launch the remediation process as soon as the reviewer signs off.
 >
 > In IAP version 3.0, the concept of review campaigns has been introduce with the ability to manage campaign configurations, including notification and scheduling capabilities. These new capabilities come with a new "Review Campaign Management" interface. The previous "Review Management" interface contains the finalized reviews in previous versions and has been renamed "Custom Review Management" interface.
 >
@@ -24,7 +24,7 @@ Access review is often key when working within compliance restrictions (Sarbanes
 
 #### What is an access review?
 
-An access review shows whether a person's rights to access an application comply with a company's access management policy. It involves getting managers to check all the rights of their staff to access applications. It is an essential part of a company's information security and an effective access review will provide a list of all wrongly assigned rights. This list is then used to correct access rights and avoid failures in security. The result is no more risk of fraud, leaks of information, or problems linked to non-compliance.  
+An access review shows whether a person's rights to access an application comply with a company's access management policy. It involves getting managers to check all the rights of their staff to access applications. It is an essential part of a company's information security and an effective access review will provide a list of all wrongly assigned rights. This list is then used to correct access rights and avoid failures in security. The result is no more risk of fraud, leaks of information, or problems linked to non-compliance.
 
 An organisation's information system is constantly changing as are the people involved in it. Access reviews must be carried out regularly. Security standards set the minimum frequency at once per year, but in practice it needs to be carried out every three months to effectively tackle the risks of fraud and data leakage.
 
@@ -34,31 +34,31 @@ The unit in charge of security is often responsible for preparing and organizing
 
 #### What are the different types of review?
 
-The two main types of review are:  
+The two main types of review are:
 
 - The 'organisational review'
 - The 'applications review'
 
-There is one other type of review that is sometimes implemented when staff entry/exit procedures are complex, *i.e.* the HR data review.
+There is one other type of review that is sometimes implemented when staff entry/exit procedures are complex, _i.e._ the HR data review.
 
 ##### The organisational review
 
-These reviews involve asking a line manager to check that the people who work there have the correct application access rights.  
+These reviews involve asking a line manager to check that the people who work there have the correct application access rights.
 
-Therefore, these reviews involve cross-checking HR information (on organisations and people) with applications information (people access rights on the different applications and their associated rights).  
+Therefore, these reviews involve cross-checking HR information (on organisations and people) with applications information (people access rights on the different applications and their associated rights).
 
 These are transverse reviews with regard to the applications (one person has access to several applications) and are limited to the access accounts of individuals.
 
 ##### The applications review
 
-These reviews involve asking an application manager to check that access rights are correctly configured for their application.  
+These reviews involve asking an application manager to check that access rights are correctly configured for their application.
 
-This exercise is usually focused on a sub-set of access accounts:  
+This exercise is usually focused on a sub-set of access accounts:
 
 1. Accounts with wider access rights
 2. Technical accounts, known as 'service accounts' that are not linked to particular individuals.
 
-It is not unusual for these two types of review to lead to additional sub-types of review, depending on the targets:  
+It is not unusual for these two types of review to lead to additional sub-types of review, depending on the targets:
 
 - Data access reviews (rights to access shared directories, Sharepoint, etc.)
 - Distribution list reviews
@@ -70,12 +70,12 @@ It is not unusual for these two types of review to lead to additional sub-types 
 
 #### How can you tell if an access right is valid?
 
-There are two fundamental principles that enable the validation of access rights:  
+There are two fundamental principles that enable the validation of access rights:
 
 - The principle of the lowest rights: assigning only the rights that are strictly necessary to users. If a person has no particular need for a resource they should not have access to it.
 - The principle of separation of tasks: those who originate a request should not be the same as those who carry it out and those who validate it. This is a first stage that helps avoid lots of errors and slip-ups later on.
 
-In practice, without a formal security policy which defines the precise roles of all those involved, the legitimacy of access rights is left to managers to decide and who alone must assess the usefulness and the risks associated with the access rights assigned.  
+In practice, without a formal security policy which defines the precise roles of all those involved, the legitimacy of access rights is left to managers to decide and who alone must assess the usefulness and the risks associated with the access rights assigned.
 
 If a company has formalized the methods for assigning access rights, particularly via applications portals involving staged approval, the associated traces are a source of extra information that help to ensure the validity of the access rights assigned.
 
@@ -85,7 +85,7 @@ Carrying out an access review involves several stages and several actors.
 
 One of the first stages involves checking the data quality: can the data be used as it is or does it need to be reworked to make it usable?
 
-Next, all available information must be gathered to compare one against the others. Such information is necessarily heterogenous, e.g. Windows, Unix, Mainframe, appliances, cloud applications, partners' applications, etc. In order to read and compare it, it must first be consolidated, *i.e.* formed into a single, structured source of data containing all the required information, *e.g.* all owners of access accounts arranged by the departments in which they work, etc.
+Next, all available information must be gathered to compare one against the others. Such information is necessarily heterogenous, e.g. Windows, Unix, Mainframe, appliances, cloud applications, partners' applications, etc. In order to read and compare it, it must first be consolidated, _i.e._ formed into a single, structured source of data containing all the required information, _e.g._ all owners of access accounts arranged by the departments in which they work, etc.
 
 The information must be rapidly comprehensible by those who have to read and validate it. This may involve improving the syntax of certain data, filtering (not displaying data that is not required for the decision making process), highlighting, etc.
 
@@ -95,14 +95,14 @@ Lastly, when all the above stages have been completed and errors have been ident
 
 #### Why is it difficult to carry out access reviews?
 
-Obviously, an access review involves two major difficulties:  
+Obviously, an access review involves two major difficulties:
 
 1. Getting an overall picture of people and their access rights.
 2. Organizing and motivating a large number of actors.
 
 ##### Putting together an overall picture of people and of access rights to an information system.
 
-This catalog of access rights provides the answers to the following questions:  
+This catalog of access rights provides the answers to the following questions:
 
 - Who works for the organisation and where?
 - What are their rights within applications and to what data do they have access?
@@ -115,7 +115,7 @@ Underestimating the importance of this stage will not only cause the associated 
 
 It should be remembered here that most of these people will not be from the IT department and, therefore, they should be presented with relevant information, which will enable them to make decisions. All too often reviews merely present technical information, such as groups of accounts (Active Directory, etc.), whereas it would be much better to have the rights validated via these groups (rights to write in directories, access to distribution lists, etc.).
 
-Their time is also limited and this operation is perceived as time-consuming. Therefore, all unnecessary stages should be avoided. For example, it is pointless to validate unchanged pieces of information, four times a year, or to have all access rights validated without considering the critical nature of some rights.  
+Their time is also limited and this operation is perceived as time-consuming. Therefore, all unnecessary stages should be avoided. For example, it is pointless to validate unchanged pieces of information, four times a year, or to have all access rights validated without considering the critical nature of some rights.
 
 A lack of empathy between the actors often leads to rubber stamping signature of reviews. This gives a semblance of compliance, but when all is said and done, everyone has wasted their time.
 
@@ -123,53 +123,53 @@ As you will discover in the following chapter RadiantOne Identity Analytics solv
 
 ### RadiantOne Identity Analytics Access Review Overview
 
-RadiantOne Identity Analytics embeds compliance driven user access review interface. Through this interface you can configure an access review perimeter and run an access certification campaign. Users will then have to review their entries either online through the GUI or offline thanks to microsoft excel spreadsheet reports. At the end of the day, this interface also manages the remediation process so that you are sure that all decisions taken during the access certification campaign are enforced.  
+RadiantOne Identity Analytics embeds compliance driven user access review interface. Through this interface you can configure an access review perimeter and run an access certification campaign. Users will then have to review their entries either online through the GUI or offline thanks to microsoft excel spreadsheet reports. At the end of the day, this interface also manages the remediation process so that you are sure that all decisions taken during the access certification campaign are enforced.
 
 #### List of new Identity Analytics 3.0 features
 
-Here is a quick list of the features available in compliance driven access review:  
+Here is a quick list of the features available in compliance driven access review:
 
 The User Access Review component has been completely redesigned in Identity Analytics 3.0 to offer the following new features:
 
-- New "Review Campaign Management" interface for managing campaign configurations: create, modify, duplicate, delete, export/import configurations,  
-- Automated notifications and reminders, with the option of defining email templates and a notification strategy (scheduling),  
-- View reminder chronology in a timeline to update (add/delete) reminders,  
-- Definition of a campaign owner, who can start/stop/finalize/modify his/her own campaigns and view the review history.  
-- Access to the old "Review Management" interface renamed "Custom Review Management" to access reviews finalized in previous versions and web-based custom reviews,  
+- New "Review Campaign Management" interface for managing campaign configurations: create, modify, duplicate, delete, export/import configurations,
+- Automated notifications and reminders, with the option of defining email templates and a notification strategy (scheduling),
+- View reminder chronology in a timeline to update (add/delete) reminders,
+- Definition of a campaign owner, who can start/stop/finalize/modify his/her own campaigns and view the review history.
+- Access to the old "Review Management" interface renamed "Custom Review Management" to access reviews finalized in previous versions and web-based custom reviews,
 - New six-step configuration wizard to define a review campaign:
-  1. "Perimeter Selection" with the ability to define a static or dynamic tag-based review scope.  
-  2. "Review Strategy Selection" with the option to activate the AI AIDA Data Wizard in SaaS mode.  
-  3. "Preview Data" for a read-only check of the scope of the review campaign based on the current time slot.  
-  4. "Reviewer UI" for fine-tuning the reviewer interface (bulk action limit, comment templates, enable/disabe actions, etc.).  
-  5. "Campaign Schedule" to choose a frequency and manage notifications and reminders.  
-  6. "Campaign information" to define campaign name, description, tags, owners, etc.  
-- New ability to notify a selection of reviewers when a review has been started.  
-- An IDDM connector can now be configured in the remediation interfaces to take advantage of IDA to IDDM remediation once a review has been completed by a reviewer.  
-  
-#### List of Other Identity Analytics features  
+  1. "Perimeter Selection" with the ability to define a static or dynamic tag-based review scope.
+  2. "Review Strategy Selection" with the option to activate the AI AIDA Data Wizard in SaaS mode.
+  3. "Preview Data" for a read-only check of the scope of the review campaign based on the current time slot.
+  4. "Reviewer UI" for fine-tuning the reviewer interface (bulk action limit, comment templates, enable/disabe actions, etc.).
+  5. "Campaign Schedule" to choose a frequency and manage notifications and reminders.
+  6. "Campaign information" to define campaign name, description, tags, owners, etc.
+- New ability to notify a selection of reviewers when a review has been started.
+- An IDDM connector can now be configured in the remediation interfaces to take advantage of IDA to IDDM remediation once a review has been completed by a reviewer.
+
+#### List of Other Identity Analytics features
 
 All the features provided in previous versions are still available:
-  
-- Can configure a precise perimeter of what needs to be reviewed  
-- Can mix organisational review and application review in a single campaign  
-- Can run multiple campaigns at once  
-- Can automatically identify for each entry to review who is accountable for the review  
-- Can launch both a global/full access review or an incremental campaign focusing only on what changed since the last review  
-- Provides rich review end user interface including  
-  - risk scoring  
-  - identity context and permission context  
-  - review history information  
-  - filtering capabilities  
-  - reordering capabilities  
-  - bulk operations  
-  - self-service entries reassignment to peers (colleagues / other application owners) by enforcing RACI principles  
-  - exporting review data in excel format  
-  - running the review offline through excel spreadsheets  
-- Provides rich review management interface including  
-  - KPIs to follow up the campaign progress  
-    - review perimeter  
-    - Nb of applications to review  
-    - Nb of reviewers  
+
+- Can configure a precise perimeter of what needs to be reviewed
+- Can mix organisational review and application review in a single campaign
+- Can run multiple campaigns at once
+- Can automatically identify for each entry to review who is accountable for the review
+- Can launch both a global/full access review or an incremental campaign focusing only on what changed since the last review
+- Provides rich review end user interface including
+  - risk scoring
+  - identity context and permission context
+  - review history information
+  - filtering capabilities
+  - reordering capabilities
+  - bulk operations
+  - self-service entries reassignment to peers (colleagues / other application owners) by enforcing RACI principles
+  - exporting review data in excel format
+  - running the review offline through excel spreadsheets
+- Provides rich review management interface including
+  - KPIs to follow up the campaign progress
+    - review perimeter
+    - Nb of applications to review
+    - Nb of reviewers
     - Reviewed entries so far
     - Actions identities so far
     - Statistics around the nb of entries to review per reviewer (percentile, min, max, ...)
@@ -210,13 +210,13 @@ All the features provided in previous versions are still available:
   - Real time view of the discrepancies identified so far with filtering/grouping/export capabilities and identity/permission context
   - Bulk remediation operations as an administrator
   - Mail notification capabilities
-- When leveraging ServiceNow for remediation, retrieve tickets numbers and track tickets status upon completion. Automatically spot discrepancies (action marked as done in ServiceNow and access still active in the target system...).  
-  
+- When leveraging ServiceNow for remediation, retrieve tickets numbers and track tickets status upon completion. Automatically spot discrepancies (action marked as done in ServiceNow and access still active in the target system...).
+
 #### Behavior of a Review Campaign Running Over Several Timeslots
 
 Identity Analytics supports two modes for handling user access review campaigns across multiple timeslots: **Standard Mode** and **Attached to Timeslot Mode**. These modes define how reviews handle changes in access data over time. The standard mode allows reviews to reflect updates and removals during the campaign, while the attached mode freezes the review scope to the exact state at campaign launch—ideal for audit and compliance requirements.
 
-> Note that standard mode is only available in Identity Analytics version 3.3 and higher.
+> Note that **Attached to Timeslot** mode is available in Identity Analytics from version 3.3 and higher.
 
 ##### Standard mode
 
@@ -235,7 +235,7 @@ Across multiple timeslots, some aspects of the review campaign remain constant, 
   - Note that deleted entries will be marked as "revoked" in the compliance report.
   - Also note that the content of the campaign follow-up page depends on the timeslot selected. This means that :
     - If entries are deleted in the next timeslot, the number of entries to be reviewed will change according to the timeslot selected in the portal in the list of entries to be reviewed (i.e., we'll have the initial list of entries to be reviewed on the timeslot on which the campaign was launched, and the "modified" list without the deleted entries on the next timeslot).
-    - If context information (identity name/department/job, account expiry date, permission name, etc.) for certain entries is modified in the next timeslot, the information displayed will depend on the timeslot selected (i.e. initial information on the timeslot on which the campaign was launched, modified information on the current timeslot). 
+    - If context information (identity name/department/job, account expiry date, permission name, etc.) for certain entries is modified in the next timeslot, the information displayed will depend on the timeslot selected (i.e. initial information on the timeslot on which the campaign was launched, modified information on the current timeslot).
 
 ##### Attached to Timeslot Mode
 
@@ -253,19 +253,19 @@ The following personas can now access to the "Review Campaign Management" interf
 - The Auditor
 - The Campaign Owner (New IAP 3.0)
 
-The *Identity Analytics administrator* is either a **functional administrator** ('functionaladmin' role) or a **technical administrator** ('technicaladmin' role) of the RadiantOne Identity Analytics platform. She/he can create, modify, duplicate, delete, export/import review campaign configurations. From a selected review campaign he can also launch, pause/resume, finalize, follow-up, download the compliance report, and delete a review instance.  
-  
-The *Identity Analytics auditor* is **auditor** ('auditor' role) of the RadiantOne Identity Analytics platform. She/He has access in readonly to all the interfaces, can check the history of review instances and can download the compliance reports.
-  
-The *campaign owner* is defined by the administrator when creating a new review campaign. She/he can be any identity with a valid email address. Once defined as owner of a campaign, she/he has access to the campaign and can edit the review campaign configuration, launch and manage review instances. The Campaign Owner does not need to have a specific role.  
+The _Identity Analytics administrator_ is either a **functional administrator** ('functionaladmin' role) or a **technical administrator** ('technicaladmin' role) of the RadiantOne Identity Analytics platform. She/he can create, modify, duplicate, delete, export/import review campaign configurations. From a selected review campaign he can also launch, pause/resume, finalize, follow-up, download the compliance report, and delete a review instance.
 
-Of course, the Identity Analytics administrator must ensure that all these personas have a valid e-mail address associated with their identity in Identity Analytics to receive notifications.  
+The _Identity Analytics auditor_ is **auditor** ('auditor' role) of the RadiantOne Identity Analytics platform. She/He has access in readonly to all the interfaces, can check the history of review instances and can download the compliance reports.
+
+The _campaign owner_ is defined by the administrator when creating a new review campaign. She/he can be any identity with a valid email address. Once defined as owner of a campaign, she/he has access to the campaign and can edit the review campaign configuration, launch and manage review instances. The Campaign Owner does not need to have a specific role.
+
+Of course, the Identity Analytics administrator must ensure that all these personas have a valid e-mail address associated with their identity in Identity Analytics to receive notifications.
 
 #### Behavior of the Scheduling
 
 The scheduling is done through a workflow that needs to be up and running: the scheduler. To check the status or start the workflow, using the left menu bar, go to "Settings" > "System" and then click on the "Scheduler" button:
 
-![](./media/IAP257.png)  
+![](./media/IAP257.png)
 
 Specify the hour you need to start the scheduler, click on "Start Scheduler" and then confirm:
 
@@ -275,11 +275,11 @@ When the scheduler is started, you'll find in the same page the information abou
 
 ![](./media/IAP258.png)
 
-When a campaign reaches its start date, the revision instance will be launched on the specified start date, at the same time as the scheduler's start time.  
+When a campaign reaches its start date, the revision instance will be launched on the specified start date, at the same time as the scheduler's start time.
 
 > **Notes:**
 >
-> 1. When the scheduler is restarted, it will launch all overdue review instances. Please make sure you've deactivated any campaigns you don't want to launch before starting the scheduler, otherwise these campaigns will be launched and notifications sent to all reviewers if you have them activated.  
+> 1. When the scheduler is restarted, it will launch all overdue review instances. Please make sure you've deactivated any campaigns you don't want to launch before starting the scheduler, otherwise these campaigns will be launched and notifications sent to all reviewers if you have them activated.
 > 2. If the current review instance is still active on the start date of the next schedule, the new review instance will not be launched until the initial one is finalized. In that case, the next start date of the campaign is set to "Behind Schedule". Once the current review instance has been finalized, the next start date is one day after the finalization date.
 
 #### Purging Behavior
