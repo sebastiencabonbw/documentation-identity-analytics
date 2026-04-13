@@ -280,7 +280,7 @@ Note that the Booster for PAM and Booster for AD functions, now integrated into 
 - **Description** A disabled account has been reactivated and the account is reconciled to an active identity.
 - **Risk Level:** 1
 - **Risk description:** Reactivated user accounts must be checked because they can be used by an insider to gain control of some systems if these accounts still have permissions.
-- **Remediation:** Review the account. Is the account owner returning from a long-term absence?  Is he a contractor?  
+- **Remediation:** Review the account. Is the account owner returning from a long-term absence? Is he a contractor?
 
 ---
 
@@ -290,7 +290,7 @@ Note that the Booster for PAM and Booster for AD functions, now integrated into 
 - **Description** A disabled account has been reactivated and the account is reconciled to an inactive identity.
 - **Risk Level:** 3
 - **Risk description:** Reactivated users accounts must be checked because they can be used by an insider to gain control of some systems if these accounts still have permissions. The identity is marked as inactive which means that the account owner is no longer part of the company.
-- **Remediation:** Review the account. Is the account owner returning from a long-term absence. Is he a contractor?  
+- **Remediation:** Review the account. Is the account owner returning from a long-term absence. Is he a contractor?
 
 ---
 
@@ -917,7 +917,7 @@ Note that the Booster for PAM and Booster for AD functions, now integrated into 
 - **Control ID:** `HR_16`
 - **Entity:** Identity
 - **Name:** Identity is its own manager
-- **Description**  The identity is its own manager
+- **Description** The identity is its own manager
 - **Risk Level:** 2
 - **Risk description:** This identity is its own manager. When access reviews are launched, this person will be assigned the review for their own entitlements. This should be avoided, and may point to HR data quality issues.
 - **Remediation:** Reassign this identity to another manager.
@@ -927,7 +927,7 @@ Note that the Booster for PAM and Booster for AD functions, now integrated into 
 - **Control ID:** `HR_17`
 - **Entity:** Identity
 - **Name:** Contractor leaving within the next 30 days
-- **Description**  This contractor's departure date is coming the next 30 days
+- **Description** This contractor's departure date is coming the next 30 days
 - **Risk Level:** 0
 - **Risk description:** This contractor will leave the company within the next 30 days. The manager should verify if the contractor's end date is accurate. Upon departure, all the contractor's accesses will be disabled.
 - **Remediation:** Verify the contractor's departure date with their manager.
@@ -937,7 +937,7 @@ Note that the Booster for PAM and Booster for AD functions, now integrated into 
 - **Control ID:** `HR_18`
 - **Entity:** Identity
 - **Name:** Identity with namesakes
-- **Description**  Multiple identities have identical first and last names (namesakes)
+- **Description** Multiple identities have identical first and last names (namesakes)
 - **Risk Level:** 1
 - **Risk description:** Namesakes must be carefully managed. They may be both a symptom of bad HR data quality, and a trigger for access rights provisioning mistakes.
 - **Remediation:** Verify if this is a real namesake or a data quality issue. Identify possible unique identification attributes (employee number, for instance).
@@ -947,7 +947,7 @@ Note that the Booster for PAM and Booster for AD functions, now integrated into 
 - **Control ID:** `HR_19`
 - **Entity:** Identity
 - **Name:** Identities with the same email address
-- **Description**  Multiple identities have the same email address.
+- **Description** Multiple identities have the same email address.
 - **Risk Level:** 2
 - **Risk description:** Several identities have the same email address. This may point to duplicated identities OR data quality issues in the HR system. This must be solved as it breaks all logical access control policies.
 - **Remediation:** Investigate and solve the issue (deduplicate identities, or update one email address in the HR system)
@@ -957,7 +957,7 @@ Note that the Booster for PAM and Booster for AD functions, now integrated into 
 - **Control ID:** `HR_20`
 - **Entity:** Identity
 - **Name:** Identity with multiple active accounts in the same repository
-- **Description**  This identity holds several active accounts in a repository.
+- **Description** This identity holds several active accounts in a repository.
 - **Risk Level:** 2
 - **Risk description:** Having multiple accounts in the same repository is a bad practice. It can be a way to evade Segregation of Duties (SoD) controls. Unless the user has several accounts for very good reasons (for instance an admin account, and a standard user account), those accounts should be merged.
 - **Remediation:** Verify that the user holds these accounts for good reasons. Otherwise consider merging the accounts and their respective permissions.
@@ -1059,7 +1059,7 @@ Note that the Booster for PAM and Booster for AD functions, now integrated into 
 - **Name:** Highly sensitive permission without description
 - **Description** Highly sensitive permission with an empty description field.
 - **Risk Level:** 1
-- **Risk description:** Highly sensitive permissions must be documented to help with  analysis and audits.
+- **Risk description:** Highly sensitive permissions must be documented to help with analysis and audits.
 - **Remediation:** Fill in the description field.
 
 ---
@@ -1079,7 +1079,7 @@ Note that the Booster for PAM and Booster for AD functions, now integrated into 
 - **Name:** Highly sensitive folders without description
 - **Description** Highly sensitive folders with an empty description field.
 - **Risk Level:** 1
-- **Risk description:** Highly sensitive folders must be documented to help with  analysis and audits.
+- **Risk description:** Highly sensitive folders must be documented to help with analysis and audits.
 - **Remediation:** Fill in the description field.
 
 ---
@@ -1390,7 +1390,7 @@ Note that the Booster for PAM and Booster for AD functions, now integrated into 
 - **Description** The organization has not been reviewed in the last 365 days.
 - **Risk Level:** 1
 - **Risk description:** Organizations should be reviewed on a regular basis to comply with security policy constraints.
-- **Remediation:** Perform a review  
+- **Remediation:** Perform a review
 
 ---
 
@@ -1471,9 +1471,9 @@ Note that the Booster for PAM and Booster for AD functions, now integrated into 
 - **Risk Level:** 1
 - **Risk description:** Extremely sensitive access rights should be reviewed on a regular basis to comply with security policy constraints.
 - **Remediation:** Perform a review.
-  
----  
-  
+
+---
+
 - **Control ID:** `REV_16`
 - **Entity:** Right
 - **Name:** Extremely sensitive folder rights not reviewed in the last 30 days
@@ -1481,14 +1481,14 @@ Note that the Booster for PAM and Booster for AD functions, now integrated into 
 - **Risk Level:** 1
 - **Risk description:** Extremely sensitive folder rights should be reviewed on a regular basis to comply with security policy constraints.
 - **Remediation:** Perform a review.
-  
----  
-  
-## ad booster controls  
+
+---
+
+## ad booster controls
 
 By installing the AD Booster add-on available on our Marketplace: [bw_ad_schema](https://marketplace.radiantlogic.com/package/bw_ad_schema/), you can extract information about privilege access rights in AD (DIT ACL) and benefit from additional controls on the accounts that can administer AD itself. These controls are listed in this section.
-  
----  
+
+---
 
 - **Control ID:** `ad_account_editadmin`
 - **Control Type:** access
@@ -1497,13 +1497,13 @@ By installing the AD Booster add-on available on our Marketplace: [bw_ad_schema]
 - **Risk Description:** "Those accounts can change Active Directory User Account control attributes administration scope and therefore grant some accounts the privilege to override default password policies, re-enable accounts, unlock accounts, ...
 This privilege should be carefully granted as if this account is compromised, it can be used to create lateral movements for an attacker by, for instance, re-enabling privileged dormant accounts."
 - **Remediation:** "Double-check if the account owner attributes are aligned with this privilege. In the case of a service account, double check that this privilege is part of the actions normally performed by this service account. If it is not the case, remove this privilege from this account."
-  
----  
-  
+
+---
+
 - **Control ID:** `ad_account_resetpass`
 - **Control Type:** access
 - **Entity:** Account
-- **Name:** AD privileged accounts that can reset password 
+- **Name:** AD privileged accounts that can reset password
 - **Risk Level:** 3
 - **Risk Description:** "Those accounts can reset Active Directory accounts password.
 This privilege should be carefully granted as if this account is compromised, it can be used to steal legitimate dormant accounts to perform lateral movements."
@@ -1519,7 +1519,6 @@ This privilege should be carefully granted as if this account is compromised, it
 - **Risk Description:** "Those accounts can change Active Directory User Account control attributes and therefore override default password policies, re-enable accounts, unlock accounts, ...
 This privilege should be carefully granted as if this account is compromised, it can be used to create lateral movements for an attacker by, for instance, re-enabling privileged dormant accounts."
 - **Remediation:** "Double-check if the account owner attributes are aligned with this privilege. In the case of a service account, double check that this privilege is part of the actions normally performed by this service account. If it is not the case, remove this privilege from this account."
-
 
 ---
 
@@ -1553,42 +1552,42 @@ This privilege should be carefully granted as if this account is compromised, it
 - **Risk Level:** 1
 - **Risk Description:** "Unused accounts are by definition no longer monitored by their respective owners. Those accounts can hacked and used by an insider to impersonate an individual while doing a fraud. Accounts can be unused if the account owner is no longer using the service, if the account owner is a contractor no longer working for the company, the account is a test/service account no longer used."
 - **Remediation:** "Monitor account last login date. If the last login date is longer than 60 days (or if the account has never been used) notify the manager of the account owner for disabling/deleting action. The account owner manager is accountable for the applying the security policy within his perimeter."
-  
----  
-  
-- **Control ID:** `ad_account_orphan`  
-- **Control Type:** ad quality controls  
-- **Entity:** Account   
-- **Name:** AD orphan active accounts  
-- **Description:** active accounts identified as orphan  
-- **Risk Level:** 1  
-- **Risk Description:** "Orphan accounts are nor assigned to an individual, nor tracked as a service account. Therefore, they can be used by insiders, outliers or hackers to steal data or issue rogue transactions"  
-- **Remediation:** reconcile the account, disable it if it is no longer used.  
-  
----  
-  
-- **Control ID:** `ad_service_account`  
-- **Control Type:** ad quality controls  
-- **Entity:** Account  
-- **Name:** AD service account  
-- **Description:** Service account  
-- **Risk Level:** 0  
-- **Risk Description:** Service accounts / No-owners should be carefully managed and revoked when no longer used as most of the time they override default security policies (password, expiration, ...).  
-- **Remediation:** Review this account on a regular basis  
-  
----  
-  
-- **Control ID:** `ad_account_leaver`  
-- **Control Type:** ad risk controls  
-- **Entity:** Account  
-- **Name:** AD leaver's active account  
-- **Description:** active account belonging to an identity who left the company  
-- **Risk Level:** 4  
-- **Risk Description:** Accounts must be terminated upon their owner departure, otherwise they can be used by a third party (insider, hacker) to compromise the data or steal information.  
-- **Remediation:** Double check if the owner left the company and disable the account immediatly  
-  
----  
-  
+
+---
+
+- **Control ID:** `ad_account_orphan`
+- **Control Type:** ad quality controls
+- **Entity:** Account
+- **Name:** AD orphan active accounts
+- **Description:** active accounts identified as orphan
+- **Risk Level:** 1
+- **Risk Description:** "Orphan accounts are nor assigned to an individual, nor tracked as a service account. Therefore, they can be used by insiders, outliers or hackers to steal data or issue rogue transactions"
+- **Remediation:** reconcile the account, disable it if it is no longer used.
+
+---
+
+- **Control ID:** `ad_service_account`
+- **Control Type:** ad quality controls
+- **Entity:** Account
+- **Name:** AD service account
+- **Description:** Service account
+- **Risk Level:** 0
+- **Risk Description:** Service accounts / No-owners should be carefully managed and revoked when no longer used as most of the time they override default security policies (password, expiration, ...).
+- **Remediation:** Review this account on a regular basis
+
+---
+
+- **Control ID:** `ad_account_leaver`
+- **Control Type:** ad risk controls
+- **Entity:** Account
+- **Name:** AD leaver's active account
+- **Description:** active account belonging to an identity who left the company
+- **Risk Level:** 4
+- **Risk Description:** Accounts must be terminated upon their owner departure, otherwise they can be used by a third party (insider, hacker) to compromise the data or steal information.
+- **Remediation:** Double check if the owner left the company and disable the account immediately
+
+---
+
 - **Control ID:** `ad_account_passnoexpire`
 - **Control Type:** ad risk controls
 - **Entity:** Account
@@ -1609,7 +1608,7 @@ This privilege should be carefully granted as if this account is compromised, it
 - **Risk Description:** Passwords must be changed on a regular basis to comply with security policies and mitigate account hacking risks.
 - **Remediation:** For user accounts: Check if the account is still used, if not disabled it. Otherwise, check password policy and reactivate password expiration policy.
 
----  
+---
 
 - **Control ID:** `ad_account_passnotrequired`
 - **Control Type:** ad risk controls
@@ -1637,7 +1636,7 @@ This privilege should be carefully granted as if this account is compromised, it
 - **Risk Level:** 1
 - **Risk Description:** "The Account Operators group grants limited account creation privileges to a user. Members of this group can create and modify most types of accounts, including those of users, local groups, and global groups, and members can log in locally to domain controllers.
 Members of the Account Operators group cannot manage the Administrator user account, the user accounts of administrators, or the Administrators, Server Operators, Account Operators, Backup Operators, or Print Operators groups. Members of this group cannot modify user rights.
-By default, this built-in group has no members, and it can create and manage users and groups in the domain, including its own membership and that of the Server Operators group. This group is considered a service administrator group because it can modify Server Operators, which in turn can modify domain controller settings. As a best practice, leave the membership of this group empty, and do not use it for any delegated administration. This group cannot be renamed, deleted, or moved." 
+By default, this built-in group has no members, and it can create and manage users and groups in the domain, including its own membership and that of the Server Operators group. This group is considered a service administrator group because it can modify Server Operators, which in turn can modify domain controller settings. As a best practice, leave the membership of this group empty, and do not use it for any delegated administration. This group cannot be renamed, deleted, or moved."
 - **Remediation:** Remove all existing members
 
 ---
@@ -1657,8 +1656,8 @@ By default, this built-in group has no members, and it can create and manage use
 - **Entity:** Account
 - **Name:** Domain Admins
 - **Risk Level:** 1
-- **Risk Description:** "Members of the Domain Admins security group are authorized to administer the domain. By default, the Domain Admins group is a member of the Administrators group on all computers that have joined a domain, including the domain controllers. The Domain Admins group is the default owner of any object that is created in Active Directory for the domain by any member of the group. If members of the group create other objects, such as files, the default owner is the Administrators group.   
-The Domain Admins group controls access to all domain controllers in a domain, and it can modify the membership of all administrative accounts in the domain. Membership can be modified by members of the service administrator groups in its domain (Administrators and Domain Admins), and by members of the Enterprise Admins group. This is considered a service administrator account because its members have full access to the domain controllers in a domain."   
+- **Risk Description:** "Members of the Domain Admins security group are authorized to administer the domain. By default, the Domain Admins group is a member of the Administrators group on all computers that have joined a domain, including the domain controllers. The Domain Admins group is the default owner of any object that is created in Active Directory for the domain by any member of the group. If members of the group create other objects, such as files, the default owner is the Administrators group.  
+The Domain Admins group controls access to all domain controllers in a domain, and it can modify the membership of all administrative accounts in the domain. Membership can be modified by members of the service administrator groups in its domain (Administrators and Domain Admins), and by members of the Enterprise Admins group. This is considered a service administrator account because its members have full access to the domain controllers in a domain."  
 - **Remediation:** "Double-check if the account owner attributes are aligned with this privilege. In the case of a service account, double check that this privilege is part of the actions normally performed by this service account. If it is not the case, remove this privilege from this account."
 
 ---
@@ -1709,7 +1708,7 @@ By default, this built-in group has no members, and it has access to server conf
 - **Control ID:** `ad_acl_id_notfound`
 - **Control Type:** quality
 - **Entity:** Account
-- **Name:** ad_acl_id_notfound
+- **Name:** ACL identity not found
 - **Risk Level:** 3
 
 ---
@@ -1881,7 +1880,7 @@ However, to protect against unsecured records or to permit members of the DnsUpd
 - **Entity:** Account
 - **Name:** Domain Guests
 - **Risk Level:** 0
-- **Risk Description:** The Domain Guests group includes the domain’s built-in Guest account. When members of this group sign in as local guests on a domain-joined computer, a domain profile is created on the local computer.
+- **Risk Description:** The Domain Guests group includes the domainï¿½s built-in Guest account. When members of this group sign in as local guests on a domain-joined computer, a domain profile is created on the local computer.
 
 ---
 
@@ -1926,9 +1925,9 @@ Read-only domain controllers address some of the issues that are commonly found 
 - **Control ID:** `grp_IIS_IUSRS`
 - **Control Type:** security groups
 - **Entity:** Account
-- **Name:** IIS_IUSRS
+- **Name:** IIS\_IUSRS
 - **Risk Level:** 0
-- **Risk Description:** IIS_IUSRS is a built-in group that is used by Internet Information Services beginning with IIS 7.0. A built-in account and group are guaranteed by the operating system to always have a unique SID. IIS 7.0 replaces the IUSR_MachineName account and the IIS_WPG group with the IIS_IUSRS group to ensure that the actual names that are used by the new account and group will never be localized. For example, regardless of the language of the Windows operating system that you install, the IIS account name will always be IUSR, and the group name will be IIS_IUSRS.
+- **Risk Description:** IIS\_IUSRS is a built-in group that is used by Internet Information Services beginning with IIS 7.0. A built-in account and group are guaranteed by the operating system to always have a unique SID. IIS 7.0 replaces the IUSR\_MachineName account and the IIS\_WPG group with the IIS\_IUSRS group to ensure that the actual names that are used by the new account and group will never be localized. For example, regardless of the language of the Windows operating system that you install, the IIS account name will always be IUSR, and the group name will be IIS\_IUSRS.
 
 ---
 
@@ -1988,9 +1987,9 @@ Cannot create or modify Data Collector Sets."
 - **Control ID:** `grp_Pre_Windows_2000_Compatible_Access`
 - **Control Type:** security groups
 - **Entity:** Account
-- **Name:** Pre–Windows 2000 Compatible Access
+- **Name:** Preï¿½Windows 2000 Compatible Access
 - **Risk Level:** 0
-- **Risk Description:** Members of the Pre–Windows 2000 Compatible Access group have Read access for all users and groups in the domain. This group is provided for backward compatibility for computers running Windows NT 4.0 and earlier. By default, the special identity group, Everyone, is a member of this group. Add users to this group only if they are running Windows NT 4.0 or earlier.
+- **Risk Description:** Members of the Preï¿½Windows 2000 Compatible Access group have Read access for all users and groups in the domain. This group is provided for backward compatibility for computers running Windows NT 4.0 and earlier. By default, the special identity group, Everyone, is a member of this group. Add users to this group only if they are running Windows NT 4.0 or earlier.
 
 ---
 
@@ -2012,10 +2011,10 @@ This group has no default members. Because members of this group can load and un
 - **Risk Description:** "Members of the Protected Users group are afforded additional protection against the compromise of credentials during authentication processes.
 This security group is designed as part of a strategy to effectively protect and manage credentials within the enterprise. Members of this group automatically have non-configurable protection applied to their accounts. Membership in the Protected Users group is meant to be restrictive and proactively secure by default. The only method to modify the protection for an account is to remove the account from the security group.
 This domain-related, global group triggers non-configurable protection on devices and host computers running Windows Server 2012 R2 and Windows 8.1, and on domain controllers in domains with a primary domain controller running Windows Server 2012 R2. This greatly reduces the memory footprint of credentials when users sign in to computers on the network from a non-compromised computer.
-Depending on the account’s domain functional level, members of the Protected Users group are further protected due to behavior changes in the authentication methods that are supported in Windows.
+Depending on the accountï¿½s domain functional level, members of the Protected Users group are further protected due to behavior changes in the authentication methods that are supported in Windows.
 Members of the Protected Users group cannot authenticate by using the following Security Support Providers (SSPs): NTLM, Digest Authentication, or CredSSP. Passwords are not cached on a device running Windows 8.1, so the device fails to authenticate to a domain when the account is a member of the Protected User group.
 The Kerberos protocol will not use the weaker DES or RC4 encryption types in the preauthentication process. This means that the domain must be configured to support at least the AES cipher suite.
-The user’s account cannot be delegated with Kerberos constrained or unconstrained delegation. This means that former connections to other systems may fail if the user is a member of the Protected Users group.
+The userï¿½s account cannot be delegated with Kerberos constrained or unconstrained delegation. This means that former connections to other systems may fail if the user is a member of the Protected Users group.
 The default Kerberos ticket-granting tickets (TGTs) lifetime setting of four hours is configurable by using Authentication Policies and Silos, which can be accessed through the Active Directory Administrative Center. This means that when four hours has passed, the user must authenticate again."
 
 ---
@@ -2029,24 +2028,24 @@ The default Kerberos ticket-granting tickets (TGTs) lifetime setting of four hou
 
 ---
 
-- **Control ID:** `grp_RDS_Endpoint_Servers`  
-- **Control Type:** security groups  
-- **Entity:** Account  
-- **Name:** RDS Endpoint Servers  
-- **Risk Level:** 0  
-- **Risk Description:** Servers that are members in the RDS Endpoint Servers group can run virtual machines and host sessions where user RemoteApp programs and personal virtual desktops run. This group needs to be populated on servers running RD Connection Broker. Session Host servers and RD Virtualization Host servers used in the deployment need to be in this group.  
-  
----  
-  
-- **Control ID:** `grp_RDS_Management_Servers`  
-- **Control Type:** security groups  
-- **Entity:** Account  
-- **Name:** RDS Management Servers  
-- **Risk Level:** 0  
-- **Risk Description:** Servers that are members in the RDS Management Servers group can be used to perform routine administrative actions on servers running Remote Desktop Services. This group needs to be populated on all servers in a Remote Desktop Services deployment. The servers running the RDS Central Management service must be included in this group.  
-  
----  
-  
+- **Control ID:** `grp_RDS_Endpoint_Servers`
+- **Control Type:** security groups
+- **Entity:** Account
+- **Name:** RDS Endpoint Servers
+- **Risk Level:** 0
+- **Risk Description:** Servers that are members in the RDS Endpoint Servers group can run virtual machines and host sessions where user RemoteApp programs and personal virtual desktops run. This group needs to be populated on servers running RD Connection Broker. Session Host servers and RD Virtualization Host servers used in the deployment need to be in this group.
+
+---
+
+- **Control ID:** `grp_RDS_Management_Servers`
+- **Control Type:** security groups
+- **Entity:** Account
+- **Name:** RDS Management Servers
+- **Risk Level:** 0
+- **Risk Description:** Servers that are members in the RDS Management Servers group can be used to perform routine administrative actions on servers running Remote Desktop Services. This group needs to be populated on all servers in a Remote Desktop Services deployment. The servers running the RDS Central Management service must be included in this group.
+
+---
+
 - **Control ID:** `grp_RDS_Remote_Access_Servers`
 - **Control Type:** security groups
 - **Entity:** Account
@@ -2136,126 +2135,126 @@ The membership of this group can be modified by any of the service administrator
 - **Risk Description:** "In Windows 8 and in Windows Server 2012, a Share tab was added to the Advanced Security Settings user interface. This tab displays the security properties of a remote file share. To view this information, you must have the following permissions and memberships, as appropriate for the version of Windows Server that the file server is running.
 The WinRMRemoteWMIUsers_ group applies to versions of the Windows Server operating system listed in the Active Directory default security groups by operating system version.
 If the file share is hosted on a server that is running a supported version of the operating system:
-You must be a member of the WinRMRemoteWMIUsers__ group or the BUILTIN Administrators group.
+You must be a member of the `WinRMRemoteWMIUsers__` group or the BUILTIN Administrators group.
 You must have Read permissions to the file share.
 If the file share is hosted on a server that is running a version of Windows Server that is earlier than Windows Server 2012:
 You must be a member of the BUILTIN Administrators group.
 You must have Read permissions to the file share.
-In Windows Server 2012, the Access Denied Assistance functionality adds the Authenticated Users group to the local WinRMRemoteWMIUsers__ group. Therefore, when the Access Denied Assistance functionality is enabled, all authenticated users who have Read permissions to the file share can view the file share permissions."
-  
----  
-  
-- **Control ID:** `grpAllowed_RODC_Password_Replication_Group`  
-- **Control Type:** security groups  
-- **Entity:** Account  
-- **Name:** Allowed RODC Password Replication Group  
-- **Risk Level:** 0  
-- **Risk Description:** The purpose of this security group is to manage a RODC password replication policy. This group has no members by default, and it results in the condition that new Read-only domain controllers do not cache user credentials. The Denied RODC Password Replication Group group contains a variety of high-privilege accounts and security groups. The Denied RODC Password Replication group supersedes the Allowed RODC Password Replication group.  
-  
----  
-  
-- **Control ID:** `grpDomain_Users`  
-- **Control Type:** security groups  
-- **Entity:** Account  
-- **Name:** Domain Users  
-- **Risk Level:** 0  
-- **Risk Description:** "The Domain Users group includes all user accounts in a domain. When you create a user account in a domain, it is automatically added to this group.  
-By default, any user account that is created in the domain automatically becomes a member of this group. This group can be used to represent all users in the domain. For example, if you want all domain users to have access to a printer, you can assign permissions for the printer to this group (or add the Domain Users group to a local group on the print server that has permissions for the printer)."  
-  
----  
-  
-- **Control ID:** `grpGroup_Policy_Creators_Owners`  
-- **Control Type:** security groups  
-- **Entity:** Account  
-- **Name:** Group Policy Creators Owners  
-- **Risk Level:** 0  
-- **Risk Description:** This group is authorized to create, edit, or delete Group Policy Objects in the domain. By default, the only member of the group is Administrator.  
+In Windows Server 2012, the Access Denied Assistance functionality adds the Authenticated Users group to the local WinRMRemoteWMIUsers\_\_ group. Therefore, when the Access Denied Assistance functionality is enabled, all authenticated users who have Read permissions to the file share can view the file share permissions."
+
+---
+
+- **Control ID:** `grpAllowed_RODC_Password_Replication_Group`
+- **Control Type:** security groups
+- **Entity:** Account
+- **Name:** Allowed RODC Password Replication Group
+- **Risk Level:** 0
+- **Risk Description:** The purpose of this security group is to manage a RODC password replication policy. This group has no members by default, and it results in the condition that new Read-only domain controllers do not cache user credentials. The Denied RODC Password Replication Group group contains a variety of high-privilege accounts and security groups. The Denied RODC Password Replication group supersedes the Allowed RODC Password Replication group.
+
+---
+
+- **Control ID:** `grpDomain_Users`
+- **Control Type:** security groups
+- **Entity:** Account
+- **Name:** Domain Users
+- **Risk Level:** 0
+- **Risk Description:** "The Domain Users group includes all user accounts in a domain. When you create a user account in a domain, it is automatically added to this group.
+By default, any user account that is created in the domain automatically becomes a member of this group. This group can be used to represent all users in the domain. For example, if you want all domain users to have access to a printer, you can assign permissions for the printer to this group (or add the Domain Users group to a local group on the print server that has permissions for the printer)."
+
+---
+
+- **Control ID:** `grpGroup_Policy_Creators_Owners`
+- **Control Type:** security groups
+- **Entity:** Account
+- **Name:** Group Policy Creators Owners
+- **Risk Level:** 0
+- **Risk Description:** This group is authorized to create, edit, or delete Group Policy Objects in the domain. By default, the only member of the group is Administrator.
 
 ---
 
 # pam booster controls  
 
 When activating the "Booster for PAM designed for CyberArk" feature in the technical configuration of the Identity Analytics project, the following addition controls are executed:  
-  
----  
-  
-- **Control ID:** `CA_SAFE_ACCOUNT03`  
-- **Control Type:** risk  
-- **Entity:** Account  
-- **Resource Type:** Safe  
-- **Name:** CA_SAFE_ACCOUNT03_leaver_access  
-- **Description:** Active user accounts for which the owner has departed and have access to a safe.  
-- **Risk Level:** 4  
-- **Risk Description:** User accounts must be terminated upon their owner's departure or risk being used by a third party (insider, hacker) to compromise the data or steal information.  
-- **Remediation:** Verify that the owner has left the company and immediately disable the account.  
-  
----  
-  
-- **Control ID:** `CA_VAULT_ACCOUNT03`  
-- **Control Type:** risk  
-- **Entity:** Account  
+
+---
+
+- **Control ID:** `CA_SAFE_ACCOUNT03`
+- **Control Type:** risk
+- **Entity:** Account
+- **Resource Type:** Safe
+- **Name:** CA\_SAFE\_ACCOUNT03\_leaver\_access
+- **Description:** Active user accounts for which the owner has departed and have access to a safe.
+- **Risk Level:** 4
+- **Risk Description:** User accounts must be terminated upon their owner's departure or risk being used by a third party (insider, hacker) to compromise the data or steal information.
+- **Remediation:** Verify that the owner has left the company and immediately disable the account.
+
+---
+
+- **Control ID:** `CA_VAULT_ACCOUNT03`
+- **Control Type:** risk
+- **Entity:** Account
 - **Resource Type:** Vault
-- **Name:**  CA_VAULT_ACCOUNT03_leaver_access
+- **Name:** CA\_VAULT\_ACCOUNT03\_leaver\_access
 - **Description:** Active user accounts for which the owner has departed and have access to a vault
 - **Risk Level:** 4
 - **Risk Description:** Accounts must be terminated upon their owner's departure or risk being used by a third party (insider, hacker) to compromise the data or steal information.
 - **Remediation:** Verify that the owner left the company and immediately disable the account.
-  
----  
-  
+
+---
+
 - **Control ID:** `CA_SAFE_ACCOUNT06`
 - **Control Type:** risk
 - **Entity:** Account
 - **Resource Type:** Safe
-- **Name:**  CA_SAFE_ACCOUNT06_contractor_noexp_admin
+- **Name:** CA\_SAFE\_ACCOUNT06\_contractor\_noexp\_admin
 - **Description:** Contractors with no expiration date that can manage a safe
 - **Risk Level:** 4
 - **Risk Description:** Contractor user accounts should have an expiration date to facilitate account revocation.
 - **Remediation:** Add an expiration date to the contractor user account.
-  
----  
-   
+
+---
+
 - **Control ID:** `CA_SAFE_ACCOUNT02`
 - **Control Type:** risk
 - **Entity:** Account
 - **Resource Type:** Safe
-- **Name:**  CA_SAFE_ACCOUNT02_contractor_noexp_access
+- **Name:** CA\_SAFE\_ACCOUNT02\_contractor\_noexp\_access
 - **Description:** Contractors without an expiration date that can access a safe
 - **Risk Level:** 4
 - **Risk Description:** Contractor user accounts should have an expiration date to faciliate account revocation.
 - **Remediation:** Add an expiration date to the contractor user account.
-  
----  
-  
+
+---
+
 - **Control ID:** `CA_VAULT_ACCOUNT02`
 - **Control Type:** risk
 - **Entity:** Account
 - **Resource Type:** Vault
-- **Name:**  CA_VAULT_ACCOUNT02_contractor_noexp_access
+- **Name:** CA\_VAULT\_ACCOUNT02\_contractor\_noexp\_access
 - **Description:** Contractors without an expiration date that can access a vault
 - **Risk Level:** 4
 - **Risk Description:** Contractor user accounts should have an expiration date to faciliate account revocation.
 - **Remediation:** Add an expiration date to the contractor user account.
-  
----    
-  
+
+---
+
 - **Control ID:** `CA_SAFE_ASSET01`
 - **Control Type:** risk
 - **Entity:** Asset
 - **Resource Type:** Credential
-- **Name:**  CA_SAFE_ASSET01_nocpm
+- **Name:** CA\_SAFE\_ASSET01\_nocpm
 - **Description:** CyberArk credentials for which automatic password rotation is disabled
 - **Risk Level:** 3
 - **Risk Description:** End users can still bypass CyberArk to use these privileged accounts because the password is not automatically changed by the CyberArk CPM.
 - **Remediation:** Contact the resource owner and the CyberArk team about activating CPM on these privileged accounts.
-  
----    
-    
+
+---
+
 - **Control ID:** `CA_SAFE_ACCOUNT08`
 - **Control Type:** risk
 - **Entity:** Account
 - **Resource Type:** Safe
-- **Name:**  CA_SAFE_ACCOUNT08_SOD_accountadmin_accountusage
+- **Name:** CA\_SAFE\_ACCOUNT08\_SOD\_accountadmin\_accountusage
 - **Description:** Users that can both manage the safe and use its contents
 - **Risk Level:** 3
 - **Risk Description:** User accounts should not be able to both manage and use the contents in order to conform with the principles of segregation of duties.
@@ -2267,319 +2266,318 @@ When activating the "Booster for PAM designed for CyberArk" feature in the techn
 - **Control Type:** risk
 - **Entity:** Account
 - **Resource Type:** Safe
-- **Name:**  CA_SAFE_ACCOUNT05_noexp_adminaccess
+- **Name:** CA\_SAFE\_ACCOUNT05\_noexp\_adminaccess
 - **Description:** Users with no expiration date that can manage a safe
 - **Risk Level:** 3
 - **Risk Description:** User accounts that can manage a CyberArk safe should have an expiration date to facilitate account revocation.
 - **Remediation:** Add an expiration date to the user account that can administer a CyberArk safe.
 
 ---
-   
+
 - **Control ID:** `CA_SAFE_ACCOUNT09`
 - **Control Type:** risk
 - **Entity:** Account
 - **Resource Type:** Safe
-- **Name:**  CA_SAFE_ACCOUNT09_SOD_vaultadmin_accountusage
+- **Name:** CA\_SAFE\_ACCOUNT09\_SOD\_vaultadmin\_accountusage
 - **Description:** Users with both access to the vault and access to a safe inside the vault
 - **Risk Level:** 3
 - **Risk Description:** User accounts should not be able to manage a vault, access a safe and use the contents in order to conform with the principles of segregation of duties.
 - **Remediation:** Re-assign the user's access rights to conform with the principles of segregation of duties.
-   
---- 
-   
+
+---
+
 - **Control ID:** `CA_SAFE_ACCOUNT07`
 - **Control Type:** risk
 - **Entity:** Account
 - **Resource Type:** Safe
-- **Name:**  CA_SAFE_ACCOUNT07_directrights_access
+- **Name:** CA\_SAFE\_ACCOUNT07\_directrights\_access
 - **Description:** Users that have at least one direct permission to a safe
 - **Risk Level:** 2
 - **Risk Description:** All access rights to a safe should be provided to user accounts through groups. Discretionary access should be avoided to ensure proper user access management.
 - **Remediation:** Remove the direct rights and use groups to grant access.
-   
----  
+
+---
 
 - **Control ID:** `CA_VAULT_ACCOUNT06`
 - **Control Type:** risk
 - **Entity:** Account
 - **Resource Type:** Vault
-- **Name:**  CA_VAULT_ACCOUNT06_directrights_access
+- **Name:** CA\_VAULT\_ACCOUNT06\_directrights\_access
 - **Description:** Users that have at least one direct permission to a vault
 - **Risk Level:** 2
 - **Risk Description:** All access rights to a vault should be provided to user accounts through groups. Discretionary access should be avoided to ensure proper user access management.
 - **Remediation:** Remove direct rights and use groups to grant access.
-   
----  
-    
+
+---
+
 - **Control ID:** `CA_VAULT_ACCOUNT05`
 - **Control Type:** risk
 - **Entity:** Account
 - **Resource Type:** Vault
-- **Name:**  CA_VAULT_ACCOUNT05_noexp_access
+- **Name:** CA\_VAULT\_ACCOUNT05\_noexp\_access
 - **Description:** Users without an expiration date that have access to a vault
 - **Risk Level:** 2
 - **Risk Description:** Users that can access a CyberArk vault should have an expiration date to facilitate account revocation.
 - **Remediation:** Add an expiration date to the account that can access a CyberArk vault.
-   
----  
-   
+
+---
+
 - **Control ID:** `CA_VAULT_ACCOUNT07`
 - **Control Type:** risk
 - **Entity:** Account
 - **Resource Type:** Vault
-- **Name:**  CA_VAULT_ACCOUNT07_SOD_admin_audit
+- **Name:** CA\_VAULT\_ACCOUNT07\_SOD\_admin\_audit
 - **Description:** Users that can both audit and administer the same vault
 - **Risk Level:** 2
 - **Risk Description:** Users should not be able to both audit and manage a vault in order to conform to the principles of segregation of duties.
 - **Remediation:** Re-assign the user's access rights to conform with the principles of segregation of duties.
-   
----  
-   
+
+---
+
 - **Control ID:** `CA_VAULT_ACCOUNT08`
 - **Control Type:** risk
 - **Entity:** Account
 - **Resource Type:** Vault
-- **Name:**  CA_VAULT_ACCOUNT08_SOD_backup_restore
+- **Name:** CA\_VAULT\_ACCOUNT08\_SOD\_backup\_restore
 - **Description:** Users that can both back up and restore the same vault
 - **Risk Level:** 2
 - **Risk Description:** Users should not be able to both back up and restore the same vault in order to conform with the principles of segregation of duties.
 - **Remediation:** Re-assign the user's access rights to conform with the principles of segregation of duties.
-   
----   
-   
+
+---
+
 - **Control ID:** `CA_SAFE_ACCOUNT04`
 - **Control Type:** risk
 - **Entity:** Account
 - **Resource Type:** Safe
-- **Name:**  CA_SAFE_ACCOUNT04_orphan_accounts_access
+- **Name:** CA\_SAFE\_ACCOUNT04\_orphan\_accounts\_access
 - **Description:** Orphaned accounts with access to a safe
 - **Risk Level:** 2
 - **Risk Description:** Orphaned accounts are no longer assigned to an individual or tracked as a service or technical account. They can be used by insiders, outliers or hackers to steal data or issue rogue transactions.
 - **Remediation:** If relevant, immediately assign the account to an individual, document it as a technical/service account or disable it if it is no longer being used.
-   
----   
-   
+
+---
+
 - **Control ID:** `CA_VAULT_ACCOUNT04`
 - **Control Type:** risk
 - **Entity:** Account
 - **Resource Type:** Vault
-- **Name:**  CA_VAULT_ACCOUNT04_orphan_accounts_access
+- **Name:** CA\_VAULT\_ACCOUNT04\_orphan\_accounts\_access
 - **Description:** Orphaned accounts with access to a vault
 - **Risk Level:** 2
 - **Risk Description:** Orphaned accounts are no longer assigned to an individual or tracked as a service or technical account. They can be used by insiders, outliers or hackers to steal data or issue rogue transactions.
 - **Remediation:** If relevant, immediately assign the account to an individual, document it as technical/service account or disable it if it is no longer being used.
-   
----   
-   
+
+---
+
 - **Control ID:** `CA_SAFE_ACCOUNT11`
 - **Control Type:** quality
 - **Entity:** Account
 - **Resource Type:** Safe
-- **Name:**  CA_SAFE_ACCOUNT11_accounts_dormant
+- **Name:** CA\_SAFE\_ACCOUNT11\_accounts\_dormant
 - **Description:** Unused user accounts giving access to a safe
 - **Risk Level:** 1
-- **Risk Description:** Unused user accounts are no longer being monitored by their respective owners.  They can be hacked and used by an insider to impersonate an individual and commit fraud. Accounts are considered unused if its owner is no longer using the service,  if its owner is a contractor no longer working for the company, or if the account is a test/service account no longer being used.
-- **Remediation:** Monitor the last login date of the account. If it is greater than 180 days, or if the account has never been used, notify the manager of the account owner in order to disable or delete it.  The account owner manager is accountable for the applying the security policy within his perimeter.
-   
+- **Risk Description:** Unused user accounts are no longer being monitored by their respective owners. They can be hacked and used by an insider to impersonate an individual and commit fraud. Accounts are considered unused if its owner is no longer using the service, if its owner is a contractor no longer working for the company, or if the account is a test/service account no longer being used.
+- **Remediation:** Monitor the last login date of the account. If it is greater than 180 days, or if the account has never been used, notify the manager of the account owner in order to disable or delete it. The account owner manager is accountable for the applying the security policy within his perimeter.
+
 ---
-   
+
 - **Control ID:** `CA_SAFE_ACCOUNT13`
 - **Control Type:** quality
 - **Entity:** Account
 - **Resource Type:** Safe
-- **Name:**  CA_SAFE_ACCOUNT13_service
+- **Name:** CA\_SAFE\_ACCOUNT13\_service
 - **Description:** Technical/service accounts giving access to a safe
 - **Risk Level:** 1
 - **Risk Description:** Service or technical accounts with access to a safe should be identified and reviewed.
 - **Remediation:** Review service or technical accounts and check the legitimacy of the access to the vault.
-   
----   
-   
+
+---
+
 - **Control ID:** `CA_VAULT_ACCOUNT11`
 - **Control Type:** quality
 - **Entity:** Account
 - **Resource Type:** Vault
-- **Name:**  CA_VAULT_ACCOUNT11_accounts_dormant
+- **Name:** CA\_VAULT\_ACCOUNT11\_accounts\_dormant
 - **Description:** Unused user accounts giving access to a vault
 - **Risk Level:** 1
-- **Risk Description:** Unused user accounts are no longer being monitored by their respective owners.  They can be hacked and used by an insider to impersonate an individual and commit fraud. Accounts are considered unused if its owner is no longer using the service,  if its owner is a contractor no longer working for the company, or if the account is a test/service account no longer being used.
+- **Risk Description:** Unused user accounts are no longer being monitored by their respective owners. They can be hacked and used by an insider to impersonate an individual and commit fraud. Accounts are considered unused if its owner is no longer using the service, if its owner is a contractor no longer working for the company, or if the account is a test/service account no longer being used.
 - **Remediation:** Monitor the last login date of the account. If it is greater than 180 days, or if the account has never been used, notify the manager of the account owner in order to disable or delete it. The account owner manager is accountable for applying the security policy within his perimeter.
-   
----   
-   
+
+---
+
 - **Control ID:** `CA_VAULT_ACCOUNT13`
 - **Control Type:** quality
 - **Entity:** Account
 - **Resource Type:** Vault
-- **Name:**  CA_VAULT_ACCOUNT13_service
+- **Name:** CA\_VAULT\_ACCOUNT13\_service
 - **Description:** Technical/service accounts giving access to a vault
 - **Risk Level:** 1
 - **Risk Description:** Service or technical accounts with access to a vault should be identified and reviewed.
 - **Remediation:** Review service or technical accounts and check the legitimacy of the access to the vault.
-   
----   
-   
+
+---
+
 - **Control ID:** `CA_SAFE_ACCOUNT01`
 - **Control Type:** risk
 - **Entity:** Account
 - **Resource Type:** Safe
-- **Name:**  CA_SAFE_ACCOUNT01_contractor_access
+- **Name:** CA\_SAFE\_ACCOUNT01\_contractor\_access
 - **Description:** Contractors that can access a safe
 - **Risk Level:** 1
 - **Risk Description:** Contractor user accounts with access to a safe should be identified and reviewed.
 - **Remediation:** Review contractor user accounts and check the legitimacy of their access to a safe.
-   
----   
-   
+
+---
+
 - **Control ID:** `CA_VAULT_ACCOUNT01`
 - **Control Type:** risk
 - **Entity:** Account
 - **Resource Type:** Vault
-- **Name:**  CA_VAULT_ACCOUNT01_contractor_access
+- **Name:** CA\_VAULT\_ACCOUNT01\_contractor\_access
 - **Description:** Contractors that can access a vault
 - **Risk Level:** 1
 - **Risk Description:** Contractor user accounts with access to a vault should be identified and reviewed.
 - **Remediation:** Review contractor user accounts and check the legitimacy of the access to a vault.
-   
----   
-   
+
+---
+
 - **Control ID:** `CA_SAFE_ACCOUNT12`
 - **Control Type:** quality
 - **Entity:** Account
 - **Resource Type:** Safe
-- **Name:**  CA_SAFE_ACCOUNT12_disabled_accounts_access
+- **Name:** CA\_SAFE\_ACCOUNT12\_disabled\_accounts\_access
 - **Description:** Disabled user accounts giving access to a safe
 - **Risk Level:** 1
 - **Risk Description:** Legacy user accounts which are very old can be removed to improve repository quality.
 - **Remediation:** Remove very old disabled accounts.
-   
----   
-   
+
+---
+
 - **Control ID:** `CA_VAULT_ACCOUNT12`
 - **Control Type:** quality
 - **Entity:** Account
 - **Resource Type:** Vault
-- **Name:**  CA_VAULT_ACCOUNT12_disabled_accounts_access
+- **Name:** CA\_VAULT\_ACCOUNT12\_disabled\_accounts\_access
 - **Description:** Disabled user accounts giving access to a vault
 - **Risk Level:** 1
 - **Risk Description:** Legacy user accounts can be removed if they are very old to improve repository quality.
 - **Remediation:** Remove very old disabled accounts.
-   
----   
-   
+
+---
+
 - **Control ID:** `CA_SAFE01`
 - **Control Type:** quality
 - **Entity:** Application
 - **Resource Type:** Safe
-- **Name:**  CA_SAFE01_safe_empty
+- **Name:** CA\_SAFE01\_safe\_empty
 - **Description:** The safe is empty
 - **Risk Level:** 0
-   
----   
-   
+
+---
+
 - **Control ID:** `CA_SAFE_GROUP01`
 - **Control Type:** quality
 - **Entity:** Group
 - **Resource Type:** Safe
-- **Name:**  CA_SAFE_GROUP01_group_empty
+- **Name:** CA\_SAFE\_GROUP01\_group\_empty
 - **Description:** Empty groups giving access to a safe
 - **Risk Level:** 0
 - **Risk Description:** Empty groups should be removed if they are no longer being used to improve repository quality.
 - **Remediation:** Verify that the group is still being used, and if not, delete it.
-   
----   
-   
+
+---
+
 - **Control ID:** `CA_SAFE_GROUP04`
 - **Control Type:** quality
 - **Entity:** Group
 - **Resource Type:** Safe
-- **Name:**  CA_SAFE_GROUP04_one_account
+- **Name:** CA\_SAFE\_GROUP04\_one\_account
 - **Description:** Groups with only one account giving access to a safe
 - **Risk Level:** 0
 - **Risk Description:** Legacy groups should be removed if they are no longer being used to improve repository quality.
 - **Remediation:** Verify that the group is still being used, and if not, delete it.
-   
----   
-   
+
+---
+
 - **Control ID:** `CA_SAFE_GROUP03`
 - **Control Type:** quality
 - **Entity:** Group
 - **Resource Type:** Safe
-- **Name:**  CA_SAFE_GROUP03_one_group
+- **Name:** CA\_SAFE\_GROUP03\_one\_group
 - **Description:** Groups with only one group giving access to a safe
 - **Risk Level:** 0
 - **Risk Description:** Legacy groups should be removed if they are no longer being used to improve repository quality.
 - **Remediation:** Verify that the group is still being used, and if not, delete it.
-   
----   
-   
+
+---
+
 - **Control ID:** `CA_VAULT_GROUP01`
 - **Control Type:** quality
 - **Entity:** Group
 - **Resource Type:** Vault
-- **Name:**  CA_VAULT_GROUP01_group_empty
+- **Name:** CA\_VAULT\_GROUP01\_group\_empty
 - **Description:** Empty groups giving access to a vault
 - **Risk Level:** 0
 - **Risk Description:** Empty groups should be removed if they are no longer used to improve repository quality.
 - **Remediation:** Verify that the group is still being used, and if not, delete it.
-   
----   
-   
+
+---
+
 - **Control ID:** `CA_SAFE_GROUP02`
 - **Control Type:** quality
 - **Entity:** Group
 - **Resource Type:** Safe
-- **Name:**  CA_SAFE_GROUP02_disabled_accounts
+- **Name:** CA\_SAFE\_GROUP02\_disabled\_accounts
 - **Description:** Groups with only disabled accounts giving access to a safe
 - **Risk Level:** 0
 - **Risk Description:** Legacy groups should be removed if they are no longer being used to improve repository quality.
 - **Remediation:** Verify that the group is still being used, and if not, delete it.
-   
----   
-   
+
+---
+
 - **Control ID:** `CA_VAULT_GROUP02`
 - **Control Type:** quality
 - **Entity:** Group
 - **Resource Type:** Vault
-- **Name:**  CA_VAULT_GROUP02_disabled_accounts
+- **Name:** CA\_VAULT\_GROUP02\_disabled\_accounts
 - **Description:** Groups with only disabled accounts giving access to a vault
 - **Risk Level:** 0
 - **Risk Description:** Legacy groups should be removed if they are no longer used to improve repository quality.
 - **Remediation:** Verify that the group is still being used, and if not, delete it.
-   
----   
+
+---
 
 - **Control ID:** `CA_VAULT_GROUP04`
 - **Control Type:** quality
 - **Entity:** Group
 - **Resource Type:** Vault
-- **Name:**  CA_VAULT_GROUP04_one_account
+- **Name:** CA\_VAULT\_GROUP04\_one\_account
 - **Description:** Groups with only one account giving access to a vault
 - **Risk Level:** 0
 - **Risk Description:** Verify that the group is still being used, and if not, delete it.
 - **Remediation:** Verify that the group is still being used, and if not, delete it.
-   
----   
-   
+
+---
+
 - **Control ID:** `CA_VAULT_GROUP03`
 - **Control Type:** quality
 - **Entity:** Group
 - **Resource Type:** Vault
-- **Name:**  CA_VAULT_GROUP03_one_group
+- **Name:** CA\_VAULT\_GROUP03\_one\_group
 - **Description:** Groups with only one group giving access to a vault
 - **Risk Level:** 0
 - **Risk Description:** Verify that the group is still being used, and if not, delete it.
 - **Remediation:** Verify that the group is still being used, and if not, delete it.
-   
----   
-    
+
+---
+
 - **Control ID:** `CA_SAFE02`
 - **Control Type:** quality
 - **Entity:** Application
 - **Resource Type:** Safe
-- **Name:**  CA_SAFE02_safe_no_access
+- **Name:** CA\_SAFE02\_safe\_no\_access
 - **Description:** Safe accounts and groups giving no access
 - **Risk Level:** 0
-   
----    
-   
+
+---

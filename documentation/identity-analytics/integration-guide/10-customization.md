@@ -3,13 +3,15 @@ title: "Identity Analytics Integration Guide"
 description : "Identity Analytics Integration Guide"
 ---
 
-# Adding Analytics
+# Identity Analytics Integration Guide
+
+## Adding Analytics
 
 IAP embeds a flexible framework in order to facilitate the inclusion of custom analytics.
 
-## User section of Access360
+### User section of Access360
 
-### Custom analytics associated to a management position
+#### Custom analytics associated to a management position
 
 You can configure custom analytics in the user section of Access360. Those analytics will appear among the others in the Analytics tab. Those customs analytics **MUST** be associated with the current user management characteristics, in a way that they will only appear if the current user corresponds to those management characteristics (line manager, application manager, ...).
 
@@ -51,7 +53,7 @@ myanalytics_app = Page {
 
 Keep in mind that the `feature:` property will help you to show or hide your custom analytics depending on the user roles if needed
 
-### Custom analytics for end users
+#### Custom analytics for end users
 
 You can configure custom analytics for endusers in the user section of Access360. Those analytics will appear among the others in the Analytics tab.
 
@@ -79,9 +81,9 @@ myanalytics_app = Page {
 
 Keep in mind that the `feature:` property will help you to show/hide your custom analytics depending on the user roles if needed
 
-## Detail pane
+### Detail pane
 
-### Custom analytics for a given entity
+#### Custom analytics for a given entity
 
 You can add your own custom analytics in the 'Analytics' section of the detail panes.
 
@@ -127,7 +129,7 @@ myanalyticspane_app = Page {
 }
 ```
 
-### Custom analytics for a given repository type
+#### Custom analytics for a given repository type
 
 You can add your own custom analytics in the 'Analytics' section of the detail panes for certain repository types.
 This is very useful if for instance you want to deploy analytics for a given system such as Active Directory, Mainframes, ...
@@ -169,7 +171,7 @@ myadanalyticspane = Page {
 }
 ```
 
-### Custom analytics for a given entity family
+#### Custom analytics for a given entity family
 
 You can add your own custom analytics in the 'Analytics' section of the detail panes for certain entity families.
 This is very useful if for instance you want to deploy analytics for a given system such as Active Directory, SAP, ...
@@ -221,7 +223,7 @@ For instance if you load database accounts and groups in a `Repository`, you sho
 - repositorytype = database
 - repositoryfamily = SQL Server
 
-### Custom identity analytics based on management position
+#### Custom identity analytics based on management position
 
 You can add custom identity analytics based on the current identity management position (such as application manager, organisation manager, ...). This is very useful as it will avoid to provide empty analytics (such as direct team reports if the current identity is not a line manager).
 This approach is very similar to the one used in the "User section of Access360".
@@ -264,7 +266,7 @@ appaccessrights360detail = Page {
 }
 ```
 
-### Best practice to publish custom analytics
+#### Best practice to publish custom analytics
 
 When you create custom analytics for end users, you **SHOULD** make them available as well in the analytics pane of the corresponding identity. At the end of the day, it will facilitate level 1 support such as an individual calling the support line because he is confused about an analytics content. As an administrator or and auditor, you will be able to browse through the corresponding identity detail pane and to access the exact same analytics from the Analytics pane.
 
@@ -313,9 +315,9 @@ myreport = Page {
 
 If needed you will be able to add `feature:` on the `_admin` and `_enduser` pages to restrict the access depending on the user roles.
 
-## Search pane
+### Search pane
 
-### Presentation
+#### Presentation
 
 Starting with IAP 1.1 you can configure Analytics accessible through the search pages in order to perform analysis on search results.
 
@@ -415,7 +417,7 @@ You can override those default values at your own risks through the technical co
 | search.folder.analyticswarningthreshold       | warns the user if the analytics will be launch on those number of search results |
 | search.folder.analyticserrorthreshold         | prevent the user to run the analytics on those number of search results          |
 
-### Build your own search analytics
+#### Build your own search analytics
 
 You can easily build your own search analytics, as with the rest of the analytics, they will be automatically discovered and added to the list thanks to their tags.
 
@@ -554,7 +556,7 @@ Your view **must** have the search definition anchor option activated, as seen i
 
 ![](./media/image67.png)
 
-# Adding custom content in detail pages & dialog box
+## Adding custom content in detail pages & dialog box
 
 You can be in a situation where you have loaded custom information on entities (such as custom identity information or custom account information). Whatever the form (custom attributes or metadata), you will want to display this information in the user interfaces as well.  
 
@@ -633,7 +635,7 @@ fragmentAccountExtendedDetails = PageFragment {
 }
 ```
 
-# Overriding detail pages
+## Overriding detail pages
 
 You can override the default details pages to provide custom content. For instance, if you have loaded a very specific application, you can consider that the default application detail page is not relevant/sufficient, you can in this case create your own detail page for this application and configure IAP in a way that it will display your detail page instead of the default one.
 
@@ -712,7 +714,7 @@ Activity {
 
 As a best practice you are **NOT ALLOWED** to modify the default details pages. If you want to modify them, you should copy/paste them instead and to override them through the `Activity` functionality.
 
-# Overriding detail dialog box
+## Overriding detail dialog box
 
 As with detail pages, you can override the default detail dialog boxes to provide custom content. For instance, if you have loaded a very specific application, you can consider that the default application detail dialog box is not relevant/sufficient, you can in this case create your own detail dialog box for this application and configure IAP in a way that it will display your detail dialog box instead of the default one.
 
@@ -755,9 +757,9 @@ If you are looking for some examples to start with, have a look at the following
 
 As a best practice you are **NOT ALLOWED** to modify the default dialog boxes. If you want to modify them, you should copy/paste them instead in your own fragment.
 
-# Building your own page
+## Building your own page
 
-## Fragments  
+### Fragments  
 
 IAP provides a framework which tremendously improves the way you can build your own reports and analytics.
 One of the main aspects of this framework is the use of 'fragments' (see [Pages Fragments](https://developer.radiantlogic.com/ia/descartes/igrc-platform/pages/23-page-fragments/) for more details about this functionality).  
@@ -792,7 +794,7 @@ As a best practice you **SHOULD** use those fragments and dialogbox whenever pos
 
 As a best practice you **ARE NOT ALLOWED** to modify/patch the standard fragments/dialogbox. If needed, you have to copy/paste them and create your own, most probably you will have to override the default pages (see next section). You can also add custom content in detail pages & dialog box (see next section).
 
-## Librairies
+### Librairies
 
 IAP provide a series of librairies to facilitate Pages design. You **SHOULD** use those librairies.
 Those libraries include:
@@ -843,11 +845,11 @@ Header {
 }
 ```
 
-## Colors
+### Colors
 
 IAP colors are located in `/webportal/pages/bw_fragments/lib/colors.page`, you **SHOULD** use them instead of hardcoding your colors in your pages. If the color is not available you **SHOULD** reference a theme color instead of hardcoding your color
 
-## IAP project files
+### IAP project files
 
 For your information, IAP project files are located as such:
 
@@ -867,7 +869,7 @@ For your information, IAP project files are located as such:
 | Metadata                     | `webportal/metadata/bw_analytics/results/*`                                |
 | Features                     | `webportal/features/bw_portaluar_base/portaluar.featuresets`               |
 
-# Configuring restricted search pages
+## Configuring restricted search pages
 
 By default, only `functionaladmin`, `auditor` and `technicaladmin` have access to all the search pages in order to enforce the **least privilege principle**
 In very specific use case, you can be in a situation where you want to break the least privilege principle and to open the door for some business user by allowing them to perfom search on sub-perimeters of the Identity Ledger.

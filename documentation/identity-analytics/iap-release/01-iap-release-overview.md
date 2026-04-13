@@ -1,40 +1,106 @@
 ---
 title: "Identity Analytics Release Notes"
-description : "Identity Analytics Release Notes"
+description: "Identity Analytics Release Notes"
 ---
 
-# Identity Analytics Release Notes  
+# Identity Analytics Release Notes
+
+## Supported versions
+
+We only support actively the last two versions of Identity analytics. Currently:
+
+- Version 3.4
+- Version 3.5
 
 ## IAP/IGRC Compatibility matrix
 
 IAP leverages improvements applied to the IGRC product. Please refer to the following table for more information :
 
-|                 | IAP 1.0 -- 1.2 | IAP 1.3 -- 1.7 | IAP 1.8 | IAP 2.0 - 2.2 | IAP 3.0 - 3.1 | IAP 3.2 |
-| :-------------- | :------------: | :------------: | :-----: | :-----------: | :-----------: | :-----: |
-| Curie R1        |     **X**      |       -        |    -    |       -       |               |         |
-| Curie R2        |     **X**      |     **X**      |    -    |       -       |               |         |
-| Curie R3 SP4    |     **X**      |     **X**      |  **X**  |       -       |               |         |
-| Descartes R2    |                |                |  **X**  |     **X**     |               |         |
-| Descartes R4    |                |                |  **X**  |     **X**     | **X**         |         |
-| Descartes R5    |                |                |  **X**  |     **X**     | **X**         |         |
-| Descartes R5 SP3|                |                |  **X**  |     **X**     | **X**         | **X**   |
+> [!warning] Curie is no longer supported. Please refer to the supported versions of IAP for more information.
+
+### Curie Version
+
+| Version      | IAP 1.0 -- 1.2 | IAP 1.3 -- 1.7 | IAP 1.8 |
+| :----------- | :------------: | :------------: | :-----: |
+| Curie R1     |     **X**      |       -        |    -    |
+| Curie R2     |     **X**      |     **X**      |    -    |
+| Curie R3 SP4 |     **X**      |     **X**      |  **X**  |
+
+### Descartes Version
+
+| Version                | IAP 1.8 - 2.2 | IAP 3.0 - 3.1 | IAP 3.2 | IAP 3.3 | IAP 3.4 + |
+| :--------------------- | :-----------: | :-----------: | :-----: | :-----: | :-------: |
+| Descartes R2           |     **X**     |       -       |    -    |    -    |     -     |
+| Descartes R4           |     **X**     |     **X**     |    -    |    -    |     -     |
+| Descartes R5           |     **X**     |     **X**     |    -    |    -    |     -     |
+| Descartes R5 SP3       |     **X**     |     **X**     |  **X**  |    -    |     -     |
+| Descartes R5 SP6       |     **X**     |     **X**     |  **X**  |  **X**  |     -     |
+| Descartes R5 SP7 - SP8 |     **X**     |     **X**     |  **X**  |  **X**  |   **X**   |
+
+### Eiffel Version
+
+| Version     | IAP 3.0 - 3.5 |
+| :---------- | :-----------: |
+| Eiffel R1   |     **X**     |
+| Eiffel R2 + |     **X**     |
 
 ## IAP release content
 
 For a full list of changes to IAP please refer the to following release notes:
 
-- [IAP 3.x release notes](04-iap-3.X-release-notes.md "IAP release notes" )
-- [IAP 2.x release notes](03-iap-2.X-release-notes.md "IAP release notes" )
-- [IAP 1.x release notes](02-iap-1.X-release-notes.md "IAP release notes" )
+- [IAP 3.x release notes](04-iap-3.X-release-notes.md "IAP release notes")
+- [IAP 2.x release notes](03-iap-2.X-release-notes.md "IAP release notes")
+- [IAP 1.x release notes](02-iap-1.X-release-notes.md "IAP release notes")
+
+### Version 3.5
+
+- New "Role Content" review, to review the permissions included in business roles.
+- Updated SOD dashboards that take exceptions into account and allow launching remediations.
+- New SOD designer, to build SOD matrices in the portal.
+- Improvement/fixes to:
+  - Campaign manager
+  - Review notifications feature
+
+### Version 3.4
+
+Web User Access Review Improvements:
+
+- Email templates configurable across campaigns with nationalization, english, spanish and french supported,
+- New perimeter filtering capabilities with "saved rules",
+- New "reviewer strategies" implemented for Application Access Rights Review and Account Repository Review,
+- Custom reviews can now be integrated within the Review Campaign Manager,
+- Reviewer Policies are now configurable as templates to be use in different campaigns,
+- Reviewer table are configurable with possibility to add custom attributes,
+
+Improvement of the remediation with error management and retry for Jira and ServiceNow connectors, and remediation of server user access,
+
+PAM Booster for CyberArk PCloud enhancement,
+
+Migration of all javascript graphical widgets to latest versions,
+
+Fix of portal bugs within the Tech Admin dashboard,
+
+Performance improvement,
+
+Vulnerabilities fix.
+
+### Version 3.3
+
+- New timeslot-attached review mode that sticks to a selected timeslot and ignores entry deletions that may occur in more recent timeslots during the campaign,
+- New type of review Server Access Rights Review,
+- Improvement of Review Campaign Management interface performance,
+- AIDA improvements for Application Access Rights Review with IDA in SaaS,
+- Improvement of CyberArk PCloud and Identity data ingestion,
+- Fix of crosstable display bugs,
+- Vulnerabilities fix.
 
 ### Version 3.2
 
 - PAM Booster: support of CyberArk PCloud with CyberArk Identity and EntraID,
-- Improvement of the “web-based” review:
-  - Add of “description” attribute for accounts in accounts and group membership “web-based” reviews,
+- Improvement of the "web-based" review:
+  - Add of "description" attribute for accounts in accounts and group membership "web-based" reviews,
   - AIDA configuration option in campaign configuration to hide the LLM prompt,
-  - User experience and performance improvements.  
-
+  - User experience and performance improvements.
 
 ### Version 3.1
 
@@ -59,7 +125,7 @@ Update of the "web based" user access review with a new configuration wizard tha
 - Define a review perimeter using tags,
 - In SaaS mode, enable AIDA for Application Rights Review only, the AI Data Assistant that helps reviewers performing their review.
 
-A new connector that handles remediation from IDA to IDDM is now available, to directly apply account deactivation and account removal from group after a review.  
+A new connector that handles remediation from IDA to IDDM is now available, to directly apply account deactivation and account removal from group after a review.
 
 In addition, CMDB data can now be imported into Identity Analytics by using the dedicated ServiceNow and CMDB connectors. CMDB elements can be automatically correlated with the existing Applications, Repositories, Servers and Shares to better understand who can access to a Service or a CMDB element. New analytics and dashboards are now available as well to provide insights around CMDB CI components with:
 
@@ -92,41 +158,41 @@ Improvement of the risk ranking.
 
 ### Version 2.0
 
-All User Access Review reviewer interfaces have been re-designed to provide a smoother and more efficient experience to the reviewers:  
+All User Access Review reviewer interfaces have been re-designed to provide a smoother and more efficient experience to the reviewers:
 
 - Responsive design of the interface
 - New and enhanced filtering capabilities
 - A progress bar is now displayed at the top of the tables
-- A new option to freeze columns  
+- A new option to freeze columns
 - Unified display of pending or in progress web-based (IAP) and custom (workflow) reviews in Access360
-- Offline mode added to Access360 to make reviewers autonomous  
+- Offline mode added to Access360 to make reviewers autonomous
 
-Enhanced user experience for review owners:  
+Enhanced user experience for review owners:
 
 - Owner escalation management of review campaigns
 - New "Reviewer" resource owner type in addition to "Business Owner" and "Technical Owner" to facilitate reviewer identification
 
-PAM Booster is now embedded by default in IAP including the CyberArk Safes User Access Review.  
+PAM Booster is now embedded by default in IAP including the CyberArk Safes User Access Review.
 
-Consideration of new license levels Observability, Governance, Compliance.  
+Consideration of new license levels Observability, Governance, Compliance.
 
-Multiple bugfixes (see release note).  
+Multiple bugfixes (see release note).
 
 ### Version 1.8
 
 RoleMining module is now embedded by default in IAP.  
-This version includes multiple bugfixes, please see the release notes above for the full list.  
+This version includes multiple bugfixes, please see the release notes above for the full list.
 
 ### Version 1.7
 
-Version 1.7 includes among others:  
-  
-- A new module, the Control browser, that provides access to all the control results and to launch ad-hoc remediation.  
-- New technical administrator home page with KPIs and shortcuts  
-- New Modern look and feel  
-- New mashup dashboards for admins and resource owners  
-- New access review compliance dashboards at an application level and at a repository level  
-- Perimeter based search pages are now accessible to resource owners  
+Version 1.7 includes among others:
+
+- A new module, the Control browser, that provides access to all the control results and to launch ad-hoc remediation.
+- New technical administrator home page with KPIs and shortcuts
+- New Modern look and feel
+- New mashup dashboards for admins and resource owners
+- New access review compliance dashboards at an application level and at a repository level
+- Perimeter based search pages are now accessible to resource owners
 - New controls:
   - Permissions without description
   - Folders without description
@@ -142,55 +208,55 @@ Version 1.7 includes among others:
   - Identities with the same mail
   - Identity with multiple accounts within a repository
   - Identity with multiple accounts within an application
-- Improve reconciliation management with bulk operations  
-- Delegation is now available as a Tab in access360  
-- Auditor role can now connect and access the access review manager and the remediation manager in read-only mode  
-- Controls scope attribute is now filled with the control target (account, right, ...)  
-- Hyperlinks in KPIs in access review management and remediation management  
+- Improve reconciliation management with bulk operations
+- Delegation is now available as a Tab in access360
+- Auditor role can now connect and access the access review manager and the remediation manager in read-only mode
+- Controls scope attribute is now filled with the control target (account, right, ...)
+- Hyperlinks in KPIs in access review management and remediation management
 
 ### Version 1.6
 
 #### Pre-requisits
 
-IAP 1.6 includes by default project dashboards, a feature added in version Curie R3 of the product (see [here](https://documentation.brainwavegrc.com/Descartes/docs/igrc-platform/dashboards/advanced-configuration/project-based-dashboards/) for more information). IAP 1.6 is as such compatible with Curie R2, however, all project dashboards will be ignored.  
+IAP 1.6 includes by default project dashboards, a feature added in version Curie R3 of the product (see [here](https://documentation.brainwavegrc.com/Descartes/docs/igrc-platform/dashboards/advanced-configuration/project-based-dashboards/) for more information). IAP 1.6 is as such compatible with Curie R2, however, all project dashboards will be ignored.
 
-When upgrading to IAP 1.6 in a version Curie R2 of the product and when the default dashboards are used in the project, please do not remove them from the project when migrating.  
+When upgrading to IAP 1.6 in a version Curie R2 of the product and when the default dashboards are used in the project, please do not remove them from the project when migrating.
 
-In some cases it can be necessary to navigate to the dashboard management page and "clean up" the existing dashboards to avoid duplicates.  
+In some cases it can be necessary to navigate to the dashboard management page and "clean up" the existing dashboards to avoid duplicates.
 
 #### Content
 
-Access review improvements:  
+Access review improvements:
 
 - Add a campaign initialization status
 - Can pause/resume a campaign
 - Reviewer can ask for a change (ok, revoke, update)
-- Reviewer can mark entries as “I am not the reviewer”
+- Reviewer can mark entries as "I am not the reviewer"
 - Reviewer can now see delegated (RACI) entries
 - Default comments provided for the reviewer
 - Self-review campaign
 
-Remediation improvements:  
+Remediation improvements:
 
 - Discrepancies computed for account based reviews
 - Jira Cloud
 - Universal ITSM
 - RPA
 
-User empowerment:  
+User empowerment:
 
 - New Mashup Dashboards
 
 ### IAS 1.5
 
-IAS Remediation:  
+IAS Remediation:
 
 - Improved remediation process
 - ServiceNow support
 
 ### IAS 1.4
 
-IAS Review process:  
+IAS Review process:
 
 - Accounts review
 - Access rights reviewSOD

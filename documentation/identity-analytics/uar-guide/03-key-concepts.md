@@ -111,11 +111,12 @@ As long as entries still need to be reviewed, *Entries to review* are displayed 
 ![](./media/IAP155.png)  
 
 By default, the option "Hide Signed-Off Reviews" is checked to list only on-going reviews. If you wish to additionally display completed reviews that have been signed-off, uncheck this box. Note that signed-off reviews can no longer be updated by the reviewer, only the campaign owner can reset or update them.  
+
 You can either review entries one by one or through bulk operations by selecting several entries and clicking on *Approve*, *Revoke* in the contextual menu.  
 You can reorder the table, and filter the entries either by selecting a given account/identity/permission/application or with the free text filter.  
 
 > **Note** in Identity Analytics 3.1 and beyond, when executing bulk actions on multiple entries, the process is now asynchronous, meaning that the end-user can continue to browse the interfaces as required. Of course, it is still not possible to take action on the remaining entries until the current process has been completed.  
- 
+  
 A contextual menu accessible with a right click on the table helps you to:  
 
 - export the table content in CSV/Excel format
@@ -143,20 +144,18 @@ You can reassign entries to your peers through the contextual menu. In order to 
 
 Please consult the [Reassigning entries](#reassigning-entries) chapter for more information about reassigning entries.  
 
-Finally, you can declare that you are not the reviewer for some entries. In order to do so, you have to select the entries you want to reassign and pick *I am not the reviewer*.  
+In adition, you can declare that you are not the reviewer for some entries. In order to do so, you have to select the entries you want to reassign and pick *I am not the reviewer*.  
 Those entries will be removed from your list, the *review owner* will be able to identify those entries through the management interface (as their review status will be "to reassign") and reassign them as needed to another person.  
 
 ![](./media/image107.png)  
 
-At any time, by clicking on the icon in the top right-hand corner, you can toggle the table display into pivot table mode to view similarities and make a decision for a group of entries. 
+At any time, by clicking on the icon in the top right-hand corner, you can toggle the table display into pivot table mode to view similarities and make a decision for a group of entries.
 
 ![](./media/IAP274.png) 
 
 When clicking on the "clustering" button in a cross-table, the data is sorted to group users by similar permission sets. Biggest blocks are displayed to the top left of the cross-table, making easier to tackle the most significant groups of similar entries and to identify the outliers at the right and bottom.  
- 
-![](./media/IAP275.png) 
 
-
+![](./media/IAP275.png)
 
 ## Management Interface functionalities  
 
@@ -195,7 +194,49 @@ The following actions are allowed once a review campaign is finalized:
 - Download the compliance report, button *Download Report*,
 - Delete the review campaign, button *Delete*, also available when the review instance is in pause.
 
-> Deleting a review instance will remove **all** information associated with this review instance, including review information and remediation information. This cannot be undone. You should use this with caution. However the compliance report will still be available in the database and can be downloaded by the administrator.
+> **Note:** Deleting a review instance will remove **all** information associated with this review instance, including review information and remediation information. This cannot be undone. You should use this with caution. However the compliance report will still be available in the database and can be downloaded by the administrator.
+
+### Reviewer Policies Tab
+
+From the campaign manager, on the top right of the page, a tab "Reviewer Policies" allows technical administrators to create and manage script templates per review type that will be available each time a new campaign is created or modified.  
+
+![](./media/IAP146-3.png)
+
+![](./media/IAP146-4.png)
+
+For example, if you want to set the following strategy:  
+
+- User accounts by themselves
+- Service accounts by account managers
+- All other accounts by application owner
+- Default reviewer for left entries
+
+You'll have to enter in the script the following conditions:
+
+```javascript
+if(accounttype.equals('user')) {
+	'myself';
+}
+if(accounttype.equals('service')) {
+	'accountowner';
+}
+'default.applicationowner';
+```
+
+This will ease the configuration of new campaigns when the review policies are specific to the organization.
+
+### Mail Templates Tab
+
+From the campaign manager, on the top right of the page, a tab "Mail Templates" allows technical administrators to create and manage notification templates for initial notification and reminder email templates.  
+
+![](./media/IAP280.png)
+
+![](./media/IAP280-1.png)
+
+You can create new template, edit and duplicate existing ones, or remove some templates. Deleting templates will not affect any campaigns that have already been set up using those templates.
+For each template, you can define emails in english, french and spanish. The Identity Analytics can specify the languages that need to be supported by setting in the technical configuration of the project the variable `ias_supportedlanguages` to "en,fr,es". 
+
+This will ease the configuration of new campaigns to create and share notification templates across user access review campaigns for the organization.
 
 ### Campaign detail page  
 
@@ -276,6 +317,7 @@ By selecting entries and clicking on "Proceed Now", the "signed off" entries wil
 By selecting entries and clicking on "Force Bulk Reset", the entries will once again be available to the *reviewer* so that he can change his decisions.  
 
 > **Notes:**  
+>
 > 1. The "proceed now" option is also hidden by default. To make it available, it requires to set the `ias_reviewcanproceedsignedentries` variable to `true`.  
 > 2. To automate the change from "signed off" to "pending remediation", the variable `ias_reviewautomateproceedsignedentries` and `ias_reviewproceedsignedentriesdelay` have to be set to in the configuration of the project. When `ias_reviewautomateproceedsignedentries` is set to `true` and `ias_reviewproceedsignedentriesdelay` is set to a number of days, the entries will automatically go from a "Signed-off" state to a "Proceed: Remediation Pending" state after the number of days indicated. The remediation will then have to be launched and managed through the "Remediation Management" page. To allow this automation, the related workflow (`bwaccess360_automateProceedSignofAccessRights`) needs to be launch using a batch.  
 
@@ -312,9 +354,8 @@ Finally, if discrepancies are found, they are displayed in a dedicated tab.
 ![](./media/IAP198.png)
 
 > A discrepancy corresponds to a case where an entry has been marked as to be revoked, has been successfully remediated (remediation finalized with a closed status "Done") and yet is detected as still active upon data refresh.
-
+>
 > When the resource on which a remediation is launched is no longer available in the current timeslot (the data relating to the resource has not been loaded), the entries will remain in "pending" status. In this case, the remediation administrator must force the status to "won't fix".    
-
 
 ### Configuring the remediation strategy
 
@@ -326,7 +367,7 @@ In this page, you can:
 
 - Declare third party ITSMs for remediation
 - Declare third party RPA for remediation
-- Declare RadiantOne automated remediation							  
+- Declare RadiantOne IDDM automated remediation
 - Assign a remediation strategy for each individual repository
 - Assign a remediation strategy for each individual application
 
@@ -334,23 +375,80 @@ In this page, you can:
 
 The last tab helps you declare a third party ITSM for remediations. For the moment only ServiceNow and Jira Cloud are supported off-the-shelf.
 
-![](./media/IAP222.png)
-
-In order to add a new third party ITSM, you **MUST** provide:  
+In order to add a new third party ITSM ServiceNow, you **MUST** provide:  
 
 - the URL endpoint
-- the account login used to connect to the ITSM
-- the account password used to connect to ITSM
+- the authentication type: basic, OAuth2 or OAuth2 using the project configuration variable  
+- the OAuth token grant type (Password or Refresh token)  
+- the account login used to connect to the ITSM or the OAuth2 details  
+- the account password used to connect to ITSM or the Client ID/Secret/Refresh token details  
+
+"Refresh ID token" is supported by the ServiceNow connector.  
+
+![](./media/IAP222bis.png)
+
+![](./media/IAP222ter.png)
+
 You also **SHOULD** provide additional information related to the ITSM such as
+
+- The Ticket Type (Incident or Change Request)
 - The caller name (ServiceNow user id)
 - The assignment group (for ServiceNow)
+  
+![](./media/IAP222.png)  
 
 Please note that both the caller and the assignment group will be resolved when creating a ticket, by searching them in the ServiceNow database. Therefore, you **must** avoid any typo here.
 
 Note that you can declare the same endpoint several time. This can be useful if you want for instance assign remediation actions to different *assignment groups* depending on the target system (repository or application)
 
+You then can test the ServiceNow configuration and open a test ticket:
+
+![](./media/IAP2221.png)
+
+![](./media/IAP2222.png)
+
+#### Declaring a new RPA
+
 Declaring a new RPA is done by selecting "Mail notification" in the list.
 An email will be sent for **each** individual remediation. The purpose of this email is to be analyzed by a robot (either an ITSM or a RPA to automate actions upon reception).
+
+#### Declaring RadiantOne
+
+If RadiantOne Identity Data Management is installed and used as a datasource for Identity Analytics, you can also leverage RadiantOne for remediation.
+
+When RadiantOne is used for remediation, the remediation orders are sent to RadiantOne and automatically enforced (provisioned) to the target systems in near real time.
+
+At the time of writing, the following remediation strategies are supported:
+
+- Account revocation
+- Group membership removal
+
+For account revocation, two strategies are applied whether the source system is Active Directory or not:
+For Active Directory, Identity analytics will automatically update the UAC (User Account Control) attribute to disable the account. For any other target system, Identity Analytics will set the configured attribute to the configured value. If you want to apply different revocation remediation strategies for different repositories (by setting different key/value pairs), you need to configure several RadiantOne remediation strategies.
+
+![](./media/R1-001.png)
+
+RadiantOne remediation strategies can be assigned to repositories loaded through RadiantOne connectors (and only those ones) in the first tab. Please note that the RadiantOne choice is automatically hidden if the repository has not been loaded through RadiantOne.
+
+![](./media/R1-002.png)
+
+At the time of writing, the following datasource connectors are supported for RadiantOne remediation:
+
+RadiantOne - Active Directory
+
+![](./media/R1-003.png)
+
+RadiantOne - Generic LDAP
+
+![](./media/R1-004.png)
+
+RadiantOne - Generic Bridge
+
+![](./media/R1-005.png)
+
+> [!warning]
+> When you use "RadiantOne - Generic Bridge", it is up to you to configure the ETL engine to load the data. This means that you can load any kind of information in Identity analytics, regardless of the source (database accounts, local server accounts, etc) and enforce automated remediation (as long as you have configured the proper remediation strategy in Identity Data Management with GlobalSync).  
+> In order to do this though, you have to configure your collect line in a special way in order for Identity Analytics to detect the RadiantOne lineage. Please consult the [integration guide](../integration-guide/08-r1-remediation.md) for more on how to configure your collect line with the "RadiantOne - Generic Bridge" and the automated remediation.
 
 #### Assigning a remediation strategy to a repository or an application
 
@@ -388,12 +486,13 @@ Note that for ITSM scenario, RadiantOne Identity Analytics adopts a consolidatio
 
 All requested changes are presented as an attachment to the ticket.  
 
-RadiantOne Identity Analytics will retrieve the ITSM ticket number as well as its current status.  
+RadiantOne Identity Analytics will retrieve the ITSM ticket number as well as its current status. When you select a remediation action from the table, click the globe icon with the tooltip "Open ITSM Ticket" at the top right of the table to access the related ITSM ticket in ServiceNow. 
 
 ![](./media/IAP225.png)  
 
 ![](./media/IAP226.png)  
 
+In attachment of the ITSM ticket in ServiceNow, you can retrieve the list of action to perform to remediate:
 ![](./media/IAP227.png)  
 
 ### Refreshing ITSM tickets status  
@@ -407,6 +506,39 @@ Note that even though a remediation is managed through an ITSM, you can still ma
 As "Bulk done" and "Bulk won't fix" will move the selected remediations to a finalized state. RadiantOne Identity Analytics will no longer query ServiceNow to update the ticket status.  
 
 This is not the case for "Bulk in progress". You should mark an ITSM ticket as "In Progress" only if you want retrieve the latest ITSM status and that this remediation was previously marked as "finalized".  
+
+### RPA tickets status  
+
+Once the emails are sent, all RPA remediations are considered processed.
+
+### RadiantOne tickets status  
+
+As remediation is done automatically and on the fly by RadiantOne Identity Data Management, once the remediation orders are sent to RadiantOne Identity Data Management without any error, the remediations are considered processed and are closed.
+
+Therefore, a RadiantOne remediation can only have two different closed status:
+
+- **done** The remediation has been sent to Identity Data Management (data has been properly updated in FID)
+- **error** Identity Analytics was not able to send the remediation order to Identity Data Management. Further investigation is required to identify the problem. This is a **final status**, the remediation will have to be performed by any other means.
+
+Due to the fact that Identity Analytics performs point-in-time analysis, there can be situations where there is a drift between Identity Analytics data and Identity Data Management data, such as:
+
+- The account has been deleted in between
+- The account has been disabled in between
+- The account/group has moved (its DN has changed)
+- the group membership no longer exists
+
+In those cases, the remediation is considered **done** but the remediation status is set to **warning**. It is advised to review those **warning** remediation on a regular basis, especially to identify if it is because of account/group who have moved as in that case a manual remediation would still be required.
+
+### Managing remediation in error  
+
+You can list remediation requests in error by clicking on the top right message "You have X remediations in error" or filtering the table available in tab "Details" by selecting from the combo box "Show Only Remediation with Errors".  
+
+![](./media/IAP228-1.png)  
+
+From there, you can select a remediation action in error and click on the button at the bottom of the page "Display the error details" to investigate.  
+Once the error fixed, you can click on "Relaunch All remediation in error" to re-execute the remediation actions.  
+
+![](./media/IAP228-2.png)  
 
 ## Users notification
 
@@ -521,17 +653,19 @@ AIDA will guides the reviewer through four main steps:
     - Leaver Accounts
     - Orphaned Accounts
     - Unused Accounts
-3. **Similarities**: this step examines the data in cross-tabular mode and identifies for the reviewer all clusters, i.e. identities with similar accesses, enabling decisions to be made quickly on the basis of similarities. It automatically detects up to 7 clusters and leads the reviewer through each one, from the largest to the smallest, using a dedicated clustering algorythm.
+3. **Similarities**: this step examines the data in cross-tabular mode and identifies for the reviewer all clusters, i.e. identities with similar accesses, enabling decisions to be made quickly on the basis of similarities. It automatically detects up to 7 clusters and leads the reviewer through each one, from the largest to the smallest, using a dedicated clustering algorithm.
 
 **Automatic Identification of Clusters with AIDA in a permission matrix:**
 *Data Examination*: During the Similarities step, AIDA examines the access rights of various users and identifies patterns in the data.
 *Cluster Detection*: AIDA automatically detects clusters, based on a "frequent closed itemsets mining" algorithm that have been especially enhanced for user access review. The detected clusters are groups of identities that display similar access rights based on permissions-application. This helps highlight entries that likely require similar treatment during the review.
 *Clustering Algorithm*: A dedicated algorithm sorts the detected clusters by size, and select the first seven biggest clusters. AIDA guides the reviewer through the largest clusters first, making it easier to tackle the most significant groups of similar entries.
 
-4. **Isolated Items**: this final stage guides the reviewer through the last entries, identity by identity for user accounts and account per account for service/technical.
+4. **Remaining Items**: this final stage guides the reviewer through the last entries, identity by identity for user accounts and account per account for service/technical.
 
 ![](./media/IAP272.png)  
-  
+
+![](./media/IAP272-bis.png)  
+
 The reviewer can exit AIDA's review mode at any time and reactivate it. In this case, AIDA is paused. The reviewer can also decide directly on certain entries in the interface, without having to leave AIDA.  
 
 #### AIDA feedback  
@@ -576,11 +710,16 @@ You can only import excel spreadsheet on *ongoing* review campaigns.
 
 ## Reassigning entries  
 
-Each entry to review has a reviewer. RACI principles, as a result each entry has both a **R**esponsible and an **A**ccountable.  
-Only the **R**esponsible reviews the entries. By default, when a review campaign is initialized, both fields contain the same value: The reviewer computed during the initialization phase.  
+Each entry to review is assigned a reviewer according to RACI principles. As a result, every entry has both a **Responsible** and an **Accountable**.
 
-One can reassign entries to another individual. As RACI principles are enforced, only the **R**esponsible information is updated.  
-At the end of the review, it means that you can identify which entries have been reassigned by comparing those two fields. It is visible in the management interface:  
+Both the **Responsible** and the **Accountable** are allowed to review an entry.
+
+By default, when a review campaign is initialized, the **Responsible** and **Accountable** fields contain the same value: the reviewer computed during the initialization phase.
+
+Entries can be reassigned to another individual. In accordance with RACI principles, only the **Responsible** field is updated when a reassignment occurs; the **Accountable** remains unchanged.
+
+At the end of the review, reassigned entries can be identified by comparing the **Responsible** and **Accountable** fields. This information is visible in the management interface.
+
 
 ![](./media/image103.png)  
 
@@ -648,3 +787,4 @@ A discrepancies occurs when a remediation fails: The access rights has been mark
 ![](./media/IAP188.png)
 
 Discrepancies are accessible in the *Remediation Management*. Discrepancies are also identified as control defects (REM02 - remediation ticket closed and access right not removed)
+

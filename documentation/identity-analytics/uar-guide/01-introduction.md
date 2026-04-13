@@ -214,7 +214,15 @@ All the features provided in previous versions are still available:
   
 #### Behavior of a Review Campaign Running Over Several Timeslots
 
-The duration of a campaign can be spread over a time range comprising several data loads at different dates (timeslots). In this case:
+Identity Analytics supports two modes for handling user access review campaigns across multiple timeslots: **Standard Mode** and **Attached to Timeslot Mode**. These modes define how reviews handle changes in access data over time. The standard mode allows reviews to reflect updates and removals during the campaign, while the attached mode freezes the review scope to the exact state at campaign launch—ideal for audit and compliance requirements.
+
+> Note that standard mode is only available in Identity Analytics version 3.3 and higher.
+
+##### Standard mode
+
+In standard mode, the review campaign adapts to changes in data across timeslots. This means:The duration of a campaign can be spread over a time range comprising several data loads at different dates (timeslots).
+
+Across multiple timeslots, some aspects of the review campaign remain constant, while others may vary.
 
 - What remains the same timeslot after timeslot:
   - The reviewer. For example:
@@ -227,7 +235,15 @@ The duration of a campaign can be spread over a time range comprising several da
   - Note that deleted entries will be marked as "revoked" in the compliance report.
   - Also note that the content of the campaign follow-up page depends on the timeslot selected. This means that :
     - If entries are deleted in the next timeslot, the number of entries to be reviewed will change according to the timeslot selected in the portal in the list of entries to be reviewed (i.e., we'll have the initial list of entries to be reviewed on the timeslot on which the campaign was launched, and the "modified" list without the deleted entries on the next timeslot).
-    - If context information (identity name/department/job, account expiry date, permission name, etc.) for certain entries is modified in the next timeslot, the information displayed will depend on the timeslot selected (i.e. initial information on the timeslot on which the campaign was launched, modified information on the current timeslot).  
+    - If context information (identity name/department/job, account expiry date, permission name, etc.) for certain entries is modified in the next timeslot, the information displayed will depend on the timeslot selected (i.e. initial information on the timeslot on which the campaign was launched, modified information on the current timeslot). 
+
+##### Attached to Timeslot Mode
+
+Starting with Identity Analytics version 3.3, a new review mode titled "Attached to Timeslot" has been introduced. This mode allows user access reviews to be fixed to a specific timeslot, representing the access configurations at that particular time. Consequently, the review does not account for newer timeslots where some entries may have been removed since the review began. This mode is applicable to all review types: Application Access Rights Review, Account Repository Review, Group Membership Review, Safe Owner Review, and Server Review.
+
+Using this mode is beneficial when strong compliance evidence is required, such as demonstrating to auditors that all accesses existing at a specific time have been reviewed. If the focus is more on reducing risks and enhancing operational efficiency rather than providing compliance proof, the standard mode, which considers access rights removal during the review campaign, might be more appropriate.
+
+If your priority is minimizing risk and improving operational efficiency—rather than strict compliance—you can opt for the standard mode, which dynamically reflects access removals during the campaign, ensuring reviewers focus only on current, active access.
 
 #### Role Assignment Prerequisites for UAR Management Access
 
@@ -249,19 +265,23 @@ Of course, the Identity Analytics administrator must ensure that all these perso
 
 The scheduling is done through a workflow that needs to be up and running: the scheduler. To check the status or start the workflow, using the left menu bar, go to "Settings" > "System" and then click on the "Scheduler" button:
 
-![](uar_guide_en.media/media/IAP257.png){ width=50% }  
+![](./media/IAP257.png)  
 
 Specify the hour you need to start the scheduler, click on "Start Scheduler" and then confirm:
 
-![](uar_guide_en.media/media/IAP256.png){ width=75% }  
+![](./media/IAP256.png)
 
 When the scheduler is started, you'll find in the same page the information about the lifecycle of the scheduler:
 
-![](uar_guide_en.media/media/IAP258.png){ width=50% }  
+![](./media/IAP258.png)
 
 When a campaign reaches its start date, the revision instance will be launched on the specified start date, at the same time as the scheduler's start time.  
 
 > **Notes:**
 >
 > 1. When the scheduler is restarted, it will launch all overdue review instances. Please make sure you've deactivated any campaigns you don't want to launch before starting the scheduler, otherwise these campaigns will be launched and notifications sent to all reviewers if you have them activated.  
-> 2. if the current review instance is still active on the start date of the next schedule, the new review instance will not be launched until the initial one is finalized. In that case, the next start date of the campaign is set to "Behind Schedule". Once the current review instance has been finalized, the next start date is one day after the finalization date.
+> 2. If the current review instance is still active on the start date of the next schedule, the new review instance will not be launched until the initial one is finalized. In that case, the next start date of the campaign is set to "Behind Schedule". Once the current review instance has been finalized, the next start date is one day after the finalization date.
+
+#### Purging Behavior
+
+When an "attached to timeslot" review campaign is active and linked to a specific timeslot, that timeslot cannot be purged. Purging will only be allowed once all reviews associated with the timeslot have been finalized or deleted.

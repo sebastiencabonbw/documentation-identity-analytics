@@ -5,8 +5,8 @@ description : "Identity Analytics Access Review Guide"
 
 # Technical Corner
 
-This chapter explains how access review are configured in RadiantOne Identity Analytics, from a technical point of view.  
-This information is only useful if you have deployed Identity Analytics 'on-prem' and you want to leverage / extend access review.  
+This document explains how access reviews are configured in RadiantOne Identity Analytics, from a technical point of view.  
+This information is only useful if you have deployed Identity Analytics 'on-prem' and you want to leverage or extend access reviews.  
 
 ## Custom Web-based Reviews
 
@@ -18,7 +18,72 @@ Those reviews are available from the main menu on the left in "Custom Review Man
 
 For the new custom reviews, the review configuration page needs to have the tag "newiasreview". In that case, it will be directly accessible when clicking on "Create a New Review" button.
 
-![](./media/IAP264.png)  
+![](./media/IAP264.png)
+
+## Server Data Extraction For User Access Review
+
+To extract server data for Identity Analytics (IDA) Server Reviews, you can combine PowerShell-based extraction, teledistribution tools (Ansible, Puppet, or SCCM) for script deployment, and automated scheduling. This process aligns with the RadiantLogic Windows Connector methodology and User Access Review server review requirements.  
+  
+### Server Data Extraction  
+
+For windows accounts, you can use the IDA Extraction Scripts available in the add-on [bw_winlocalresources](http://marketplace.radiantlogic.com/package/bw_winlocalresources/) that you can download from the RadiantLogic Marketplace to extract data.
+
+For that you can execute locally the script on the windows servers using teledistribution tools:  
+
+```sh
+.\get-winlocalresources.ps1 -logLevel Debug
+```
+
+In addition, you can use for small environment the following scripts from a single server of the domains to extract list of servers from AD and then their local accounts and groups:  
+
+- Example to list Windows server machines available in the current Active Directory Domain, named `intra05` in this example. The output file will be `intra05_hosts.csv`.
+
+```sh
+get-hosts.ps1 -prefix intra05`
+```
+
+- Then extract, for each Windows server present in `intra05_hosts.csv` file, local accounts and groups, shares:
+
+```sh
+get-hosts-sharesinfos.ps1 -prefix intra05 -hostsFile intra05_hosts.csv
+```
+
+The output will be csv files that you can transfer to upload them to your Identity Analytics instance.
+
+> For more details, please refer to the documentation embedded within the add-on.
+
+For other kind of servers, you can use other add-ons or your own script to extract data. In that case, you have to make sure that the data mapping is well configured in order to see your servers in the Server Access Reviews.  
+
+### Configuration of the Data Mapping in the IDA data model
+
+Upload the data into the IDA platform:
+
+- For windows server, we recommend installing the add-on `bw_winlocalresources` in your Identity Analytics for the data mapping into IDA
+- Or define your own data mapping. For that you need to map servers as applications in the IDA data model with the attribute Application Type set to 'server' and you need to map access rights (that could be local groups within your servers) to permissions.
+
+## Server Data Extraction for User Access Reviews
+
+To extract server data for Identity Analytics (IDA) Server Reviews, you can combine PowerShell-based extraction, teledistribution tools (Ansible, Puppet, or SCCM) for script deployment, and automated scheduling. This process aligns with the RadiantLogic Windows Connector methodology and UAR (User Access Review) server review requirements. 
+
+### Data Extraction
+
+**For Windows Servers:**
+
+Utilize the Identity Analytics Extraction Scripts available in the "bw_windows_local" add-on, which can be downloaded from the RadiantLogic Marketplace. The primary script, `bw_data_collector.ps1`, is designed to extract data from Active Directory and local servers. The extracted data is saved in CSV format, suitable for uploading into your Identity Analytics instance.
+
+**For Other Servers:**
+
+For non-Windows servers, you can employ alternative add-ons or custom scripts to extract access data. Ensure that these scripts are designed to capture all necessary access information. It's crucial to verify that the data mapping configurations are correctly set up to ensure seamless integration with the Identity Analytics platform.
+
+### Configuring Data Mapping
+
+After extracting the data, follow these steps to configure the data mapping in the Identity Data Analytics Data Model:
+
+**Upload Data into Identity Analytics:**
+
+- **For Windows Servers:** It's recommended to install the "bw_windows_local" add-on in your Identity Analytics instance to facilitate data mapping. This add-on simplifies the process of mapping server data into the IDA data model.
+
+- **For Other Servers:** If you're using custom scripts or different add-ons, ensure that the extracted data aligns with the IDA data model's requirements. Specifically, map servers as applications with the attribute "Application Type" set to "server." Additionally, map access rights, such as local groups within your servers, to the appropriate permissions within the IDA model.
 
 ## Data model
 
@@ -41,23 +106,23 @@ Here is a `view` of an access right campaign.
 
 Campaign information is stored as such:  
 
-| Campaign     |                                                            |
-| ------------ | ---------------------------------------------------------- |
-| recorduid    | Campaign internal unique identifier                        |
-| ticketnumber | Campaign unique number                                     |
-| title        | Campaign name                                              |
-| description  | Campaign description                                       |
-| priority     | Campaign priority number                                   |
-| duedate      | Campaign due date                                          |
-| custom1      | Campaign type ('right', 'account', 'safe', 'group members")|
-| custom2      | timeslotuid when the campaign was launched                 |
-| custom3      | status page                                                |
-| custom4      | review page                                                |
-| custom5      | finalize page                                              |
-| custom6      | offline mode enabled                                       |
-| custom7      | self delegation enabled                                    |
-| custom8      | is it a full (compliance driven ) review                   |
-| tickettype   | ADHOC_UAR                                                  |
+| Campaign     |                                                             |
+| ------------ | ----------------------------------------------------------- |
+| recorduid    | Campaign internal unique identifier                         |
+| ticketnumber | Campaign unique number                                      |
+| title        | Campaign name                                               |
+| description  | Campaign description                                        |
+| priority     | Campaign priority number                                    |
+| duedate      | Campaign due date                                           |
+| custom1      | Campaign type ('right', 'account', 'safe', 'group members") |
+| custom2      | timeslotuid when the campaign was launched                  |
+| custom3      | status page                                                 |
+| custom4      | review page                                                 |
+| custom5      | finalize page                                               |
+| custom6      | offline mode enabled                                        |
+| custom7      | self delegation enabled                                     |
+| custom8      | is it a full (compliance driven ) review                    |
+| tickettype   | ADHOC_UAR                                                   |
 
 The campaign current status is stored in a dedicated metadata named `bwr_campaigninstance` where the subkey equals the campaign recorduid. The status is stored as a String in string3, the possible values are:
 
@@ -145,7 +210,7 @@ Ticketlog information is:
 
 Once a campaign is finalized, remediation tickets are automatically created for all reviewed entries with `revoke` or `update` status.
 
-A remediation is a `ticketlog`, nevertheless, as a ticketlog is read-only, a `ticketreview` is created for **each** remediation. This `ticketreview` contains the remediation current status.
+A remediation is a `ticketlog`, nevertheless, as a `ticketlog` is read-only, a `ticketreview` is created for **each** remediation. This `ticketreview` contains the remediation current status.
 
 ![](./media/image102.png)
 
@@ -165,6 +230,7 @@ Remediation information is stored in the remediation `reviewticket` as such
 | custom6                   | External ticket id (internal info)                                |
 | custom7                   | External ITSM instance code                                       |
 | custom8                   | External ITSM hyperlink to show the ticket details                |
+| custom10                  | Assigned remediation instance code _(error only)_                 |
 
 `status` contains the current review ticket status. This printable value depends on the remediation type (manuel, automated, ...) in case of an automated review through an ITSM system, this value contains the current ITSM ticket status.
 
@@ -172,12 +238,13 @@ Remediation information is stored in the remediation `reviewticket` as such
 
 > You cannot rely on `status` to check for the active remediation state as `status` contains a printable status which depends on the remediation type
 
-| Remediation closed status |                                              |
-| ------------------------- | -------------------------------------------- |
-| -1                        | Remediation is ready to be launched          |
-| 0                         | Remediation is still active                  |
-| 1                         | Remediation is closed and has been done      |
-| 2                         | Remediation is closed and has been cancelled |
+| Remediation closed status |                                                   |
+| ------------------------- | ------------------------------------------------- |
+| -1                        | Remediation is ready to be launched               |
+| 0                         | Remediation is still active                       |
+| 1                         | Remediation is closed and has been done           |
+| 2                         | Remediation is closed and has been cancelled      |
+| 3                         | Remediation is in error and can be launched again |
 
 As you can notice in the upper table, the only case where a remediation has been done is when `custom2=1`
 
@@ -188,9 +255,15 @@ As you can notice in the upper table, the only case where a remediation has been
 
 > [!warning] A *remediation ticketreview* is **not** associated with the access right which needs to be remediated. It is associated with a *dummy* reviewed metadata. When configured this way, this ticketreview will never disappear even when the access right itself disappear when refreshing the Identity Ledger. A printable version of the access right is available in `custom1`.
 
-## create / update review status
+#### Remediation error
 
-Several workflows are available to create/update reviews. You should use them whenever possible. Those workflows are located in `/workflow/bw_access360/`
+Using external ITSM tools can lead to errors during the creation process of the tickets whether it's due to misconfiguration, the external server not being reachable or any other reason. In case of error, the closed status is set to `custom2=3` along with the `custom10=remediationinstancecode`, this way the remediation instance that must be looked into can quickly be identified and the `comment` field, used to store the error returned during the process, can help resolve the issue.
+
+Once the error has been fixed, the remediations in error can be launched again. The `bwr_retrytickets` workflow is executed to do so, with the variable `retrymode=True` sent as an input to the `bwr_inittickets` workflow. This way instead of processing the remediations with a closed status `custom2=-1` it executes on `custom2=3` hence retrying to create the remediation tickets that fell in error before.
+
+## Create and update review status
+
+Several workflows are available to create or update reviews. You should use them whenever possible. Those workflows are located in `/workflow/bw_access360/`
 
 | Workflows                               |                                                                                                    |
 | --------------------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -204,14 +277,15 @@ Several workflows are available to create/update reviews. You should use them wh
 | createRemediationTicket                 | Used to create one remediation ticket                                                              |
 | writeRemediationTickets                 | Used to update remediation tickets status                                                          |
 
-## launch remediation  and create ITSM tickets / refresh ITSM tickets status
+## Launch remediation and create ITSM tickets 
 
-Several workflows are available to automatically create/update remediations. You can launch them through a scheduled batch (`igrc_workflow.[cmd|sh]`) if you want automate remediation creation or ITSM tickets refresh. Those workflows are located in `/workflow/bw_iasreview/`
+Several workflows are available to automatically create and update remediations. You can launch them as a scheduled batch (`igrc_workflow.[cmd|sh]`) to automate remediation creation or refresh ITSM tickets. Those workflows are located in `/workflow/bw_iasreview/`
 
-| Workflows                           |                                                              |
-| ----------------------------------- | ------------------------------------------------------------ |
-| inittickets (bwr_inittickets)       | Used to automatically launch all "pending" remediations.     |
-| refreshtickets (bwr_refreshtickets) | Used to automatically refresh all active ITSM tickets status |
+| Workflows                             |                                                              |
+| ------------------------------------- | ------------------------------------------------------------ |
+| inittickets (`bwr_inittickets`)       | Used to automatically launch all "pending" remediations.     |
+| refreshtickets (`bwr_refreshtickets`) | Used to automatically refresh all active ITSM tickets status |
+| retrytickets (`bwr_retrytickets`)     | Used to automatically retry the creation of tickets that previously encountered error(s) |
 
 ## Self-Reassignment
 
@@ -230,18 +304,30 @@ To do so, you have to edit the following feature file: `\webportal\features\bw_i
 
 Please contact your Identity Analytics project owner to configure this.
 
-## New configuration variables to handle large volume of data
+## New configuration variables
+
+### Configuration variable to handle notifications languages
+
+When managing notifications from the user access review campaign management interface, tab "Mail Templates", the technical administrator can create new email template, edit and duplicate existing ones, or remove some templates. Deleting templates will not affect any campaigns that have already been set up using those templates.
+For each template, you can define emails in english, french and spanish. The Identity Analytics can specify the languages that need to be supported by setting in the technical configuration of the project the variable `ias_supportedlanguages` to "en,fr,es".  
+
+### Configuration variables to handle large volume of data
 
 Four new configuration variables have been added to the project to handle large amount of data.
 
-- `ias_reviewersdisplaylimitvalue` used by Identity Analytics 3.0 and 2.2, indicates the maximum number of reviewers to display the "Review Statsitics" tab in the review follow-up interface (accessible via the **Details** button of a review instance). The default value is 1000.
-- `ias_maxentriestoreview` in Identity Analytics 2.2, the maximum number of entries to review per reviewer can be limited by this configuration variable. By default, the limit is set to 30,000. In Identity Analytics 3.0, the limit does not depend to this variable and is set to 100,000.
-- `ias_disablenoniappreviews` allows to disable the display of custom workflow review types in Access360 to improve performance, used by Identity Analytics 3.0 and 2.2. The default value is false, and it should be activated only if you don't have any custom workflow reviews.
-- `ias_reviewercriticalthreshold` in Identity Analytics 3.0 and 2.2, indicates the number of entries upon which the review instance is forced to offline mode. The default value is 30,000.
+- `ias_reviewersdisplaylimitvalue` used by Identity Analytics 3.X and 2.2, indicates the maximum number of reviewers to display the "Review Statsitics" tab in the review follow-up interface (accessible via the **Details** button of a review instance). The default value is 1000.
+- `ias_maxentriestoreview` in Identity Analytics 2.2, the maximum number of entries to review per reviewer can be limited by this configuration variable. By default, the limit is set to 30,000. In Identity Analytics 3.X, the limit does not depend to this variable and is set to 100,000.
+- `ias_disablenoniappreviews` allows to disable the display of custom workflow review types in Access360 to improve performance, used by Identity Analytics 3.X and 2.2. The default value is false, and it should be activated only if you don't have any custom workflow reviews.
+- `ias_reviewercriticalthreshold` in Identity Analytics 3.X and 2.2, indicates the number of entries upon which the review instance is forced to offline mode. The default value is 30,000.
 - `ias_reviewdisablepreviewlimit` in Identity Analytics 3.1 and above, allows for reviews on large volumes of data, above 30,000 entries by default, to deactivate the step 3 `Perimeter Preview` to smooth the experience, as well as hide the KPIs in step 6. As a result, the campaign is forced into "on hold" mode to allow perimeter review from the campaign management interface before launching the reviews.  
+  
 ### AIDA configuration variables
 
 In the technical project configuration file, two variables are available:
 
 - `aida_enabled` which allows to disable/enable the AIDA service in your Identity Analytics project.  
 - `aida_service_url` which is the API URL used to reach the LLM agents in AWS Bedrock.  
+
+
+
+

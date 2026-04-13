@@ -136,7 +136,7 @@ To launch a repository accounts review, click on "+ Create" button and select "A
 ![](./media/IAP209.png)  
 ![](./media/IAP210.png)  
 
-The next steps are the same than application access rights review. Decision history (Incremental review) strategy and reviewers strategy must be defined:  
+The next steps are the same as application access rights review. Decision history (Incremental review) strategy and reviewers strategy must be defined:  
 
 ![](./media/IAP210-bis.png)  
 
@@ -148,13 +148,44 @@ The available *reviewer strategies* are:
 - All accounts by the repository owner
 - All accounts by the default reviewer
 
-When the accounts review is launch, review is available on "Access 360" section:  
+When the accounts review is launched, review is available on "Access 360" section:  
 
 ![](./media/IAP211.png)  
 
 Reviewers can start the accounts review. They can approve, revoke or comment one by one, they can also perform bulk operations by selecting several entries at once.  
 
 ![](./media/IAP212.png)  
+
+## Server access rights review
+
+To launch a server access rights review, click on the "+ Create" button and select "Server Review" in the Review Campaign Management section. 
+
+![Image of the screen that shows server access rights review button](./media/IAPSAR.png)  
+
+You will then need to select the servers that you want to include in your review campaign.
+
+![Image of the screen that lists servers to be added](./media/IAPCS.png)  
+
+The next steps are the same as application access rights review. **Decision history (Incremental review) strategy** and **reviewers’ strategy** must be defined:
+
+![An image of reviewer assignment strategy](./media/IAPRAS.png)  
+
+**The available reviewer strategies are:**
+
+- User accounts by line manager, technical accounts by server owner  
+- User accounts by line manager, all other accounts by server owner  
+- User accounts by account owner, all other accounts by server owner  
+- All accounts by server owner  
+- All accounts by default reviewer
+
+When the server review is launched, the review is available in the **"Access 360"** section:
+
+![An image of Access 360 screen](./media/IAPAccess.png)  
+
+Reviewers can begin the account review process by approving, revoking, or commenting on individual entries. They also have the option to perform bulk actions by selecting multiple entries at once, or use the cross table to make decisions per cluster.
+
+![An image of example access review](./media/IAPReview.png)  
+
 
 ## Repository group membership review
 
@@ -187,6 +218,34 @@ Reviewers can start the group membership review. They can approve, revoke or com
 
 ![](./media/IAP242.png)  
 
+## Server access rights review
+
+To launch a server access rights review, click on "+ Create" button and select "Server Review" in the Review Campaign Management section. You have then to select the servers that you want to include in your review campaign.
+
+![](./media/newcampaign.png)  
+
+![](./media/ServerReview1.png)  
+
+The next steps are the same as application access rights review. Decision history (Incremental review) strategy and reviewers� strategy must be defined: 
+
+![](./media/ServerReview2.png)  
+
+The available `reviewer strategies` are:
+
+- User accounts by line manager, technical accounts by server owner
+- User accounts by line manager, all other accounts by server owner
+- User accounts by account owner, all other accounts by server owner
+- All accounts by server owner
+- All accounts by default reviewer
+
+When the server review is launched, review is available in "Access 360" section:
+
+![](./media/ServerReview3.png)  
+
+Reviewers can start the accounts review. They can approve, revoke or comment one by one, they can also perform bulk operations by selecting several entries at once, or use the cross table to take decisions per cluster.  
+
+![](./media/ServerReview4.png)  
+
 ## Sensitive service accounts by account owners, all other accounts by line manager or repository owner
 
 For campaigns such as "Account Repository Review" you can configure more advanced scenarios where you can select who will have to do the review depending on some factors such as risk level, account sensitivity level, last login date, ...
@@ -200,7 +259,6 @@ This script will be executed for each individual line to review in order to find
 ![](./media/IAP232.png)  
 
 When you click OK, a check is performed to identify any errors in the script, and the errors are then highlighted.  
-
 
 ```javascript
 // This script identifies the reviewer for each individual review line.
