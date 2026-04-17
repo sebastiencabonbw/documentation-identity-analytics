@@ -422,7 +422,7 @@ Next **Review Strategy** step is to define incremental review and reviewers stra
 The available _reviewer strategies_ are:
 
 - Role manager if any; default reviewer otherwise
-- Role manager if any; if njone, application manager; default reviewer otherwise
+- Role manager if any; if none, application manager; default reviewer otherwise
 - Application manager if any; default reviewer otherwise
 - Default reviewer
 
