@@ -391,15 +391,15 @@ if (accounttype.equals("user")) {
 
 > This mode is enabled by default for the functional and technical administration role (`iasreview_funcadmin` and `iasreview_techadmin`). The related feature have to be disabled in your project if you don't want campaign owners to use advanced review strategies. To do so, you have to edit the following feature file: `\webportal\features\bw_iasreview\iasreview.features`. The feature `iasr_rightreviewadvandedreviewermode` for application rights reviews has to be associated to the relevant feature sets. Please contact your Identity Analytics project owner to configure this.
 
-## Role Permissions review
+## Role Permissions Review
 
-A Role Permissions review in IDA implies to first have all necessary objects and links between them to be ingested in order to be reviewed:
+A Role Permissions review in IDA requires that all necessary objects and their links be ingested before the review can take place:
 
-- Business Applications and associated Permissions
-- IAM system and Business Roles
-- Links between Business Roles and Applications Permissions
+- Business Applications and their associated Permissions
+- IAM systems and Business Roles
+- Links between Business Roles and Application Permissions
 
-Objects reviewed during a Role Permissions review are **IAM Roles / Applications Permissions** pairs. Functionnally speaking, the goal is to review the content of IAM Roles, i.e. every effective Permissions granted by an IAM role.
+The objects reviewed during a Role Permissions review are **IAM Roles / Application Permissions** pairs. Functionally, the goal is to review the content of IAM Roles — that is, every effective permission granted by an IAM role.
 
 ![Role Permissions Review selection](./media/identity_analytics_review_role_content_data_model.png)
 
@@ -407,53 +407,71 @@ To launch a Role Permissions review, select **Role Permissions Review** from the
 
 ![Role Permissions Review selection](./media/identity_analytics_review_role_content_creation.png)
 
-From the **Review Perimeter** menu, you have to select IAM Applications and/or Roles you want to include in your review.
 
-Then, you can also, if needed, filter your review scope:
+### Review Perimeter
 
-- By Permission tag
-- By Permission sensitivity
-- Using a custom rule on Permission
+From the **Review Perimeter** menu, select the IAM Applications and/or Roles to include in your review.
+
+You can also optionally filter the review scope by:
+
+- Permission tag
+- Permission sensitivity
+- A custom rule on Permission
 
 ![Role Permissions Review Perimeter](./media/identity_analytics_review_role_content_review_perimeter.png)
 
-Next **Review Strategy** step is to define incremental review and reviewers strategies.
+### Review Strategy
 
-The available _reviewer strategies_ are:
+The **Review Strategy** step defines the incremental review and reviewer strategies.
+
+The available reviewer strategies are:
 
 - Role manager if any; default reviewer otherwise
 - Role manager if any; if none, application manager; default reviewer otherwise
 - Application manager if any; default reviewer otherwise
 - Default reviewer
 
-If necessary, an advanced reviewer strategy can be selected (but may be created before from **Reviewer Policies** section).
+If necessary, an advanced reviewer strategy can be selected (it must be created beforehand in the **Reviewer Policies** section).
 
-> Note: **Application** is referring to the Business application, not the IAM system. **Role** is referring to IAM Role.
+> **Note:** **Application** refers to the Business Application, not the IAM system. **Role** refers to the IAM Role.
 
-You can also configure incremental review as other reviews (See [related section](#review-only-the-changes-since-the-last-review)).
+Incremental review can also be configured here, as with other review types (see [related section](#review-only-the-changes-since-the-last-review)).
 
 ![Role Permissions Review Strategy](./media/identity_analytics_review_role_content_review_strategy.png)
 
-Regarding configuration made on previous steps, the **Perimeter Preview** displays every IAM Roles / Applications Permissions pairs to review and associated reviewers (see [this section](./02-my-first-review.md#step-3---perimeter-preview) for more details.
+### Perimeter Preview
+
+Based on the configuration from the previous steps, the **Perimeter Preview** displays all IAM Roles / Application Permissions pairs to be reviewed, along with their associated reviewers (see [this section](./02-my-first-review.md#step-3---perimeter-preview) for more details).
 
 ![Role Permissions Perimeter Preview](./media/identity_analytics_review_role_content_perimeter_preview.png)
 
-**Reviewer UI** step can be configured as other reviews to configure the reviewer user interfaces, especially authorized actions and columns to display and propose (see [this section](./02-my-first-review.md#step-4---reviewer-ui) for more details).
+
+### Reviewer UI
+
+The **Reviewer UI** step can be configured as with other review types to set up the reviewer user interface, including authorized actions and columns to display (see [this section](./02-my-first-review.md#step-4---reviewer-ui) for more details).
 
 ![Role Permissions Reviewer UI](./media/identity_analytics_review_role_content_reviewer_ui.png)
 
-**Campaign Schedule** step can be configured as other reviews to configure the campaign scheduling (see [this section](./02-my-first-review.md#step-5---campaign-schedule) for more details).
+
+### Campaign Schedule
+
+The **Campaign Schedule** step can be configured as with other review types to set up campaign scheduling (see [this section](./02-my-first-review.md#step-5---campaign-schedule) for more details).
 
 ![Role Permissions Campaign Schedule](./media/identity_analytics_review_role_content_campaign_schedule.png)
 
-Last "Campaign Information" campaign configuration step can be configured as other reviews to configure general campaign information (see [this section](./02-my-first-review.md#step-6---campaign-information) for more details).
+### Campaign Information
 
-![Role Permissions Campaign Information(./media/identity_analytics_review_role_content_campaign_information.png)
+The **Campaign Information** step can be configured as with other review types to set up general campaign information (see [this section](./02-my-first-review.md#step-6---campaign-information) for more details).
 
-When the Role Permissions review is launched, review is available for assigned reviewers on "Access 360" section:
+![Role Permissions Campaign Information](./media/identity_analytics_review_role_content_campaign_information.png)
+
+
+### Conducting the Review
+
+Once the Role Permissions review is launched, it becomes available to assigned reviewers in the **Access 360** section.
 
 ![Role Permissions Access 360](./media/identity_analytics_review_role_content_access360.png)
 
-Reviewers can start the Role Permissions review. They can approve, revoke or comment one by one, they can also perform bulk operations by selecting several entries at once (see [this section](./02-my-first-review.md#step-8---reviewing-entries) for more details).
+Reviewers can approve, revoke, or comment on entries individually, or perform bulk operations by selecting multiple entries at once (see [this section](./02-my-first-review.md#step-8---reviewing-entries) for more details).
 
 ![Role Permissions Reviewer Page](./media/identity_analytics_review_role_content_reviewer_page.png)
