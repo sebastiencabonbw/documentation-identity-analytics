@@ -225,7 +225,7 @@ For customers under maintenance/subscription contract as well as official partne
 
 <tabpanel>
   
-# Welcome to Identity Analytics Data Extractor Marketplace
+# Identity Analytics Data Extractor Marketplace
 
  Browse all available Identity Analytics Extractors by vising the [Marketplace](https://marketplace.radiantlogic.com/).  
   
