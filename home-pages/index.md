@@ -7,6 +7,7 @@ description: Guides to help build, configure and use Identity Analytics
   <tablist>
     <tab>Knowledge</tab>
     <tab>Developer</tab>
+    <tab>Marketplace</tab>
   </tablist>
 
   <tabpanels>
@@ -14,7 +15,9 @@ description: Guides to help build, configure and use Identity Analytics
 
 # Welcome to Identity Analytics
 
-Correlate your identity data and add analytics to improve data quality, properly respond to audit recommendations and automate IT controls. Get a full overview of access chains with all the identity context: gain key visibility into all human and non-human identities to simplify user access reviews and ensure that your company’s entitlements are compliant. Browse below to learn more about the capabilities and components that comprise Identity Analytics and link to the guides to help get you started.  
+Correlate your identity data and add analytics to improve data quality, properly respond to audit recommendations and automate IT controls. Get a full overview of access chains with all the identity context: gain key visibility into all human and non-human identities to simplify user access reviews and ensure that your company’s entitlements are compliant.
+
+Browse below to learn more about the capabilities and components that comprise Identity Analytics and link to the guides to help get you started.  
   
 <section>
 
@@ -48,9 +51,9 @@ Correlate your identity data and add analytics to improve data quality, properly
 
 This web site will help you make the most of the iGRCanalytics product and methodology. Included you will find pages describing:  
 
-- The product documentation
-- Project configuration
-- Tips and tricks
+  - The product documentation
+  - Project configuration
+  - Tips and tricks
 
 For customers under maintenance/subscription contract as well as official partners, you can reach our support website (24/7): https://support.radiantlogic.com/
 
@@ -219,5 +222,13 @@ For customers under maintenance/subscription contract as well as official partne
 </section>
 
 </tabpanel>
+
 <tabpanel>
+  
+# Welcome to Identity Analytics Data Extractor Marketplace
+
+ Browse all available Identity Analytics Extractors by vising the [Marketplace](https://marketplace.radiantlogic.com/).  
+  
+</tabpanel>
+  
 </tabs>  
