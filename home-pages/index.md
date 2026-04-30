@@ -47,9 +47,9 @@ Browse below to learn more about the capabilities and components that comprise I
 </tabpanel>
 <tabpanel>
 
-# Welcome to Identity Analytics technical documentation
+# Identity Analytics Technical Documentation
 
-This web site will help you make the most of the iGRCanalytics product and methodology. Included you will find pages describing:  
+The guides in this site will help you make the most of the iGRCanalytics product and methodology. Included you will find pages describing:  
 
   - The product documentation
   - Project configuration
