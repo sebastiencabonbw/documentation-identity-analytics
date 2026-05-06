@@ -230,7 +230,7 @@ For customers under maintenance/subscription contract as well as official partne
  <section>
 
    > [Data Extractor Marketplace](https://marketplace.radiantlogic.com/)
-   > Browse all available Identity Analytics Extractors by visting the Marketplace.
+   > Browse all available Identity Analytics Extractors by visiting the Marketplace.
 
  </section>
  
