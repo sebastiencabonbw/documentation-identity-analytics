@@ -7,10 +7,10 @@ description: "Identity Analytics Release Notes"
 
 ## Supported versions
 
-We only support actively the last two versions of Identity analytics. Currently:
+We actively support only the two most recent versions of Identity Analytics. Currently, they are:
 
-- Version 3.4
 - Version 3.5
+- Version 3.6
 
 ## IAP/IGRC Compatibility matrix
 
@@ -28,21 +28,23 @@ IAP leverages improvements applied to the IGRC product. Please refer to the foll
 
 ### Descartes Version
 
-| Version                | IAP 1.8 - 2.2 | IAP 3.0 - 3.1 | IAP 3.2 | IAP 3.3 | IAP 3.4 + |
-| :--------------------- | :-----------: | :-----------: | :-----: | :-----: | :-------: |
-| Descartes R2           |     **X**     |       -       |    -    |    -    |     -     |
-| Descartes R4           |     **X**     |     **X**     |    -    |    -    |     -     |
-| Descartes R5           |     **X**     |     **X**     |    -    |    -    |     -     |
-| Descartes R5 SP3       |     **X**     |     **X**     |  **X**  |    -    |     -     |
-| Descartes R5 SP6       |     **X**     |     **X**     |  **X**  |  **X**  |     -     |
-| Descartes R5 SP7 - SP8 |     **X**     |     **X**     |  **X**  |  **X**  |   **X**   |
+| Version                | IAP 1.8 - 2.2 | IAP 3.0 - 3.1 | IAP 3.2 | IAP 3.3 | IAP 3.4 - 3.5 | IAP 3.6+ |
+| :--------------------- | :-----------: | :-----------: | :-----: | :-----: | :-----------: | :------: |
+| Descartes R2           |     **X**     |       -       |    -    |    -    |       -       |    -     |
+| Descartes R4           |     **X**     |     **X**     |    -    |    -    |       -       |    -     |
+| Descartes R5           |     **X**     |     **X**     |    -    |    -    |       -       |    -     |
+| Descartes R5 SP3       |     **X**     |     **X**     |  **X**  |    -    |       -       |    -     |
+| Descartes R5 SP6       |     **X**     |     **X**     |  **X**  |  **X**  |       -       |    -     |
+| Descartes R5 SP7 - SP8 |     **X**     |     **X**     |  **X**  |  **X**  |     **X**     |    -     |
+| Descartes R6           |     **X**     |     **X**     |  **X**  |  **X**  |     **X**     |  **X**   |
 
 ### Eiffel Version
 
-| Version     | IAP 3.0 - 3.5 |
-| :---------- | :-----------: |
-| Eiffel R1   |     **X**     |
-| Eiffel R2 + |     **X**     |
+| Version        | IAP 3.0 - 3.5 | IAP 3.6 |
+| :------------- | :-----------: | :-----: |
+| Eiffel R1      |     **X**     |    -    |
+| Eiffel R2      |     **X**     |    -    |
+| Eiffel R2 SP2+ |     **X**     |  **X**  |
 
 ## IAP release content
 
@@ -51,6 +53,10 @@ For a full list of changes to IAP please refer the to following release notes:
 - [IAP 3.x release notes](04-iap-3.X-release-notes.md "IAP release notes")
 - [IAP 2.x release notes](03-iap-2.X-release-notes.md "IAP release notes")
 - [IAP 1.x release notes](02-iap-1.X-release-notes.md "IAP release notes")
+
+### Version 3.6
+
+- Introduced new "Unstructured Data Review", to support reviews of File Shares, SharePoint and Exchange data.
 
 ### Version 3.5
 
