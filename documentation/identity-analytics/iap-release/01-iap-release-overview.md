@@ -7,7 +7,7 @@ description: "Identity Analytics Release Notes"
 
 ## Supported versions
 
-We only support actively the last two versions of Identity analytics. Currently:
+We actively support only the two most recent versions of Identity Analytics. Currently, they are:
 
 - Version 3.5
 - Version 3.6
@@ -56,7 +56,7 @@ For a full list of changes to IAP please refer the to following release notes:
 
 ### Version 3.6
 
-- New "Unstructured Data" Review, to review File Shares, SharePoint and Exchange data
+- Introduced new "Unstructured Data Review", to support reviews of File Shares, SharePoint and Exchange data.
 
 ### Version 3.5
 
