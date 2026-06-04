@@ -28,15 +28,15 @@ IAP leverages improvements applied to the IGRC product. Please refer to the foll
 
 ### Descartes Version
 
-| Version                | IAP 1.8 - 2.2 | IAP 3.0 - 3.1 | IAP 3.2 | IAP 3.3 | IAP 3.4 - 3.5 | IAP 3.6+ |
-| :--------------------- | :-----------: | :-----------: | :-----: | :-----: | :-----------: | :------: |
-| Descartes R2           |     **X**     |       -       |    -    |    -    |       -       |    -     |
-| Descartes R4           |     **X**     |     **X**     |    -    |    -    |       -       |    -     |
-| Descartes R5           |     **X**     |     **X**     |    -    |    -    |       -       |    -     |
-| Descartes R5 SP3       |     **X**     |     **X**     |  **X**  |    -    |       -       |    -     |
-| Descartes R5 SP6       |     **X**     |     **X**     |  **X**  |  **X**  |       -       |    -     |
-| Descartes R5 SP7 - SP8 |     **X**     |     **X**     |  **X**  |  **X**  |     **X**     |    -     |
-| Descartes R6           |     **X**     |     **X**     |  **X**  |  **X**  |     **X**     |  **X**   |
+| Version                | IAP 1.8 - 2.2 | IAP 3.0 - 3.1 | IAP 3.2 | IAP 3.3 | IAP 3.4 - 3.5 | IAP 3.6 |
+| :--------------------- | :-----------: | :-----------: | :-----: | :-----: | :-----------: | :-----: |
+| Descartes R2           |     **X**     |       -       |    -    |    -    |       -       |    -    |
+| Descartes R4           |     **X**     |     **X**     |    -    |    -    |       -       |    -    |
+| Descartes R5           |     **X**     |     **X**     |    -    |    -    |       -       |    -    |
+| Descartes R5 SP3       |     **X**     |     **X**     |  **X**  |    -    |       -       |    -    |
+| Descartes R5 SP6       |     **X**     |     **X**     |  **X**  |  **X**  |       -       |    -    |
+| Descartes R5 SP7 - SP9 |     **X**     |     **X**     |  **X**  |  **X**  |     **X**     |  **X**  |
+| Descartes R6           |     **X**     |     **X**     |  **X**  |  **X**  |     **X**     |  **X**  |
 
 ### Eiffel Version
 
