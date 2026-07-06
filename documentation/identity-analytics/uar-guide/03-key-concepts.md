@@ -5,11 +5,11 @@ description : "Identity Analytics Access Review Guide"
 
 # Key Concepts
 
-This chapter presents the key concepts of access certification.
+This document presents the key concepts of access certification.
 
 ## Access Review Process
 
-As seen in the previous chapter, access certification is a straight forward process involving 4 actors:
+Access certification is a straight forward process involving four user personas:
 
 - Identity Analytics administrator
 - Campaign owner
