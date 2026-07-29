@@ -11,7 +11,7 @@ description: Guides to help build, configure and use Identity Analytics
   </tablist>
 
   <tabpanels>
-    <tabpanel>4
+    <tabpanel>
 
 # Welcome to Identity Analytics
 
